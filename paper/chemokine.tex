@@ -204,7 +204,7 @@ Define CyCells environment.  Talk about the need for spatial model.  Human/mouse
 
 \subsection*{Chemokine production}
 
-Chemokine data was collected in conjunction with the Mitchell et al (REF) (Fig.~\ref{fig:data}).   Increases in IP-10 concentration are observed starting no later than eight hours post-infection and increases in RANTES concentration are seen no later than 16 hours post-infection.  We extended the ODE model established in Mitchell to allow for chemokine production from infected cells.  A genetic algorithm was used to find per cell production rates for both IP-10 and RANTES for the three different strains of influenza.  The production values for IP-10 are 7.15e-5 ng/cell*s for Avian, 9.35e-5 ng/cell*s for Seasonal, and 6.23e-5 ng/cell*s for Swine.  The values for RANTES are 3.90e-5 ng/cell*s for Avian, 1.27e-6 ng/cell*s for Seasonal, and 1.39e-6 ng/cell*s for Swine.  We observe consistent production values of each chemokine across the different strains with an exception of a larger production rate of RANTES in avian H5N1.  There seems to be no correlation between viral production and induced chemokine production across strains of influenza.
+Chemokine data were collected from epithelial monolayers infected with influenza strains, as described in \cite{MitchellEtAl2011} (Fig.~\ref{fig:data}).  IP-10 concentration increases were observed by 8h p.i., and RANTES by 16h p.i..  To estimate per-cell production rates, we extended the ODE model of Ref. \cite{MitchellEtAl2011} to represent chemokine production from infected cells.  Model was fits were generated for three influenza straints (Fig.~\ref{fig:data}) using a genetic algorithm \cite{GA-ref}.  The model estimates that IP-10 is produced at 7.15e-5 ng/cell*s for Avian, 9.35e-5 ng/cell*s for Seasonal, and 6.23e-5 ng/cell*s for Swine.  The values for RANTES are 3.90e-5 ng/cell*s for Avian, 1.27e-6 ng/cell*s for Seasonal, and 1.39e-6 ng/cell*s for Swine.  These chemokine expression rates are consistent for each chemokine across the different strain, except that the RANTES rate is higher in avian H5N1.  There is no discernible correlation between viral production and induced chemokine production across the three strains of influenza.
 
 \begin{figure}[ht!]
 \begin{center}
@@ -214,34 +214,49 @@ Chemokine data was collected in conjunction with the Mitchell et al (REF) (Fig.~
  \label{fig:data}
 \end{figure}
 
-\subsection*{Model variance}
+\subsection*{Stochastic modeling effects}
 
-The parameters of the agent-based model are listed in Table~\ref{table:parameters}.  The model was run using calculated values of viral production and chemokine production for the three different strains of influenza.  To measure the variance of the stochastic model, we ran each model ten times using the default parameters (Fig.~\ref{fig:variance}).  The amount of variance between each run was calculated to be X .  The plots show total number of incubating, virus secreting, and apoptotic cells, but do not include dead cells.  Thus the figures approximate the rate of growth of the plaque over time.
+[FIXME-DREW: Shouldn't we do 30 runs instead of 10 to get statistical significance?]
 
-Overlaying multiple runs reveals a slight elbow at day three of the infection.  This shift in the growth rate is due to the introduction of IgM antibodies that clear free virus.  Each infection shows a sharp decrease in infected cells at day five due to the T-cell response. 
+Unlike ODE models, which are deterministic, stochastic models such as CyCells can produce different results on different runs (Figure \ref{}fig:variance).  To test the strength of this effect, we ran each model ten times using the default parameters given in Table~\ref{table:parameters}, finding that the variance of infected cells was X.  Each run took as input the calculated viral production and chemokine production rates for the three different strains of influenza, reporting as output the total number of infected cells, including incubating, virus secreting and apoptotic, but not including dead cells.  The figures thus approximate plaque growth over time.
+
+Overlaying multiple runs on a single plot reveals a slight growth rate transition 3 days p.i., which reflects the presence of IgM.
+%antibodies that clear free virus. 
+In addition, each infection the number of infected cells declines quickly at day five due to the T-cell response. 
 
 \begin{figure}[ht!]
 \begin{center}
  \includegraphics[width=\textwidth]{variance}
  \end{center}
-\caption{Time series plots of ten runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections.  Both chemokines were used with the exception of aH5N1 which only produced RANTES.  The ten runs were initialized with the same parameters for each strain.  Plots show the number of infected, expressing, and apoptotic cells.  Dead cells are not included.  Variance arises from the stochastic nature of the agent-based model.  All three simulations are dramatically affected by the T-cell response at day five.  Each simulation uses a T-cell sensitivity to chemokine value of 1e-22.} 
+\caption{Model results: Time series plots of ten runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections. IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  The ten runs were initialized identically for each strain.  
+% Only say this once, either in the text or here.
+%Plots show the number of infected, expressing, and apoptotic cells.  Dead cells are not included.  
+%All three model scenairos respond dramatically to the T-cell response at day five.  
+Each simulation was run with identical T-cell sensitivity to chemokine  (1e-22).} 
  \label{fig:variance}
 \end{figure}
 
 
 \subsection*{Spatial effects}
 
-Spatial effects of viral and chemokine diffusion play an important role in both the spread and the clearance of the infection.  Free virus particles diffuse from virus secreting cells and infect healthy cells.  Chemokine is also produced by infected cells and serves as chemotactic gradient for T-cells to follow to cells secreting virus.  Although virus is produced at a higher rate, it diffuses much more slowly than the two chemokines because it is a larger particle.  On the other hand, the chemokines are limited in their diffusion by a higher decay rate than virus.  This gives the two particle types similar spatial profiles (Fig.~\ref{fig:cycells}).
+Spatial effects of viral and chemokine diffusion play an important role in both the spread and clearance of infection.  Free virus particles diffuse from virus secreting cells and infect healthy cells.  Chemokine produced by infected cells attracts T-cells to the infected cells.  Although virus is produced at a higher rate than chemokine, it diffuses much more slowly because it is a larger particle.  Chemokine diffusion, however, is limited by higher decay rates than the virus.  These countervaling effects result in similar
+spatial profiles for the two particle types (Fig.~\ref{fig:cycells}).
 
-At day four, expressing cells make up a significant proportion of the infection and the total number of dead cells is relatively small.  By day seven, most expressing cells have been killed off by T-cells and most of the plaque consists of dead cells.  Furthermore, the pockets of concentrated chemokine lags somewhat behind the cell and virus spatial layout.  It takes time for newly secreting cells to produce chemokine and for old pockets of chemokine to decay away.  Thus, T-cells, which rely on the chemokine gradient to find infected cells, will often lag slightly behind the changes in the plaque.  The delayed response and the low proportion of virus secreting cells make it difficult for T-cells alone to completely clear the infection.
+%FROM FIGURE~\ref{fig:plaquesize} CAPTION: 
+Early in the infection (until day 4), plaque is dominated by active (incubating and secreting) cells, and dead cells are rare. Over time, cells in the plaque's interior die, so active cells comprise a decreasing proportion of the total. T-cells arrive at day 5 and begin to killing the plentiful virus-expressing cells. By day 6 (OR 7?), however,  many of the expressing cells have been eliminated and the plaque is dominated by dead cells.  In the H5N1
+example, the plaque is dense,  so the secreting cells can be found easily and the infection is eliminated.  In both H1N1 simulations, however, secreting cells are not eliminated.  In this case, expressing cells account for at most 10\% of the active cell population and less than  1\% of the total plaque at 6 days p.i.  T-cells still accumulate, but they arrive at a slower rate than the plaque's rate of growth. This leads to a lower probability of T-cells finding and killing the remaining expressing cells, and the infection is able to recover and resume growth.   The regions of concentrated chemokine trail the cell and virus spatial layout.  It takes time for newly secreting cells to produce chemokine and for old pockets of chemokine to decay away.  Thus, T-cells, which rely on the chemokine gradient to find infected cells, often lag behind changes in the plaque.  The delayed response and the low proportion of virus secreting cells prevent T-cells from clearing the infection completely.
 
-FROM FIGURE~\ref{fig:plaquesize} CAPTION: Early during the infection the plaque is dominated by cells that are active in producing more virus (incubating cells and secreting cells).  As the infection grows, cells in the middle of the plaque die and these active cells make up a decreasing proportion of the total size. At day five T-cells arrive and begin to kill any virus secreting cells they can find.  Initially, secreting cells make up a significant proportion of the total active cell population, but by day six the number of expressing cells has been reduced dramatically.   The H5N1 plaque is concentrated enough that the secreting cells can be found and completely eliminated.  On the other hand, both H1N1 simulations secreting cells are not completely eliminated.  These cells only account for at most 10\% of the active cell population and less than  1\% of the total plaque by day six.  T-cells continue to accumulate at the site of infection, but arrive at a slower rate than the plaque's rate of growth.  Because of this, it becomes more and more difficult for T-cells to find and kill the remaining expressing cells in order to shut down the infection.  Thus, the infection is able to recover and resume growth. 
+% At day four, expressing cells make up a significant proportion of the infection and the total number of dead cells is relatively small.  
+% By day seven, most expressing cells have been killed off by T-cells and most of the plaque consists of dead cells.  Furthermore, the pockets of concentrated chemokine lags somewhat behind the cell and virus spatial layout.  It takes time for newly secreting cells to produce chemokine and for old pockets of chemokine to decay away.  Thus, T-cells, which rely on the chemokine gradient to find infected cells, will often lag slightly behind the changes in the plaque.  The delayed response and the low proportion of virus secreting cells make it difficult for T-cells alone to completely clear the infection.
 
 \begin{figure}[ht!]
 \begin{center}
  \includegraphics[width=\textwidth]{cycells}
  \end{center}
-\caption{Screenshots taken at Day 4, Day 5.5, and Day 7 of a sample simulated sH1N1 infection.  The top row shows the spreading focus of infection  through the color coding of individual cells:  healthy cells in uninfected tissue (gray),  virus-incubating cells (yellow), virus-secreting cells (orange), apoptotic cells (red), dead cells (brown), and T-cells introduced at day 5 (green).  Free virus and chemokine particles are represented by compartmentalized concentrations of mols/ml and ng/ml (see the legend in the bottom right).  Each plot of virus and chemokine corresponds directly with the simultaneous cell figures.} 
+\caption{Example simulated sH1N1 infection. Screenshots taken at Day 4, Day 5.5, and Day 7.  The top row shows the spreading focus of infection  through the color coding of individual cells:  healthy cells in uninfected tissue (gray),  virus-incubating cells (yellow), virus-secreting cells (orange), apoptotic cells (red), dead cells (brown), and T-cells introduced at day 5 (green).  Free virus and chemokine particles are represented by compartmentalized concentrations of mols/ml and ng/ml (see the legend in the bottom right).  
+%Each plot of virus and chemokine corresponds directly to the cell population
+%the simultaneous cell figures.
+FIXME_DREW (mols/ml) ??} 
  \label{fig:cycells}
 \end{figure}
 
@@ -249,15 +264,19 @@ FROM FIGURE~\ref{fig:plaquesize} CAPTION: Early during the infection the plaque 
 
 \subsection*{Infection dynamics}
 
-The three strains show markedly different levels of virulence consistent with the results found in Mitchell (Fig.~\ref{fig:variance}).  Furthermore, the pandemic H1N1 grows so fast that the immune response is not able to contain the infection.  By the time the T-Cells arrive at the site of infection the plaque has become so spread out that the T-Cells are unable to cover the entire area.  Because H1N1 is produced at such a high rate, the window of opportunity for the T-Cells to stay ahead of the infection is too small (see discussion).  H5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH5N1 eventually recovers and continues to grow.  
+The three strains show different levels of virulence, consistent with the results found in Mitchell (Fig.~\ref{fig:variance}).  The rapid growth of the pandemic H1N1 prevents the immune response from containing the infection.  By the time T-Cells arrive, the plaque is too large for them  to cover effectively.  Because H1N1 is produced so quickly, the window of opportunity for T-Cells to gain ground is too small (Discussion).  H5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH5N1 recovers and continues to expand.
 
 ADD IP-10 RANTES COMPARISON
 
 \subsection*{T-cell sensitivity to chemokine}
 
-T-Cells exit a capillary when they can sense an inflammatory cytokine signal.  T-Cells then encounter a second signal, the chemokine gradient.  We use the chemokine gradient as an approximation of the inflammatory signal.  As seen in Figure \ref{fig:cycells}, chemokine is concentrated around virus secreting cells.  The threshold sensitivity level determines the minimum concentration of aggregate chemokine signal required for T-cells to detect the gradient.
+T-Cells exit a capillary when they sense inflammatory cytokine and then follow a second signal, the chemokine gradient.  We use the chemokine gradient as a proxy for the inflammatory signal.  Figure \ref{fig:cycells} shows chemokine concentrated around virus secreting cells.  
+%threshold sensitivity level 
+T-cell sensitivity determines how much aggregate chemokine signal is required to detect the gradient.
 
-To test what concentration the cytokine/chemokine signal is enough to recruit T-Cells from the capillaries we examined sensitivity levels that spanned seven orders of magnitude.  There is a threshold (Fig.~\ref{fig:sensitivity}) between the concentrations of (FIXME: new values) 1e-18 and 1e-19 (1e-19 and 1e-20 for pH1N1) after which there is no discernible difference in the infection kinetics.  Because multiple T-cells in the same area do not increase the rate of induction of apoptosis (killing), we hypothesize that there is a critical number of T-cells required to clear an infection after which there is no benefit gained from increasing numbers.  For consistency, all model runs were preformed using a sensitivity level of 1e-22.
+To test for the minimum concentration of cytokine/chemokine signal required to recruit T-Cells from capillary, we simulated sensitivity levels ranging over seven orders of magnitude. We find a threshold (Fig.~\ref{fig:sensitivity}) between the concentrations of (FIXME: new values) 1e-18 and 1e-19 (1e-19 and 1e-20 for pH1N1), above which there is no discernible effect on infection kinetics.  Because multiple T-cells in the same area do not increase the rate at which  apoptosis is induced, we hypothesize that a critical number of T-cells is required to clear an infection, above which there is no additional benefit from increasing numbers.  For consistency, we standardized all subsequent model runs to  sensitivity of 1e-22.
+
+% We notice a threshold between concentrations of 1e-18 and 1e-19 for H5N1 and sH1N1 and a threshold between 1e-19 and 1e-20 (NOTE TO SELF: 1e-21???) for pH1N1, after which there is no discernible difference in the infection kinetics.
 
 NOTE TO SELF: Discuss the threshold in the discussion?  How does this threshold translate into a level of chemokine needed?  
 
@@ -265,24 +284,29 @@ NOTE TO SELF: Discuss the threshold in the discussion?  How does this threshold 
 \begin{center}
  \includegraphics[width=\textwidth]{sensitivity}
  \end{center}
-\caption{Plots of H5N1 using only RANTES and sH1N1 and pH1N1 infections using both IP-10 and RANTES with varying values for T-cell sensitivity to chemokine.  The plots show the total number of infected, expressing, and apoptotic cells for each infection.  The sensitivity value specifies the minimum level of chemokine concentration required for T-cells to detect it.  We notice a threshold between concentrations of 1e-18 and 1e-19 for H5N1 and sH1N1 and a threshold between 1e-19 and 1e-20 (NOTE TO SELF: 1e-21???) for pH1N1, after which there is no discernible difference in the infection kinetics.} 
+\caption{Varying T-cell sensitivity to chemokine in the model: H5N1 model results use RANTES  only, and sH1N1 and pH1N1 use both IP-10 and RANTES. Total number of infected, expressing and apoptotic cells are plotted for each infection.  The sensitivity value specifies the minimum level of chemokine concentration required for T-cells to detect it. } 
  \label{fig:sensitivity}
 \end{figure}
 
-\subsection*{Infection resurgence}
+\subsection*{Infection rebound}
 
-As seen in Figure \ref{fig:variance}, the immune response fails to completely clear the seasonal infection and is unable to contain the pandemic infection.  We suggest this is an artifact of the spatial nature of the ABM.  Why can the immune response create an immediate decrease in the number of infected cells of the pandemic infection, only to fail in the same endeavor two days later?  It is important to note that Figure \ref{fig:variance} shows only the number of infected cells and does not include the number of dead cells in the focus of infection (FOI).  Furthermore, T-Cells are only able to induce apoptosis for epithelial cells that are presenting viral peptides.  This means that they do not kill incubating cells that are not yet expressing the virus.  At day 5.5, the proportion of expressing cells to the size of the FOI is high (Fig.~\ref{fig:cycells}).  By day seven however, the number of sH1N1 virus-secreting cells has decreased to a small fraction of the overall FOI size, whereas pH1N1 secreting cells remain a significant proportion of plaque size.  Even though the number of T-Cells at the site of infection continue to increase, the size of the plaque increases at an even faster rate.  Thus, the few remaining expressing cells become dilute, decreasing the efficiency of the T-cell search.  
+FIXME-DREW-FRED: expressing, actively presenting viral peptides, secreting, viral-secreting, etc.  Pls. choose one of these terms, introduce its synomys early, and then
+be consistent for the rest of the paper.
 
-By day seven the ratio of plaque size to the number of virus-secreting cells is approximately 100:1 for both the pH1N1 and sH1N1 strains.  However the greater replication rate of pH1N1 widens the gap between plaque size and fixed T-cell input (Fig.~\ref{plaquesize}C) whereas the lower replication rate of sH1N1 allows a match to T-cell input after day seven and subsequent control (but not elimination) of the sH1N1 infection.
+The immune response fails to clear sH1N1 completely and is unable to contain the pH1N1 (Fig. \ref{fig:variance}).  This appears to be an artifact of the spatial nature of the ABM.  Why can the immune response create an immediate decrease in the number of pH1N1 infected cells at day 5, only to fail in the same endeavor two days later?   Figure \ref{fig:variance} reports only the number of infected cells, not counting dead cells in the focus of infection (FOI).  Further, T-Cells induce apoptosis 
+%for epithelial cells 
+in cells that are actively presenting viral peptides, but not in incubating cells.  At day 5.5, the ratio of expressing cells to the total FOI is high (Fig.~\ref{fig:cycells}).  
+By day 7, the ratio of plaque size to the number of virus-secreting cells is approximately 100:1 for both the pH1N1 and sH1N1 strains.  However the greater replication rate of pH1N1 widens the gap (Fig.~\ref{plaquesize}C) whereas the lower replication rate of sH1N1 allows the T-cells to keep up, even after day seven, leading to control (but not elimination) of the sH1N1 infection.
+%By day 7,  the number of sH1N1-secreting cells is only a small fraction of the overall FOI, whereas pH1N1-secreting cells remain a significant proportion.  Even though the number of T-Cells on the plaque continues to increase, the plaque increases more quickly.  The few remaining expressing cells become dilute, decreasing the efficiency of the T-cell search.  
 
-A cell infected with pandemic influenza will produce new virus at the rate of 5.08e-3 particles/s.  This means that it will produce a new viral particle approximately every 200 seconds.  Assuming that virus particle secretion continues for one hour after apoptosis is initiated, the BEST a T-Cell can do is to limit a single infected cell to producing 18 new viral particles.  Thus, with no help from other immune sources, it becomes an impossible task for T-Cells alone to contain the pH1N1 infection.  In contrast, the sH1N1 virus-secreting cell produces a new virus particle every 2,643 seconds, so the T-cell can limit a single infected cell to produce only 1.3 viral particles in the one hour interval.  The avian virus-secreting cell will produce only 0.2 viral particles in the interval after T-cell detection. 
+A cell infected with pH1N1  produces new virus at the rate of 5.08e-3 particles/s [FIXME: Where does this come from? IS this our data, model results, or what?].  That is,   a new viral particle is produced approximately every 200 seconds.  Assuming that virus particle secretion continues for one hour after apoptosis is initiated, the best a T-Cell can do on average is to limit a single infected cell to producing 18 new viral particles.  Without additional immune responses,  T-Cells alone cannot  contain the pH1N1 infection.  In contrast, the sH1N1 virus-secreting cell produces a new virus particle every 2,643 seconds, so the T-cell can limit a single infected cell to producing 1.3 viral particles in the one-hour window.  Avian H5N1 virus-secreting cells produce only 0.2 viral particles in the interval after T-cell detection. 
 
 
 \begin{figure}[ht!]
 \begin{center}
  \includegraphics[width=0.7\textwidth]{searcharea}
  \end{center}
-\caption{Comparison of the number of T-cells at the site of infection and the number of expressing cells left in the plaque.  Although T-cell counts continue to increase, the number of expressing cells the T-cells are targeting become fewer and far between.  By day six, an equilibrium is reached where T-cells are only able to contain (and not clear) the remaining expressing cells. } 
+\caption{T-cell frequency in plaque: T-cells compared to expressing cells at the FOI.  Total  T-cell counts increase, but the number of expressing cells are fewer and harder to find.  Equilibrium is reached at day 6, when T-cells contain (but cannot clear) expressing cells. } 
  \label{fig:searcharea}
 \end{figure}
 
