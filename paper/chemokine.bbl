@@ -1,0 +1,36 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{Maines2008}
+Maines TR, Szretter KJ, Perrone L, Belser JA, Bright RA, et~al. (2008)
+  {Pathogenesis of emerging avian influenza viruses in mammals and the host
+  innate immune response.}
+\newblock Immunological Reviews 225: 68--84.
+\bibAnnoteFile{Maines2008}
+
+\bibitem{Saenz2010}
+Saenz RA, Quinlivan M, Elton D, MacRae S, Blunden AS, et~al. (2010) {Dynamics
+  of influenza virus infection and pathology.}
+\newblock Journal of Virology 84: 3974--3983.
+\bibAnnoteFile{Saenz2010}
+
+\bibitem{Hatta2010}
+Hatta Y, Hershberger K, Shinya K, Proll SC, Dubielzig RR, et~al. (2010) {Viral
+  Replication Rate Regulates Clinical Outcome and CD8 T Cell Responses during
+  Highly Pathogenic H5N1 Influenza Virus Infection in Mice}.
+\newblock PLoS Pathogens 6: 12.
+\bibAnnoteFile{Hatta2010}
+
+\end{thebibliography}
