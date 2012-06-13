@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -32,5 +32,177 @@ Hatta Y, Hershberger K, Shinya K, Proll SC, Dubielzig RR, et~al. (2010) {Viral
   Highly Pathogenic H5N1 Influenza Virus Infection in Mice}.
 \newblock PLoS Pathogens 6: 12.
 \bibAnnoteFile{Hatta2010}
+
+\bibitem{Marshall2001}
+Marshall DR, Turner SJ, Belz GT, Wingo S, Andreansky S, et~al. (2001)
+  {Measuring the diaspora for virus-specific CD8+ T cells}.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 98: 6313--6318.
+\bibAnnoteFile{Marshall2001}
+
+\bibitem{Handel2008}
+Handel A, Antia R (2008) {A Simple Mathematical Model Helps To Explain the
+  Immunodominance of CD8 T Cells in Influenza A Virus Infections}.
+\newblock Journal of Virology 82: 7768--7772.
+\bibAnnoteFile{Handel2008}
+
+\bibitem{Lee2009}
+Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
+  and Prediction of the Adaptive Immune Response to Influenza A Virus
+  Infection}.
+\newblock Journal of Virology 83: 7151--7165.
+\bibAnnoteFile{Lee2009}
+
+\bibitem{Miao2010}
+Miao H, Hollenbaugh J, Zand M, Holden-Wiltse J, Mosmann T, et~al. (2010)
+  {Quantifying the early immune response and adaptive immune response kinetics
+  in mice infected with influenza A virus}.
+\newblock Journal of virology 84: 6687--6698.
+\bibAnnoteFile{Miao2010}
+
+\bibitem{Handel2010}
+Handel A, Longini IM, Antia R (2010) {Towards a quantitative understanding of
+  the within-host dynamics of influenza A infections}.
+\newblock Journal of the Royal Society Interface the Royal Society 7: 35--47.
+\bibAnnoteFile{Handel2010}
+
+\bibitem{Wu2011}
+Wu H, Kumar A, Miao H, Holden-Wiltse J, Mosmann TR, et~al. (2011) {Modeling of
+  influenza-specific CD8+ T cells during the primary response indicates that
+  the spleen is a major source of effectors.}
+\newblock The Journal of Immunology 187: 4474--82.
+\bibAnnoteFile{Wu2011}
+
+\bibitem{Allan1990}
+Allan W, Tabi Z, Cleary A (1990) {Cellular events in the lymph node and lung of
+  mice with influenza}.
+\newblock The Journal of Immunology 144: 3980--3986.
+\bibAnnoteFile{Allan1990}
+
+\bibitem{Kawai1999}
+Kawai T, Seki M, Hiromatsu K, Eastcott JW, Watts GF, et~al. (1999) {Selective
+  diapedesis of Th1 cells induced by endothelial cell RANTES.}
+\newblock The Journal of Immunology 163: 3269--3278.
+\bibAnnoteFile{Kawai1999}
+
+\bibitem{Sallusto2000}
+Sallusto F, Lanzavecchia A (2000) {Understanding dendritic cell and
+  T-lymphocyte traffic through the analysis of chemokine receptor expression.}
+\newblock Immunological Reviews 177: 134--140.
+\bibAnnoteFile{Sallusto2000}
+
+\bibitem{Zhao2000}
+Zhao MQ, Stoler MH, Liu AN, Wei B, Soguero C, et~al. (2000) {Alveolar
+  epithelial cell chemokine expression triggered by antigen-specific cytolytic
+  CD8(+) T cell recognition.}
+\newblock Journal of Clinical Investigation 106: R49--R58.
+\bibAnnoteFile{Zhao2000}
+
+\bibitem{Dufour2002}
+Dufour JH, Dziejman M, Liu MT, Leung JH, Lane TE, et~al. (2002)
+  {IFN-gamma-inducible protein 10 (IP-10; CXCL10)-deficient mice reveal a role
+  for IP-10 in effector T cell generation and trafficking.}
+\newblock The Journal of Immunology 168: 3195--3204.
+\bibAnnoteFile{Dufour2002}
+
+\bibitem{Thelen2008}
+Thelen M, Stein JV (2008) {How chemokines invite leukocytes to dance}.
+\newblock Nature Immunology 9: 953--959.
+\bibAnnoteFile{Thelen2008}
+
+\bibitem{Sigmundsdottir2008}
+Sigmundsdottir H, Butcher EC (2008) {Environmental cues, dendritic cells and
+  the programming of tissue-selective lymphocyte trafficking.}
+\newblock Nature Immunology 9: 981--987.
+\bibAnnoteFile{Sigmundsdottir2008}
+
+\bibitem{Sallusto2008}
+Sallusto F, Baggiolini M (2008) {Chemokines and leukocyte traffic.}
+\newblock Nature Immunology 392: 949--952.
+\bibAnnoteFile{Sallusto2008}
+
+\bibitem{Bromley2008}
+Bromley SK, Mempel TR, Luster AD (2008) {Orchestrating the orchestrators:
+  chemokines in control of T cell traffic.}
+\newblock Nature immunology 9: 970--80.
+\bibAnnoteFile{Bromley2008}
+
+\bibitem{Kohlmeier2008}
+Kohlmeier JE, Miller SC, Smith J, Lu B, Gerard C, et~al. (2008) {The chemokine
+  receptor CCR5 plays a key role in the early memory CD8+ T cell response to
+  respiratory virus infections.}
+\newblock Immunity 29: 101--13.
+\bibAnnoteFile{Kohlmeier2008}
+
+\bibitem{Mitchell2011}
+Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
+  level of replication efficiency of 2009 (H1N1) pandemic influenza virus than
+  those of seasonal and avian strains: kinetics from epithelial cell culture
+  and computational modeling.}
+\newblock Journal of virology 85: 1125--35.
+\bibAnnoteFile{Mitchell2011}
+
+\bibitem{DeJong2006}
+{De Jong} MD, Simmons CP, Thanh TT, Hien VM, Smith GJD, et~al. (2006) {Fatal
+  outcome of human influenza A (H5N1) is associated with high viral load and
+  hypercytokinemia.}
+\newblock Nature Medicine 12: 1203--1207.
+\bibAnnoteFile{DeJong2006}
+
+\bibitem{Chan2005}
+Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
+  {Proinflammatory cytokine responses induced by influenza A (H5N1) viruses in
+  primary human alveolar and bronchial epithelial cells}.
+\newblock Respiratory Research 6: 135.
+\bibAnnoteFile{Chan2005}
+
+\bibitem{Chan2010}
+Chan RWY, Yuen KM, Yu WCL, Ho CCC, Nicholls JM, et~al. (2010) {Influenza H5N1
+  and H1N1 Virus Replication and Innate Immune Responses in Bronchial
+  Epithelial Cells Are Influenced by the State of Differentiation}.
+\newblock PLoS ONE 5: 9.
+\bibAnnoteFile{Chan2010}
+
+\bibitem{Zeng2011}
+Zeng H, Pappas C, Katz JM, Tumpey TM (2011) {The 2009 pandemic H1N1 and
+  triple-reassortant swine H1N1 influenza viruses replicate efficiently but
+  elicit an attenuated inflammatory response in polarized human bronchial
+  epithelial cells.}
+\newblock Journal of Virology 85: 686--696.
+\bibAnnoteFile{Zeng2011}
+
+\bibitem{Zeng2007}
+Zeng H, Goldsmith C, Thawatsupha P, Chittaganpitch M, Waicharoen S, et~al.
+  (2007) {Highly Pathogenic Avian Influenza H5N1 Viruses Elicit an Attenuated
+  Type I Interferon Response in Polarized Human Bronchial Epithelial Cells}.
+\newblock Journal of Virology 81: 12439--12449.
+\bibAnnoteFile{Zeng2007}
+
+\bibitem{Matsukura1996}
+Matsukura S, Kokubu F, Noda H, Tokunaga H, Adachi M (1996) {Expression of IL-6,
+  IL-8, and RANTES on human bronchial epithelial cells, NCI-H292, induced by
+  influenza virus A.}
+\newblock The Journal of allergy and clinical immunology 98: 1080--1087.
+\bibAnnoteFile{Matsukura1996}
+
+\bibitem{Arndt2002}
+Arndt U, Wennemuth G, Barth P, Nain M, Al-Abed Y, et~al. (2002) {Release of
+  Macrophage Migration Inhibitory Factor and CXCL8/Interleukin-8 from Lung
+  Epithelial Cells Rendered Necrotic by Influenza A Virus Infection}.
+\newblock Journal of Virology 76: 9298--9306.
+\bibAnnoteFile{Arndt2002}
+
+\bibitem{Julkunen2000}
+Julkunen I, Mel\'{e}n K, Nyqvist M, Pirhonen J, Sareneva T, et~al. (2000)
+  {Inflammatory responses in influenza A virus infection}.
+\newblock Vaccine 19 Suppl 1: S32--7.
+\bibAnnoteFile{Julkunen2000}
+
+\bibitem{Francis1997}
+Francis K, Palsson BEO (1997) {Effective intercellular communciation distances
+  are determined by the relative time constants for cyto/chemokine secretion
+  and diffusion}.
+\newblock Proceedings of the National Academy of Sciences 94: 12258--12262.
+\bibAnnoteFile{Francis1997}
 
 \end{thebibliography}

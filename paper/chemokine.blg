@@ -2,47 +2,44 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: chemokine.aux
 The style file: plos2009.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "MitchellEtAl2011"
-Warning--I didn't find a database entry for "GA-ref"
-You've used 3 entries,
+You've used 29 entries,
             2441 wiz_defined-function locations,
-            574 strings with 6078 characters,
-and the built_in function-call counts, 3362 in all, are:
-= -- 304
-> -- 72
+            810 strings with 17603 characters,
+and the built_in function-call counts, 30097 in all, are:
+= -- 2820
+> -- 552
 < -- 0
-+ -- 36
-- -- 18
-* -- 296
-:= -- 408
-add.period$ -- 6
-call.type$ -- 3
-change.case$ -- 3
++ -- 276
+- -- 138
+* -- 2676
+:= -- 3606
+add.period$ -- 58
+call.type$ -- 29
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 327
-empty$ -- 337
-format.name$ -- 21
-if$ -- 735
+cite$ -- 58
+duplicate$ -- 2931
+empty$ -- 3081
+format.name$ -- 167
+if$ -- 6679
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 39
-newline$ -- 30
-num.names$ -- 3
-pop$ -- 36
+int.to.str$ -- 29
+missing$ -- 341
+newline$ -- 160
+num.names$ -- 29
+pop$ -- 331
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 36
+skip$ -- 267
 stack$ -- 0
-substring$ -- 486
-swap$ -- 78
+substring$ -- 4568
+swap$ -- 682
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 27
-width$ -- 4
-write$ -- 47
-(There were 2 warnings)
+while$ -- 225
+width$ -- 31
+write$ -- 333
