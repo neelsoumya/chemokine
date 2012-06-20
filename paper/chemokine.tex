@@ -312,7 +312,7 @@ A cell infected with pH1N1 produces new virus at the rate of 5.08e-3 PFU/s [FIXM
 \begin{center}
  \includegraphics[width=0.7\textwidth]{tcellratio}
  \end{center}
-\caption{A logarithmic plot of the ratio of T-Cells at the focus of infection vs the number of cells that make up the focus of infection.  aH5N1 exhibits unstable behavior once the infection is and T-cell counts are reduced to negligible levels.} 
+\caption{A logarithmic plot of the ratio of T-Cells at the focus of infection vs the number of cells that make up the focus of infection.  aH5N1 exhibits unstable behavior once the infection is cleared and T-cell counts are reduced to negligible levels.} 
  \label{fig:tcellratio}
 \end{figure}
 
@@ -328,23 +328,20 @@ A cell infected with pH1N1 produces new virus at the rate of 5.08e-3 PFU/s [FIXM
 
 \section*{Discussion}
 
+\subsection*{ABM Advantages}
+
+The use of an ABM has advantages over a spatially homogeneous ODE model.  An ODE model assumes that any virus particle is capable of infecting any healthy cell.  Figure \ref{fig:cycells} shows that this is clearly not the case.  In fact, most free virus exists on top of infected cells that are no longer candidates for viral binding and fusion.  ODE models account for this discrepancy by lowering rates of infection by a constant amount, but this assumes that the proportion of unsuitable virions will always be the same.  This is clearly false as can been seen in Figure~\ref{fig:cycells} where the early infection has a higher proportion of virus overlapping healthy cells.
+
+Another advantage of our ABM is the ability to render the model using OpenGL (Fig.~\ref{fig:cycells}).  The ability to see the model in action reveals spatial dynamics that are absent in ODE models and difficult or impossible to observe in \textit{in vitro} and \textit{in vivo} systems.  For example, observing the simulation reveals challenges to T-cell detection of infected cells that are not apparent using standard population plots.  By watching the model progress, we observed three key phenomena.  First, because T-cells find infected cells by climbing the chemokine gradient, we see T-cell clustering at local maxima of chemokine concentration.  Thus, we have an explanation for why T-cells do not increase in effectiveness as their numbers increase.  Second, we notice that clumps of T-cells remain in place even after all virus-secreting cells have been killed off.  This is because it takes time for the local chemokine maxima to diffuse and decay to a point where the T-cells can once again climb the gradient to a new maxima.  Finall, we can see that infected cells grow more disperse as the size of the infection grows.  Because T-cells cluster together they become incapable of covering the increasing plaque size.  These spatial observations provide explanations for the pH1N1 resurgence that would be hidden without the visualization tools provided by the ABM.
+
+
+\subsection*{Model Comparison}
+
 Hypercytokinemia is a characteristic of virulent influenza strains \cite{DeJong2006} but bloodstream levels of cytokines and chemokines may not reflect local concentrations and dynamics critical in guiding T cells to infected epithelial cells.  We elected to use our data on in vitro secretion of chemokines by human bronchial epithelial (NHBE) cells obtained from the same cultures of the three virus strains previously reported \cite{Mitchell2011}.  In this study the replication kinetics and productivity of the three virus strains were markedly different, but monolayer infection was initiated with a low MOI of 0.01 or 0.001, mimicking the initial infection naturally.  The levels of the chemokines CCL5 and CXCL10 in the basal media induced by the 3 strains were approximately equivalent at 24h post-infection.  When the productivity per cell was calculated, the avian H5N1 strain induced higher secretion of CCL5 (RANTES) than the seasonal or pandemic strains.  Greater CCL5 secretion by H5N1 strains has been noted in in vitro NHBE cultures when a relatively high MOI is used compared to seasonal strains \cite{Chan2005, Chan2010, Zeng2011} and pandemic strains \cite{Zeng2011}.  MOI and degree of differentiation of NHBE are critical determinants of cyto/chemokine secretion \cite{Chan2010}.  However, in spite of the attenuated type 1 interferon response induced by H5N1 strains \cite{Zeng2007}, the chemokine secretion is not attenuated.
 
 Chemokines with a clear role directing T cell traffic include CXCL10 \cite{Dufour2002}, CCL5 \cite{Kawai1999} and CCL3 \cite{Kawai1999}.  The chemokine receptor CCR5, binding CCL5 and other chemokines, is crucial in the accelerated recruitment of CD8+ T cells to lung airways \cite{Kohlmeier2008}.  Other chemokines are likely to play a role in T cell traffic.  Although we did not detect significant levels of other chemokines in our cultures, the neutrophil- and T cell-attractant CXCL8/IL-8 is secreted into seasonal influenza-infected NHBE cultures \cite{Matsukura1996, Arndt2002}.  In the intact animal immigrant inflammatory cells particularly macrophages augment the multiple chemokine signals \cite{Julkunen2000}.  Finally, antigen-specific CD8+ T cell recognition of its target will induced lung injury mediated by TNFa and trigger addition alveolar epithelial cell chemokine secretion \cite{Zhao2000}.   Thus our model represents only a portion of the complete chemokine signal complex operating in the infected animal.
 
 A key determinant in the efficiency of chemokine-directed T cell migration towards virus-secreting epithelial cells is the communication distance, defined by the threshold of sufficient chemokine signal to induce directed motion of the cell up the chemical gradient \cite{Thelen2008}.  The diameter of this cloud generated by a single cell is a function of production rate, decay rate, protein diffusion and the sensitivity threshold.  For the threshold of 100 pg/mL and maximal levels of concentration in tissue of 10,000 pg/mL, we calculated the effective communication distance as approximately 250 microns in our model.  This calculation matches the distance calculated for generic cytokines secreted by a suspended solitary cell \cite{Francis1997}.
-
-\subsection*{Model Validation}
-
-The ABM produces infection dynamics consistent with \textit{in vivo} observations.  We observe FOI diameters on the order of 1mm in seasonal H1N1 simulation.  The T-cell response at day five post-infection rapidly decreases the number of infected cells over the first 24 hours.
-
-Scaling to humans?
-
-\subsection*{ABM Advantages}
-
-The use of an ABM has advantages over a spatially homogeneous ODE model.  An ODE model assumes that any virus particle is capable of infecting any healthy cell.  Figure \ref{fig:cycells} shows that this is clearly not the case.  In fact, most free virus exists on top of infected cells that are no longer candidates for viral binding and fusion.  ODE models account for this discrepancy by lowering rates of infection, but this simply results in improper parameter values. 
-
-The spatial nature of the simulation also reveals challenges to T-cell detection rates that are not apparent in ODE models.  T-cells find infected cells by climbing the chemokine gradient.  This results in T-cell clustering at local maxima of chemokine concentration.  Thus, T-cells do not increase in effectiveness as the number of T-cells increases.  Furthermore, infected cells grow more disperse as the size of the infection grows.  Because T-cells cluster together they become incapable of covering the increasing plaque size.  This allows for the infection to recover and accelerate once its size crosses a certain threshold.  This is another effect that is not seen in an ODE model.
 
 
 \subsection*{Caveats and Limitations}
