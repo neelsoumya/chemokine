@@ -2,44 +2,49 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: chemokine.aux
 The style file: plos2009.bst
 Database file #1: references.bib
-You've used 29 entries,
+Warning--I didn't find a database entry for "Beauchemin2006"
+Warning--missing publisher in Wormser2006a
+Warning--can't use both volume and number fields in Wormser2006a
+Warning--empty chapter and pages in Wormser2006a
+You've used 33 entries,
             2441 wiz_defined-function locations,
-            810 strings with 17603 characters,
-and the built_in function-call counts, 30097 in all, are:
-= -- 2820
-> -- 552
-< -- 0
-+ -- 276
-- -- 138
-* -- 2676
-:= -- 3606
-add.period$ -- 58
-call.type$ -- 29
-change.case$ -- 29
+            848 strings with 19076 characters,
+and the built_in function-call counts, 33773 in all, are:
+= -- 3160
+> -- 616
+< -- 2
++ -- 308
+- -- 154
+* -- 2991
+:= -- 4033
+add.period$ -- 68
+call.type$ -- 33
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 58
-duplicate$ -- 2931
-empty$ -- 3081
-format.name$ -- 167
-if$ -- 6679
+cite$ -- 69
+duplicate$ -- 3287
+empty$ -- 3456
+format.name$ -- 187
+if$ -- 7506
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 341
-newline$ -- 160
-num.names$ -- 29
-pop$ -- 331
+int.to.str$ -- 33
+missing$ -- 388
+newline$ -- 182
+num.names$ -- 33
+pop$ -- 389
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 267
+skip$ -- 312
 stack$ -- 0
-substring$ -- 4568
-swap$ -- 682
-text.length$ -- 0
+substring$ -- 5074
+swap$ -- 785
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 225
-width$ -- 31
-write$ -- 333
+warning$ -- 3
+while$ -- 253
+width$ -- 35
+write$ -- 381
+(There were 4 warnings)
