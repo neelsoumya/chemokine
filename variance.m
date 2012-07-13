@@ -15,7 +15,7 @@ aavg = (infect(vara00) + infect(vara01) + infect(vara02) + infect(vara03) + infe
         infect(vara40) + infect(vara41) + infect(vara42) + infect(vara43) + infect(vara44) + ...
         infect(vara45) + infect(vara46) + infect(vara47) + infect(vara48) + infect(vara49)) / 50;
     
-plot(time, [infect(vara00) infect(vara01) infect(vara02) infect(vara03) infect(vara04) ...
+hline1 = plot(time, [infect(vara00) infect(vara01) infect(vara02) infect(vara03) infect(vara04) ...
             infect(vara05) infect(vara06) infect(vara07) infect(vara08) infect(vara09) ...
             infect(vara10) infect(vara11) infect(vara12) infect(vara13) infect(vara14) ...
             infect(vara15) infect(vara16) infect(vara17) infect(vara18) infect(vara19) ...
@@ -27,25 +27,13 @@ plot(time, [infect(vara00) infect(vara01) infect(vara02) infect(vara03) infect(v
             infect(vara45) infect(vara46) infect(vara47) infect(vara48) infect(vara49)], 'color', [.75 .75 .75]);
         
 hold on
-%plot(time, infect(vara00), 'color', [.75 0 0]) % .8992
-%plot(time, infect(vara01), 'color', [.75 0 0]) % .8142
-%plot(time, infect(vara05), 'color', [.75 0 0]) % .8712
-plot(time, infect(vara08), 'color', [.75 0 0]) % .7343
-plot(time, infect(vara12), 'color', [.75 0 0]) % .7980
-%plot(time, infect(vara13), 'color', [.75 0 0]) % .8703
-%plot(time, infect(vara14), 'color', [.75 0 0]) % .8464
-%plot(time, infect(vara17), 'color', [.75 0 0]) % .8752
-%plot(time, infect(vara18), 'color', [.75 0 0]) % .8871
-%plot(time, infect(vara20), 'color', [.75 0 0]) % .8392
-%plot(time, infect(vara28), 'color', [.75 0 0]) % .8347
-%plot(time, infect(vara30), 'color', [.75 0 0]) % .8856
-%plot(time, infect(vara34), 'color', [.75 0 0]) % .8626
-%plot(time, infect(vara40), 'color', [.75 0 0]) % .8929
-%plot(time, infect(vara42), 'color', [.75 0 0]) % .8908
-plot(time, infect(vara45), 'color', [.75 0 0]) % .2617 !!!
-%plot(time, infect(vara46), 'color', [.75 0 0]) % .8566
-%plot(time, infect(vara49), 'color', [.75 0 0]) % .8723
+hline2 = plot(time, infect(vara12), 'color', [.75 0 0]); % .7363
+plot(time, infect(vara13), 'color', [.75 0 0]) % .7504
+plot(time, infect(vara33), 'color', [.75 0 0]) % .7988
+plot(time, infect(vara35), 'color', [.75 0 0]) % .5881
 plot(time, aavg, '-k', 'LineWidth', 2)
+hline3 = plot(time, alow, 'Color', 'k', 'LineStyle', '--');
+plot(time, ahigh, 'Color', 'k', 'LineStyle', '--')
 hold off
 
 set(gca, 'FontSize', 16)
@@ -54,8 +42,9 @@ set(gca, 'YLim', [1 600])
 set(gca, 'YTick', [0 100 200 300 400 500 600])
 set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
-xlabel('Time (hours)')
+xlabel('Days Post-Infection')
 ylabel('Infected Cell Count')
+%lhandle = legend([hline1 hline3 hline2], 'Mean', '95% Confidence', 'Outlier');
 title('aH5N1 Influenza')
 
 % Seasonal
@@ -85,8 +74,10 @@ plot(time, [infect(vars00) infect(vars01) infect(vars02) infect(vars03) infect(v
             infect(vars45) infect(vars46) infect(vars47) infect(vars48) infect(vars49)], 'color', [.75 .75 .75]);
         
 hold on
-plot(time, infect(vars13), 'color', [.75 0 0])
+plot(time, infect(vars16), 'color', [.75 0 0])
 plot(time, savg, '-k', 'LineWidth', 2)
+plot(time, slow, 'Color', 'k', 'LineStyle', '--')
+plot(time, shigh, 'Color', 'k', 'LineStyle', '--')
 hold off
 
 set(gca, 'FontSize', 16)
@@ -95,7 +86,7 @@ set(gca, 'YLim', [0 600])
 set(gca, 'YTick', [100 200 300 400 500 600])
 set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
-xlabel('Time (hours)')
+xlabel('Days Post-Infection')
 %ylabel('Infected Cell Count')
 title('sH1N1 Influenza')
 
@@ -128,6 +119,8 @@ plot(time, [infect(varw00) infect(varw01) infect(varw02) infect(varw03) infect(v
         
 hold on
 plot(time, wavg, '-k', 'LineWidth', 2)
+plot(time, wlow, 'Color', 'k', 'LineStyle', '--')
+plot(time, whigh, 'Color', 'k', 'LineStyle', '--', 'LineWidth', 2)
 hold off
 
 set(gca, 'FontSize', 16)
@@ -136,7 +129,7 @@ set(gca, 'YLim', [0 600])
 set(gca, 'YTick', [100 200 300 400 500 600])
 set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
-xlabel('Time (hours)')
+xlabel('Days Post-Infection')
 %ylabel('Infected Cell Count')
 title('pH1N1 Influenza')
 
