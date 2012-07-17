@@ -155,25 +155,25 @@ Define CyCells environment.  Talk about the need for spatial model.  Human/mouse
   Paramter & Value & Source \\
   \hline
   Viral Diffusion & .0318 & \cite{Beauchemin2006} \\
-  Viral Decay &  $1/day$ & Soumya \\
+  Viral Decay &  $1/day$ & Phenomenological \\
   Chemokine Diffusion & $.318 \mu m^2/s$ & \cite{Beauchemin2006} \\
   Chemokine Decay &  $3.8508e-4/s$ & 30m half-life \\
-  Infection Sensitivity &  $2 h/virion$ & [1*] \\
+  Infection Sensitivity &  $2 h/virion$ & Phenomenological \\
   Incubation Time &  $10 h$ & \cite{Mitchell2011} \\
   Expression Time &  $16.7 h$ & \cite{Mitchell2011} \\
-  Apoptosis Time & $1 h$ & Fred \\
-  T-Cell Production Rate & $777/h$ & Soumya, Miao fits \\ 
-  Circulation Time & $6 m$ & Fred, mouse model \\
-  Search Time & $10 m$ & Fred, mouse model \\
-  T-Cell Speed (Search) & $30 \mu m/s$ & Fred ? \\
-  T-Cell Speed (Activated) & $3 \mu m/s$ & Fred ?\\
+  Apoptosis Time & $1 h$ & Phenomenological \\
+  T-Cell Production Rate & $777/h$ & \cite{Miao2010} \\ 
+  Circulation Time & $6 m$ & \cite{Banerjee2010b} \\
+  Search Time & $10 m$ & \cite{Banerjee2010b} \\
+  T-Cell Speed (Search) & $30 \mu m/s$ & \cite{Miller2003} \\
+  T-Cell Speed (Activated) & $3 \mu m/s$ & \cite{Miller2003} \\
   T-Cell Sensitivity & $1 ng/mL$ & \cite{Gao2003} \\
   T-Cell Expected Kill Rate & $10 m$ & Fred/Drew \\
-  Cell Radius & $25 \mu m$ & Drew? \\
-  T-Cell Age (Active) & $2 h$ & Fred \\
-  T-Cell Age (Other) & $3 d$ & Fred \\
+  Cell Radius & $25 \mu m$ & Phenomenological \\
+  T-Cell Age (at FOI) & $2 h$ & [REF] \\
+  T-Cell Age (Other) & $3 d$ & [REF] \\
   T-Cell Ramp Up Time & $5 d$ & \cite{Banerjee2011} \\
-  IgM Strength & Viral decay of $3/day$ after day 3 & Soumya [3*] \\
+  IgM Strength & Viral decay of $3/day$ & Phenomenological \\
   \hline  
 \end{tabular}
 \caption{Generic model parameters}
@@ -187,12 +187,12 @@ Define CyCells environment.  Talk about the need for spatial model.  Human/mouse
   \hline                        
   Paramter & Value & Source \\
   \hline
-  IP-10 Production Rate &  & [2*]\\
+  IP-10 Production Rate &  & ODE Fits \\
   Avian H5N1 & 2.0e-4 pg/s$\cdot$cell & \\
   Seasonal H1N1 & 1.8e-4 pg/s$\cdot$cell& \\
   Pandemic H1N1 & 8.7e-5 pg/s$\cdot$cell& \\
   \hline
-  RANTES Production Rate & & [2*] \\
+  RANTES Production Rate & & ODE Fits \\
   Avian H5N1 & 1.3e-5 pg/s$\cdot$cell& \\
   Seasonal H1N1 & 8.9e-7pg/s$\cdot$cell& \\
   Pandemic H1N1 & 4.4e-6 pg/s$\cdot$cell& \\
@@ -207,12 +207,6 @@ Define CyCells environment.  Talk about the need for spatial model.  Human/mouse
 \label{table:strains}
 \end{center}
 \end{table}
-
-\begin{itemize}
-\item[1] The molecular concentration where there is one molecule per eptithelial cell volume is 1.53e-17 mol/mL.  Thus, if you multiply the local viral concentration by 9.05e12 you get an infection event after two hours given that concentration.  This probability scales linearly with the viral concentration.
-\item[2] These are calculated off of Fred's new data sets using the Mitchell ODE model and parameters as a basis.
-\item[3] IgM is represented by increasing the viral decay rate to 3/day after the third day of the simulation.
-\end{itemize}
 
 \section*{Materials}
 
@@ -247,7 +241,7 @@ The three strains show different levels of virulence, consistent with the result
 \begin{center}
  \includegraphics[width=\textwidth]{variance}
  \end{center}
-\caption{Model results: Time series plots of ten runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections. IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  The ten runs were initialized identically for each strain.  Each simulation was run with identical T-cell sensitivity to chemokine (100 ng/mL).} 
+\caption{Model results: Time series plots of fifty runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections (gray). IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  Each run was initialized identically for each strain.  The middle line shows the average while the outer lines show the 95\% confidence interval.} 
  \label{fig:variance}
 \end{figure}
 
@@ -352,7 +346,9 @@ In our model directed migration and viral infection control was not limited over
 
 In both H1N1 strains the T-cell response fails to clear the infection by day 10.  In the case of pandemic H1N1, the infection continues to accelerate after a short period of clearance.  We suggest that this is due to the absence of several innate immune agents that were not included in the model.  We chose to remove most of the innate response in order to better focus on the relative effects of the cytokine signaling and T-cell response.  Although the infections do not clear by day 10, the models show clear differences in the ability of the immune system to deal with influenza strains of varying replication rates.  We see that the viral production rate is a major factor in the strength of the infection.
 
+Our model combines the dynamics of human epithelial tissue with the scaling of a mouse's immune system.  We choose to use mouse scale models because of the computational limitations of our ABM.  By limiting our model to mice, we are able to keep the active agent population below 100,000, which allows a single model to be run in less than a day.  A human-sized model would be computationally intractable.  We find this practice acceptable for two reasons.  First, the size differences and scaling principles between mice and human has been well documented [REF?] and can be accounted for.  Second, this paper focuses on relative differences between strains so an exact recreation of the immune response is not necessary.
 
+In our model, the ability of T-cells to detect a chemokine signal and their subsequent motility upon doing so rests entirely on the T-cell's sensitivity to chemokine parameter.  Once a T-cell encounters a concentration of chemokine above the sensitivity threshold it will immediately climb the chemotactic gradient to the local maxima.  Studies of T-cell chemotaxis show that T-cell movement depends more on the magnitude of the chemokine gradient rather than the concentration \cite{Gao2003}.  Furthermore, T-cells will perform a biased random walk rather than moving in a straight line directly up the concentration gradient [REF?].  We experimented with biased random walks in our model and noticed no change in any results.  Thus, we chose to keep the model simple and limited T-cell movement to directly climbing the chemokine gradient.
 
 % Do NOT remove this, even if you are not including acknowledgments
 \section*{Acknowledgments}
