@@ -1,0 +1,261 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{Sallusto2000}
+Sallusto F, Lanzavecchia A (2000) {Understanding dendritic cell and
+  T-lymphocyte traffic through the analysis of chemokine receptor expression.}
+\newblock Immunological Reviews 177: 134--140.
+\bibAnnoteFile{Sallusto2000}
+
+\bibitem{Joo2008}
+Joo HM, He Y, Sangster MY (2008) {Broad dispersion and lung localization of
+  virus-specific memory B cells induced by influenza pneumonia.}
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 105: 3485--3490.
+\bibAnnoteFile{Joo2008}
+
+\bibitem{Mackay2008}
+Mackay CR (2008) {Moving targets: cell migration inhibitors as new
+  anti-inflammatory therapies.}
+\newblock Nature Immunology 9: 988--998.
+\bibAnnoteFile{Mackay2008}
+
+\bibitem{Miao2010}
+Miao H, Hollenbaugh J, Zand M, Holden-Wiltse J, Mosmann T, et~al. (2010)
+  {Quantifying the early immune response and adaptive immune response kinetics
+  in mice infected with influenza A virus}.
+\newblock Journal of virology 84: 6687--6698.
+\bibAnnoteFile{Miao2010}
+
+\bibitem{Saenz2010}
+Saenz RA, Quinlivan M, Elton D, MacRae S, Blunden AS, et~al. (2010) {Dynamics
+  of influenza virus infection and pathology.}
+\newblock Journal of Virology 84: 3974--3983.
+\bibAnnoteFile{Saenz2010}
+
+\bibitem{Beltman2007}
+Beltman JB, Mar\'{e}e AFM, {De Boer} RJ (2007) {Spatial modelling of brief and
+  long interactions between T cells and dendritic cells.}
+\newblock Immunology and Cell Biology 85: 306--314.
+\bibAnnoteFile{Beltman2007}
+
+\bibitem{Handel2008}
+Handel A, Antia R (2008) {A Simple Mathematical Model Helps To Explain the
+  Immunodominance of CD8 T Cells in Influenza A Virus Infections}.
+\newblock Journal of Virology 82: 7768--7772.
+\bibAnnoteFile{Handel2008}
+
+\bibitem{Zheng2008}
+Zheng H, Jin B, Henrickson SE, Perelson AS, {Von Andrian} UH, et~al. (2008)
+  {How antigen quantity and quality determine T-cell decisions in lymphoid
+  tissue.}
+\newblock Molecular and Cellular Biology 28: 4040--4051.
+\bibAnnoteFile{Zheng2008}
+
+\bibitem{Ingulli2009}
+Ingulli E, Funatake C, Jacovetty EL, Zanetti M (2009) {Cutting edge: antigen
+  presentation to CD8 T cells after influenza A virus infection.}
+\newblock The Journal of Immunology 182: 29--33.
+\bibAnnoteFile{Ingulli2009}
+
+\bibitem{Allan1990}
+Allan W, Tabi Z, Cleary A (1990) {Cellular events in the lymph node and lung of
+  mice with influenza}.
+\newblock The Journal of Immunology 144: 3980--3986.
+\bibAnnoteFile{Allan1990}
+
+\bibitem{Thelen2008}
+Thelen M, Stein JV (2008) {How chemokines invite leukocytes to dance}.
+\newblock Nature Immunology 9: 953--959.
+\bibAnnoteFile{Thelen2008}
+
+\bibitem{Thomas-Vaslin2008}
+Thomas-Vaslin V, Altes HK, {De Boer} RJ, Klatzmann D (2008) {Comprehensive
+  assessment and mathematical modeling of T cell population dynamics and
+  homeostasis.}
+\newblock The Journal of Immunology 180: 2240--2250.
+\bibAnnoteFile{Thomas-Vaslin2008}
+
+\bibitem{Beauchemin2008}
+Beauchemin CAA, McSharry JJ, Drusano GL, Nguyen JT, Went GT, et~al. (2008)
+  {Modeling amantadine treatment of influenza A virus in vitro.}
+\newblock Journal of Theoretical Biology 254: 439--451.
+\bibAnnoteFile{Beauchemin2008}
+
+\bibitem{Smith2010}
+Smith AM, Adler FR, Perelson AS (2010) {An accurate two-phase approximate
+  solution to an acute viral infection model.}
+\newblock Journal of Mathematical Biology 60: 711--726.
+\bibAnnoteFile{Smith2010}
+
+\bibitem{Thakar2010}
+Thakar J, Poss M, Albert R, Long GH, Zhang R (2010) {Dynamic models of immune
+  responses: what is the ideal level of detail?}
+\newblock Theoretical biology medical modelling 7: 35.
+\bibAnnoteFile{Thakar2010}
+
+\bibitem{Burrowes2004}
+Burrowes KS, Tawhai MH, Hunter PJ (2004) {Modeling RBC and neutrophil
+  distribution through an anatomically based pulmonary capillary network.}
+\newblock Annals of Biomedical Engineering 32: 585--595.
+\bibAnnoteFile{Burrowes2004}
+
+\bibitem{Zhao2000}
+Zhao MQ, Stoler MH, Liu AN, Wei B, Soguero C, et~al. (2000) {Alveolar
+  epithelial cell chemokine expression triggered by antigen-specific cytolytic
+  CD8(+) T cell recognition.}
+\newblock Journal of Clinical Investigation 106: R49--R58.
+\bibAnnoteFile{Zhao2000}
+
+\bibitem{LiJeon2002}
+{Li Jeon} N, Baskaran H, Dertinger SKW, Whitesides GM, {Van De Water} L, et~al.
+  (2002) {Neutrophil chemotaxis in linear and complex gradients of
+  interleukin-8 formed in a microfabricated device.}
+\newblock Nature Biotechnology 20: 826--830.
+\bibAnnoteFile{LiJeon2002}
+
+\bibitem{Mitchell2011}
+Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
+  level of replication efficiency of 2009 (H1N1) pandemic influenza virus than
+  those of seasonal and avian strains: kinetics from epithelial cell culture
+  and computational modeling.}
+\newblock Journal of virology 85: 1125--35.
+\bibAnnoteFile{Mitchell2011}
+
+\bibitem{Warrender2006}
+Warrender C, Forrest S, Koster F (2006) {Modeling intercellular interactions in
+  early Mycobacterium infection.}
+\newblock Bulletin of Mathematical Biology 68: 2233--2261.
+\bibAnnoteFile{Warrender2006}
+
+\bibitem{Beauchemin2006}
+Beauchemin C, Forrest S, Koster FT (2006) {Modeling Influenza Viral Dynamics in
+  Tissue}.
+\newblock LNCS Artificial Immune Systems 4163: 23--36.
+\bibAnnoteFile{Beauchemin2006}
+
+\bibitem{Banerjee2010b}
+Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
+  and times: perspectives on immune system architecture and implications for
+  artificial immune systems}.
+\newblock Swarm Intelligence 4: 301--318.
+\bibAnnoteFile{Banerjee2010b}
+
+\bibitem{Miller2003}
+Miller MJ, Wei SH, Cahalan MD, Parker I (2003) {Autonomous T cell trafficking
+  examined in vivo with intravital two-photon microscopy}.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 100: 2604--2609.
+\bibAnnoteFile{Miller2003}
+
+\bibitem{Gao2003}
+Gao P, Zhou Xy, Yashiro-ohtani Y, Yang Yf, Sugimoto N, et~al. (2003) {The
+  unique target specificity of a nonpeptide chemokine receptor antagonist :
+  selective blockade of two Th1 chemokine receptors CCR5 and CXCR3 cated in
+  their migration to sites of inflammation .}
+\newblock Journal of Leukocyte Biology 73: 273--280.
+\bibAnnote{Gao2003}{CCL5 (RANTES) and CXCL10 (IP-10) concentrations inducing T
+  cell chemotaxis (adhesion)}
+
+\bibitem{Banerjee2011}
+Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
+  Inflammatory Signals in Adaptive Immune Responses}.
+\newblock ICARIS 6825: 1--14.
+\bibAnnoteFile{Banerjee2011}
+
+\bibitem{DeJong2006}
+{De Jong} MD, Simmons CP, Thanh TT, Hien VM, Smith GJD, et~al. (2006) {Fatal
+  outcome of human influenza A (H5N1) is associated with high viral load and
+  hypercytokinemia.}
+\newblock Nature Medicine 12: 1203--1207.
+\bibAnnoteFile{DeJong2006}
+
+\bibitem{Chan2005}
+Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
+  {Proinflammatory cytokine responses induced by influenza A (H5N1) viruses in
+  primary human alveolar and bronchial epithelial cells}.
+\newblock Respiratory Research 6: 135.
+\bibAnnoteFile{Chan2005}
+
+\bibitem{Chan2010}
+Chan RWY, Yuen KM, Yu WCL, Ho CCC, Nicholls JM, et~al. (2010) {Influenza H5N1
+  and H1N1 Virus Replication and Innate Immune Responses in Bronchial
+  Epithelial Cells Are Influenced by the State of Differentiation}.
+\newblock PLoS ONE 5: 9.
+\bibAnnoteFile{Chan2010}
+
+\bibitem{Zeng2011}
+Zeng H, Pappas C, Katz JM, Tumpey TM (2011) {The 2009 pandemic H1N1 and
+  triple-reassortant swine H1N1 influenza viruses replicate efficiently but
+  elicit an attenuated inflammatory response in polarized human bronchial
+  epithelial cells.}
+\newblock Journal of Virology 85: 686--696.
+\bibAnnoteFile{Zeng2011}
+
+\bibitem{Zeng2007}
+Zeng H, Goldsmith C, Thawatsupha P, Chittaganpitch M, Waicharoen S, et~al.
+  (2007) {Highly Pathogenic Avian Influenza H5N1 Viruses Elicit an Attenuated
+  Type I Interferon Response in Polarized Human Bronchial Epithelial Cells}.
+\newblock Journal of Virology 81: 12439--12449.
+\bibAnnoteFile{Zeng2007}
+
+\bibitem{Dufour2002}
+Dufour JH, Dziejman M, Liu MT, Leung JH, Lane TE, et~al. (2002)
+  {IFN-gamma-inducible protein 10 (IP-10; CXCL10)-deficient mice reveal a role
+  for IP-10 in effector T cell generation and trafficking.}
+\newblock The Journal of Immunology 168: 3195--3204.
+\bibAnnoteFile{Dufour2002}
+
+\bibitem{Kawai1999}
+Kawai T, Seki M, Hiromatsu K, Eastcott JW, Watts GF, et~al. (1999) {Selective
+  diapedesis of Th1 cells induced by endothelial cell RANTES.}
+\newblock The Journal of Immunology 163: 3269--3278.
+\bibAnnoteFile{Kawai1999}
+
+\bibitem{Kohlmeier2008}
+Kohlmeier JE, Miller SC, Smith J, Lu B, Gerard C, et~al. (2008) {The chemokine
+  receptor CCR5 plays a key role in the early memory CD8+ T cell response to
+  respiratory virus infections.}
+\newblock Immunity 29: 101--13.
+\bibAnnoteFile{Kohlmeier2008}
+
+\bibitem{Matsukura1996}
+Matsukura S, Kokubu F, Noda H, Tokunaga H, Adachi M (1996) {Expression of IL-6,
+  IL-8, and RANTES on human bronchial epithelial cells, NCI-H292, induced by
+  influenza virus A.}
+\newblock The Journal of allergy and clinical immunology 98: 1080--1087.
+\bibAnnoteFile{Matsukura1996}
+
+\bibitem{Arndt2002}
+Arndt U, Wennemuth G, Barth P, Nain M, Al-Abed Y, et~al. (2002) {Release of
+  Macrophage Migration Inhibitory Factor and CXCL8/Interleukin-8 from Lung
+  Epithelial Cells Rendered Necrotic by Influenza A Virus Infection}.
+\newblock Journal of Virology 76: 9298--9306.
+\bibAnnoteFile{Arndt2002}
+
+\bibitem{Julkunen2000}
+Julkunen I, Mel\'{e}n K, Nyqvist M, Pirhonen J, Sareneva T, et~al. (2000)
+  {Inflammatory responses in influenza A virus infection}.
+\newblock Vaccine 19 Suppl 1: S32--7.
+\bibAnnoteFile{Julkunen2000}
+
+\bibitem{Francis1997}
+Francis K, Palsson BEO (1997) {Effective intercellular communciation distances
+  are determined by the relative time constants for cyto/chemokine secretion
+  and diffusion}.
+\newblock Proceedings of the National Academy of Sciences 94: 12258--12262.
+\bibAnnoteFile{Francis1997}
+
+\end{thebibliography}

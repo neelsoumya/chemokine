@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: chemokine_supplement.aux
+The style file: plos2009.bst
+Database file #1: references.bib
+You've used 15 entries,
+            2441 wiz_defined-function locations,
+            686 strings with 11909 characters,
+and the built_in function-call counts, 15981 in all, are:
+= -- 1481
+> -- 316
+< -- 0
++ -- 158
+- -- 79
+* -- 1416
+:= -- 1920
+add.period$ -- 30
+call.type$ -- 15
+change.case$ -- 15
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 1546
+empty$ -- 1625
+format.name$ -- 94
+if$ -- 3538
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 184
+newline$ -- 90
+num.names$ -- 15
+pop$ -- 178
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 152
+stack$ -- 0
+substring$ -- 2395
+swap$ -- 368
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 124
+width$ -- 17
+write$ -- 179
