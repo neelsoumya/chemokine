@@ -181,24 +181,25 @@ Parameters that are consistent between every model are shown in Table \ref{table
 
 \begin{table}
 \begin{center}
-\begin{tabular}{ | r | c | c | }
+\begin{tabular}{ | r | c | c | c | }
   \hline                        
-  Paramter & Value & Source \\
+  Parameter & Value & 95\% Confidence & Source \\
+   & \footnotesize{(pg/s$\cdot$cell)}  & \footnotesize{(pg/s$\cdot$cell)} &  \\
   \hline
-  IP-10 Production Rate &  & ODE Fits \\
-  Avian H5N1 & 2.0e-4 pg/s$\cdot$cell & \\
-  Seasonal H1N1 & 1.8e-4 pg/s$\cdot$cell& \\
-  Pandemic H1N1 & 8.7e-5 pg/s$\cdot$cell& \\
+  \textbf{IP-10 Production Rate} & & & ODE Fits \\
+  Avian H5N1 & 2.0e-4 & \small{8.4e-5 --- 4.2e-4} & \\
+  Seasonal H1N1 & 1.8e-4 & \small{1.2e-4 --- 3.0e-4} & \\
+  Pandemic H1N1 & 8.7e-5 & \small{1.7e-5 --- 7.1e-4}  & \\
   \hline
-  RANTES Production Rate & & ODE Fits \\
-  Avian H5N1 & 1.3e-5 pg/s$\cdot$cell& \\
-  Seasonal H1N1 & 8.9e-7pg/s$\cdot$cell& \\
-  Pandemic H1N1 & 4.4e-6 pg/s$\cdot$cell& \\
-  \hline
-  Virus Production Rate &  & \cite{Mitchell2011} \\
-  Avian H5N1 & 5.4e-5 PFU/s$\cdot$cell& \\
-  Seasonal H1N1 & 3.8e-4 PFU/s$\cdot$cell& \\
-  Pandemic H1N1 & 5.1e-3 PFU/s$\cdot$cell& \\  
+  \textbf{RANTES Production Rate} & & & ODE Fits \\
+  Avian H5N1 & 1.3e-5 & \small{7.9e-6 --- 1.9e-5} & \\
+  Seasonal H1N1 & 8.9e-7 & \small{4.8e-7 --- 1.6e-6} & \\
+  Pandemic H1N1 & 4.4e-6 & \small{5.0e-7 --- 3.6e-5} & \\
+%  \hline
+  \textbf{Virus Production Rate} & & & \cite{Mitchell2011} \\
+  Avian H5N1 & 5.4e-5 PFU/s$\cdot$cell & & \\
+  Seasonal H1N1 & 3.8e-4 PFU/s$\cdot$cell & & \\
+  Pandemic H1N1 & 5.1e-3 PFU/s$\cdot$cell & & \\  
   \hline  
 \end{tabular}
 \caption{Strain specific model parameters}
@@ -221,7 +222,7 @@ Chemokine data were collected from epithelial monolayers infected with influenza
 \begin{center}
  \includegraphics[width=\textwidth]{data}
  \end{center}
-\caption{Empirical data of viral and cytokine titer for three strains of influenza: Avian H5N1 (A), Seasonal sH1N1 (B), and Pandemic pH1N1 (C).  For each strain, the viral load (blue circle) is shown in PFU/mL and the chemokines IP-10 (red triangle) and RANTES (green square) are shown in ng/mL.  sH1N1 IP-10 registered three values not included in model fitting above the measurement threshold of 8,500 $pg/mL$ (dotted line).} 
+\caption{Empirical data of viral and cytokine titer for three strains of influenza: Avian H5N1 (A), Seasonal sH1N1 (B), and Pandemic pH1N1 (C).  For each strain, the viral load (blue circle) is shown in PFU/mL and the chemokines IP-10 (red triangle) and RANTES (green square) are shown in ng/mL.  sH1N1 IP-10 registered three values not included in model fitting above the measurement threshold of 8,500 $pg/mL$ (empty red triangles).  Solid lines show model fits to IP-10 and RANTES data.} 
  \label{fig:data}
 \end{figure}
 
@@ -243,13 +244,13 @@ To test for the minimum concentration of cytokine/chemokine signal required to r
 
 \subsection*{Spatial effects}
 
-Spatial effects of viral and chemokine diffusion play an important role in both the spreading and clearing infections.  Free virus particles diffuse from virus secreting cells and infect healthy cells.  Chemokine produced by infected cells attracts T-cells to the infected cells.  Although virus is produced at a higher rate than chemokine, the larger particle diffuses much more slowly.  Chemokine diffusion decays more quickly.  These countervaling effects result in similar spatial profiles for the two particle types (Fig.~\ref{fig:cycells}).
+Spatial effects of viral and chemokine diffusion play an important role in both the spreading and clearing of infections.  Free virus particles diffuse from virus secreting cells and infect healthy cells.  Chemokine produced by infected cells attracts T-cells to the infected cells.  Although virus is produced at a higher rate than chemokine, the larger particle diffuses much more slowly.  Chemokine decays more quickly.  These countervaling effects result in similar spatial profiles for the two particle types (Fig.~\ref{fig:cycells}).
 
-Up to day 4 the plaque is dominated by active (incubating and secreting) cells, and dead cells are rare. Over time, cells in the plaque's interior die, and active cells are a decreasing proportion of the plaque. T-cells arrive at day 5 and begin killing the virus-secreting cells. By day 6 many expressing cells have been eliminated and the plaque is dominated by dead cells.  In H5N1, the plaque is dense, allowing T-cells to find secreting cells easily and infection is eliminated.  However, in both H1N1 simulations secreting cells were not eliminated.  Expressing cells accounted for at most 10\% of the active cell population and less than 1\% of the total plaque at 6 days p.i..  T cells still accumulate, but they arrive more slowly than the plaque is growing, leading to lower average T cell killing rate.  Further, the regions of concentrated chemokine lag behind the cell and virus spatial layout.  It takes time for newly secreting cells to produce chemokine while pockets of high chemokine density are slow to decay.  Thus, T-cells can lag behind cellular changes in the plaque.  Taken together, the delayed response and low proportion of virus secreting cells prevent T-cells from completely clearing the infection.
+Up to day 4 the plaque is dominated by active (incubating and secreting) cells, and dead cells are rare. Over time, cells in the plaque's interior die, and active cells are a decreasing proportion of the plaque. T-cells arrive at day 5 and begin killing the virus-secreting cells. By day 6 many expressing cells have been eliminated and the plaque is dominated by dead cells.  In aH5N1, the plaque is dense, allowing T-cells to find secreting cells easily and infection is eliminated.  However, in both H1N1 simulations secreting cells were not eliminated.  Secreting cells accounted for at most 10\% of the active cell population and less than 1\% of the total plaque at 6 days p.i..  T cells still accumulate, but they arrive more slowly than the plaque is growing, leading to lower average T cell killing rate.  Further, the regions of concentrated chemokine lag behind the cell and virus spatial layout.  It takes time for newly secreting cells to produce chemokine while pockets of high chemokine density are slow to decay.  Thus, T-cells can lag behind cellular changes in the plaque.  Taken together, the delayed response and low proportion of virus secreting cells prevent T-cells from completely clearing the infection.
 
-The immune response fails to clear sH1N1 completely and is unable to contain pH1N1 (Fig. \ref{fig:sensitivity}).  T-cells are unable to kill cells that have not yet presented antigen.  At day 5.5, the ratio of secreting cells to the total plaque size is high (Fig.~\ref{fig:cycells}). By day 7, this ratio is approximately 1:100 for both the pH1N1 and sH1N1 strains.  The high replication rate of pH1N1 enhances this effect (Fig.~\ref{fig:plaquesize}C) and the T-cells can control (but not eliminate) the sH1N1 infection.
+The immune response fails to clear sH1N1 completely and is unable to contain pH1N1 (Fig. \ref{fig:sensitivity}).  T-cells are unable to kill cells that have not yet presented antigen.  At day 5.5, the ratio of secreting cells to the total plaque size is high (Fig.~\ref{fig:cycells}-\ref{fig:plaquesize}). By day 7, this ratio is approximately 1:100 for both the pH1N1 and sH1N1 strains.  The high replication rate of pH1N1 enhances this effect (Fig.~\ref{fig:plaquesize}C) and the T-cells can control (but not eliminate) the sH1N1 infection.
 
-A cell infected with pH1N1 produces new virus at the rate of 5.08e-3 PFU/s \cite{Mitchell2011}.  That is, a new viral particle is produced approximately every 200 seconds.  Assuming that secretion continues for one hour after apoptosis is initiated, the best a T-Cell can do is to limit production to 18 new viral particles.  T-Cells alone cannot contain the pH1N1 infection.  In contrast, a sH1N1 virus-secreting cell produces a new virus particle every 2,643 seconds, allowing T-cells to limit a single infected cell to 1.3 viral particles in the one-hour window.  Avian H5N1 virus-secreting cells produce only 0.2 viral particles in the interval after T-cell detection. 
+A cell infected with pH1N1 produces new virus at the rate of 5.08e-3 PFU/s \cite{Mitchell2011}.  That is, a new viral particle is produced approximately every 200 seconds.  Assuming that secretion continues for one hour after apoptosis is initiated, the best a T-Cell can do is to limit production to 18 new viral particles.  T-Cells alone cannot contain the pH1N1 infection.  In contrast, a sH1N1 virus-secreting cell produces a new virus particle every 2,643 seconds, allowing T-cells to limit a single infected cell to 1.3 viral particles in the one-hour window.  Avian H5N1 virus-secreting cells produce only 0.2 viral particles in the interval after induced apoptosis. 
 
 \begin{figure}[ht!]
 \begin{center}
@@ -264,7 +265,7 @@ A cell infected with pH1N1 produces new virus at the rate of 5.08e-3 PFU/s \cite
 \begin{center}
  \includegraphics[width=\textwidth]{plaquesize}
  \end{center}
-\caption{Comparison of total plaque size (green), number of virus incubating cells (blue), number of virus secreting cells (red), and T-cells (indigo) for the simulated infections of H5N1, sH1N1, and pH1N1.} 
+\caption{Comparison of total plaque size (blue), number of virus incubating cells (yellow), number of virus secreting cells (green), and T cells (red) for the simulated infections of aH5N1, sH1N1, and pH1N1.  T cells are able to clear both secreting and incubating cells in aH5N1, are unable to contain incubating cells in sH1N1, and are unable to contain either type of infected cell in pH1N1.} 
  \label{fig:plaquesize}
 \end{figure}
 

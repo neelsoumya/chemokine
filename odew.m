@@ -1,6 +1,7 @@
-function dx = ode(t, x, lag)
+function dx = odew(t, x, lag)
     
-    global IP10 RANTES;
+    IP10 = 0.005202;
+    RANTES = 2.61e-4;
 
     ylag1 = lag(:,1);
     ylag2 = lag(:,2);
@@ -8,27 +9,12 @@ function dx = ode(t, x, lag)
     ylag4 = lag(:,4);
     ylag5 = lag(:,5);
 
-     % Avian
-    B = 8.82931e-9;
-    X = .001001;
-    P = .0032662;
-    E = 1e-8;
-    Y = .0231;
-
-
-    % Seasonal
-%    B = 1.013e-8;
-%    X = .001;
-%    P = .0227;
-%    E = 1.6174e-6;
-%    Y = .0231;    
-
     % Swine
-%    B = 4.555e-8;
-%    X = .001;
-%    P = .304882;
-%    E = .00344675;
-%    Y = .0231;    
+    B = 4.555e-8;
+    X = .001;
+    P = .304882;
+    E = .00344675;
+    Y = .0231;    
 
     dx = zeros(7, 1);
 

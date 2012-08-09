@@ -22,9 +22,9 @@ IP10 = a(1);
 
 options = ddeset('InitialY', [1e6 0 0 1e4 0 0 0]);
 
-%sol = dde23('ode', [600 600 1292.28 480 960], [0 0 0 0 0 0 0], [0 2880], options); % Avian
+sol = dde23('ode', [600 600 1292.28 480 960], [0 0 0 0 0 0 0], [0 2880], options); % Avian
 %sol = dde23('ode', [600 600 1416.73 480 960], [0 0 0 0 0 0 0], [0 2880], options); % Seasonal
-sol = dde23('ode', [600 600 1262.99 480 960], [0 0 0 0 0 0 0], [0 2880], options); % Swine
+%sol = dde23('ode', [600 600 1262.99 480 960], [0 0 0 0 0 0 0], [0 2880], options); % Swine
 
 % Recall that we are interested only in the infected population.
 % We will use the built-in interpolation function interp1 to get
