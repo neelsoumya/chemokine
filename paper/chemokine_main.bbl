@@ -175,6 +175,12 @@ Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
 \newblock ICARIS 6825: 1--14.
 \bibAnnoteFile{Banerjee2011}
 
+\bibitem{Wu1986}
+Wu CFJ (1986) {Jackknife, Bootstrap and Other Resampling Methods in Regression
+  Analysis}.
+\newblock Annals of Statistics 14: 1261--1295.
+\bibAnnoteFile{Wu1986}
+
 \bibitem{DeJong2006}
 {De Jong} MD, Simmons CP, Thanh TT, Hien VM, Smith GJD, et~al. (2006) {Fatal
   outcome of human influenza A (H5N1) is associated with high viral load and
@@ -257,5 +263,12 @@ Francis K, Palsson BEO (1997) {Effective intercellular communciation distances
   and diffusion}.
 \newblock Proceedings of the National Academy of Sciences 94: 12258--12262.
 \bibAnnoteFile{Francis1997}
+
+\bibitem{Wu2011}
+Wu H, Kumar A, Miao H, Holden-Wiltse J, Mosmann TR, et~al. (2011) {Modeling of
+  influenza-specific CD8+ T cells during the primary response indicates that
+  the spleen is a major source of effectors.}
+\newblock The Journal of Immunology 187: 4474--82.
+\bibAnnoteFile{Wu2011}
 
 \end{thebibliography}

@@ -44,6 +44,7 @@
 \pagestyle{myheadings}
 %% ** EDIT HERE **
 
+\usepackage{multirow}
 
 %% ** EDIT HERE **
 %% PLEASE INCLUDE ALL MACROS BELOW
@@ -86,47 +87,31 @@ $\ast$ E-mail: Corresponding drew@cs.unm.edu
 
 
 \subsection*{Ordinary Differential Equation Models}
-Here we use a differential equation model:
 
-\begin{equation}
-\frac{dN_{c}}{dt} = \sigma - \frac{r'^{2} \cdot N_{c}}{R^{2} \cdot t_{rc}} ,  \pi r'^{2} = a \sqrt{I} + b
-\end{equation}
-\begin{equation}
-\frac{dN'_{f}}{dt} = \frac{(r'^{2} - r^{2}) \cdot N_{c}}{R^{2} \cdot t_{rc}} - \frac{v_{tcell}}{(r' - r) / 2} ,  \pi r^{2} = \pi r_{cell}^{2} \cdot I
-\end{equation}
-\begin{equation}
-\frac{dN_{f}}{dt} = \frac{r^{2} \cdot N_{c}}{R^{2} \cdot t_{rc}} + \frac{v_{tcell}}{(r' - r) / 2}
-\end{equation}
-\begin{equation}
-\label{tcl_eqn1}
-\frac{dT}{dt} = \rho T -\beta TV
-\end{equation}
-\begin{equation}
-\label{tcl_eqn2}
-\frac{dI}{dt} = \beta TV - \delta I - k_{e} N_{f} I
-\end{equation}
-\begin{equation}
-\label{tcl_eqn4}
-\frac{dV}{dt} = pI - \beta TV - \gamma (t) V
-\end{equation}
-\begin{equation}
-\label{is_eqn5}
-\gamma (t) = \left\{ \begin{array}{rcl}
+To find a value for $\sigma$ we use a differential equation model from \cite{Miao20101}:
+
+\begin{equation*}
+\begin{aligned}
+\frac{dN_{c}}{dt} &= \sigma - \frac{r'^{2} \cdot N_{c}}{R^{2} \cdot t_{rc}}    & \pi r'^{2} &= a \sqrt{I} + b \\
+\frac{dN'_{f}}{dt} &= \frac{(r'^{2} - r^{2}) \cdot N_{c}}{R^{2} \cdot t_{rc}} - \frac{v_{tcell}}{(r' - r) / 2} \hspace*{2cm}  & \pi r^{2} &= \pi r_{cell}^{2} \cdot I \\
+\frac{dN_{f}}{dt} &= \frac{r^{2} \cdot N_{c}}{R^{2} \cdot t_{rc}} + \frac{v_{tcell}}{(r' - r) / 2} \\
+\frac{dT}{dt} &= \rho T -\beta TV \\
+\frac{dI}{dt} &= \beta TV - \delta I - k_{e} N_{f} I \\
+\frac{dV}{dt} &= pI - \beta TV - \gamma (t) V \\
+\gamma (t) &= \left\{ \begin{array}{rcl}
 	1/\mbox{day} & \mbox{,}  & t < 5  \\
 	3/\mbox{day} & \mbox{,} & t \geq 5  
-	\end{array}\right.
-\end{equation}
+	\end{array}\right. \\
+\end{aligned}
+\end{equation*}
 
 
 where $N_{c}$ is the number of circulating activated antigen-specific T-cells, $N'_{f}$ is the number of circulating T-cells that have found and exit into a region of lung tissue expressing chemokines and $N_{f}$ is the number of circulating T-cells that have found an infected region. $T$ is the number of uninfected target cells, $I$ is the number of productively infected cells, and $V$ is the viral titer in serum. The infected region is assumed to be of radius $r$ and is within a region expressing chemokines of radius $r'$ ($r  < r'$). The lung is assumed to be a circular region with radius $R$. The area of the infected region is equal to the area of an infected cell (of radius $r_{cell}$) multiplied by the number of infected cells. The area of the region expressing chemokine was found to be related non-linearly to the number of infected cells ($\pi r'^{2} = a \sqrt{I} + b$) where $a$ and $b$ are constants that depend on the viral strain.
 
-Circulating activated antigen-specific T-cells ($N_{c}$) are assumed to be released from lymph nodes at a constant rate $\sigma$. These circulating cells then transition into $N'_{f}$ and $N_{f}$ at rates proportional to the areas of the chemokine expressing and infected regions relative to the whole lung area. Circulating cells that are in the chemokine expressing region ($N'_{f}$) transition to the infected region after walking randomly for an average time proportional to the difference in the radii between the two regions ($r' - r$). Target cells ($T$) become infected by virus at rate $\beta TV$, where $\beta$ is the rate constant characterizing infection. Infected cells ($I$) die at rate $\delta$ in addition to being lysed by T-cells ($N_{f}$) at a rate $k_{e}$. Finally the viral titers ($V$) increase due to production of virus at rate $p$ by infected cells. Virus is also cleared due to uptake by infected cells (at a rate $- \beta TV$) and due to antibody (at a rate $\gamma (t)$ that changes after 5 days post infection). The initial viral titer and the initial number of target cells are denoted $V_{0}$ and $T_{0}$, respectively. The initial number of infected cells is assumed to be zero.
-
+Circulating activated antigen-specific T-cells ($N_{c}$) are assumed to be released from lymph nodes at a constant rate $\sigma$. These circulating cells then transition into $N'_{f}$ and $N_{f}$ at rates proportional to the areas of the chemokine expressing and infected regions relative to the whole lung area. Circulating cells that are in the chemokine expressing region ($N'_{f}$) transition to the infected region after walking randomly for an average time proportional to the difference in the radii between the two regions ($r' - r$). Target cells ($T$) become infected by virus at rate $\beta TV$, where $\beta$ is the rate constant characterizing infection. Infected cells ($I$) die at rate $\delta$ in addition to being lysed by T-cells ($N_{f}$) at a rate $k_{e}$. Finally the viral titers ($V$) increase due to production of virus at rate $p$ by infected cells. Virus is also cleared due to uptake by infected cells (at a rate $- \beta TV$) and due to antibody (at a rate $\gamma (t)$ that changes after 5 days post infection). The initial viral titer and the initial number of target cells are denoted $V_{0}$ and $T_{0}$, respectively. The initial number of infected cells is assumed to be zero. This ode was fit to data taken from \cite{Miao2010} using Matlab's \texttt{nlinfit} function in order to obtain a value for $\sigma$.
 
 % Results and Discussion can be combined.
 \section*{Results}
-
-\subsection*{Chemokine production}
 
 \subsection*{Stochastic modeling effects}
 
@@ -134,23 +119,22 @@ Unlike ODE models, which are deterministic, stochastic models such as CyCells ca
 
 Each run took the calculated viral production and chemokine production rates for the three different strains of influenza as input and reported the total number of infected cells, including incubating, virus secreting and apoptotic, but not including dead cells.  Therefore the figures approximate plaque growth over time.
 
-Overlaying multiple runs on a single plot reveals a slight growth rate transition 3 days p.i., which reflects the presence of IgM.  In addition, for each infection the number of infected cells declines quickly at day five due to the T-cell response. 
+Overlaying multiple runs on a single plot reveals a slight growth rate transition 3 days p.i., which reflects the addition of IgM.  In addition, for each infection the number of infected cells declines quickly at day five due to the T-cell response. 
 
-The three strains show different levels of virulence, consistent with the results found in Mitchell (Fig.~\ref{fig:variance}).  The rapid growth of the pandemic H1N1 prevents the immune response from containing the infection.  By the time T-Cells arrive, the plaque is too large for them to cover effectively.  Because pH1N1 is replicates at such a rapid rate, the window of opportunity for T-Cells to gain ground is too small.  aH5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH5N1 recovers and continues to expand.
+The three strains show different levels of virulence, consistent with the results found in \cite{Mitchell2011} (Fig.~\ref{fig:variance}).  The rapid growth of the pandemic H1N1 prevents the immune response from containing the infection.  Because pH1N1 is replicates at such a rapid rate, the window of opportunity for T-Cells to gain ground is too small.  aH5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH5N1 recovers and continues to expand.
 
 \begin{figure}[ht!]
 \begin{center}
  \includegraphics[width=\textwidth]{variance}
  \end{center}
-\caption{Model results: Time series plots of fifty runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections (gray). IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  Each run was initialized identically for each strain.  The middle line shows the average while the outer lines show the 95\% confidence interval.} 
+\caption{Model results: Time series plots of fifty runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections (gray). IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  Each run was initialized identically for each strain save for the random seed.  The middle line shows the average while the outer lines show the 95\% confidence interval.} 
  \label{fig:variance}
 \end{figure}
 
 
 \subsection*{Chemokine combinations}
 
-Because aH5N1 has been shown to suppress the production of interferon \cite{Mitchell2011} we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table~\ref{table:strains}).  Because of this behavior IP-10 was not included in the aH5N1 model runs.
-
+Because aH5N1 has been shown to suppress the production of interferon \cite{Mitchell2011}, we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table~\ref{table:strains}).  Because of this behavior IP-10 was not included in the aH5N1 model runs.-
 Four models runs were performed for each strain (two for aH5N1) to look at how the presence and/or lack of specific chemokines affect the simulated immune response (Fig.~\ref{fig:chemokine}).  The lack of both chemokines leads to runaway infections in all three strains.  The presence of only RANTES is enough to contain the aH5N1 infection, but is weaker than IP-10 in both H1N1 strains.  IP-10 alone proves to be as effective as the combination of IP-10 and RANTES, suggesting that RANTES does not play a significant role in infections that stimulate an IP-10 response.
 
 \begin{figure}[ht!]
@@ -228,6 +212,62 @@ In our model T-cell motion depends on the T-cells' sensitivity to chemokine.  On
 %\end{flushleft}
 %\label{tab:label}
 % \end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ | c | c | c | }
+  \hline                        
+  Paramter & Value & Source \\
+  \hline
+  Viral Diffusion & .0318 & \cite{Beauchemin2006} \\
+  Viral Decay &  $1/day$ & Phenomenological \\
+  Chemokine Diffusion & $.318 \mu m^2/s$ & \cite{Beauchemin2006} \\
+  Chemokine Decay &  $3.8508$e-4$/s$ & 30m half-life \\
+  Infection Sensitivity &  $2 h/virion$ & Phenomenological \\
+  Incubation Time &  $10 h$ & \cite{Mitchell2011} \\
+  Expression Time &  $16.7 h$ & \cite{Mitchell2011} \\
+  Apoptosis Time & $1 h$ & Phenomenological \\
+  T-Cell Production Rate & $777/h$ & \cite{Miao2010} \\ 
+  Circulation Time & $6 m$ & \cite{Banerjee2010b} \\
+  Search Time & $10 m$ & \cite{Banerjee2010b} \\
+  T-Cell Speed (Search) & $30 \mu m/s$ & \cite{Miller2003} \\
+  T-Cell Speed (Activated) & $3 \mu m/s$ & \cite{Miller2003} \\
+  T-Cell Sensitivity & $1 ng/mL$ & \cite{Gao2003} \\
+  T-Cell Expected Kill Rate & $10 m$ & [REF] \\
+  Cell Radius & $25 \mu m$ & Phenomenological \\
+  T-Cell Age (at FOI) & $2 h$ & [REF] \\
+  T-Cell Age (Other) & $3 d$ & [REF] \\
+  T-Cell Ramp Up Time & $5 d$ & \cite{Banerjee2011} \\
+  IgM Strength & Viral decay of $3/day$ & Phenomenological \\
+  \hline  
+\end{tabular}
+\caption{Model parameters}
+\label{table:parameters}
+\end{center}
+\end{table}
+
+
+\begin{table}
+\centering
+\begin{tabular}{ | r | c | c | c | }
+  \hline                        
+  \multicolumn{1}{|c|}{\multirow{2}{*}{Strain}} & IP-10 Production & RANTES Production & Viral Production \\
+   & \footnotesize{(pg/s$\cdot$cell)}  & \footnotesize{(pg/s$\cdot$cell)} &  \footnotesize{(PFU/s$\cdot$cell)} \\
+  \hline
+  \multirow{2}{*}{Avian H5N1} & 2.0e-4 &  1.3e-5 & \multirow{2}{*}{5.4e-5} \\
+   &  \footnotesize{8.4e-5 --- 4.2e-4} & \footnotesize{7.9e-6 --- 1.9e-5} & \\ 
+   \hline
+  \multirow{2}{*}{Seasonal H1N1} & 1.8e-4 &  8.9e-7 & \multirow{2}{*}{3.8e-4} \\
+   & \footnotesize{1.2e-4 --- 3.0e-4} & \footnotesize{4.8e-7 --- 1.6e-6} &  \\
+   \hline
+  \multirow{2}{*}{Pandemic H1N1} & 8.7e-5 &  4.3e-6 & \multirow{2}{*}{5.1e-3} \\
+   & \footnotesize{1.7e-5 --- 7.1e-4} & \footnotesize{5.0e-7 --- 3.5e-5} &  \\
+  \hline
+\end{tabular}
+\caption{Strain-specific model parameters.  Small text values show 95\% confidence intervals resulting from 1,000 bootstrapping runs for each parameter \cite{Wu1986}.  Viral production values are taken from \cite{Mitchell2011}.}
+\label{table:strains}
+\end{table}
+
 
 \end{document}
 

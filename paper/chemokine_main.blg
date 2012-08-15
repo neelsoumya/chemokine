@@ -2,44 +2,44 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: chemokine_main.aux
 The style file: plos2009.bst
 Database file #1: references.bib
-You've used 37 entries,
+You've used 39 entries,
             2441 wiz_defined-function locations,
-            883 strings with 20577 characters,
-and the built_in function-call counts, 38145 in all, are:
-= -- 3601
-> -- 660
+            902 strings with 21217 characters,
+and the built_in function-call counts, 39908 in all, are:
+= -- 3767
+> -- 688
 < -- 0
-+ -- 330
-- -- 165
-* -- 3407
-:= -- 4556
-add.period$ -- 74
-call.type$ -- 37
-change.case$ -- 37
++ -- 344
+- -- 172
+* -- 3561
+:= -- 4769
+add.period$ -- 78
+call.type$ -- 39
+change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 74
-duplicate$ -- 3728
-empty$ -- 3923
-format.name$ -- 201
-if$ -- 8474
+cite$ -- 78
+duplicate$ -- 3898
+empty$ -- 4106
+format.name$ -- 209
+if$ -- 8867
 int.to.chr$ -- 0
-int.to.str$ -- 37
-missing$ -- 424
-newline$ -- 200
-num.names$ -- 37
-pop$ -- 429
+int.to.str$ -- 39
+missing$ -- 445
+newline$ -- 210
+num.names$ -- 39
+pop$ -- 447
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 306
+skip$ -- 321
 stack$ -- 0
-substring$ -- 5860
-swap$ -- 848
+substring$ -- 6128
+swap$ -- 890
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 276
-width$ -- 39
-write$ -- 421
+while$ -- 289
+width$ -- 41
+write$ -- 443

@@ -73,7 +73,7 @@ set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
 %ylabel('Infected Cell Count (log10)')
 title('pH1N1 Influenza')
-set(gca, 'FontSize', 12)
+%set(gca, 'FontSize', 12)
 % legend('Plaque size (cells)', 'Virus-incubating cells', 'Virus-secreting cells', 'T-cells at FOI', 2)
 
 % T-Cell Ratios

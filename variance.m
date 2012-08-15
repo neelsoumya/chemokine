@@ -27,10 +27,10 @@ hline1 = plot(time, [infect(vara00) infect(vara01) infect(vara02) infect(vara03)
             infect(vara45) infect(vara46) infect(vara47) infect(vara48) infect(vara49)], 'color', [.75 .75 .75]);
         
 hold on
-hline2 = plot(time, infect(vara12), 'color', [.75 0 0]); % .7363
-plot(time, infect(vara13), 'color', [.75 0 0]) % .7504
-plot(time, infect(vara33), 'color', [.75 0 0]) % .7988
-plot(time, infect(vara35), 'color', [.75 0 0]) % .5881
+%hline2 = plot(time, infect(vara12), 'color', [.75 0 0]); % .7363
+%plot(time, infect(vara13), 'color', [.75 0 0]) % .7504
+%plot(time, infect(vara33), 'color', [.75 0 0]) % .7988
+%plot(time, infect(vara35), 'color', [.75 0 0]) % .5881
 plot(time, aavg, '-k', 'LineWidth', 2)
 hline3 = plot(time, alow, 'Color', 'k', 'LineStyle', '--');
 plot(time, ahigh, 'Color', 'k', 'LineStyle', '--')
@@ -74,7 +74,7 @@ plot(time, [infect(vars00) infect(vars01) infect(vars02) infect(vars03) infect(v
             infect(vars45) infect(vars46) infect(vars47) infect(vars48) infect(vars49)], 'color', [.75 .75 .75]);
         
 hold on
-plot(time, infect(vars16), 'color', [.75 0 0])
+%plot(time, infect(vars16), 'color', [.75 0 0])
 plot(time, savg, '-k', 'LineWidth', 2)
 plot(time, slow, 'Color', 'k', 'LineStyle', '--')
 plot(time, shigh, 'Color', 'k', 'LineStyle', '--')
