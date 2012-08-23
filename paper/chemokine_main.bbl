@@ -146,6 +146,19 @@ Beauchemin C, Forrest S, Koster FT (2006) {Modeling Influenza Viral Dynamics in
 \newblock LNCS Artificial Immune Systems 4163: 23--36.
 \bibAnnoteFile{Beauchemin2006}
 
+\bibitem{Lee2009}
+Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
+  and Prediction of the Adaptive Immune Response to Influenza A Virus
+  Infection}.
+\newblock Journal of Virology 83: 7151--7165.
+\bibAnnoteFile{Lee2009}
+
+\bibitem{Ganusov2008}
+Ganusov VV, {De Boer} RJ (2008) {Estimating in vivo death rates of targets due
+  to CD8 T-cell-mediated killing.}
+\newblock Journal of Virology 82: 11749--11757.
+\bibAnnoteFile{Ganusov2008}
+
 \bibitem{Banerjee2010b}
 Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
   and times: perspectives on immune system architecture and implications for
@@ -180,6 +193,13 @@ Wu CFJ (1986) {Jackknife, Bootstrap and Other Resampling Methods in Regression
   Analysis}.
 \newblock Annals of Statistics 14: 1261--1295.
 \bibAnnoteFile{Wu1986}
+
+\bibitem{Wu2011}
+Wu H, Kumar A, Miao H, Holden-Wiltse J, Mosmann TR, et~al. (2011) {Modeling of
+  influenza-specific CD8+ T cells during the primary response indicates that
+  the spleen is a major source of effectors.}
+\newblock The Journal of Immunology 187: 4474--82.
+\bibAnnoteFile{Wu2011}
 
 \bibitem{DeJong2006}
 {De Jong} MD, Simmons CP, Thanh TT, Hien VM, Smith GJD, et~al. (2006) {Fatal
@@ -263,12 +283,5 @@ Francis K, Palsson BEO (1997) {Effective intercellular communciation distances
   and diffusion}.
 \newblock Proceedings of the National Academy of Sciences 94: 12258--12262.
 \bibAnnoteFile{Francis1997}
-
-\bibitem{Wu2011}
-Wu H, Kumar A, Miao H, Holden-Wiltse J, Mosmann TR, et~al. (2011) {Modeling of
-  influenza-specific CD8+ T cells during the primary response indicates that
-  the spleen is a major source of effectors.}
-\newblock The Journal of Immunology 187: 4474--82.
-\bibAnnoteFile{Wu2011}
 
 \end{thebibliography}
