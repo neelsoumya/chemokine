@@ -127,9 +127,9 @@ To find a value for $\sigma$ we use a differential equation model from \cite{Mia
 \end{equation*}
 \vspace{.05in}
 
-where $N_{c}$ is the number of circulating activated antigen-specific T-cells, $N'_{f}$ is the number of circulating T-cells that have found and exit into a region of lung tissue expressing chemokines and $N_{f}$ is the number of circulating T-cells that have found an infected region. $T$ is the number of uninfected target cells, $I$ is the number of productively infected cells, and $V$ is the viral titer in serum. The infected region is assumed to be of radius $r$ and is within a region expressing chemokines of radius $r'$ ($r  < r'$). The lung is assumed to be a circular region with radius $R$. The area of the infected region is equal to the area of an infected cell (of radius $r_{cell}$) multiplied by the number of infected cells. The area of the region expressing chemokine was found to be related non-linearly to the number of infected cells ($\pi r'^{2} = a \sqrt{I} + b$) where $a$ and $b$ are constants that depend on the viral strain.
+where $N_{c}$ is the number of circulating activated antigen-specific T cells, $N'_{f}$ is the number of circulating T cells that have found and exit into a region of lung tissue expressing chemokines and $N_{f}$ is the number of circulating T cells that have found an infected region. $T$ is the number of uninfected target cells, $I$ is the number of productively infected cells, and $V$ is the viral titer in serum. The infected region is assumed to be of radius $r$ and is within a region expressing chemokines of radius $r'$ ($r  < r'$). The lung is assumed to be a circular region with radius $R$. The area of the infected region is equal to the area of an infected cell (of radius $r_{cell}$) multiplied by the number of infected cells. The area of the region expressing chemokine was found to be related non-linearly to the number of infected cells ($\pi r'^{2} = a \sqrt{I} + b$) where $a$ and $b$ are constants that depend on the viral strain.
 
-Circulating activated antigen-specific T-cells ($N_{c}$) are assumed to be released from lymph nodes at a constant rate $\sigma$. These circulating cells then transition into $N'_{f}$ and $N_{f}$ at rates proportional to the areas of the chemokine expressing and infected regions relative to the whole lung area. Circulating cells that are in the chemokine expressing region ($N'_{f}$) transition to the infected region after walking randomly for an average time proportional to the difference in the radii between the two regions ($r' - r$). Target cells ($T$) become infected by virus at rate $\beta TV$, where $\beta$ is the rate constant characterizing infection. Infected cells ($I$) die at rate $\delta$ in addition to being lysed by T-cells ($N_{f}$) at a rate $k_{e}$. Finally the viral titers ($V$) increase due to production of virus at rate $p$ by infected cells. Virus is also cleared due to uptake by infected cells (at a rate $- \beta TV$) and due to antibody (at a rate $\gamma (t)$ that changes after 5 days post infection). The initial viral titer and the initial number of target cells are denoted $V_{0}$ and $T_{0}$, respectively. The initial number of infected cells is assumed to be zero. This ode was fit to data taken from \cite{Miao2010} using Matlab's \texttt{nlinfit} function in order to obtain a value for $\sigma$.
+Circulating activated antigen-specific T cells ($N_{c}$) are assumed to be released from lymph nodes at a constant rate $\sigma$. These circulating cells then transition into $N'_{f}$ and $N_{f}$ at rates proportional to the areas of the chemokine expressing and infected regions relative to the whole lung area. Circulating cells that are in the chemokine expressing region ($N'_{f}$) transition to the infected region after walking randomly for an average time proportional to the difference in the radii between the two regions ($r' - r$). Target cells ($T$) become infected by virus at rate $\beta TV$, where $\beta$ is the rate constant characterizing infection. Infected cells ($I$) die at rate $\delta$ in addition to being lysed by T cells ($N_{f}$) at a rate $k_{e}$. Finally the viral titers ($V$) increase due to production of virus at rate $p$ by infected cells. Virus is also cleared due to uptake by infected cells (at a rate $- \beta TV$) and due to antibody (at a rate $\gamma (t)$ that changes after 5 days post infection). The initial viral titer was initialized to 10,000 PFUs and the initial number of target cells was one million. The initial number of infected cells is assumed to be zero. This ODE was fit to data taken from \cite{Miao2010} using Matlab's \texttt{nlinfit} function in order to obtain a value for $\sigma$.
 
 % Results and Discussion can be combined.
 \section{Results}
@@ -140,35 +140,21 @@ Unlike ODE models, which are deterministic, stochastic models such as CyCells ca
 
 Each run took the calculated viral production and chemokine production rates for the three different strains of influenza as input and reported the total number of infected cells, including incubating, virus secreting and apoptotic, but not including dead cells.  Therefore the figures approximate plaque growth over time.
 
-Overlaying multiple runs on a single plot reveals a slight growth rate transition 3 days p.i., which reflects the addition of IgM.  In addition, for each infection the number of infected cells declines quickly at day five due to the T-cell response. 
+Overlaying multiple runs on a single plot reveals a slight growth rate transition 3 days p.i., which reflects the addition of IgM.  In addition, for each infection the number of infected cells declines quickly at day five due to the T cell response. 
 
-The three strains show different levels of virulence, consistent with the results found in \cite{Mitchell2011} (Fig.~\ref{fig:variance}).  The rapid growth of the pandemic H1N1 prevents the immune response from containing the infection.  Because pH1N1 is replicates at such a rapid rate, the window of opportunity for T-Cells to gain ground is too small.  aH5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH5N1 recovers and continues to expand.
+The three strains show different levels of virulence, consistent with the results found in \cite{Mitchell2011} (Fig.~\ref{fig:variance}).  The rapid production of the pandemic H1N1 virus prevents the immune response from containing the infection.  Because pH1N1 is replicates at such a rapid rate, the window of opportunity for T Cells to gain ground is too small.  aH5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH5N1 recovers and continues to expand.
 
-\begin{figure}[ht!]
-\begin{center}
- \includegraphics[width=\textwidth]{variance}
- \end{center}
-\caption{Model results: Time series plots of fifty runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections (gray). IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  Each run was initialized identically for each strain save for the random seed.  The middle line shows the average while the outer lines show the 95\% confidence interval.} 
- \label{fig:variance}
-\end{figure}
 
 
 \subsection{Chemokine combinations}
 
-Because aH5N1 has been shown to suppress the production of interferon \cite{Mitchell2011}, we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table~\ref{table:strains}).  Because of this behavior IP-10 was not included in the aH5N1 model runs.  Four models runs were performed for each strain (two for aH5N1) to look at how the presence and/or lack of specific chemokines affect the simulated immune response (Fig.~\ref{fig:chemokine}).  The lack of both chemokines leads to runaway infections in all three strains.  The presence of only RANTES is enough to contain the aH5N1 infection, but is weaker than IP-10 in both H1N1 strains.  IP-10 alone proves to be as effective as the combination of IP-10 and RANTES, suggesting that RANTES does not play a significant role in infections that stimulate an IP-10 response.
-
-\begin{figure}[ht!]
-\begin{center}
-	\includegraphics[width=\textwidth]{chemokine}
-	\caption{Effects of different chemokine combinations.  A) aH5N1 does not stimulate an IP-10 response.  B-C) sH1N1 and pH1N1 show no significant difference between IP-10 alone versus IP-10 and RANTES combined.}
-	\label{fig:chemokine}
-\end{center}
-\end{figure}
-
+Because aH5N1 has been shown to suppress the production of interferon \cite{Mitchell2011}, we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table~\ref{table:strains}).  Because of this behavior IP-10 was not included in the aH5N1 model runs.  Four models runs were performed for each strain (two for aH5N1) to look at how the presence and/or lack of specific chemokines affect the simulated immune response (Fig.~\ref{fig:chemokine}).  The lack of both chemokines leads to runaway infections in all three strains.  The presence of only RANTES is enough to contain the aH5N1 infection, but is weaker than IP-10 in both H1N1 strains.  IP-10 alone proves to be as effective as the combination of IP-10 and RANTES, suggesting that RANTES does not play a significant role in infections that stimulate an IP-10 response.  We assume receptor sensitivity is the same for both chemokines and that the chemokines in combination work additively.
 
 
 % The bibtex filename
 \bibliography{references}
+
+\section*{Figure Legends}
 
 %\begin{figure}[!ht]
 %\begin{center}
@@ -183,7 +169,25 @@ Because aH5N1 has been shown to suppress the production of interferon \cite{Mitc
 %\end{figure}
 
 
-%\section*{Tables}
+\begin{figure}[ht!]
+\begin{center}
+ \includegraphics[width=\textwidth]{variance}
+ \end{center}
+\caption{Model results: Time series plots of fifty runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections (gray). IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  Each run was initialized identically for each strain save for the random seed.  The middle line shows the average while the outer lines show the 95\% confidence interval.} 
+ \label{fig:variance}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\begin{center}
+	\includegraphics[width=\textwidth]{chemokine}
+	\caption{Effects of different chemokine combinations.  A) aH5N1 does not stimulate an IP-10 response.  B-C) sH1N1 and pH1N1 show no significant difference between IP-10 alone versus IP-10 and RANTES combined.}
+	\label{fig:chemokine}
+\end{center}
+\end{figure}
+
+\section*{Tables}
+
 %\begin{table}[!ht]
 %\caption{
 %\bf{Table title}}
@@ -195,7 +199,28 @@ Because aH5N1 has been shown to suppress the production of interferon \cite{Mitc
 %\label{tab:label}
 % \end{table}
 
-
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{ | c | c | c | }
+  \hline                        
+  Paramter & Value & Source \\
+  \hline
+  T(0) & $1e6$ & \cite{Mitchell2011} \\
+  V(0) &  $1e4$ & \cite{Mitchell2011} \\
+  $r_{cell}$ &  $10 \mu m$ & \cite{Miao2010} \\
+  $t_{rc}$ & $6s$ & \cite{Peters1983} \\
+  $v_{tcell}$ & $0.3 \mu m/s$ & \cite{Miller2003} \\
+  $k_e$ & $6.4e-5/cell/day$ & \cite{Miao2010} \\
+  $\beta$ & $4.8e-7/cell/PFU$ & \cite{Mitchell2011} \\
+  $p$ & $0.18 PFU/h$ & \cite{Mitchell2011} \\
+  $\delta$ & $16.7 hours$ & \cite{Mitchell2011} \\
+  $a$ & $20.9$ & ABM fits \\
+  $b$ & $70.8$ & ABM fits \\
+  \hline  
+\end{tabular}
+\caption{Supplemental model parameters.  Most values are chosen to match the equations borrowed from both \cite{Mitchell2011} and \cite{Miao2010}.  Values \textit{a} and \textit{b} were fit to multiple runs of a simplified CyCells ABM.}
+\label{table:supplement}
+\end{center}
+\end{table}
 
 \end{document}
-
