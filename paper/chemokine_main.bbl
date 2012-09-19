@@ -134,44 +134,17 @@ Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
 \newblock Journal of virology 85: 1125--35.
 \bibAnnoteFile{Mitchell2011}
 
+\bibitem{Ganusov2011}
+Ganusov VV, Barber DL, {De Boer} RJ (2011) {Killing of targets by CD8 T cells
+  in the mouse spleen follows the law of mass action.}
+\newblock PloS one 6: e15959.
+\bibAnnote{Ganusov2011}{This paper has mass action T cell killing rates}
+
 \bibitem{Warrender2006}
 Warrender C, Forrest S, Koster F (2006) {Modeling intercellular interactions in
   early Mycobacterium infection.}
 \newblock Bulletin of Mathematical Biology 68: 2233--2261.
 \bibAnnoteFile{Warrender2006}
-
-\bibitem{Beauchemin2006}
-Beauchemin C, Forrest S, Koster FT (2006) {Modeling Influenza Viral Dynamics in
-  Tissue}.
-\newblock LNCS Artificial Immune Systems 4163: 23--36.
-\bibAnnoteFile{Beauchemin2006}
-
-\bibitem{Lee2009}
-Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
-  and Prediction of the Adaptive Immune Response to Influenza A Virus
-  Infection}.
-\newblock Journal of Virology 83: 7151--7165.
-\bibAnnoteFile{Lee2009}
-
-\bibitem{Ganusov2008}
-Ganusov VV, {De Boer} RJ (2008) {Estimating in vivo death rates of targets due
-  to CD8 T-cell-mediated killing.}
-\newblock Journal of Virology 82: 11749--11757.
-\bibAnnoteFile{Ganusov2008}
-
-\bibitem{Banerjee2010b}
-Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
-  and times: perspectives on immune system architecture and implications for
-  artificial immune systems}.
-\newblock Swarm Intelligence 4: 301--318.
-\bibAnnoteFile{Banerjee2010b}
-
-\bibitem{Miller2003}
-Miller MJ, Wei SH, Cahalan MD, Parker I (2003) {Autonomous T cell trafficking
-  examined in vivo with intravital two-photon microscopy}.
-\newblock Proceedings of the National Academy of Sciences of the United States
-  of America 100: 2604--2609.
-\bibAnnoteFile{Miller2003}
 
 \bibitem{Gao2003}
 Gao P, Zhou Xy, Yashiro-ohtani Y, Yang Yf, Sugimoto N, et~al. (2003) {The
@@ -181,18 +154,6 @@ Gao P, Zhou Xy, Yashiro-ohtani Y, Yang Yf, Sugimoto N, et~al. (2003) {The
 \newblock Journal of Leukocyte Biology 73: 273--280.
 \bibAnnote{Gao2003}{CCL5 (RANTES) and CXCL10 (IP-10) concentrations inducing T
   cell chemotaxis (adhesion)}
-
-\bibitem{Banerjee2011}
-Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
-  Inflammatory Signals in Adaptive Immune Responses}.
-\newblock ICARIS 6825: 1--14.
-\bibAnnoteFile{Banerjee2011}
-
-\bibitem{Wu1986}
-Wu CFJ (1986) {Jackknife, Bootstrap and Other Resampling Methods in Regression
-  Analysis}.
-\newblock Annals of Statistics 14: 1261--1295.
-\bibAnnoteFile{Wu1986}
 
 \bibitem{Wu2011}
 Wu H, Kumar A, Miao H, Holden-Wiltse J, Mosmann TR, et~al. (2011) {Modeling of
@@ -208,19 +169,19 @@ Wu H, Kumar A, Miao H, Holden-Wiltse J, Mosmann TR, et~al. (2011) {Modeling of
 \newblock Nature Medicine 12: 1203--1207.
 \bibAnnoteFile{DeJong2006}
 
-\bibitem{Chan2005}
-Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
-  {Proinflammatory cytokine responses induced by influenza A (H5N1) viruses in
-  primary human alveolar and bronchial epithelial cells}.
-\newblock Respiratory Research 6: 135.
-\bibAnnoteFile{Chan2005}
-
 \bibitem{Chan2010}
 Chan RWY, Yuen KM, Yu WCL, Ho CCC, Nicholls JM, et~al. (2010) {Influenza H5N1
   and H1N1 Virus Replication and Innate Immune Responses in Bronchial
   Epithelial Cells Are Influenced by the State of Differentiation}.
 \newblock PLoS ONE 5: 9.
 \bibAnnoteFile{Chan2010}
+
+\bibitem{Chan2005}
+Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
+  {Proinflammatory cytokine responses induced by influenza A (H5N1) viruses in
+  primary human alveolar and bronchial epithelial cells}.
+\newblock Respiratory Research 6: 135.
+\bibAnnoteFile{Chan2005}
 
 \bibitem{Zeng2011}
 Zeng H, Pappas C, Katz JM, Tumpey TM (2011) {The 2009 pandemic H1N1 and
@@ -283,5 +244,50 @@ Francis K, Palsson BEO (1997) {Effective intercellular communciation distances
   and diffusion}.
 \newblock Proceedings of the National Academy of Sciences 94: 12258--12262.
 \bibAnnoteFile{Francis1997}
+
+\bibitem{Beauchemin2006}
+Beauchemin C, Forrest S, Koster FT (2006) {Modeling Influenza Viral Dynamics in
+  Tissue}.
+\newblock LNCS Artificial Immune Systems 4163: 23--36.
+\bibAnnoteFile{Beauchemin2006}
+
+\bibitem{Lee2009}
+Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
+  and Prediction of the Adaptive Immune Response to Influenza A Virus
+  Infection}.
+\newblock Journal of Virology 83: 7151--7165.
+\bibAnnoteFile{Lee2009}
+
+\bibitem{Ganusov2008}
+Ganusov VV, {De Boer} RJ (2008) {Estimating in vivo death rates of targets due
+  to CD8 T-cell-mediated killing.}
+\newblock Journal of Virology 82: 11749--11757.
+\bibAnnoteFile{Ganusov2008}
+
+\bibitem{Banerjee2010b}
+Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
+  and times: perspectives on immune system architecture and implications for
+  artificial immune systems}.
+\newblock Swarm Intelligence 4: 301--318.
+\bibAnnoteFile{Banerjee2010b}
+
+\bibitem{Miller2003}
+Miller MJ, Wei SH, Cahalan MD, Parker I (2003) {Autonomous T cell trafficking
+  examined in vivo with intravital two-photon microscopy}.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 100: 2604--2609.
+\bibAnnoteFile{Miller2003}
+
+\bibitem{Banerjee2011}
+Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
+  Inflammatory Signals in Adaptive Immune Responses}.
+\newblock ICARIS 6825: 1--14.
+\bibAnnoteFile{Banerjee2011}
+
+\bibitem{Wu1986}
+Wu CFJ (1986) {Jackknife, Bootstrap and Other Resampling Methods in Regression
+  Analysis}.
+\newblock Annals of Statistics 14: 1261--1295.
+\bibAnnoteFile{Wu1986}
 
 \end{thebibliography}

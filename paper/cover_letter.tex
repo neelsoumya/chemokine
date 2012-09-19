@@ -1,0 +1,79 @@
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+
+% Use doublespacing - comment out for single spacing
+\usepackage{setspace} 
+\doublespacing
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+% Use the PLoS provided bibtex style
+\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+\usepackage{multirow}
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+% figure files reside in the figures/ directory
+\graphicspath{
+{figures/}
+}
+
+%% END MACROS SECTION
+
+\begin{document}
+
+\begin{flushleft}Dear Editors, \end{flushleft} 
+
+We submit this manuscript entitled "Spatially explicit model of the lymphocyte diaspora in influenza-infected lung quantifies constraints of chemokine directed migration" for consideration of publication in PLoS Computational Biology.  We feel this work will be of interest to investigators modeling the immune response for the ultimate purpose of improving vaccine design.  
+
+Many insights have derived from modeling the immune response using differential equations (ODEs) and delay differential equations (DDEs) to simulate linear and non-linear components.  We have taken a different approach, using agent-based spatially-explicit modeling to examine the recruitment of antigen-specific T cells to influenza-infected foci in the lung during a primary immune response.   ODE and DDE models do not take spatial effects into account, but given that the search occurs within a very large uninfected tissue space, we felt the efficiency of this search, depending largely on chemokine signaling of infected regions, needed to be carefully examined.  We found that, similar to the highly efficient recruitment of precursor T cells to the lymph nodes, activated T cell search is indeed efficient, with one caveat applicable to large infected foci.  We wish to stimulate other investigators to use agent-based modeling to carefully examine other aspects of the immune response in a spatially explicit manner, thus improving the comprehensive models of the immune response. \\
+
+This work has not been published elsewhere, and is complementary to a recent publication from our group (H Mitchell, D Levin, et al. J Virol 2011;85(2):1125-1135). \\
+
+All authors have read and approved the manuscript. 
+
+\begin{flushleft}Respectfully yours,\end{flushleft}
+Drew Levin \\
+Stephanie Forrest \\
+Soumya Banerjee \\
+Candice Clay \\
+Melanie Moses \\
+Frederick Koster
+
+\end{document}
