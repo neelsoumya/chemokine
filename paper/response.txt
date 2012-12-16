@@ -1,0 +1,173 @@
+Levin, et. al. 
+  Spatially explicit model of the lymphocyte diaspora in influenza-
+infected lung quantifies constraints of chemokine directed migration
+
+---------------------
+RESPONSE TO REVIEWERS
+---------------------
+
+--- Reviewer #1 ---
+
+1) The title may be misleading as the model is very simplified from the 
+immunological viewpoint and gives rather a qualitative rather than a
+quantitative view of the spatial dynamics.
+
+- We have changed the title by removing the words 'quantifies constraints'
+and have replaced them with 'reveals threshold' which we believe more
+accurately reflects the paper's main focus. 
+
+
+2) Introduction, p3: It would be interesting to add a general reference to 
+agent-based models (ABM), in particular spatial ABM in immunology and briefly
+justify the use of an ABM rather than partial differential equations in the
+present context.
+
+- Added reference to Beauchemin 2006 paper that discusses ABM advantages vs.
+differential equations as well as Bauer 2009.  The last scentence in the
+paragraph has been rewritten for clarity.
+
+
+3) Computational modelling section: there is no reference to Fig. 1 in the 
+main text. As far as I understand the drawing in Fig. 1, I see 16 branches 
+rather than 14, why?
+
+- A reference to Fig. 1 has been added to the Model section.  The number 14
+refers to the depth of the bronchial tree, where each layer represents the
+bifurcation of a branch.  Thus, each level results in the doubling of the total
+number of pathways.  14 branches refers to 2^14 = 16,384 endpoints.  The
+figure simplifies this to 4 layers and thus 2^4 = 16 endpoints.  The figure
+has been edited to read '14 bifurcations' rather than '14 branches' and the
+caption has been changed to read 'vascular bifurcations' for clarity.
+
+
+4) Acronyms in text and tables should be defined (for example, ODE, FOI, NHBE,
+ATC, ?).
+
+- Acronyms in the text have been either defined or removed.  Acronyms in 
+Table 1 have been defined in the caption.
+
+
+5) Model definition:
+   - More details concerning the implementation of the ABM need to be given,
+       at least in the supplement: a short description of the spatial 
+       arrangement (size of the simulation space, cell arrangement, number of
+       epithelial cells, as well as how T cell movement vs. particle diffusion
+       has been implemented.
+   - IgM addition is mentioned in section 2.1 of the supplement but not 
+       indicated in the main text.
+   - What happens in this ABM when a free virus particle infects a cell: is it
+       absorbed and does it disappear from the pool of free viruses?
+
+- Two new sections were added to the supplement.  One describing details of the
+general CyCells model environment and one describing details of the model 
+specific to this paper.  These sections address all the points raised here
+aside from IgM.
+  -Added a sentence referencing the IgM implementation to the main paper.
+
+
+6) Materials, p6: the sentence "treatment of the monolayer with protease" is
+not understandable without reading reference [19] and requires here more
+explanation.
+
+- TODO: Fred
+
+
+7) Chemokine production, p6:
+   - The definition of all the variables and parameters of the ODE model in 
+       the supplement (eqs S1) should be added in order to be more self-
+       contained.
+   - Fig. 3: "> 8500 pg/mL" is indicated as a measurement threshold for sH1N1.
+       Why is this not also the case for aH5N1 and pH1N1?
+
+- The main differential equation has been moved to the beginning of the model
+section of the main paper.
+- TODO: Fred - 8,500 limit description
+
+
+8) T cell sensitivity, p7, top: The sentence "Because multiple T cells ? we 
+hypothesize ? more T cells are not more efficient above a critical threshold"
+is unclear. Is it not that the probability of apoptosis induction will increase
+with the T cell number even if the rate of transition from secreting to
+apoptotic cells does not scale with T cell number?
+
+- It is NOT that the probability would increase with additional T cells at the
+infected epithelial cell in our model.  The section has been rearranged. The
+detail regarding multiple T cells has been moved to other sections to be more
+clear.  We have also added two expanded model description sections to the 
+supplement that we hope clarifies this point.
+
+
+9) Spatial effects:
+   - p7, bottom: refer also to Fig. S1
+   - Figure 6, legend: Can the difference in behaviour for pH1N1 and sH1N1 
+       infections not be explained by the difference in IP-10 production rates
+       (even if small)?
+
+- Reference to Fig. S1 was added.
+- We performed a new model run combining pH1N1 virus and sH1N1 chemokine and found no
+difference in the infection profile.  A sentence was added to the end of the
+Fig. 6 caption reflecting this.
+
+
+10) Discussion, p10, 2d §: reference should also be given to section 2.2 of the
+supplement where combinations of chemokines are considered.
+
+- Reference added.
+
+
+11) Eqs S1: add definition of variables and parameters
+    - Eqs S2: add definition of t_rc and v_tcell; reference to Fig. 1 of the 
+        main text should also be given in section 1.2 of the supplement as eqs.
+        S2 relate to the bottom part of this figure.
+    - Section 2.2: does the conclusion that RANTES does not play a significant 
+        role for H1N1 infections not simply follows from the fact that IP-10 
+        has a much higher production rate (about 100 times) than RANTES in the
+        H1N1 strains (Table 2, main text)?
+
+- We have moved the first equation from the supplement to the main paper to 
+help address the point that the paper is not self-contained.  We have added
+a new table with descriptions and values for each population and parameter
+of this equation.
+  - Done
+  - Indeed, it does follow given the assumption that T cells are equally
+  sensitive to each chemokine.  The text in S2.2 has been modified to make
+  that assumption clear and to strengthen the conclusion.
+
+
+12) Minor points:
+    - p7, Fig. 5, top row: T cells are barely visible. Could this be improved?
+    - p7, Fig. 6, legend, 5th line:  add "more expressing cells than sH1N1".
+    - p8, line 4: taking the viral production indicated in Table 2, I find 2632
+        rather than 2643
+    - p9, line 12 from bottom: greater ? than
+    - p9, line 3 from bottom: replace "into" by "in"
+    - Note that some Table and reference numbers have been replaced by question
+        marks in the supplement
+
+- The figure has been artificially enhanced to improve visibility and a note 
+    regarding the change has been added to the caption.
+- Done
+- This was calculated before we rounded to significant digits.  Fixed.
+    (Impressive eye for detail!)
+- TODO: Fred
+- Done
+- Fixed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

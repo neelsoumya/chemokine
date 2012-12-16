@@ -13,6 +13,13 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{Miao2010}
+Miao H, Hollenbaugh J, Zand M, Holden-Wiltse J, Mosmann T, et~al. (2010)
+  {Quantifying the early immune response and adaptive immune response kinetics
+  in mice infected with influenza A virus}.
+\newblock Journal of virology 84: 6687--6698.
+\bibAnnoteFile{Miao2010}
+
 \bibitem{Mitchell2011}
 Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
   level of replication efficiency of 2009 (H1N1) pandemic influenza virus than
@@ -21,12 +28,16 @@ Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
 \newblock Journal of virology 85: 1125--35.
 \bibAnnoteFile{Mitchell2011}
 
-\bibitem{Miao2010}
-Miao H, Hollenbaugh J, Zand M, Holden-Wiltse J, Mosmann T, et~al. (2010)
-  {Quantifying the early immune response and adaptive immune response kinetics
-  in mice infected with influenza A virus}.
-\newblock Journal of virology 84: 6687--6698.
-\bibAnnoteFile{Miao2010}
+\bibitem{Desmetz2006}
+Desmetz C, Lin YL, Mettling C, Portal\`{e}s P, Rabesandratana H, et~al. (2006)
+  {The strength of the chemotactic response to a CCR5 binding chemokine is
+  determined by the level of cell surface CCR5 density.}
+\newblock Immunology 119: 551--61.
+\bibAnnote{Desmetz2006}{--> the important factor seems to be the fluctuations
+  of CCR5 (receptor) expression on T cells and less the fluctuations of CCL5
+  (chemokine) concentration on T cell chemotactic activity. - CCL5
+  concentration dependent T cell migration (in vitro) --> CCL5 T cell
+  sensitivity ?}
 
 \bibitem{Peters1983}
 Peters RH (1983) {The ecological implications of body size}, volume Cambridge.

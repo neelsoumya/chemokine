@@ -85,30 +85,11 @@ $\ast$ E-mail: Corresponding drew@cs.unm.edu
 % authors may use "Analysis" 
 \section{Models}
 
-\subsection{Delay Differential Equation Model}
-
-We adapt the delay differential equations first presented in \cite{Mitchell2011} to find values for chemokine production rates.  We use initial populations and parameter values from the previous study while adding an extra equation to model chemokine production (final equation):
-
-\begin{equation*}
-\label{EqS1}
-\begin{aligned}
-\dot{T} &= - \beta T V \\
-\dot{I_1} &= \beta T V - \beta T[t-\tau_1]V[t-\tau_1] \\
-\dot{I_2} &= \beta T[t-\tau_1]V[t-\tau_1] - \delta I_2 \\
-\dot{V} &= \frac{p}{1+eF} I_2  - \beta T V  \\
-\dot{F} &=  I_1[t-\tau_2] \\
-\dot{C} &= r I[t-\tau_3] - d C \\
-\end{aligned}
-\tag{\textbf{S}1}
-\end{equation*}
-\vspace{.05in}
-
-$C$ represents the chemokine population.  Two parameters, $r$ and $d$, control the rate of chemokine production and the rate of chemokine decay.  Chemokine decay, $d$, was set to $3.8508\cdot10^{-4}$/s, which equates to a 30 minute half-life. $r$, being the only free parameter, was fit to the empirical data shown in Fig. 1 of the main paper using Matlab's \texttt{nlinfit} function.  This process was repeated six times, once for each set of data.  $\tau_3$, the chemokine production delay, was set to 8 hours for IP-10 fits and 16 hours for RANTES fits.
-
 \subsection{T Cell Production Rate}
 
-To find a value for $\sigma$ we use a differential equation model from \cite{Miao20101}:
+To find a value for $\sigma$, the rate of production of activated T cells (ATCs) we use a differential equation model from \cite{Miao2010}:
 
+{\footnotesize
 \begin{equation*}
 \label{EqS2}
 \begin{aligned}
@@ -123,36 +104,74 @@ To find a value for $\sigma$ we use a differential equation model from \cite{Mia
 	3/\mbox{day} & \mbox{,} & t \geq 5  
 	\end{array}\right. \\
 \end{aligned}
-\tag{\textbf{S}2}
+\tag{\textbf{S}1}
 \end{equation*}
+}
 \vspace{.05in}
 
-where $N_{c}$ is the number of circulating activated antigen-specific T cells, $N'_{f}$ is the number of circulating T cells that have found and exit into a region of lung tissue expressing chemokines and $N_{f}$ is the number of circulating T cells that have found an infected region. $T$ is the number of uninfected target cells, $I$ is the number of productively infected cells, and $V$ is the viral titer in serum. The infected region is assumed to be of radius $r$ and is within a region expressing chemokines of radius $r'$ ($r  < r'$). The lung is assumed to be a circular region with radius $R$. The area of the infected region is equal to the area of an infected cell (of radius $r_{cell}$) multiplied by the number of infected cells. The area of the region expressing chemokine was found to be related non-linearly to the number of infected cells ($\pi r'^{2} = a \sqrt{I} + b$) where $a$ and $b$ are constants that depend on the viral strain.
+where $N_{c}$ is the number of circulating activated antigen-specific T cells, $N'_{f}$ is the number of circulating T cells that have found and exit into a region of lung tissue expressing chemokines and $N_{f}$ is the number of circulating T cells that have found an infected region. $T$ is the number of uninfected target cells, $I$ is the number of productively infected cells, and $V$ is the viral titer in serum. The infected region is assumed to be of radius $r$ and is within a region expressing chemokines of radius $r'$ ($r  < r'$). The lung is assumed to be a circular region with radius $R$. The area of the infected region is equal to the area of an infected cell (of radius $r_{cell}$) multiplied by the number of infected cells. See Fig. 1 for more details about the model.  The area of the region expressing chemokine was found to be related non-linearly to the number of infected cells ($\pi r'^{2} = a \sqrt{I} + b$) where $a$ and $b$ are constants that depend on the viral strain.
 
-Circulating activated antigen-specific T cells ($N_{c}$) are assumed to be released from lymph nodes at a constant rate $\sigma$. These circulating cells then transition into $N'_{f}$ and $N_{f}$ at rates proportional to the areas of the chemokine expressing and infected regions relative to the whole lung area. Circulating cells that are in the chemokine expressing region ($N'_{f}$) transition to the infected region after walking randomly for an average time proportional to the difference in the radii between the two regions ($r' - r$). Target cells ($T$) become infected by virus at rate $\beta TV$, where $\beta$ is the rate constant characterizing infection. Infected cells ($I$) die at rate $\delta$ in addition to being lysed by T cells ($N_{f}$) at a rate $k_{e}$. Finally the viral titers ($V$) increase due to production of virus at rate $p$ by infected cells. Virus is also cleared due to uptake by infected cells (at a rate $- \beta TV$) and due to antibody (at a rate $\gamma (t)$ that changes after 5 days post infection). The initial viral titer was initialized to 10,000 PFUs and the initial number of target cells was one million. The initial number of infected cells is assumed to be zero. This ODE was fit to data taken from \cite{Miao2010} using Matlab's \texttt{nlinfit} function in order to obtain a value for $\sigma$.
+Circulating activated antigen-specific T cells ($N_{c}$) are assumed to be released from lymph nodes at a constant rate $\sigma$ and circulate to the $N'_{f}$ population over a time defined by $t_{rc}$. These circulating cells transition into $N'_{f}$ and $N_{f}$ at rates proportional to the areas of the chemokine expressing and infected regions relative to the whole lung area. Circulating cells that are in the chemokine expressing region ($N'_{f}$) transition to the infected region after walking randomly for an average time proportional to the difference in the radii between the two regions ($r' - r$) at a given speed, $v_{tcell}$. Target cells ($T$) become infected by virus at rate $\beta TV$, where $\beta$ is the rate constant characterizing infection. Infected cells ($I$) die at rate $\delta$ in addition to being lysed by T cells ($N_{f}$) at a rate $k_{e}$. Finally the viral titers ($V$) increase due to production of virus at rate $p$ by infected cells. Virus is also cleared due to uptake by infected cells (at a rate $- \beta TV$) and due to antibody (at a rate $\gamma (t)$ that changes after 5 days post infection). The initial viral titer was initialized to 10,000 PFUs and the initial number of target cells was one million. The initial number of infected cells is assumed to be zero. This ODE was fit to data taken from \cite{Miao2010} using Matlab's \texttt{nlinfit} function in order to obtain a value for $\sigma$.  The final value was found to be 777 per hour.
+
+
+\subsection{CyCells Implementation Details}
+
+The CyCells modeling environment splits its populations into two types: cells and molecules.  Cells are considered to be unique agents and are modeled individually.  On the other hand, molecules are considered to be too small and numerous to model explicitly and are thus represented as compartmentalized concentrations.  These compartments are arranged as a grid that covers the environment.  Each square in the grid contains a unique concentration of the given molecule.  Multiple molecules are represented in separate grids.
+
+Molecular behavior is limited to diffusion and decay.  At each time step, CyCells decreases the concentration of each square in the grid according to the decay rate specified for the given molecule.  CyCells then diffuses the molecules by applying a discrete diffusion equation to each grid square, taking into account the specified diffusion constant and the concentrations in neighboring squares.
+
+New molecules can be secreted by cell objects, such as an infected cell secreting new virus.  In this scenario CyCells calculates the amount of virus secreted per time step, based upon the cell's defined production rate, and then adds this quantity to the grid square that overlaps the secreting cell.  If a cell wants to remove molecular concentration, it will subtract from the square it overlaps.  If the concentration at that square is not enough, concentration will be removed from neighboring squares in an ever expanding diamond.
+
+When a cell's behavior depends on a local molecular concentration, the cell will measure the local concentration at its position by calculating a linearly interpolated combination of the concentrations in the grid squares surrounding the cell.
+
+
+\subsection{Model Implementation Details}
+
+An overview of the model implementation is shown in Fig. 2.  The model is initialized with one virus-secreting cell placed in the middle of a 2-dimensional sheet of hexagonally-tiled epithelial cells (46,085 total cells).  The sheet measures 10$mm$ per side, which is large enough to contain the infection (Fig. 5).  The molecular grid (S1.2) is initialized with a resolution of 50$\mu m$.
+
+Healthy cells transition to virus-incubating based on a probability that scales linearly with the local virus concentration.   When a cell `becomes infected' it removes the amount of viral concentration equal to a single virion. 
+
+Virus-incubating cells idle for 10 hours (with standard deviation $\sigma=1$ hour) and then transition to virus-secreting cells.  Virus-incubating cells also begin to secrete chemokine after 8 hours (except for aH5N1 which only secretes RANTES after a 16 hour delay).  
+
+Virus-secreting cells secrete both virus and chemokine (the RANTES portion of the chemokine production is added in 16 hours after the initial infection) and die after 1,000 minutes of production (16.7 hours).  Virus-secreting cells will also probabilistically transition to apoptizing cells in the presence of T cells (defined by the existence of a T cell within 5$\mu m$).  The number of T cells in the vicinity of the virus-secreting cell has no effect on the rate that apoptosis is induced in the model.
+
+Apoptizing cells continue to secrete virus and chemokine for one hour and then die.
+
+T cells are added to the model at a constant rate of 777 per hour (S1.1) through a global `oracle' cell that represents the lymph node.  Because the model environment is only a small portion of the entire lung (1\%), most of the T cells miss the model window and are not visually represented.  The T cells that miss enter a dormant searching state and transition to recirculating after a 10 minute delay.  The cells that enter the model window are placed at a random position and begin a random walk.  At each step, these searching cells check the local chemokine concentration.  If the concentration is above the sensitivity threshold, the T cells immediately transition to the chemotaxing state.  If not, searching T cells transition to the recirculating state and are removed from the model window.  Searching and recirculating T cells have a probabilistic decay rate that corresponds to a 3 day lifespan.
+
+Recirculating T cells are not visually represented.  These cells are individually tracked for 6 minutes, after which they are reintroduced as new searching cells with a new chance of entering the model window.
+
+Chemotaxing T cells move directly up the chemokine gradient until they find a local maximum.  T cells probabilistically decay at a rate corresponding to a 2 hour lifespan.  Chemotaxing T cells have no effect other than inducing apoptosis in virus-secreting cells by proximity.
+
+
 
 % Results and Discussion can be combined.
 \section{Results}
 
 \subsection{Stochastic modeling effects}
 
-Unlike ODE models, which are deterministic, stochastic models such as CyCells can produce different results on different runs (Figure~\ref{fig:variance}).  To test the strength of this effect, we ran each model fifty times using the default parameters given in Table~\ref{table:parameters}.  $R^2$ values were calculated for individual runs versus the average of all runs.  Pandemic H1N1 showed the least inter-run variance with an mean $R^2$ value of 0.9935 and standard deviation of 0.0029.  sH1N1 had a mean $R^2$ 0.9859 with a standard deviation of 0.0109.  aH5N1 had a mean $R^2$ of 0.9167 with a standard deviation of 0.0726.  
+Unlike ODE models, which are deterministic, stochastic models such as CyCells can produce different results on different runs (Fig.~S\ref{fig:variance}).  To test the strength of this effect, we ran each model fifty times using the default parameters given in Table 2.  $R^2$ values were calculated for individual runs versus the average of all runs.  Pandemic H1N1 showed the least inter-run variance with an mean $R^2$ value of 0.9935 and standard deviation of 0.0029.  sH1N1 had a mean $R^2$ 0.9859 with a standard deviation of 0.0109.  aH5N1 had a mean $R^2$ of 0.9167 with a standard deviation of 0.0726.  
 
 Each run took the calculated viral production and chemokine production rates for the three different strains of influenza as input and reported the total number of infected cells, including incubating, virus secreting and apoptotic, but not including dead cells.  Therefore the figures approximate plaque growth over time.
 
 Overlaying multiple runs on a single plot reveals a slight growth rate transition 3 days p.i., which reflects the addition of IgM.  In addition, for each infection the number of infected cells declines quickly at day five due to the T cell response. 
 
-The three strains show different levels of virulence, consistent with the results found in \cite{Mitchell2011} (Fig.~\ref{fig:variance}).  The rapid production of the pandemic H1N1 virus prevents the immune response from containing the infection.  Because pH1N1 is replicates at such a rapid rate, the window of opportunity for T Cells to gain ground is too small.  aH5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH5N1 recovers and continues to expand.
+The three strains show different levels of virulence, consistent with the results found in \cite{Mitchell2011} (Fig.~S\ref{fig:variance}).  The rapid production of the pandemic H1N1 virus prevents the immune response from containing the infection.  Because pH1N1 is replicates at such a rapid rate, the window of opportunity for T Cells to gain ground is too small.  aH5N1 is cleared completely, sH1N1 is contained but not fully cleared, and pH1N1 recovers and continues to expand.
 
 
 
 \subsection{Chemokine combinations}
 
-Because aH5N1 has been shown to suppress the production of interferon \cite{Mitchell2011}, we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table~\ref{table:strains}).  Because of this behavior IP-10 was not included in the aH5N1 model runs.  Four models runs were performed for each strain (two for aH5N1) to look at how the presence and/or lack of specific chemokines affect the simulated immune response (Fig.~\ref{fig:chemokine}).  The lack of both chemokines leads to runaway infections in all three strains.  The presence of only RANTES is enough to contain the aH5N1 infection, but is weaker than IP-10 in both H1N1 strains.  IP-10 alone proves to be as effective as the combination of IP-10 and RANTES, suggesting that RANTES does not play a significant role in infections that stimulate an IP-10 response.  We assume receptor sensitivity is the same for both chemokines and that the chemokines in combination work additively.
+Because aH5N1 has been shown to suppress the production of interferon \cite{Mitchell2011}, we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table 3).  Because of this behavior IP-10 was not included in the aH5N1 model runs. 
 
+T cell sensitivity depends on receptor density \cite{Desmetz2006} and this was assumed to be constant.  Thus, the chemokines in combination work additively in our model. 
+
+Four models runs were performed for each strain (two for aH5N1) to look at how the presence and/or lack of specific chemokines affect the simulated immune response (Fig.~S\ref{fig:chemokine}).  The lack of both chemokines leads to runaway infections in all three strains.  The presence of only RANTES is enough to contain the aH5N1 infection, but is weaker than IP-10 in both H1N1 strains.  In sH1N1 and pH1N1 simulations, IP-10 alone proves to be as effective as the combination of IP-10 and RANTES.  This suggests that RANTES does not play a significant role in infections that stimulate an IP-10 response due to the higher production rates of IP-10.  
 
 % The bibtex filename
 \bibliography{references}
+
+\pagebreak
 
 \section*{Figure Legends}
 
@@ -171,7 +190,7 @@ Because aH5N1 has been shown to suppress the production of interferon \cite{Mitc
 
 \begin{figure}[ht!]
 \begin{center}
- \includegraphics[width=\textwidth]{variance}
+% \includegraphics[width=\textwidth]{variance}
  \end{center}
 \caption{Model results: Time series plots of fifty runs of aH5N1 (A), sH1N1 (B), and pH1N1 (C) infections (gray). IP-10 and RANTES were simulated in each run, except for aH5N1, which  produced only RANTES.  Each run was initialized identically for each strain save for the random seed.  The middle line shows the average while the outer lines show the 95\% confidence interval.} 
  \label{fig:variance}
@@ -180,11 +199,33 @@ Because aH5N1 has been shown to suppress the production of interferon \cite{Mitc
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=\textwidth]{chemokine}
+%	\includegraphics[width=\textwidth]{chemokine}
 	\caption{Effects of different chemokine combinations.  A) aH5N1 does not stimulate an IP-10 response.  B-C) sH1N1 and pH1N1 show no significant difference between IP-10 alone versus IP-10 and RANTES combined.}
 	\label{fig:chemokine}
 \end{center}
 \end{figure}
+
+
+\begin{figure}[ht!]
+\caption{The first of three overlaid videos of a representative seasonal H1N1 infection.  This video spans the 10 day infection and shows the cells as they transition from healthy to infected to dead.  T cells show half way through the simulation.  Healthy cells are gray, virus-incubating cells are yellow, virus-secreting cells are orange, apoptotic cells are red, and T cells are green.} 
+ \label{video:cell_view}
+\end{figure}
+
+\begin{figure}[ht!]
+\caption{The second of three overlaid videos of a representative seasonal H1N1 infection.  This video spans the 10 day infection and shows the virus concentration.  Notice the volatility when T cells arrive halfway through the simulation.  Virus concentration ranges from 1e-13 mols/mL (white) to 1e-27 mols/mL (black).  Refer to Figure 5 for the detailed legend. } 
+ \label{video:virus_view}
+\end{figure}
+
+\begin{figure}[ht!]
+\caption{The third of three overlaid videos of a representative seasonal H1N1 infection.  This video spans the 10 day infection and shows the chemokine concentration.  Notice the volatility when T cells arrive halfway through the simulation.  Chemokine concentration ranges from 1e8 ng/mL (white) to 1e-6 ng/mL (black).  Refer to Figure 5 for the detailed legend. } 
+ \label{video:chemokine_view}
+\end{figure}
+
+\begin{figure}[ht!]
+\caption{A closer look at the 2009 pandemic simulation.  This video shows the infection from day 6 to day 7 with each frame spanning 100 simulated seconds.  Healthy cells are gray, virus-incubating cells are yellow, virus-secreting cells are orange, apoptotic cells are red, and T cells are green.  Note the high proportion of virus-secreting cells (orange) early on.  As time passes, secreting cells are gradually contained to the point where they become very sparse.  T cell clumping often prevents the T cells from quick discovery of new secreting cells.}
+\end{figure}
+
+\pagebreak
 
 \section*{Tables}
 
@@ -222,28 +263,6 @@ Because aH5N1 has been shown to suppress the production of interferon \cite{Mitc
 \label{table:supplement}
 \end{center}
 \end{table}
-
-
-\section*{Video}
-
-\begin{figure}
-\caption{First of three overlaid videos of a representative seasonal H1N1 infection.  This video spans the 10 day infection and shows the cells as they transition from healthy to infected to dead.  T cells show half way through the simulation.  Healthy cells are gray, virus-incubating cells are yellow, virus-secreting cells are orange, apoptotic cells are red, and T cells are green.} 
- \label{video:cell_view}
-\end{figure}
-
-\begin{figure}
-\caption{Second of three overlaid videos of a representative seasonal H1N1 infection.  This video spans the 10 day infection and shows the virus concentration.  Notice the volatility when T cells arrive halfway through the simulation.  Virus concentration ranges from 1e-13 mols/mL (white) to 1e-27 mols/mL (black).  Refer to Figure 5 for the detailed legend. } 
- \label{video:virus_view}
-\end{figure}
-
-\begin{figure}
-\caption{Third of three overlaid videos of a representative seasonal H1N1 infection.  This video spans the 10 day infection and shows the chemokine concentration.  Notice the volatility when T cells arrive halfway through the simulation.  Chemokine concentration ranges from 1e8 ng/mL (white) to 1e-6 ng/mL (black).  Refer to Figure 5 for the detailed legend. } 
- \label{video:chemokine_view}
-\end{figure}
-
-\begin{figure}
-\caption{A closer look at the 2009 pandemic simulation.  This video shows the infection from day 6 to day 7 with each frame spanning 100 simulated seconds.  Healthy cells are gray, virus-incubating cells are yellow, virus-secreting cells are orange, apoptotic cells are red, and T cells are green.  Note the high proportion of virus-secreting cells (orange) early on.  As time passes, secreting cells are gradually contained to the point where they become very sparse.  T cell clumping often prevents the T cells from quick discovery of new secreting cells.}
-\end{figure}
 
 
 \end{document}

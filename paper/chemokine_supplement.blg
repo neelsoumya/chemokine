@@ -2,48 +2,47 @@ This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
 The top-level auxiliary file: chemokine_supplement.aux
 The style file: plos2009.bst
 Database file #1: references.bib
-Warning--I didn't find a database entry for "Miao20101"
 Warning--can't use both author and editor fields in Peters1983
 Warning--can't use both volume and number fields in Peters1983
-You've used 4 entries,
+You've used 5 entries,
             2441 wiz_defined-function locations,
-            581 strings with 6087 characters,
-and the built_in function-call counts, 4239 in all, are:
-= -- 391
-> -- 68
+            591 strings with 6803 characters,
+and the built_in function-call counts, 5349 in all, are:
+= -- 493
+> -- 92
 < -- 1
-+ -- 34
-- -- 17
-* -- 382
-:= -- 499
-add.period$ -- 9
-call.type$ -- 4
-change.case$ -- 3
++ -- 46
+- -- 23
+* -- 482
+:= -- 632
+add.period$ -- 11
+call.type$ -- 5
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 418
-empty$ -- 440
-format.name$ -- 20
-if$ -- 934
+cite$ -- 12
+duplicate$ -- 526
+empty$ -- 552
+format.name$ -- 27
+if$ -- 1180
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 49
-newline$ -- 36
-num.names$ -- 4
-pop$ -- 56
+int.to.str$ -- 5
+missing$ -- 62
+newline$ -- 41
+num.names$ -- 5
+pop$ -- 68
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 37
+skip$ -- 49
 stack$ -- 0
-substring$ -- 632
-swap$ -- 94
+substring$ -- 795
+swap$ -- 120
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 27
-width$ -- 5
-write$ -- 61
-(There were 3 warnings)
+while$ -- 36
+width$ -- 6
+write$ -- 72
+(There were 2 warnings)

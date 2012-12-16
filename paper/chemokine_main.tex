@@ -63,7 +63,7 @@
 % Title must be 150 characters or less
 \begin{flushleft}
 {\Large
-\textbf{Spatially explicit model of the lymphocyte diaspora in influenza-infected lung quantifies constraints of chemokine directed migration}
+\textbf{Spatially explicit model of the lymphocyte diaspora in influenza-infected lung reveals constraints on chemokine directed migration}
 }
 % Insert Author names, affiliations and corresponding author email.
 \\
@@ -90,7 +90,7 @@ During the primary immune response, clearance of influenza in the lung requires 
 
 Avian H5N1, seasonal H1N1, and 2009 pandemic influenza strains were used to induce chemokine production \textit{in vitro}.  Of the chemokines tested, secretion of CXCL10 (IP-10) and CCL5 (RANTES) were stimulated by infection, with IP-10 dominating the migration due to higher concentrations.  A differential equation model was fit to empirical chemokine production rates and coupled with published T cell parameters to calibrate the spatial model to test inter-strain variation on T cell recruitment in the lungs.  We observe that T cell sensitivity to chemokine is high enough to maximize their efficiency.  The modeled immune response is unable to clear the pandemic strain due to its high rate of viral production.  
 
-The spatial nature of the model reveals unique challenges to T cell recruitment not visible in spatially homogeneous ODE models.  Infected cells can become isolated in expanding plaques, impeding infection control.  In the model, T cells executed an efficient search with sensitivity to either chemokine.  A key limitation imposed on T cells was illustrated by their failure to clear the pandemic H1N1 virus after day 6, when T cells became inefficient in large infected foci as revealed in cinematics. This spatial model is consistent with efficient T cell recruitment to infected lung.  Without an apparent means to induce increased efficiency, vaccination remains the key to shortening the interval between initial infection and T cell activation.
+The spatial nature of the model reveals unique challenges to T cell recruitment not visible in standard differential equation models.  Infected cells can become isolated in expanding plaques, impeding infection control.  In the model, T cells executed an efficient search with sensitivity to either chemokine.  A key limitation imposed on T cells was illustrated by their failure to clear the pandemic H1N1 virus after day 6, when T cells became inefficient in large infected foci as revealed in cinematics. This spatial model is consistent with efficient T cell recruitment to infected lung.  Without an apparent means to induce increased efficiency, vaccination remains the key to shortening the interval between initial infection and T cell activation.
 
 
 % Please keep the Author Summary between 150 and 200 words
@@ -102,28 +102,47 @@ Clearance of influenza from the lung depends strongly on the efficiency with whi
 
 \section*{Introduction}
 
-The adaptive immune response induced during acute influenza A infection is a complex web of defense mechanisms that controls all but the most virulent strains.  Understanding its components and their interactions are relevant to improving vaccines and strategies to control immunopathology. Elegant studies in the mouse model have described the induction and effector phases of the adaptive immune response, including functional capabilities of the innate interferon-directed response, macrophages, specific antibody, and cytotoxic effector lymphocytes \cite{Sallusto2000, Joo2008, Mackay2008}.   CD8+ T cells are necessary for the resolution of pneumonia and complete clearance of mouse-adapted influenza strains \cite{Sallusto2000, Joo2008, Mackay2008, Miao2010}, but gaps remain in our understanding of the behavior of activated T cells in infected tissue.
+The adaptive immune response induced during acute influenza A infection is a complex web of defense mechanisms that control viral replication of all but the most virulent strains.  Understanding the behavior and interactions of each cellular component may lead to improved vaccines and strategies to control immunopathology.   The innate immune response is critical for early control of viral replication, followed by antibody-mediated viral neutralization \cite{Kohlmeier2009a, Joo2008, Oslund2011}.   Complete resolution of influenza pneumonia depends on antigen-specific CD8+ T effector cells \cite{Cerwenka1999, Kim2011}.  The murine model has been critical in the reductive analysis of each phase and component, permitting temporally explicit descriptions of the induction phase in the regional lymph node \cite{Miller2003, Allan2006, Ingulli2009} where recruitment of clonal precursor CD8 T cells is highly efficient \cite{VanHeijst2009}.   On approximately day 5 after infection activated CD8 T cells are released from the secondary lymphoid tissue \cite{Miao2010a} and distributed throughout the body in a process known as the ‘lymphocyte diaspora’ \cite{Marshall2001}.
 
-The generally held view of the sequence of CD8+ T cell events during a primary immune response to influenza in the lung involves the following steps: dendritic cells bearing specific antigen migrate from the lung to the draining lymph node where naive T and B cell precursors are activated in specialized architecture \cite{Saenz2010, Beltman2007, Handel2008, Zheng2008, Ingulli2009, Allan1990}.  T cells proliferate in the lymph node and are released into the bloodstream, appearing simultaneously in the lung, spleen and other organs 4-5 days post-infection, a whole-body distribution known as the lymphocyte diaspora \cite{Thelen2008}.  In the lung, extravasation from capillaries is signaled by inflammatory cytokine-mediated integrin-activation on endothelial cells.  Once in the tissue, T cells follow a chemokine gradient to the infected epithelial cells secreting the chemokine.
+The process of recruitment of activated CD8 effector cells to infected sites in the lung is not completely understood.  Initial localization and extravasation may depend on a number of inflammatory signals but viral antigen does not appear to induce recruitment into tissue \cite{Topham2001}.   Effector cells must localize to sites of viral replication [4], but it is not clear whether cells passing through uninfected lung tissue leave through the pulmonary vein or exit the capillary bed and leave the lung through lymphatic channels. Chemotactic proteins play a major role in recruitment in both acute infections and chronic inflammatory diseases \cite{Bromley2008, Medoff2005} where recruited T cells mediate either protection or immunopathology.  Infected epithelial cells secrete chemokines \cite{Chan2005} and contact with CD8 T cells also triggers secretion \cite{Zhao2000}. Activated CD8 T effector cells upregulate chemotactic protein receptors, particularly CXCR3 and CCR5 \cite{Hoji2005, Groom2011a}, responding to their primary ligands CXCL10 (IP-10) and CCL5 (RANTES) respectively.  
 
-Mathematical models have used detailed mouse data to characterize the evolution of the immune response and predict its impact on viral kinetics \cite{Thomas-Vaslin2008, Beauchemin2008, Smith2010, Thakar2010, Burrowes2004}.  Such whole-response modeling has considerable potential to inform strategies of vaccination and therapy, thus avoiding subsequent expensive animal and human trials.  Models using ordinary differential equations to predict temporal events, however, do not account for spatial constraints, and must make assumptions about the efficiency of the viral spread and interaction of different populations. 
+The consequences of chemotactic ligand-receptor interactions, however, are complex \cite{Groom2011a, Groom2011} and variable in the models studied.   For example, in the lymphochoriomeningitis virus model the CXCR3 receptor mediated T cell recruitment to infected brain and subsequent immunopathology \cite{Christensen2004, Christensen2006}, while the CCR5 mediated the opposite effect \cite{DeLemos2005}.  In contrast, in the West Nile virus model \cite{Klein2005} and the dengue model \cite{Hsieh2006}, deficiency of CXCL10 reduced T cell recruitment to the brain resulting in higher viral burden and increased mortality.   In the herpesvirus model CXCL10 was critical in T cell recruitment and disease control in the HSV-2-infected brain \cite{Wuest2008, Thapa2008}.  In the parainfluenza virus model CXCR3 receptor is critical in CD4+ T cell migration to the lung \cite{Kohlmeier2009}.  In the influenza A model initial studies with chemokine receptor knock-out mice obtained mixed results with respect to changing the course of disease \cite{Dawson2000, Wareing2004}, concluding that redundancy in chemokine signals may confound interpretation.   The CXCR3 receptor mediated T cell localization and spared the increased mortality of CCR5 deficiency but viral clearance was not altered \cite{Fadel2008}.  The CXCR3 receptor also mediates the balance between effector versus memory cell differentiation among recruited CD8 T cells in the lung \cite{Kohlmeier2011}.   
 
-Here we study the time and physical constraints of the lymphocyte diaspora using an agent-based model (ABM).  To develop a model with tractable simulations, some components of host defense are abstracted and the model therefore does not aim to predict the true outcome for each strain examined.   We ask how very small foci of infected tissue can attract limited numbers of activated CD8 T cells after release into the systemic vascular system.  The circulating blood supply services non-infected tissue orders of magnitude larger than the target infected tissue, necessitating an efficient mechanism to focus cell migration.   A host of cytokines and chemokines secreted by infected cells are critical in directing immune cells to sites of infection \cite{Miao2010, Zhao2000, LiJeon2002}.  While each chemokine has been studied in detail for receptor specificity and function in knockout models, the local advantage brought by chemokine secretion in an inflammatory context have not been examined in detail in a virus-infected whole animal model.  
+Although leukocytes exhibit directional behavior to chemokines \cite{LiJeon2002, McDonald2010}, T cells have not be shown to climb chemokine gradients.   Following arrival at the infected site, CD8 T cells secrete cytokines when mononuclear cells are present but in their absence kill infected epithelial cells only by contact cytolysis \cite{Hufford2011}.   Finally the exit of T cells from tissue is tightly regulated to keep effector cells from leaving or dying prematurely \cite{Jennrich2012, Richter2007} but effective life-span is unknown. 
 
-To characterize the local chemokine-secretion environment in which T cells migrate, we used data on viral secretion and chemokine secretion patterns from human epithelial cells infected in vitro by three different influenza virus strains of avian, seasonal and pandemic origins \cite{Mitchell2011}.   We selected in vitro chemokine data as a tissue environment surrogate, because it may be more accurate than published chemokine levels in mouse blood and bronchial alveolar fluid, and it allowed us to represent sustained chemokine gradients in our model.  Extensive literature on mouse model data of infections with mouse-adapted strains PR8 and HK-31 were used to calibrate the ABM model \cite{Miao2010, Ganusov2011}.
+A number of mathematical models have constructed the entire adaptive response and key components \cite{Miao2010, Saenz2010, Beltman2007, Handel2008, Zheng2008, Lee2009}, filling gaps with reasonable assumptions of cellular behavior in the absence of experimental support.  Focused math models can examine each event in detail and narrow the range of possible solutions.  We sought to examine the CD8 T cell diaspora and recruitment to infected lung in detail.  Models using ordinary differential equations are able to predict events with temporal fidelity, but lack the ability to examine the spatial detail.   Activated T cells searching for and homing into infected tissue do so in a spatially complex environment.  We therefore utilized the strategy of agent-based modeling (ABM) to represent the physical environment of the searching T cell.  Thus T cells travel in vascular and lymphatic channels during part of their search, and respond to localized inflammatory signals to achieve compartmentalized cell-cell interactions.  
 
-The standard hypothesis posits that the marked strain-specific differences in replication efficiency and tissue spread previously reported \cite{Mitchell2011} would largely determine the outcome of infection as eradication or lack of control.  Our model confirms this hypothesis, but we also observed three interesting characteristics of chemokine-directed migration not revealed by earlier data.  First, of the only two chemokines stimulated by all three strains, the influence of IP-10 consistently dominated the effect of RANTES, regardless of strain.  Second, each chemokine exhibited a clear threshold to direct migration, with diminishing improvements at increasing concentrations above the threshold.  Finally, when the target (infection focus) was large, T cell search became inefficient due to the disappearance of the chemokine gradient, possibly contributing to the loss of control of the pandemic strain.  
+We ask how small foci of infected tissue, scattered through a very large space of uninfected tissue, can attract and retain limited numbers of activated CD8 T cells.  Our model does not consider important features of tissue immunity such as T cell proliferation, resident T cells, tertiary lymphoid structures, and regulatory interactions with other cell phenotypes \cite{McGill2009}.  The model does not aim to predict control of viral replication but only compare simulated outcome among three influenza strains.  To achieve this focused goal on the efficacy of the chemotactic signals alone, we use chemotactic protein data from in vitro cultures of bronchial epithelial cells infected with three strains of influenza virus with different replication rates \cite{Mitchell2011} previously described in our laboratory.  Using known parameters from the extensive literature on the murine model, we offer several insights on the control of viral replication in lung tissue derived from spatially explicit simulations.  
 
 % You may title this section "Methods" or "Models". 
 % "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
 % authors may use "Analysis" 
 \section*{Models}
 
+\subsection*{Delay Differential Equation Model}
+
+We estimate chemokine production rates by adapting the delay differential equation model described in \cite{Mitchell2011} by adding one new equation to model chemokine production.  Initial population sizes and parameter values are taken from the previous study.
+{\footnotesize
+\begin{equation}
+\begin{aligned}
+\dot{T} &= - \beta T V \\
+\dot{I_1} &= \beta T V - \beta T[t-\tau_1]V[t-\tau_1] \\
+\dot{I_2} &= \beta T[t-\tau_1]V[t-\tau_1] - \delta I_2 \\
+\dot{V} &= \frac{p}{1+eF} I_2  - \beta T V  \\
+\dot{F} &=  I_1[t-\tau_2] \\
+\dot{C} &= r I[t-\tau_3] - d C \\
+\end{aligned}
+\label{eq:dde}
+\end{equation}
+\vspace{.05in}
+}
+
+Table \ref{tab:dde} summarizes population and parameter values and descriptions.  Strain-specific values for $r$ were found by fitting the equations to experimental data (see Results and Table \ref{tab:strains}).
+
 
 \subsection*{Computational Modeling}
 
-
-Computational modeling used CyCells \cite{Warrender2006}, a modeling platform for two- or three-dimensional agent-based simulations of the immune response. A simplified model of T cell activation and recirculation was implemented in CyCells (Fig.~\ref{fig:modelchart}), and simulations measured efficiency of infection clearance under different environmental conditions. The lung was represented as a two-dimensional sheet of healthy epithelial cells. Vasculature was represented as a binary tree with fourteen branches originating at a single lymph node. Activated T cells descend through the vascular tree until cytokine signal is detected on the local endothelium, at which point they exit the vasculature and follow the chemotactic gradient to the site of infection. T cells that do not encounter cytokine recirculate to the lymph node. At the site of infection when a T cell encounters an infected epithelial cell it induces apoptosis.
+Computational modeling used CyCells \cite{Warrender2006}, a modeling platform for two- or three-dimensional agent-based simulations of the immune response. A simplified model of T cell activation and recirculation (Fig.~\ref{fig:systemchart}) was implemented in CyCells (Fig.~\ref{fig:modelchart}), and simulations measured efficiency of infection clearance under different environmental conditions. The lung was represented as a two-dimensional sheet of healthy epithelial cells. Vasculature was represented as a binary tree with fourteen branches originating at a single lymph node. Activated T cells descend through the vascular tree until cytokine signal is detected on the local endothelium, at which point they exit the vasculature and follow the chemotactic gradient to the site of infection. T cells that do not encounter cytokine recirculate to the lymph node. At the site of infection when a T cell encounters an infected epithelial cell it induces apoptosis.
 
 The simulation begins when a single cell in the center of the tissue is infected. After the eclipse phase (incubation), the infected cell begins secreting virus and chemokine. Virus diffuses locally, infecting nearby cells, and continuing the cycle. Chemokine diffuses from secreting cells, creating a ball of stimulation around the infected region. After a five day delay to simulate lymph node stimulation and T cell proliferation, activated T cells exit the lymph node and circulate through the vasculature to the tissue. Because T  cells cannot choose their path through the branching network, we assume they arrive in tissue at random locations. 
 
@@ -134,10 +153,9 @@ In the model, epithelial cells are stationary and can be in one of five differen
 
 T cells have three states. \emph{Circulating} T cells begin to emerge from the lymph node at five days post infection. \textit{Emigrating} T cells arrive at a random location on the lung's surface, wander randomly in the tissue for 10 minutes, and transition to \emph{circulating} in the absence of chemokine. \emph{Circulating} cells spend six minutes recirculating to the lymph node, transition to \emph{emigrating} and are reintroduced to a new random location in the lung. When a \emph{emigrating} T cell encounters chemokine, it converts to \emph{chemotaxing} and begins following the chemotactic gradient to the source of infection. \emph{Chemotaxing} T cells move continuously up the gradient, inducing apoptosis if they encounter \emph{expressing} epithelial cells. \emph{Chemotaxing} cells decay exponentially with an average lifespan of two hours. 
 
-The model contains two kinds of particles: virus and chemokine. Both are produced at constant rates by \emph{expressing} epithelial cells.  Virus diffuses through the lung tissue, infecting healthy cells probabilistically according to the local virus concentration. Chemokine diffuses across the tissue but has no
-direct effect beyond activating T cells. Both particle types decay exponentially.
+The model contains two kinds of particles: virus and chemokine. Both are produced at constant rates by \emph{expressing} epithelial cells.  Virus diffuses through the lung tissue, infecting healthy cells probabilistically according to the local virus concentration. Chemokine diffuses across the tissue but has no direct effect beyond activating T cells. Both particle types decay exponentially.  IgM is modeled by increasing the viral decay rate by a factor of three after the third day.
 
-Parameters that are consistent between every model are shown in Table \ref{table:parameters}.  Strain-specific values are shown in Table \ref{table:strains}.
+Parameters that are consistent between every model are shown in Table \ref{tab:parameters}.  Strain-specific values are shown in Table \ref{tab:strains}.
 
 \section*{Materials}
 
@@ -149,25 +167,26 @@ Chemokine secretion:  Epithelial cell culture and supernatant collection was per
 
 \subsection*{Chemokine production}
 
-Chemokine data were collected from epithelial monolayers infected with three different influenza strains, as described in \cite{Mitchell2011} (Fig.~\ref{fig:data}).  IP-10 concentration increases were observed by 8h post-infection (p.i.), and RANTES by 16h p.i..  To estimate per-cell production rates, we extended the ODE model of Ref. \cite{Mitchell2011} to represent chemokine production from infected cells (Eq. \textbf{S}1).  Model fits, (Table \ref{table:strains}), were computed for three strains (Fig.~\ref{fig:data}) using Matlab's \texttt{nlinfit} function (Levenberg-Marquardt algorithm).  The resulting chemokine production values were used in the CyCells ABM.  Best-fit expression rates were similar for all strains except for significantly higher RANTES production in aH5N1.  There is no positive correlation between viral production and induced chemokine production across the three strains.
+To provide estimates of chemokine concentrations and secretion rates present in lung tissue, chemokine levels were measured at 4-6h intervals during the first 48 h of infection in wells containing approximately one million human bronchial epithelial cells (Fig.~\ref{fig:data}).  The dynamic viral loads at these intervals in these cultures infected with seasonal H1N1 virus, pandemic H1N1 virus, and avian H5N1 virus have been reported previously \cite{Mitchell2011}.  IP-10 concentration increases were observed by 8h post-infection (p.i.), and RANTES by 16h p.i..  To estimate per-cell production rates, we extended the ordinary differential equation (ODE) model of Ref. \cite{Mitchell2011} to represent chemokine production from infected cells (Eq.~\ref{eq:dde}).  Model fits (Table \ref{tab:strains}) were computed for three strains (Fig.~\ref{fig:data}) using Matlab's \texttt{nlinfit} function (Levenberg-Marquardt algorithm).  The resulting chemokine production values were used in the CyCells ABM.  Best-fit expression rates were similar for all strains except for significantly higher RANTES production in aH5N1.  There is no positive correlation between viral production and induced chemokine production across the three strains.
 
 
 \subsection*{T cell sensitivity to chemokine}
 
-The model uses chemokine gradient as a surrogate for the inflammatory cytokines required for extravasation.  Figure \ref{fig:cycells} shows chemokine concentrated around virus secreting cells.  However, T cell sensitivity determines how strong the aggregate chemokine signal must be.
+The model simulates a chemokine gradient surrounding an infected focus (Fig.~\ref{fig:cycells}), based on the calculated per-infected cell secretion rate (Table~\ref{tab:strains}) and known chemical parameters for a 10 kDa protein (Table~\ref{tab:parameters}).  T cell sensitivity depends on receptor density \cite{Desmetz2006} and this was assumed to be constant.
 
-We simulated T cell sensitivity levels ranging over seven orders of magnitude and found a threshold (Fig.~\ref{fig:sensitivity}) between concentrations of 1 $\mu g/ml$ and 100 $ng/ml$ (100 $ng/ml$ and 10 $ng/ml$ in aH5N1), below which there is no discernible effect on T cell movement (model variance discussed in \textbf{S}2.1.).  Seasonal and pandemic H1N1 models simulated both IP-10 and RANTES; avian H5N1 included only RANTES (\textbf{S2.2}).  Because multiple T cells in the same area do not enhance control of infection, we hypothesize more T cells are not more efficient above a critical threshold.  We set the sensitivity to 10 $ng/mL$ (1 $nM$ concentration assuming a chemokine molecular weight of 10 $kDa$) \cite{Gao2003}.  Single runs were used due to computational limitations.  
+Because this parameter is unknown, we simulated T cell sensitivity levels ranging over 10 orders of magnitude and found a threshold (Fig.~\ref{fig:sensitivity}) at a concentration of 100 $ng/ml$ (10 $ng/ml$ in aH5N1), beyond which there is no detectable effect on model behavior (single runs were used due to computational limitations, model variance is discussed in S2.1.).  We then set the sensitivity to 10 $ng/mL$ for all future runs (1 $nM$ concentration assuming a chemokine molecular weight of 10 $kDa$) \cite{Gao2003}.  
 
+% Because more than one T cell at each infected epithelial cell would not increasing effective target cell death, there may be a threshold of immigrant T cells above which no additional control of viral replication is possible.
 
 \subsection*{Spatial effects}
 
 Spatial effects of viral and chemokine diffusion play an important role in both the spreading and clearing of infections.  Free virus particles diffuse from virus secreting cells and infect healthy cells.  Chemokine produced by infected cells attracts T cells to the infected cells.  Although virus is produced at a higher rate than chemokine, its larger size diffuses much more slowly, while chemokine decays more quickly.  These countervaling effects result in similar spatial profiles for the two particle types (Fig.~\ref{fig:cycells}). Until day 4 the plaque is dominated by active (incubating and secreting) cells, whereas dead cells are rare. Over time, cells in the plaque's interior die, and active cells form a decreasing proportion of the plaque. T cells arrive at day 5 and begin killing the virus-secreting cells. By day 6 many expressing cells have been eliminated and the plaque is dominated by dead cells.  Refer to the videos in Figures S3-S5 to see a representative simulation of seasonal influenza.
 
-In aH5N1, the plaque is dense, allowing T cells to find secreting cells easily, and infection is eliminated.  However, secreting cells were not eliminated in either H1N1 simulations.  Secreting cells accounted for at most 10\% of the active cell population and less than 1\% of the total plaque at 6 days p.i..  T cells still accumulate, but they arrive more slowly than the plaque is growing, leading to lower average T cell killing rate.  Further, the regions of concentrated chemokine lag behind the cell and virus spatial layout.  It takes time for newly secreting cells to produce chemokine while pockets of high chemokine density are slow to decay.  Thus, T cells can fail to detect cellular changes in the plaque.  Taken together, the delayed response and low proportion of virus secreting cells prevent T cells from completely clearing the infection.
+In aH5N1, the plaque is dense, allowing T cells to find secreting cells easily, and infection is eliminated.  However, secreting cells were not eliminated in either H1N1 simulations (Fig. S1).  Secreting cells accounted for at most 10\% of the active cell population and less than 1\% of the total plaque at 6 days p.i..  T cells still accumulate, but they arrive more slowly than the plaque is growing, leading to lower average T cell killing rate.  Further, the regions of concentrated chemokine lag behind the cell and virus spatial layout.  It takes time for newly secreting cells to produce chemokine while pockets of high chemokine density are slow to decay.  Thus, T cells can fail to detect cellular changes in the plaque.  Taken together, the delayed response and low proportion of virus secreting cells prevent T cells from completely clearing the infection.
 
 T cells are unable to kill cells that have not yet presented antigen.  At day 5.5, the ratio of secreting cells to the total plaque size is high (Fig.~\ref{fig:cycells}-\ref{fig:plaquesize}). By day 7, this ratio is approximately 1:100 for both the pH1N1 and sH1N1 strains.  The high replication rate of pH1N1 enhances this effect (Fig.~\ref{fig:plaquesize}C) and the T cells can control (but not eliminate) the sH1N1 infection.  The video in Figure S6 illustrates this event.
 
-A cell infected with pH1N1 produces new virus at the rate of 5.08e-3 PFU/s \cite{Mitchell2011}.  That is, in each secreting cell a new viral particle is produced approximately every 200 seconds.  Assuming that secretion continues for one hour after apoptosis is initiated, the best a T cell could do is limit production to 18 new viral particles.  Thus, T cells alone cannot contain the pH1N1 infection.  In contrast, a sH1N1 virus-secreting cell produces a new virus particle every 2,643 seconds, allowing T cells to limit a single infected cell to 1.3 viral particles in the one-hour window.  Avian H5N1 virus-secreting cells produce only 0.2 viral particles in the interval after induced apoptosis. 
+A cell infected with pH1N1 produces new virus at the rate of 5.08e-3 PFU/s \cite{Mitchell2011}.  That is, in each secreting cell a new viral particle is produced approximately every 200 seconds.  Assuming that secretion continues for one hour after apoptosis is initiated, the best a T cell could do is limit production to 18 new viral particles.  Thus, T cells alone cannot contain the pH1N1 infection.  In contrast, a sH1N1 virus-secreting cell produces a new virus particle every 2,632 seconds, allowing T cells to limit a single infected cell to 1.4 viral particles in the one-hour window.  Avian H5N1 virus-secreting cells produce only 0.2 viral particles in the interval after induced apoptosis. 
 
 
 \section*{Discussion}
@@ -183,13 +202,11 @@ can enhance future global immune response models.
 
 \subsection*{Chemokine Directed T Cell Search}
 
-Hypercytokinemia, or `cytokine storm' is described in virulent influenza infections \cite{DeJong2006} but bloodstream cytokine and chemokine levels may not reflect local tissue concentrations.  The use of in vitro human bronchial epithelial cells \cite{Mitchell2011} infected at low cell:virus infection ratio (MOI) was intended to mimic initial natural infection and subsequent local infection spread.  MOI and degree of differentiation of NHBE cells are critical determinants of cytokine/chemokine secretion \cite{Chan2010}.   Yet, as we noted at low MOI, greater RANTES secretion by H5N1 strains has been found in NHBE cultures infected at high MOI with seasonal \cite{Chan2005, Chan2010, Zeng2011} and pandemic \cite{Zeng2011} strains.  Thus chemokine secretion stimulated by H5N1 strains does not appear to be attenuated in parallel with the type 1 interferon response \cite{Zeng2007}, placing greater importance on the role of T cells in controlling the infection.
+ The actual quantitative chemokine environment in the infected lung is difficult to estimate for a math model.  The hypercytokinemia documented in virulent influenza infections \cite{DeJong2006} likely does not reflect lung tissue concentrations.  Dynamic chemokine concentrations secreted by bronchial epithelial cells in vitro depend on infection intensity and cell maturation state \cite{Mitchell2011, Chan2010, Chan2005, Zeng2011} but may better approximate actual levels.  Interestingly, the attenuation of the type I interferon response by H5N1 strains is not associated with attenuation of chemokine secretion \cite{Zeng2007}.  The model did not incorporate the potential contributions from other chemokines such as CXCL8/IL-8 detected in bronchial cell cultures \cite{Matsukura1996, Arndt2002}, nor did the model account for chemokines secreted by immigrant macrophages \cite{Julkunen2000} and amplification of epithelial cell secretion by CD8 T cells \cite{Zhao2000}.
 
-Our model represents only a portion of the complete chemokine signal complex operating in the infected animal.  Chemokines with a clear role directing T cell traffic include IP-10 \cite{Dufour2002}, RANTES \cite{Kawai1999}, CCL3 \cite{Kawai1999}, and likely others.  The chemokine receptor CCR5, binding CCL5 (RANTES) and other chemokines, is crucial to accelerated recruitment of CD8+ T cells to lung airways \cite{Kohlmeier2008}.  Although we did not detect significant levels of other chemokines in our cultures, the neutrophil- and T cell-attractant CXCL8/IL-8 is secreted into seasonal influenza-infected NHBE cultures \cite{Matsukura1996, Arndt2002}.  In the intact animal, immigrant inflammatory cells particularly macrophages augment the multiple chemokine signals \cite{Julkunen2000}.  Finally, antigen-specific CD8+ T cell recognition of its target induces lung injury mediated by TNFa and triggers additional alveolar epithelial cell chemokine secretion \cite{Zhao2000}.
+A key determinant in the efficiency of chemokine-directed T cell migration towards virus-secreting epithelial cells is the communication distance, defined by the threshold of sufficient chemokine signal required to induce directed motion of the cell up the chemical gradient \cite{Thelen2008}.  The diameter of this gradient generated by a single cell is a function of production rate, decay rate, protein diffusion and the sensitivity threshold.  For the threshold of 10 ng/mL and maximal levels of concentration in tissue of 10,000 pg/mL, we calculated the effective communication distance to be approximately 150 microns in our model by simulating a single chemokine producing cell and observing the radius of the resulting chemokine gradient.  This calculation is similar to the distance calculated for generic cytokines secreted by a suspended solitary cell \cite{Francis1997}.  Spatially explicit modeling can provide support for not only communication distance but also the role of immigrant CD8 T cell proliferation, contribution of resident memory T cells and B cells, and effector cell lifespan. 
 
-A key determinant in the efficiency of chemokine-directed T cell migration towards virus-secreting epithelial cells is the communication distance, defined by the threshold of sufficient chemokine signal required to induce directed motion of the cell up the chemical gradient \cite{Thelen2008}.  The diameter of this cloud generated by a single cell is a function of production rate, decay rate, protein diffusion and the sensitivity threshold.  For the threshold of 10 ng/mL and maximal levels of concentration in tissue of 10,000 pg/mL, we calculated the effective communication distance as approximately 150 microns in our model.  This calculation is similar to the distance calculated for generic cytokines secreted by a suspended solitary cell \cite{Francis1997}.
-
-Can T cell recruitment to tissue during the primary immune response be manipulated to increase search efficiency, with particular implications for recovery of people prior vaccination?  The high sensitivity to chemokine signals and lack of increased efficiency with an added chemokine do not appear to be avenues for manipulation. Increasing inflammatory cells may raise the volume of tissue containing chemokine signal, thus amplifying T cell search success, but comes with the price of greater morbidity. T cell recruitment to regional lymph nodes is highly efficient, and numbers of responding clones is restricted by immunological dominance. We conclude that, with respect to the elements of recruitment studied in this spatially explicit model, recruitment is efficient and offers few if any options for manipulating its efficiency. Only vaccination provides the clonal expansion and tissue resident memory cells to accelerate the appearance of activated T cells in tissue.
+% - removed - Can T cell recruitment to tissue during the primary immune response be manipulated to increase search efficiency, with particular implications for recovery of people prior vaccination?  The high sensitivity to chemokine signals and lack of increased efficiency with an added chemokine do not appear to be avenues for manipulation (S2.2). Increasing inflammatory cells may raise the volume of tissue containing chemokine signal, thus amplifying T cell search success, but comes with the price of greater morbidity. T cell recruitment to regional lymph nodes is highly efficient, and numbers of responding clones is restricted by immunological dominance. We conclude that, with respect to the elements of recruitment studied in this spatially explicit model, recruitment is efficient and offers few if any options for manipulating its efficiency. Only vaccination provides the clonal expansion and tissue resident memory cells to accelerate the appearance of activated T cells in tissue.
 
 
 % Do NOT remove this, even if you are not including acknowledgments
@@ -197,7 +214,7 @@ Can T cell recruitment to tissue during the primary immune response be manipulat
 
 We thank J. Cannon (UNM Pathology and Molecular Genetics \& Microbiology), F. Asperti-Boursin (UNM Pathology and Computer Science), S. Jordan (UNM Computer Science and Biology), and G. Bezerra, B. Edwards, and G. Stelle (UNM Computer Science) for suggestions concerning the manuscript, cellular and chemokine behavior, and agent-based modeling.
 
-This publication was funded by NIH grants R21-AI-73607 (to F.K.) and U01-AI-074561 (to F.K.), DARPA grant P-1070-113237 (to S.F and M.M), and NSF grant EF-1038682 (to S.F and M.M.).
+% This publication was funded by NIH grants R21-AI-73607 (to F.K.) and U01-AI-074561 (to F.K.), DARPA grant P-1070-113237 (to S.F and M.M), and NSF grant EF-1038682 (to S.F and M.M.).
 
 %\section*{References}
 % The bibtex filename
@@ -216,60 +233,62 @@ This publication was funded by NIH grants R21-AI-73607 (to F.K.) and U01-AI-0745
 %\label{Figure_label}
 %\end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{SystemChart}
+%\includegraphics[width=4in]{SystemChart}
 \end{center}
-\caption{Model of T cell search.  Activated T cells originate in the lymph node and enter the bloodstream after which they randomly navigate through the 14 layers of the branching bronchial network.  Upon reaching a capillary, T cells exit into tissue if cytokine signal is present.  In the absence of signal, the T cell recirculates either through the lymph network or through the pulmonary vein back to the top of the network.}
+\caption{{\bf Model of T cell search.}  Activated T cells originate in the lymph node and enter the bloodstream after which they randomly navigate through 14 vascular bifurcations of the bronchial network.  Upon reaching a capillary, T cells exit into tissue if cytokine signal is present.  In the absence of signal, the T cell recirculates either through the lymph network or through the pulmonary vein back to the top of the network.}
 \label{fig:systemchart}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \begin{center}
-\includegraphics[width=\textwidth]{ModelChart}
+%\includegraphics[width=4in]{ModelChart}
 \end{center}
-\caption{Visual representation of the model.  Healthy epithelial cells infected by virus begin secreting virus after the incubation delay.  Activated T cells traverse the bronchial vascular network and may be recruited by inflammatory cytokine.  Chemotaxing T cells climb the chemokine gradient and induce apoptosis in infected cells.  Solid arrows represent a cell state transition from one behavior to another.  Dashed arrows display the mechanism used to induce a transition.  Dotted arrows indicate the production of new virus.}
+\caption{{\bf Visual representation of the model.}  Healthy epithelial cells infected by virus begin secreting virus after the incubation delay.  Activated T cells traverse the bronchial vascular network and may be recruited by inflammatory cytokine.  Chemotaxing T cells climb the chemokine gradient and induce apoptosis in infected cells.  Solid arrows represent a cell state transition from one behavior to another.  Dashed arrows display the mechanism used to induce a transition.  Dotted arrows indicate the production of new virus.}
 \label{fig:modelchart}
 \end{figure}
 
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \begin{center}
- \includegraphics[width=\textwidth]{data}
+% \includegraphics[width=4in]{data}
  \end{center}
-\caption{Empirical viral and cytokine titers for three strains of influenza: Avian H5N1, Seasonal sH1N1, and Pandemic pH1N1.  Viral titer (blue circles) is in PFU/mL, and IP-10 (red triangle) and RANTES (green square) are shown in ng/mL.  sH1N1 IP-10 registered three values, not included in model fitting, above the measurement threshold of 8,500 $pg/mL$ (empty red triangles).  Dashed lines show model fits to IP-10 and RANTES data.  Human bronchial epithelial cells were infected at an MOI of 0.01 with one of the three strains of influenza.  Apical fluid for viral secretion and basal media for chemokine secretion was collected at the given time intervals post infection.  Viral culture was performed by a standard plaque assay and chemokine levels were measured using 30 µl aliots for a panel of 17 chemokines and cytokines (not shown).} 
+\caption{{\bf Empirical viral and cytokine titers for three strains of influenza: Avian H5N1, Seasonal sH1N1, and Pandemic pH1N1.}  Viral titer (blue circles) is in PFU/mL, and IP-10 (red triangle) and RANTES (green square) are shown in ng/mL.  sH1N1 IP-10 registered three values, not included in model fitting, above the measurement threshold of 8,500 $pg/mL$ (empty red triangles).  Dashed lines show model fits to IP-10 and RANTES data.  Human bronchial epithelial cells were infected at an MOI of 0.01 with one of the three strains of influenza.  Apical fluid for viral secretion and basal media for chemokine secretion was collected at the given time intervals post infection.  Viral culture was performed by a standard plaque assay and chemokine levels were measured using 30 µl aliots for a panel of 17 chemokines and cytokines (not shown).} 
  \label{fig:data}
 \end{figure}
 
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \begin{center}
- \includegraphics[width=\textwidth]{sensitivity}
+% \includegraphics[width=4in]{sensitivity}
  \end{center}
-\caption{Varying T cell sensitivity to chemokine: H5N1 model results use RANTES  only, and sH1N1 and pH1N1 use both IP-10 and RANTES. Total number of incubating, secreting and apoptotic cells are plotted for each infection.  The sensitivity value specifies the minimum level of chemokine concentration required for T cells to detect it. } 
+\caption{{\bf Varying T cell sensitivity to chemokine.}  H5N1 model results use RANTES  only, and sH1N1 and pH1N1 use both IP-10 and RANTES. Total number of incubating, secreting and apoptotic cells are plotted for each infection.  The sensitivity value specifies the minimum level of chemokine concentration required for T cells to detect it. } 
  \label{fig:sensitivity}
 \end{figure}
 
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \begin{center}
- \includegraphics[width=\textwidth]{cycells}
+% \includegraphics[width=4in]{cycells}
  \end{center}
-\caption{Simulated sH1N1 infection. Screenshots from day 4, day 5.5, and day 7.  The top row shows the spreading focus of infection  through the color coding of individual cells:  healthy cells in uninfected tissue (gray),  virus-incubating cells (yellow), virus-secreting cells (orange), apoptotic cells (red), dead cells (brown), and T cells arriving at day 5 (green).  Free virus and chemokine particles are represented by compartmentalized concentrations of mols/mL and ng/mL (see the legend in the bottom right).} 
+\caption{{\bf Simulated sH1N1 infection.} Screenshots from day 4, day 5.5, and day 7.  The top row shows the spreading focus of infection  through the color coding of individual cells:  healthy cells in uninfected tissue (gray),  virus-incubating cells (yellow), virus-secreting cells (orange), apoptotic cells (red), dead cells (brown), and T cells arriving at day 5 (green).  Free virus and chemokine particles are represented by compartmentalized concentrations of mols/mL and ng/mL.  The individual cell images for days 5.5 and 7 have been enhanced by hand for improved T cell visibility.  Individual groups of T cells appear larger than they are and only cover an area of one or two epithelial cells in the model.  Original images available upon request. } 
  \label{fig:cycells}
 \end{figure}
 
 
-\begin{figure}[ht!]
+\begin{figure}[!ht]
 \begin{center}
- \includegraphics[width=\textwidth]{plaquesize}
+% \includegraphics[width=\textwidth]{plaquesize}
  \end{center}
-\caption{Comparison of total plaque size (blue), number of virus incubating cells (yellow), number of virus secreting cells (green), and T cells (red) for the simulated infections of aH5N1, sH1N1, and pH1N1.  T cells are able to clear both secreting and incubating cells in aH5N1, are unable to contain incubating cells in sH1N1, and are unable to contain either type of infected cell in pH1N1.  We notice a threshold at day 5: pH1N1 has more expressing cells (green) by a factor of only two to three, yet unlike aH5N1 and sH1N1, the T cell response is unable to clear the expressing population.} 
+\caption{{\bf Simulated infections of aH5N1, sH1N1, and pH1N1.} Plotted values: total plaque size (blue), number of virus incubating cells (yellow), number of virus secreting cells (green), and T cells (red).  T cells clear secreting and incubating cells in aH5N1, fail to clear incubating cells in sH1N1, and fail to clear either type of infected cell in pH1N1.  The number of expressing cells (green) after day 5 differs markedly among the three strains indicating that the T cells have differing success at controlling the infection.} 
  \label{fig:plaquesize}
 \end{figure}
 
+% In the simulation, increasing chemokine concentration fails to control the runaway pH1N1 infection (data not shown) suggesting that the effect of high viral production rates dominate low chemokine concentrations in this scenario.
 
 
+\pagebreak
 
 \section*{Tables}
 %\begin{table}[!ht]
@@ -283,10 +302,55 @@ This publication was funded by NIH grants R21-AI-73607 (to F.K.) and U01-AI-0745
 %\label{tab:label}
 % \end{table}
 
+\begin{table}
+\begin{center}
+\begin{tabular}{|  l  l  l  |}
+  \hline
+  Population & Description & Initial Value\\
+  \hline
+  $T$ & Healthy target eptithelial cells & 1,000,000 \\
+  $I_1$ & Virus-incubating cells & 0 \\
+  $I_2$ & Virus-secreting cells & 0 \\
+  $V$ & Free virus particles & 10,000 \\
+  $F$ & Interferon quantity & 0 \\
+  $C$ & Chemokine quantity (ng/mL) & 0 \\
+  \hline
+  Parameter & Description & Value \\
+  \hline
+  $\beta$ & Viral infection rates &  \\
+    & \hspace{2em} Avian & 5.3e-7 (PFU$\cdot$h)$^{-1}$ \\
+    & \hspace{2em} Seasonal & 6.1e-7 (PFU$\cdot$h)$^{-1}$ \\
+    & \hspace{2em} Pandemic &  2.7e-6 (PFU$\cdot$h)$^{-1}$\\
+  $p$ & Viral production rates & \\
+    & \hspace{2em} Avian & 0.20 (PFU/h) \\
+    & \hspace{2em} Seasonal & 1.4 (PFU/h) \\
+    & \hspace{2em} Pandemic & 18.3 (PFU/h) \\
+  $e$ & Interferon strengths & \\
+    & \hspace{2em} Avian & 1.0e-8 \\
+    & \hspace{2em} Seasonal & 1.6e-6 \\
+    & \hspace{2em} Pandemic & 3.4e-3 \\
+  $\tau_2$ & Interferon production delays &  \\
+    & \hspace{2em} Avian & 21.5 (h) \\
+    & \hspace{2em} Seasonal & 23.6 (h) \\
+    & \hspace{2em} Pandemic & 21.0 (h) \\
+  $\delta$ & Virus-secreting cell decay rate & 0.6 (h$^{-1}$) \\
+  $d$ & Chemokine decay rate & 1.386 (h$^{-1}$) \\
+  $\tau_1$ & Viral incubation time & 10 (h) \\
+  $\tau_3$ & Chemokine production delays & \\
+    & \hspace{2em} IP-10 & 8 (h)\\
+    & \hspace{2em} RANTES & 16 (h)\\
+  \hline
+\end{tabular}
+\caption{All parameters and populations are taken from \cite{Mitchell2011} except for $C$, $d$, and $\tau_3$.  The value chosen for $d$ corresponds to a 30 minute half-life and values for $\tau_3$ were take from the observed chemokine data (Fig.~\ref{fig:data}).  Interferon ($F$) is an abstracted unitless quantity and thus $e$ is a unitless multiplier.}
+\label{tab:dde}
+\end{center}
+\end{table}
+
+
 
 \begin{table}
 \begin{center}
-\begin{tabular}{ | c | c | c | }
+\begin{tabular}{| l l l |}
   \hline                        
   Paramter & Value & Source \\
   \hline
@@ -306,14 +370,14 @@ This publication was funded by NIH grants R21-AI-73607 (to F.K.) and U01-AI-0745
   T Cell Sensitivity to Chemokine & $10 ng/mL$ & \cite{Gao2003} \\
   T Cell Expected Kill Time & $10 min$ & Selected$^4$ \\
   Epithelial Cell Radius & $25 \mu m$ & Selected$^5$ \\
-  T Cell Age (at FOI) & $2 hours$ & Selected$^6$ \\
+  T Cell Age (at FOI$^\ast$) & $2 hours$ & Selected$^6$ \\
   T Cell Age (in Blood) & $3 days$ & Selected$^6$ \\
-  Onset of ATC Lymph Node Exit & $5 days$ & \cite{Banerjee2011} \\
+  Onset of ATC$^\ddagger$ Lymph Node Exit & $5 days$ & \cite{Banerjee2011} \\
   IgM Strength & Viral decay of $3/day$ & Selected$^7$ \\
   \hline  
 \end{tabular}
-\caption{Static model parameters.  1) Chosen to correspond to a 30 minute half-life.  2) Epithelial cells are infected at a probabilistic rate such that the expected time for infection in the presence of a single virion is 2 hours.  This scales linearly with the number of virions in the cell's vicinity.  3) Chosen to be a plausible median time (1,000 minutes) between 6 hours and 24 hours.  4) T cells induce apoptosis in nearby virus-secreting epithelial cells at a probabilistic rate such that the expected time to induce apoptosis is 10 minutes.  This rate does not scale with T cell numbers.  5)  The mean surface area of the epithelial cell available for virus contact and entry includes cilia and the radius is estimated to be 25 microns. 6) Parameters chosen after discussions with David Woodland, Trudeau Institute.  7) IgM presence is abstracted by increasing viral decay by a factor of three. }
-\label{table:parameters}
+\caption{1) Corresponds to a 30 minute half-life.  2) Epithelial cells are infected at a probabilistic rate such that the expected time for infection in the presence of a single virion is 2 hours.  This scales linearly with the number of virions in the cell's vicinity.  3) Chosen as a plausible median time (1,000 minutes) between 6 hours and 24 hours.  4) T cells induce apoptosis in nearby virus-secreting epithelial cells at a probabilistic rate such that the expected time to induce apoptosis is 10 minutes.  This rate does not scale with T cell numbers.  5)  The mean surface area of the epithelial cell available for virus contact and entry includes cilia and the radius is estimated to be 25 microns. 6) Parameters used after discussions with David Woodland, Trudeau Institute.  7) IgM presence is abstracted by increasing viral decay by a factor of three. $^\ast$Focus of Infection.  $^\ddagger$Activated T Cell.}
+\label{tab:parameters}
 \end{center}
 \end{table}
 
@@ -337,7 +401,7 @@ This publication was funded by NIH grants R21-AI-73607 (to F.K.) and U01-AI-0745
   \hline
 \end{tabular}
 \caption{Strain-specific model parameters.  Small text values show 95\% confidence intervals resulting from 1,000 bootstrapping runs for each parameter \cite{Wu1986}.  Viral production values are taken from \cite{Mitchell2011}.}
-\label{table:strains}
+\label{tab:strains}
 \end{table}
 
 

@@ -13,11 +13,10 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem{Sallusto2000}
-Sallusto F, Lanzavecchia A (2000) {Understanding dendritic cell and
-  T-lymphocyte traffic through the analysis of chemokine receptor expression.}
-\newblock Immunological Reviews 177: 134--140.
-\bibAnnoteFile{Sallusto2000}
+\bibitem{Kohlmeier2009a}
+Kohlmeier JE, Woodland DL (2009) {Immunity to respiratory viruses.}
+\newblock Annual Review of Immunology 27: 61--82.
+\bibAnnoteFile{Kohlmeier2009a}
 
 \bibitem{Joo2008}
 Joo HM, He Y, Sangster MY (2008) {Broad dispersion and lung localization of
@@ -26,11 +25,239 @@ Joo HM, He Y, Sangster MY (2008) {Broad dispersion and lung localization of
   of America 105: 3485--3490.
 \bibAnnoteFile{Joo2008}
 
-\bibitem{Mackay2008}
-Mackay CR (2008) {Moving targets: cell migration inhibitors as new
-  anti-inflammatory therapies.}
-\newblock Nature Immunology 9: 988--998.
-\bibAnnoteFile{Mackay2008}
+\bibitem{Oslund2011}
+Oslund KL, Baumgarth N (2011) {Influenza-induced innate immunity: regulators of
+  viral replication, respiratory tract pathology \& adaptive immunity}.
+\newblock Future Virol 6: 951--962.
+\bibAnnoteFile{Oslund2011}
+
+\bibitem{Cerwenka1999}
+Cerwenka A, Morgan TM, Harmsen AG, Dutton RW (1999) {Migration Kinetics and
+  Final Destination of  Type 1 and Type 2 CD8 Effector Cells Predict
+  Protection against Pulmonary Virus Infection}.
+\newblock The Journal of Experimental Medicine 189: 423--434.
+\bibAnnoteFile{Cerwenka1999}
+
+\bibitem{Kim2011}
+Kim TS, Sun J, Braciale TJ (2011) {T cell responses during influenza infection:
+  getting and keeping control.}
+\newblock Trends in Immunology 32: 225--231.
+\bibAnnoteFile{Kim2011}
+
+\bibitem{Miller2003}
+Miller MJ, Wei SH, Cahalan MD, Parker I (2003) {Autonomous T cell trafficking
+  examined in vivo with intravital two-photon microscopy}.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 100: 2604--2609.
+\bibAnnoteFile{Miller2003}
+
+\bibitem{Allan2006}
+Allan RS, Waithman J, Bedoui S, Jones CM, Villadangos JA, et~al. (2006)
+  {Migratory dendritic cells transfer antigen to a lymph node-resident
+  dendritic cell population for efficient CTL priming.}
+\newblock Immunity 25: 153--162.
+\bibAnnoteFile{Allan2006}
+
+\bibitem{Ingulli2009}
+Ingulli E, Funatake C, Jacovetty EL, Zanetti M (2009) {Cutting edge: antigen
+  presentation to CD8 T cells after influenza A virus infection.}
+\newblock The Journal of Immunology 182: 29--33.
+\bibAnnoteFile{Ingulli2009}
+
+\bibitem{VanHeijst2009}
+{Van Heijst} JWJ, Gerlach C, Swart E, Sie D, Nunes-Alves C, et~al. (2009)
+  {Recruitment of antigen-specific CD8+ T cells in response to infection is
+  markedly efficient.}
+\newblock Science 325: 1265--1269.
+\bibAnnoteFile{VanHeijst2009}
+
+\bibitem{Miao2010a}
+Miao H, Hollenbaugh JA, Zand MS, Holden-Wiltse J, Mosmann TR, et~al. (2010)
+  {Quantifying the early immune response and adaptive immune response kinetics
+  in mice infected with influenza A virus.}
+\newblock Journal of Virology 84: 6687--6698.
+\bibAnnoteFile{Miao2010a}
+
+\bibitem{Marshall2001}
+Marshall DR, Turner SJ, Belz GT, Wingo S, Andreansky S, et~al. (2001)
+  {Measuring the diaspora for virus-specific CD8+ T cells}.
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 98: 6313--6318.
+\bibAnnoteFile{Marshall2001}
+
+\bibitem{Topham2001}
+Topham DJ, Castrucci MR, Wingo FS, Belz GT, Doherty PC (2001) {The role of
+  antigen in the localization of naive, acutely activated, and memory CD8(+) T
+  cells to the lung during influenza pneumonia.}
+\newblock The Journal of Immunology 167: 6983--6990.
+\bibAnnoteFile{Topham2001}
+
+\bibitem{Bromley2008}
+Bromley SK, Mempel TR, Luster AD (2008) {Orchestrating the orchestrators:
+  chemokines in control of T cell traffic.}
+\newblock Nature immunology 9: 970--80.
+\bibAnnoteFile{Bromley2008}
+
+\bibitem{Medoff2005}
+Medoff BD, Thomas SY, Banerji A, Wain JC, Zhang H, et~al. (2005) {Pathogenic
+  T-cell recruitment into the airway in human disease.}
+\newblock Annals Of The New York Academy Of Sciences 1062: 220--241.
+\bibAnnoteFile{Medoff2005}
+
+\bibitem{Chan2005}
+Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
+  {Proinflammatory cytokine responses induced by influenza A (H5N1) viruses in
+  primary human alveolar and bronchial epithelial cells}.
+\newblock Respiratory Research 6: 135.
+\bibAnnoteFile{Chan2005}
+
+\bibitem{Zhao2000}
+Zhao MQ, Stoler MH, Liu AN, Wei B, Soguero C, et~al. (2000) {Alveolar
+  epithelial cell chemokine expression triggered by antigen-specific cytolytic
+  CD8(+) T cell recognition.}
+\newblock Journal of Clinical Investigation 106: R49--R58.
+\bibAnnoteFile{Zhao2000}
+
+\bibitem{Hoji2005}
+Hoji A, Rinaldo CR (2005) {Human CD8+ T cells specific for influenza A virus M1
+  display broad expression of maturation-associated phenotypic markers and
+  chemokine receptors}.
+\newblock Immunology 115: 239--245.
+\bibAnnoteFile{Hoji2005}
+
+\bibitem{Groom2011a}
+Groom JR, Luster AD (2011) {CXCR3 ligands: redundant, collaborative and
+  antagonistic functions.}
+\newblock Immunology and Cell Biology 89: 207--215.
+\bibAnnoteFile{Groom2011a}
+
+\bibitem{Groom2011}
+Groom JR, Luster AD (2011) {CXCR3 in T cell function.}
+\newblock Experimental Cell Research 317: 620--631.
+\bibAnnoteFile{Groom2011}
+
+\bibitem{Christensen2004}
+Christensen JE, Nansen A, Moos T, Lu B, Gerard C, et~al. (2004) {Efficient
+  T-cell surveillance of the CNS requires expression of the CXC chemokine
+  receptor 3.}
+\newblock Journal of Neuroscience 24: 4849--4858.
+\bibAnnoteFile{Christensen2004}
+
+\bibitem{Christensen2006}
+Christensen JE, {De Lemos} C, Moos T, Christensen JP, Thomsen AR (2006) {CXCL10
+  is the key ligand for CXCR3 on CD8+ effector T cells involved in immune
+  surveillance of the lymphocytic choriomeningitis virus-infected central
+  nervous system.}
+\newblock The Journal of Immunology 176: 4235--4243.
+\bibAnnoteFile{Christensen2006}
+
+\bibitem{DeLemos2005}
+{De Lemos} C, Christensen JE, Nansen A, Moos T, Lu B, et~al. (2005) {Opposing
+  effects of CXCR3 and CCR5 deficiency on CD8+ T cell-mediated inflammation in
+  the central nervous system of virus-infected mice.}
+\newblock The Journal of Immunology 175: 1767--1775.
+\bibAnnoteFile{DeLemos2005}
+
+\bibitem{Klein2005}
+Klein RS, Lin E, Zhang B, Luster AD, Tollett J, et~al. (2005) {Neuronal CXCL10
+  directs CD8+ T-cell recruitment and control of West Nile virus encephalitis.}
+\newblock Journal of Virology 79: 11457--11466.
+\bibAnnoteFile{Klein2005}
+
+\bibitem{Hsieh2006}
+Hsieh MF, Lai SL, Chen JP, Sung JM, Lin YL, et~al. (2006) {Both CXCR3 and
+  CXCL10/IFN-inducible protein 10 are required for resistance to primary
+  infection by dengue virus.}
+\newblock The Journal of Immunology 177: 1855--1863.
+\bibAnnoteFile{Hsieh2006}
+
+\bibitem{Wuest2008}
+Wuest TR, Carr DJJ (2008) {Dysregulation of CXCR3 signaling due to CXCL10
+  deficiency impairs the antiviral response to herpes simplex virus 1
+  infection.}
+\newblock The Journal of Immunology 181: 7985--7993.
+\bibAnnoteFile{Wuest2008}
+
+\bibitem{Thapa2008}
+Thapa M, Welner RS, Pelayo R, Carr DJJ (2008) {CXCL9 and CXCL10 expression are
+  critical for control of genital herpes simplex virus type 2 infection through
+  mobilization of HSV-specific CTL and NK cells to the nervous system.}
+\newblock The Journal of Immunology 180: 1098--1106.
+\bibAnnoteFile{Thapa2008}
+
+\bibitem{Kohlmeier2009}
+Kohlmeier JE, Cookenham T, Miller SC, Roberts AD, Christensen JP, et~al. (2009)
+  {CXCR3 directs antigen-specific effector CD4+ T cell migration to the lung
+  during parainfluenza virus infection.}
+\newblock The Journal of Immunology 183: 4378--4384.
+\bibAnnoteFile{Kohlmeier2009}
+
+\bibitem{Dawson2000}
+Dawson TC, Beck Ma, Kuziel Wa, Henderson F, Maeda N (2000) {Contrasting effects
+  of CCR5 and CCR2 deficiency in the pulmonary inflammatory response to
+  influenza A virus.}
+\newblock The American journal of pathology 156: 1951--9.
+\bibAnnote{Dawson2000}{--> description of the general effect on lung
+  "inflammation" of CCR5 dependent T cell response during influenza infection -
+  CCR5 KO triggers higher mortality rate in influenza infected mice but does
+  not significantly decrease the clearance of the virus (}
+
+\bibitem{Wareing2004}
+Wareing MD, Lyon AB, Lu B, Gerard C, Sarawar SR (2004) {Chemokine expression
+  during the development and resolution of a pulmonary leukocyte response to
+  influenza A virus infection in mice.}
+\newblock Journal of Leukocyte Biology 76: 886--895.
+\bibAnnoteFile{Wareing2004}
+
+\bibitem{Fadel2008}
+Fadel S, Bromley S, Medoff B, Luster A (2008) {CXCR3-deficiency protects
+  influenza-infected CCR5-deficient mice from mortality}.
+\newblock European journal of immunology 38: 3376--3387.
+\bibAnnote{Fadel2008}{These data could be interesting if we want to model both
+  CCL5 and CXCR3 (receptor for CXCL10 or IP-10) because CXCR3 has regulating
+  properties on CCR5 (receptor for CCL5 or RANTES) dependent and/or independent
+  response.}
+
+\bibitem{Kohlmeier2011}
+Kohlmeier JE, Reiley WW, Perona-Wright G, Freeman ML, Yager EJ, et~al. (2011)
+  {Inflammatory chemokine receptors regulate CD8(+) T cell contraction and
+  memory generation following infection.}
+\newblock The Journal of Experimental Medicine 208: 1621--1634.
+\bibAnnoteFile{Kohlmeier2011}
+
+\bibitem{LiJeon2002}
+{Li Jeon} N, Baskaran H, Dertinger SKW, Whitesides GM, {Van De Water} L, et~al.
+  (2002) {Neutrophil chemotaxis in linear and complex gradients of
+  interleukin-8 formed in a microfabricated device.}
+\newblock Nature Biotechnology 20: 826--830.
+\bibAnnoteFile{LiJeon2002}
+
+\bibitem{McDonald2010}
+McDonald B, Pittman K, Menezes GB, Hirota SA, Slaba I, et~al. (2010)
+  {Intravascular danger signals guide neutrophils to sites of sterile
+  inflammation.}
+\newblock Science 330: 362--366.
+\bibAnnoteFile{McDonald2010}
+
+\bibitem{Hufford2011}
+Hufford MM, Kim TS, Sun J, Braciale TJ (2011) {Antiviral CD8+ T cell effector
+  activities in situ are regulated by target cell type}.
+\newblock The Journal of Experimental Medicine 208: 167--180.
+\bibAnnoteFile{Hufford2011}
+
+\bibitem{Jennrich2012}
+Jennrich S, Lee MH, Lynn RC, Dewberry K, Debes GF (2012) {Tissue exit: a novel
+  control point in the accumulation of antigen-specific CD8 T cells in the
+  influenza a virus-infected lung.}
+\newblock Journal of Virology 86: 3436--45.
+\bibAnnoteFile{Jennrich2012}
+
+\bibitem{Richter2007}
+Richter MV, Topham DJ (2007) {The alpha1beta1 integrin and TNF receptor II
+  protect airway CD8+ effector T cells from apoptosis during influenza
+  infection.}
+\newblock The Journal of Immunology 179: 5054--5063.
+\bibAnnoteFile{Richter2007}
 
 \bibitem{Miao2010}
 Miao H, Hollenbaugh J, Zand M, Holden-Wiltse J, Mosmann T, et~al. (2010)
@@ -64,67 +291,19 @@ Zheng H, Jin B, Henrickson SE, Perelson AS, {Von Andrian} UH, et~al. (2008)
 \newblock Molecular and Cellular Biology 28: 4040--4051.
 \bibAnnoteFile{Zheng2008}
 
-\bibitem{Ingulli2009}
-Ingulli E, Funatake C, Jacovetty EL, Zanetti M (2009) {Cutting edge: antigen
-  presentation to CD8 T cells after influenza A virus infection.}
-\newblock The Journal of Immunology 182: 29--33.
-\bibAnnoteFile{Ingulli2009}
+\bibitem{Lee2009}
+Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
+  and Prediction of the Adaptive Immune Response to Influenza A Virus
+  Infection}.
+\newblock Journal of Virology 83: 7151--7165.
+\bibAnnoteFile{Lee2009}
 
-\bibitem{Allan1990}
-Allan W, Tabi Z, Cleary A (1990) {Cellular events in the lymph node and lung of
-  mice with influenza}.
-\newblock The Journal of Immunology 144: 3980--3986.
-\bibAnnoteFile{Allan1990}
-
-\bibitem{Thelen2008}
-Thelen M, Stein JV (2008) {How chemokines invite leukocytes to dance}.
-\newblock Nature Immunology 9: 953--959.
-\bibAnnoteFile{Thelen2008}
-
-\bibitem{Thomas-Vaslin2008}
-Thomas-Vaslin V, Altes HK, {De Boer} RJ, Klatzmann D (2008) {Comprehensive
-  assessment and mathematical modeling of T cell population dynamics and
-  homeostasis.}
-\newblock The Journal of Immunology 180: 2240--2250.
-\bibAnnoteFile{Thomas-Vaslin2008}
-
-\bibitem{Beauchemin2008}
-Beauchemin CAA, McSharry JJ, Drusano GL, Nguyen JT, Went GT, et~al. (2008)
-  {Modeling amantadine treatment of influenza A virus in vitro.}
-\newblock Journal of Theoretical Biology 254: 439--451.
-\bibAnnoteFile{Beauchemin2008}
-
-\bibitem{Smith2010}
-Smith AM, Adler FR, Perelson AS (2010) {An accurate two-phase approximate
-  solution to an acute viral infection model.}
-\newblock Journal of Mathematical Biology 60: 711--726.
-\bibAnnoteFile{Smith2010}
-
-\bibitem{Thakar2010}
-Thakar J, Poss M, Albert R, Long GH, Zhang R (2010) {Dynamic models of immune
-  responses: what is the ideal level of detail?}
-\newblock Theoretical biology medical modelling 7: 35.
-\bibAnnoteFile{Thakar2010}
-
-\bibitem{Burrowes2004}
-Burrowes KS, Tawhai MH, Hunter PJ (2004) {Modeling RBC and neutrophil
-  distribution through an anatomically based pulmonary capillary network.}
-\newblock Annals of Biomedical Engineering 32: 585--595.
-\bibAnnoteFile{Burrowes2004}
-
-\bibitem{Zhao2000}
-Zhao MQ, Stoler MH, Liu AN, Wei B, Soguero C, et~al. (2000) {Alveolar
-  epithelial cell chemokine expression triggered by antigen-specific cytolytic
-  CD8(+) T cell recognition.}
-\newblock Journal of Clinical Investigation 106: R49--R58.
-\bibAnnoteFile{Zhao2000}
-
-\bibitem{LiJeon2002}
-{Li Jeon} N, Baskaran H, Dertinger SKW, Whitesides GM, {Van De Water} L, et~al.
-  (2002) {Neutrophil chemotaxis in linear and complex gradients of
-  interleukin-8 formed in a microfabricated device.}
-\newblock Nature Biotechnology 20: 826--830.
-\bibAnnoteFile{LiJeon2002}
+\bibitem{McGill2009}
+McGill J, Legge KL (2009) {Cutting edge: contribution of lung-resident T cell
+  proliferation to the overall magnitude of the antigen-specific CD8 T cell
+  response in the lungs following murine influenza virus infection.}
+\newblock The Journal of Immunology 183: 4177--4181.
+\bibAnnoteFile{McGill2009}
 
 \bibitem{Mitchell2011}
 Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
@@ -134,17 +313,22 @@ Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
 \newblock Journal of virology 85: 1125--35.
 \bibAnnoteFile{Mitchell2011}
 
-\bibitem{Ganusov2011}
-Ganusov VV, Barber DL, {De Boer} RJ (2011) {Killing of targets by CD8 T cells
-  in the mouse spleen follows the law of mass action.}
-\newblock PloS one 6: e15959.
-\bibAnnote{Ganusov2011}{This paper has mass action T cell killing rates}
-
 \bibitem{Warrender2006}
 Warrender C, Forrest S, Koster F (2006) {Modeling intercellular interactions in
   early Mycobacterium infection.}
 \newblock Bulletin of Mathematical Biology 68: 2233--2261.
 \bibAnnoteFile{Warrender2006}
+
+\bibitem{Desmetz2006}
+Desmetz C, Lin YL, Mettling C, Portal\`{e}s P, Rabesandratana H, et~al. (2006)
+  {The strength of the chemotactic response to a CCR5 binding chemokine is
+  determined by the level of cell surface CCR5 density.}
+\newblock Immunology 119: 551--61.
+\bibAnnote{Desmetz2006}{--> the important factor seems to be the fluctuations
+  of CCR5 (receptor) expression on T cells and less the fluctuations of CCL5
+  (chemokine) concentration on T cell chemotactic activity. - CCL5
+  concentration dependent T cell migration (in vitro) --> CCL5 T cell
+  sensitivity ?}
 
 \bibitem{Gao2003}
 Gao P, Zhou Xy, Yashiro-ohtani Y, Yang Yf, Sugimoto N, et~al. (2003) {The
@@ -176,13 +360,6 @@ Chan RWY, Yuen KM, Yu WCL, Ho CCC, Nicholls JM, et~al. (2010) {Influenza H5N1
 \newblock PLoS ONE 5: 9.
 \bibAnnoteFile{Chan2010}
 
-\bibitem{Chan2005}
-Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
-  {Proinflammatory cytokine responses induced by influenza A (H5N1) viruses in
-  primary human alveolar and bronchial epithelial cells}.
-\newblock Respiratory Research 6: 135.
-\bibAnnoteFile{Chan2005}
-
 \bibitem{Zeng2011}
 Zeng H, Pappas C, Katz JM, Tumpey TM (2011) {The 2009 pandemic H1N1 and
   triple-reassortant swine H1N1 influenza viruses replicate efficiently but
@@ -197,26 +374,6 @@ Zeng H, Goldsmith C, Thawatsupha P, Chittaganpitch M, Waicharoen S, et~al.
   Type I Interferon Response in Polarized Human Bronchial Epithelial Cells}.
 \newblock Journal of Virology 81: 12439--12449.
 \bibAnnoteFile{Zeng2007}
-
-\bibitem{Dufour2002}
-Dufour JH, Dziejman M, Liu MT, Leung JH, Lane TE, et~al. (2002)
-  {IFN-gamma-inducible protein 10 (IP-10; CXCL10)-deficient mice reveal a role
-  for IP-10 in effector T cell generation and trafficking.}
-\newblock The Journal of Immunology 168: 3195--3204.
-\bibAnnoteFile{Dufour2002}
-
-\bibitem{Kawai1999}
-Kawai T, Seki M, Hiromatsu K, Eastcott JW, Watts GF, et~al. (1999) {Selective
-  diapedesis of Th1 cells induced by endothelial cell RANTES.}
-\newblock The Journal of Immunology 163: 3269--3278.
-\bibAnnoteFile{Kawai1999}
-
-\bibitem{Kohlmeier2008}
-Kohlmeier JE, Miller SC, Smith J, Lu B, Gerard C, et~al. (2008) {The chemokine
-  receptor CCR5 plays a key role in the early memory CD8+ T cell response to
-  respiratory virus infections.}
-\newblock Immunity 29: 101--13.
-\bibAnnoteFile{Kohlmeier2008}
 
 \bibitem{Matsukura1996}
 Matsukura S, Kokubu F, Noda H, Tokunaga H, Adachi M (1996) {Expression of IL-6,
@@ -238,6 +395,11 @@ Julkunen I, Mel\'{e}n K, Nyqvist M, Pirhonen J, Sareneva T, et~al. (2000)
 \newblock Vaccine 19 Suppl 1: S32--7.
 \bibAnnoteFile{Julkunen2000}
 
+\bibitem{Thelen2008}
+Thelen M, Stein JV (2008) {How chemokines invite leukocytes to dance}.
+\newblock Nature Immunology 9: 953--959.
+\bibAnnoteFile{Thelen2008}
+
 \bibitem{Francis1997}
 Francis K, Palsson BEO (1997) {Effective intercellular communciation distances
   are determined by the relative time constants for cyto/chemokine secretion
@@ -251,13 +413,6 @@ Beauchemin C, Forrest S, Koster FT (2006) {Modeling Influenza Viral Dynamics in
 \newblock LNCS Artificial Immune Systems 4163: 23--36.
 \bibAnnoteFile{Beauchemin2006}
 
-\bibitem{Lee2009}
-Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
-  and Prediction of the Adaptive Immune Response to Influenza A Virus
-  Infection}.
-\newblock Journal of Virology 83: 7151--7165.
-\bibAnnoteFile{Lee2009}
-
 \bibitem{Ganusov2008}
 Ganusov VV, {De Boer} RJ (2008) {Estimating in vivo death rates of targets due
   to CD8 T-cell-mediated killing.}
@@ -270,13 +425,6 @@ Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
   artificial immune systems}.
 \newblock Swarm Intelligence 4: 301--318.
 \bibAnnoteFile{Banerjee2010b}
-
-\bibitem{Miller2003}
-Miller MJ, Wei SH, Cahalan MD, Parker I (2003) {Autonomous T cell trafficking
-  examined in vivo with intravital two-photon microscopy}.
-\newblock Proceedings of the National Academy of Sciences of the United States
-  of America 100: 2604--2609.
-\bibAnnoteFile{Miller2003}
 
 \bibitem{Banerjee2011}
 Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
