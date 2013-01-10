@@ -1,0 +1,268 @@
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+
+% Use doublespacing - comment out for single spacing
+\usepackage{setspace} 
+\doublespacing
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+% Use the PLoS provided bibtex style
+\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+\usepackage{multirow}
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+% figure files reside in the figures/ directory
+\graphicspath{
+{figures/}
+}
+
+%% END MACROS SECTION
+
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large
+\textbf{Spatially explicit model of the lymphocyte diaspora in influenza-infected lung reveals thresholds on chemokine directed migration (Response to Reviewers)}
+}
+% Insert Author names, affiliations and corresponding author email.
+\\
+Drew Levin, 
+Stephanie Forrest, 
+Soumya Banerjee,
+Candice Clay,
+Melanie Moses, 
+Frederick Koster
+\end{flushleft}
+\vspace{1cm}
+
+
+
+We thank the reviewers for their constructive and insightful comments.  The incorporation of the reviewers' comments has greatly improved the paper.  We include detailed responses to each comment below.
+
+\section*{Reviewer 1}
+
+\begin{enumerate}
+
+\item \textbf{The title may be misleading as the model is very simplified from the immunological viewpoint and gives rather a qualitative rather than a quantitative view of the spatial dynamics.}
+
+We changed the title by changing the phrase `quantifies constraints' to `reveals thresholds', which we believe more accurately reflects the paper's main focus. \\
+
+
+\item \textbf{Introduction, p3: It would be interesting to add a general reference to agent-based models (ABM), in particular spatial ABM in immunology and briefly justify the use of an ABM rather than partial differential equations in the present context.}
+
+Added reference to Beauchemin 2006 paper that discusses ABM advantages vs. differential equations as well as Bauer 2009.  We have added the following sentences to the introduction: \\
+
+\textit{Activated CD8 T cells searching for and homing into infected tissue do so in a spatially complex environment. We therefore used agent-based modeling (ABM) to represent the physical environment of the searching T cell.} \\
+
+\pagebreak
+
+\item \textbf{Computational modeling section: there is no reference to Fig. 1 in the main text. As far as I understand the drawing in Fig. 1, I see 16 branches rather than 14, why?}
+
+A reference to Fig. 1 was added to the Model section.  The number 14 refers to the depth of the bronchial tree, where each layer represents the bifurcation of a branch.  Thus, each level results in the doubling of the total number of pathways.  14 branches refers to $2^{14} = 16,384$ endpoints.  The figure simplifies this to 4 layers and thus $2^4 = 16$ endpoints.  The figure has been edited to read `14 bifurcations' rather than `14 branches' and the caption was changed to read `vascular bifurcations' for clarity. \\
+
+
+\item \textbf{Acronyms in text and tables should be defined (for example, ODE, FOI, NHBE, ATC, ?).}
+
+Acronyms in the text have been either defined or removed.  Acronyms in the table are now defined in the caption. \\
+
+
+\item \textbf{Model definition:}
+\begin{enumerate}
+   \item \textbf{More details concerning the implementation of the ABM need to be given, at least in the supplement: a short description of the spatial arrangement (size of the simulation space, cell arrangement, number of epithelial cells, as well as how T cell movement vs. particle diffusion has been implemented.}
+  
+   \item \textbf{IgM addition is mentioned in section 2.1 of the supplement but not indicated in the main text.}
+   
+   \item \textbf{What happens in this ABM when a free virus particle infects a cell: is it absorbed and does it disappear from the pool of free viruses?}
+   
+  
+\end{enumerate}       
+
+Two new sections were added to the supplement (S1.2, S1.3).  One describes details of the general CyCells model environment and the other describes details of the model specific to this paper.  These sections address all of the points raised here by the reviewer except IgM.     We added a sentence referencing the IgM implementation to the main paper: \\
+
+\textit{IgM is modeled by increasing the viral decay rate by a factor of three after the third day.} \\
+
+\item \textbf{Materials, p6: the sentence "treatment of the monolayer with protease" is not understandable without reading reference [19] and requires here more explanation.}
+
+The description of viral measurement was expanded into two sentences and an explanation of why protease was used was added: \\
+
+\textit{Basal media was collected from previously undisturbed triplicate or quadruplicate wells at 0, 6, 10, 12, 16, 20, 24, 30, 36, 42, 48, and 72 hours after infection, and stored at -80C until assay.  Subsequently, apical fluid for virus secretion was collected before and after treatment of the monolayer with protease (Pronase, Sigma) to optimize the collection of infectious virus (Mitchell 2011).} \\
+
+
+\item \textbf{Chemokine production, p6:}
+
+\begin{enumerate}
+	\item \textbf{The definition of all the variables and parameters of the ODE model in the supplement (eqs S1) should be added in order to be more self-contained.} 
+	
+The central differential equation was moved to the beginning of the model section of the main paper and a new table was added with descriptions of every population and parameter. \\
+
+	\item \textbf{Fig. 3: "8500 pg/mL" is indicated as a measurement threshold for sH1N1.  Why is this not also the case for aH5N1 and pH1N1?} 
+	
+The upper limit applied only to sH1N1 because there were insufficient sample dilutions made and the sample could not be repeated.  The sentence in the caption has been rewritten: \\
+
+\textit{sH1N1 IP-10 secretion exceeded measurement accuracy above 8500 pg/mL but these three values (empty red triangles) were not included in the model fitting.} \\
+
+\end{enumerate}
+
+\pagebreak
+
+\item \textbf{T cell sensitivity, p7, top: The sentence "Because multiple T cells ? we hypothesize ? more T cells are not more efficient above a critical threshold" is unclear. Is it not that the probability of apoptosis induction will increase with the T cell number even if the rate of transition from secreting to apoptotic cells does not scale with T cell number?}
+
+It is {\em not} that the probability would increase with additional T cells at the infected epithelial cell in our model.  The section has been rearranged to improve clarity. The detail regarding multiple T cells was moved to other sections.  We also added two expanded model description sections to the supplement, which we hope clarifies this point. \\
+
+
+\item \textbf{Spatial effects:}
+\begin{enumerate}
+	\item \textbf{p7, bottom: refer also to Fig. S1}
+	
+A reference to Figure S1 was added. \\
+
+	\item \textbf{Figure 6, legend: Can the difference in behaviour for pH1N1 and sH1N1 infections not be explained by the difference in IP-10 production rates (even if small)?}
+	
+We performed a new model run combining pH1N1 virus and sH1N1 chemokine and found no difference in the infection profile.  A sentence was to the spatial effects results section: \\
+
+\textit{Furthermore, increasing chemokine production fails to control the runaway pH1N1 infection (data not shown) suggesting that the effect of high viral production rates dominate low chemokine concentrations in this scenario.} \\
+	
+\end{enumerate}
+
+
+
+\item \textbf{Discussion, p10, 2d §: reference should also be given to section 2.2 of the supplement where combinations of chemokines are considered.}
+
+The Chemokine Directed T cell Search section of the discussion was significantly abbreviated for clarity and removal of information not directly relevant to the modeling exercise.  The paragraph in question was removed entirely. \\
+
+\item \textbf{Equations:}
+\begin{enumerate}
+	\item \textbf{Eqs S1: add definition of variables and parameters}
+	
+	We  moved the first equation from the supplement to the main paper to  help address the point that the paper is not self-contained.  We have added a new table with descriptions and values for each population and parameter of this equation. \\
+
+	\item \textbf{Eqs S2: add definition of $t_{rc}$ and $v_{tcell}$; reference to Fig. 1 of the main text should also be given in section 1.2 of the supplement as eqs. S2 relate to the bottom part of this figure.} 
+	
+	These modifications have all been made. \\
+
+	\item \textbf{Section 2.2: does the conclusion that RANTES does not play a significant role for H1N1 infections not simply follows from the fact that IP-10 has a much higher production rate (about 100 times) than RANTES in the H1N1 strains (Table 2, main text)?}
+        
+	Indeed, it does follow given the assumption that T cells are equally sensitive to each chemokine.  The text in S2.2 has been modified to make that assumption clear and to strengthen the conclusion.  The following two sentences in particular address the point. \\
+	
+	\textit{T cell sensitivity depends on receptor density (Desmetz 2006) and this was assumed to be constant.  Thus, the chemokines in combination work additively in our model.} \\
+	
+	\textit{This suggests that RANTES does not play a significant role in infections that stimulate an IP-10 response due to the higher production rates of IP-10.} \\
+
+\end{enumerate}
+
+\pagebreak
+
+\item \textbf{Minor points:}
+\begin{enumerate}
+	\item \textbf{p7, Fig. 5, top row: T cells are barely visible. Could this be improved?}
+	
+	The figure has been enhanced to improve visibility and a note regarding the change has been added to the caption: \\
+	
+	\textit{Individual cell images for days 5.5 and 7 were enhanced (green dots are enlarged) manually to improve T cell visibility.  Thus, individual groups of T cells, which cover only an area of one or two epithelial cells in the model appear larger in the image.  Original images available upon request.} \\
+	
+	\item \textbf{p7, Fig. 6, legend, 5th line:  add "more expressing cells than sH1N1".}
+	
+	This has been done. \\
+	
+	\item \textbf{p8, line 4: taking the viral production indicated in Table 2, I find 2632 rather than 2643}
+	
+	This was calculated before we rounded to significant digits and has been fixed. (Impressive eye for detail!) \\
+	
+	\item \textbf{p9, line 12 from bottom: greater ? than}
+	
+	This sentence has been removed. \\
+	
+	\item \textbf{p9, line 3 from bottom: replace "into" by "in"}
+	
+	This has been done. \\
+	
+	\item \textbf{Note that some Table and reference numbers have been replaced by question marks in the supplement}	
+	
+	These have been fixed.	
+	
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+
+\section*{Reviewer 2}
+
+\begin{enumerate}
+
+\item \textbf{Very little detail is given about the agent-based model and how chemokines influence cell migration behavior. The authors cite several papers (4,17,18) but as far as I can see these papers do not provide convincing evidence that chemokines direct migration of effector T cells to the sites of infection (foci of infected cells). In fact, I don't think that there is any evidence of that process. How chemokines direct migration of lymphocytes in tissues is not well understood and the cartoon knowledge of textbooks is mainly applicable to the process of extravasations and may not be used by T cells to find infected cells.}
+
+We agree with the reviewer that for the influenza model the evidence for chemokine-directed migration of T cells to infected foci is incomplete.  To provide a justification for constructing a math model based on chemokine-directed migration, we have completely rewritten the Introduction in order to thoroughly review the available literature on chemokine function with respect to RNA virus infections.  We state that there is no evidence for T cells climbing chemokine gradients, and that this activity has been shown only for neutrophils.  However, we feel that the pieces of evidence, taken together, support a reasonable hypothesis for chemokine-directed migration, in addition to extravasation, providing a reasonable justification for the model-building. \\
+
+
+\item \textbf{How you analyze experimental data is unclear. Which equations did you use?}
+
+This was a common theme in our reviews.  We have made the paper more self-contained by moving the central differential equation to the main paper.  We added details of the inner workings of the model to the supplement in two new sections (S1.2 and S1.3).  This allows the paper to stand alone from our previous work in Mitchell 2011.  \\
+
+\pagebreak
+
+\item \textbf{Please check parameter values that you provided in Table 1. It appears to several of those are made up and are not really measured in the referenced work.}
+
+Table 2 was split into a referenced parameter section and an estimated parameter section to make the distinction clear.  We reviewed all of our references and annotated two parameters in Table 2: Apoptosis Time and T Cell Speed as follows: 
+
+\begin{itemize}
+
+\item Apoptosis time has been rewritten as an estimated parameter and a note has been made that this value is specific to low T cell densities.
+
+\item T cell speed has been rewritten as an estimated parameter: \textit{The values were selected to be an order of magnitude faster than those calculated for inside the lymph node (Miller 2003).} \\
+
+\end{itemize}
+
+\end{enumerate}
+
+
+\section*{Reviewer 3}
+
+\textbf{A minor comment is that I think it would be interesting to comment in the discussion on the fact that most pathogenic isolates kill the host (in animal models, for sure) presumably before an large CTL infiltration could occur, but that's really not the focus of the manuscript.} \\
+
+While it does not address early mortality in animal hosts, we added a note in the discussion addressing the fact that most humans did not die from pH1N1 infection: \\
+
+in vivo \textit{pH1N1 infection did not usually exhibit a resurgence due to features of the immune response not modeled, specifically antibody and local T cell proliferation}
+
+\end{document}

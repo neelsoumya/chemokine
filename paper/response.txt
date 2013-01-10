@@ -13,7 +13,7 @@ immunological viewpoint and gives rather a qualitative rather than a
 quantitative view of the spatial dynamics.
 
 - We have changed the title by removing the words 'quantifies constraints'
-and have replaced them with 'reveals threshold' which we believe more
+and have replaced them with 'reveals thresholds' which we believe more
 accurately reflects the paper's main focus. 
 
 
@@ -149,7 +149,7 @@ of this equation.
 - Done
 - This was calculated before we rounded to significant digits.  Fixed.
     (Impressive eye for detail!)
-- TODO: Fred
+- This sentence has been removed.
 - Done
 - Fixed
 

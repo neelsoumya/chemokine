@@ -298,6 +298,18 @@ Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
 \newblock Journal of Virology 83: 7151--7165.
 \bibAnnoteFile{Lee2009}
 
+\bibitem{Beauchemin2006a}
+Beauchemin C (2006) {Probing the effects of the well-mixed assumption on viral
+  infection dynamics.}
+\newblock Journal of Theoretical Biology 242: 464--477.
+\bibAnnoteFile{Beauchemin2006a}
+
+\bibitem{Bauer2009}
+Bauer AL, Beauchemin CAA, Perelson AS (2009) {Agent-based modeling of
+  host-pathogen systems: The successes and challenges}.
+\newblock Information Sciences 179: 1379--1389.
+\bibAnnoteFile{Bauer2009}
+
 \bibitem{McGill2009}
 McGill J, Legge KL (2009) {Cutting edge: contribution of lung-resident T cell
   proliferation to the overall magnitude of the antigen-specific CD8 T cell
