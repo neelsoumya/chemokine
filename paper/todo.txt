@@ -1,0 +1,23 @@
+* Redo all experiments with the following changes:
+    - Slower T cells speeds, constant between searching and climbing (6um/m?  10um/m?  double-check)
+    - Stronger IgM (x10)
+    - Cell radius? -> T cell 4 or 5um R, Epithelial cell R?
+    - No random search, just recirculation or climb
+    - Double-check recirculation times (mouse/human).
+
+
+* Do a CyCells simulation of pH1N1 where infected cells skip the screting phase
+  and proceed immediately to apoptosis.  See if this still allows the infection
+  to persist (it likely would).
+
+
+* Graph number of Tcells in circulation and in tissue vs time, add to Fig. 6
+    Answer: no more random walkers...
+
+* Experimentally determine the motility coefficient for T cells?
+    Answer: D = M = e^2/4dt (e = step length, dt = timestep)
+
+* Remove T cell speed figure from supplement?
+
+
+* Mouse model

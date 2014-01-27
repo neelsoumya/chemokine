@@ -1,0 +1,220 @@
+Reviewer #2: Comments.
+
+1. If I understood you correctly you model infected lung as 2D layer of cells with CD8 T cells having access only to the edge of the plaque growing in the lung. What experimental evidence do you have that this is a valid model? E.g., we know that blood/RBC in the lung has access to nearly all epithelial cells, so T cells could potentially have access to the middle of the plaque. Also, whether such a simple description of the lung is adequate for the physiologically relevant modeling is questionable. There is a very good example of the modeling done on recruitment of T cells to antigen-expressing DCs. Spatial (2D) modeling showed that secretion of chemokines by infected DCs will crow DC with irrelevant cells and thus will prevent T cell activation (Riggs et al. JTB 2008). More recent work showed that this result is an artifact of 2D modeling, and considering cell dynamics in 3D allowed efficient recruitment of antigen-specific T cells to infected DCs (Vroomans et al. PLoS CB
+2012). I think that your results could arise simply from inappropriately describing biology of the virus replication in the lung.
+
+You understood incorrectly.
+  - Access only to edge???
+  - DCs, DCs, DCs???
+  - 2D model is appropriate
+
+
+2. Cell recruitment into plaque could occur not only because of chemokines but simply because of change in vascular permeability of blood vessels/capillaries. I can imagine that at the site of rapid virus replication there is more cells coming in simply because of increased blood flow, not due to chemokines. Currently you consider that cell entering the lung has equal probability to access any place (which is incorrect, site of infection will be visited more often upon arrival from the blood). Please address.
+
+- Good point, needs addressing
+
+
+3. You seem to ignore cell death in the middle of the plaque - in real situations (Paul Thomas work), plaques have viable virus/infected cells only on the boundary, not in the center. If majority of infected cells are in the border, then you don't have a problem, T cells should be able to control the virus sufficiently rapidly. Please address.
+
+- No we don't (Fig 5, Entire Discussion).  This is addressed.
+
+
+4. You have no justification for the model (1), nor you have explanation of different terms and delays used. The fits of the model to data are very poor and you need to improve those.
+
+- The fits are to a simplified ODE model with highly constrained parameters from a previous study.  The purpose isn't to fit the data as best we can, but rather to find the best fit given the constraints in order to infer a parameter value.
+
+
+5. You simulation show viral growth in the lung (Figures 4 and 6). These are completely incompatible (too slow) with what has been measured in vivo. See work by Hulin Wu on the subject.
+
+- Figures 4 and 6 refer to infected cell popluation, not viral population.  Figure 3 shows viral population on the same order as Wu.
+
+
+
+Reviewer #4:
+This paper investigates directional migration of T-cells towards infection foci
+in a 2D model representation of the lung.
+
+My most important comment is that I noticed a large overlap between this
+paper and a previous publication by the same group (their ref. 63). In that
+previous publication a very similar model is used, the main difference being
+that there they "switch on and off" the chemokine sensing to quantify its
+effect. Specifically, the branching structure representing the lung vascular
+network, the 2D representation of the lung tissue, and even the chemokine-driven
+extravasation from the lung vascular network are all present in ref. 63 as well
+(for a quick check, compare Fig. 1 of ref. 63 with Fig. 1 of the present paper)
+and similar (though simpler) equations are used.
+
+I find this worrying because the connection to ref. 63 is not mentioned anywhere
+and the reference is only given in a very marginal place (in Table 2, to warrant
+a certain parameter setting). This situation makes it impossible to judge the
+relative advance to that previous publication and hence to judge whether the
+work can be recommended for publication or not. Because ref. 63 is in a computer
+science conference proceedings, maybe the authors intend this to be the
+corresponding "journal version", but that seems unlikely given that the main
+results of ref. 63 are not included in the present paper. So my guess would be
+that publication of the journal version of ref. 63 is still underway, which
+should then have been mentioned in the cover letter.
+
+- Very good point, we have moved disucssion of the ICARIS paper to the introduction.
+
+
+Nevertheless, I do wish to mention at least a few concerns on the actual content
+of the paper.
+
+- Even though this paper aims to model T cell migration in the lung, it seems
+  unclear to me whether the current model can really say anything about that.
+  Certainly the combination of a branching structure with a 2D monolayer is not
+  the most natural way of representing the lung of an animal. However, no
+  motivation or justification is given why the structure is as it is, and why
+  the authors think this is an appropriate model of the lung. My guess would be
+  that the 2D monolayer is incorporated simply because this enabled the group
+  to use experimental data from previous in vitro experiments that did use such
+  a monolayer of lung cells. Though this is a valid pragmatical reason, the fact
+  that the real lung anatomy is substantially more complex would need to be
+  taken into account when interpreting the results. For example, in the end they
+  define an "effective communication distance" of approx. 150 microns. How can
+  I interpret this value in the context of a real lung? The lung is structured
+  into a network of different alveoli which are somewhat segregated from each
+  other. In contrast, the present 2D model assumes that there is a direct path
+  from every location to every other location. Moreover migratory efficacy could
+  be substantially different in 2D than in 3D.
+
+  Either a more faithful representation of lung anatomy or an
+  explanation why the current 2D representation is sufficient or at the very
+  least some discussion on how this affects the results would be recommended.
+  Some nice quantification of the alveoli network of the human lung is performed
+  in http://ajrccm.atsjournals.org/content/169/1/120.long and perhaps it would
+  be useful if the authors set their results in context with some of these
+  numbers.
+
+Plaque sizes are small enough to exist on the surface of lung tissue, thus 2D.
+Cells and virus on the surface are limited enough in their movements that free
+movement through the entire lung is a moot point. Traversal of the lung is clearly 
+done through a branching network.  
+
+
+- In general it is difficult to assess what the main results and take-home
+  messages of the paper are. The title indicates that some thresholds are
+  identified but due to the above concerns I find it difficult to judge the
+  relevance of these thresholds beyond their own model. Perhaps most likely
+  these values could be interpreted in terms of their 2D cell monolayer
+  experimental system. But as it stands it remains completely unclear who is
+  going to use these values and for what. Apart from these values, the paper
+  has little insight to offer and the discussion largely elaborates on how
+  agent based models can describe some aspects of immune responses more
+  realistically than ODE's. This is hardly a novel insight (see e.g. their
+  own references to Beauchemin 2006 or Beltman et al 2007). Perhaps the most
+  interesting conclusion from the study might be that T-cells alone cannot
+  contain the infection, but even this might be more of an artifact of their
+  system because the compartmentalized structure of the real lung would likely
+  provide some additional barriers to the viral spread.
+
+  Perhaps some linking points might exist to several published modelling studies
+  on the role of directed T-cell migration in other tissues, e.g. Riggs et al
+  (J Theor Biol 250: 732-751) or Textor et al (PNAS 108: 2401-12406) or Vroomans
+  et al (PLoS Comp Biol 8(11), 2012); it could be checked whether the authors
+  might increase the usefulness of their work for the modelling audience by
+  setting their results in context with these or other similar studies.
+
+Needs to be addressed
+
+
+- Figure 3 indicates some serious problems with the model fit to the data, e.g.
+  unrealistically sharp increases or decreases of chemokine concentrations at
+  the beginning and/or the end of observation time. These issues are not dicussed
+  anywhere as far as I can see.
+
+Addressed earlier.  The fits are from a separate simplified model with highly constrained
+parameters for the purpose of infering a single value.  
+
+
+
+Reviewer #5: Levin et al. present a spatial model to decribe T cell mediated clearance of influenza infection in the lung. They compare three different virus strains and suggest that the pandemic strain is not cleared because of a combination of a high viral production rate and an inefficient T cell search.
+
+
+Main comments
+
+1. For some of the model parameters, especially with respect to T cell migration, the authors have made very unrealistic choices. First, the circulation parameters between blood/lymph nodes and within lung tissue are taken to be on the order of minutes. This is a heavy underestimate because it takes T cells 12-24 hours to travel through a lymph node. Not all T cells will first move through a lymph node before attempting to pass by the lung vasculature again, but still the average is likely to be in the order of hours rather than minutes. Second, allowing T cells to search only for 10 minutes within lung tissue seems very short. Two-photon imaging studies of T cells in infected tissues have not found such a fast turnover. This could be different for influenza, but if there are no experimental data for that I see no reason to make this assumption. Third, T cell speeds of 30 micron/sec are more than 100-fold larger than those observed in vivo (10 micron/min). Also a speed of 3
+micron/sec in chemotaxis mode (directed straight up the chemokine gradient), is also at least an order of magnitude too big. The authors write that they chose these parameters an order of magnitude bigger than lymph node speeds, but give no reason for doing that. It is thus questionable whether their results are biologically meaningful.
+
+2. I am not convinced of the conclusion that the T cell search is impeded by chemokines in large infections. Rather, it seems they have made the search process unrealistically efficient by using such high speeds. The videos indeed suggest that T cells very quickly find and kill the targets that they can recognize. The reason for lack of control for the pandemic strain seems rather to lie only in the assumption that targets continue to secrete viral particles for an hour during apopotosis. It is unclear how realistic that assumption is.
+
+3. The ODE model for chemokine production (extension of previously published
+model with chemokine equations) gives a poor fit to the data. First, the model exhibits temporal dynamics that seem absent from the data, so it is questionable whether it is a good model to estimate chemokine production rates. Second, the evidence for a delay in chemokine production is unclear. In most cases no delay is visible at all. Third, the fit to the virus data is not presented, but it is very relevant to see how good the fit is for that part of the data.
+
+4. It remains rather confusing what is exactly new in this manuscript compared to previous publications by the same authors. For the ODE model on chemokine production this is quite clear. However, for the CyCells model it is unclear how it is different from for example Banerjee et al. ICARIS (2011). Is it the same model but with a different parametrization, or are there large differences? The same is true for the ODE model presented in the supplement. It is stated that the model of Miao et al. (2010) is used but there are also similarities to Banerjee et al.(2011). The contribution of the current manuscript should be made clear and compared to the earlier work.
+
+
+Other comments
+
+1. A test of whether the T cell search is impeded by chemokines would be to kill all simulated targets for the pH1N1 strain as soon as they become secreting. Given the already efficient killing by T cells in the current simulations, it seems likely that in that case still the infection will not be cleared.
+
+2. p3, par 3, l1-2. It is stated that T cells have not been shown to climb chemokine gradients. However, it has been shown by the Germain group that T cells can in some circumstances perform chemotaxis towards dendritic cells. Moreover, several studies by the Cyster group have shown evidence for chemotaxis in B cells in certain conditions. As far as I know, the authors are correct that in the context of an infection T cell chemotaxis has not been demonstrated.
+
+3. p4, par 3, l3. In the previous study various initial population sizes are used. Please include what was used in this study in Table 1 as well (and show it in the fit of the viral particles data).
+
+4. p4, equations. It is unclear to me why the (t minus tau_1) appears twice in the I1 equation. Moreover, in the C equation, does 'I' represent 'I1 + I2'? This is not mentioned.
+
+5. p5. Some assumptions regarding the computational model are unclear. How is the connection made between the vascular network and the lung tissue? Does each end point of the network end at a connected location in the lung tissue? Related to this, can T cells enter anywhere in the part of the tissue that is modeled? How do T cells select an end point to extravasate into the tissue? Do T cells approach the focus of infection from the outside or do they enter directly into it in the simulations? I can imagine that in the literature immunohistochemical data are available to show what happens in vivo, but the first option seems most likely.
+
+6. p5. Are T cells modeled in a different layer, as are the chemokines?
+
+7. p5, par 3, l5. 'Apoptotic cells secrete virus until 1 hours after transition'. Do they continue to secrete chemokine as well?
+
+8. p6, last line. State that the data for the other chemo/cytokines are not shown.
+
+9. p8, l1. 'its larger size diffuses' is no proper phrase.
+
+10. p8, last lines. Apart from the number of viral particles that will still be produced during apoptosis, the infection probability as well as the viral decay rate will affect whether clearance occurs.
+
+11. p9, l2-4. Rewrite sentence.
+
+12. fig S2 is not referred to in main text.
+
+13. legend fig 5. Which chemokine is shown?
+
+14. add time to videos that is running along with the dynamics.
+
+15. table 1 legend. Does 'taken from' mean it was fitted, or that it was just set?
+
+16. Table 2. Some of the references are earlier modeling papers. This hardly counts as a reference for the parameter estimate.
+
+17. Table 2. What is the radius R? And the size of T cells?
+
+18. Table 2. Does 'age' mean the time after which T cells die?
+
+19. Table 2. What motility coefficient does this speed result in? This is actually a more relevant parameter than the speed.
+
+20. Table 2 legend l6. Does this imply an exponential distribution of the time to induce apoptosis?
+
+21. video S3 legend. Which chemokine is shown?
+
+22. Table 3 legend. It is unclear what was bootstrapped here, please give more details.
+
+23. Fig 3. Why are there no error bars? It was stated that the experiments were performed in triplicate of quadruplicate.
+
+24. pS1 equations. Why is gamma(t) here different from day 5 instead of from day 3 as in main text?
+
+25. pS2 par 2. I don't understand why the assumption is made that entry into the tissue is proportional to the areas relative to the whole lung area. This will result in only a very small fraction of T cells entering into the lung tissue, and it seems consistent with random entry, not with chemokine-mediated entry. It would be helpful if a plot of the number of T cells in circulation and in lung tissue over time is provided.
+
+26. pS2, par 3, l3. It is unclear why the authors write 'after walking randomly for that time'. Within the chemokine expressing region the cells should be performing chemotaxis, at least if I have understood the assumptions correctly.
+
+27. pS2, par 3, last line. Show a fit of the ODE model to the mentioned data. In these published data about 50000 T cells were present in the lung at the peak of infection. How does this compare to the ODE model used here?
+
+28. pS2, par 3, last line. In Banerjee et al. (2011), a similar (or the same) approach resulted in 864 cells per hour. What are the differences between the approaches?
+
+29. pS3, par 2, l4-6. A cell does not 'want to remove molecular concentration'. Moreover, it seems strange to remove concentration from neighboring squares, why is this done?
+
+30. pS3, par 4, l4. Does a molecular grid of 50 micron imply that the grid size is the same as for the target cells? And what about the T cell grid (if it exists).
+
+31. pS3, par 4, l5. A time step of 10 seconds implies that at the large speeds used T cells may easily miss targets because they make steps of 300 micron. How is this taken into account?
+
+32. pS4, l1. 'oracle cell' is not a clear term.
+
+33. pS4, par 3. This way of implementing chemotaxis seems too strong (apart from the large value). It would make more sense to define a component of random migration and add a chemotactic component that biases migration.
+
+34. pS4 and S5. References to supplementary figures are undefined (they appear as question marks).
+
+35. pS4 par 6 l1. The growth rate transition at day 3 is hardly visible, only for sH1N1 something seems to happen. This suggests that this parameter is underestimated, or it would mean antibodies have no role in infection clearance. However, that would oppose experimental evidence.
+
+36. pS5 par 3. Does this imply that only one chemokine grid is modeled, and that the chemokines do not diffuse independently?

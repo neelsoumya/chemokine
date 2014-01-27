@@ -85,6 +85,13 @@ Marshall DR, Turner SJ, Belz GT, Wingo S, Andreansky S, et~al. (2001)
   of America 98: 6313--6318.
 \bibAnnoteFile{Marshall2001}
 
+\bibitem{Vroomans2012}
+Vroomans RMA, Mar\'{e}e AFM, {De Boer} RJ, Beltman JB (2012) {Chemotactic
+  migration of T cells towards dendritic cells promotes the detection of rare
+  antigens}.
+\newblock PLoS Comput Biol 8: e1002763.
+\bibAnnoteFile{Vroomans2012}
+
 \bibitem{Topham2001}
 Topham DJ, Castrucci MR, Wingo FS, Belz GT, Doherty PC (2001) {The role of
   antigen in the localization of naive, acutely activated, and memory CD8(+) T
@@ -103,6 +110,28 @@ Medoff BD, Thomas SY, Banerji A, Wain JC, Zhang H, et~al. (2005) {Pathogenic
   T-cell recruitment into the airway in human disease.}
 \newblock Annals Of The New York Academy Of Sciences 1062: 220--241.
 \bibAnnoteFile{Medoff2005}
+
+\bibitem{Castellino2006}
+Castellino F, Huang AY, Altan-Bonnet G, Stoll S, Scheinecker C, et~al. (2006)
+  {Chemokines enhance immunity by guiding naive CD8+ T cells to sites of CD4+ T
+  cell-dendritic cell interaction.}
+\newblock Nature 440: 890--5.
+\bibAnnoteFile{Castellino2006}
+
+\bibitem{Gunn1998}
+Gunn MD, Tangemann K, Tam C, Cyster JG, Rosen SD, et~al. (1998) {A chemokine
+  expressed in lymphoid high endothelial venules promotes the adhesion and
+  chemotaxis of naive T lymphocytes.}
+\newblock Proceedings of the National Academy of Sciences of the United States
+  of America 95: 258--263.
+\bibAnnoteFile{Gunn1998}
+
+\bibitem{Okada2005}
+Okada T, Miller MJ, Parker I, Krummel MF, Neighbors M, et~al. (2005)
+  {Antigen-Engaged B Cells Undergo Chemotaxis toward the T Zone and Form Motile
+  Conjugates with Helper T Cells}.
+\newblock PLoS Biology 3: e150.
+\bibAnnoteFile{Okada2005}
 
 \bibitem{Chan2005}
 Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
@@ -317,6 +346,12 @@ McGill J, Legge KL (2009) {Cutting edge: contribution of lung-resident T cell
 \newblock The Journal of Immunology 183: 4177--4181.
 \bibAnnoteFile{McGill2009}
 
+\bibitem{Banerjee2011}
+Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
+  Inflammatory Signals in Adaptive Immune Responses}.
+\newblock ICARIS 6825: 1--14.
+\bibAnnoteFile{Banerjee2011}
+
 \bibitem{Mitchell2011}
 Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
   level of replication efficiency of 2009 (H1N1) pandemic influenza virus than
@@ -330,26 +365,6 @@ Warrender C, Forrest S, Koster F (2006) {Modeling intercellular interactions in
   early Mycobacterium infection.}
 \newblock Bulletin of Mathematical Biology 68: 2233--2261.
 \bibAnnoteFile{Warrender2006}
-
-\bibitem{Desmetz2006}
-Desmetz C, Lin YL, Mettling C, Portal\`{e}s P, Rabesandratana H, et~al. (2006)
-  {The strength of the chemotactic response to a CCR5 binding chemokine is
-  determined by the level of cell surface CCR5 density.}
-\newblock Immunology 119: 551--61.
-\bibAnnote{Desmetz2006}{--> the important factor seems to be the fluctuations
-  of CCR5 (receptor) expression on T cells and less the fluctuations of CCL5
-  (chemokine) concentration on T cell chemotactic activity. - CCL5
-  concentration dependent T cell migration (in vitro) --> CCL5 T cell
-  sensitivity ?}
-
-\bibitem{Gao2003}
-Gao P, Zhou Xy, Yashiro-ohtani Y, Yang Yf, Sugimoto N, et~al. (2003) {The
-  unique target specificity of a nonpeptide chemokine receptor antagonist :
-  selective blockade of two Th1 chemokine receptors CCR5 and CXCR3 cated in
-  their migration to sites of inflammation .}
-\newblock Journal of Leukocyte Biology 73: 273--280.
-\bibAnnote{Gao2003}{CCL5 (RANTES) and CXCL10 (IP-10) concentrations inducing T
-  cell chemotaxis (adhesion)}
 
 \bibitem{Wu2011}
 Wu H, Kumar A, Miao H, Holden-Wiltse J, Mosmann TR, et~al. (2011) {Modeling of
@@ -425,11 +440,24 @@ Beauchemin C, Forrest S, Koster FT (2006) {Modeling Influenza Viral Dynamics in
 \newblock LNCS Artificial Immune Systems 4163: 23--36.
 \bibAnnoteFile{Beauchemin2006}
 
-\bibitem{Ganusov2008}
-Ganusov VV, {De Boer} RJ (2008) {Estimating in vivo death rates of targets due
-  to CD8 T-cell-mediated killing.}
-\newblock Journal of Virology 82: 11749--11757.
-\bibAnnoteFile{Ganusov2008}
+\bibitem{Elbert1999}
+Elbert KJ, Sch\"{a}fer UF, Sch\"{a}fers HJ, Kim KJ, Lee VH, et~al. (1999)
+  {Monolayers of human alveolar epithelial cells in primary culture for
+  pulmonary absorption and transport studies.}
+\newblock Pharmaceutical Research 16: 601--608.
+\bibAnnoteFile{Elbert1999}
+
+\bibitem{abbas2011cellular}
+Abbas AK, Lichtman AHH, Pillai S (2011) {Cellular and Molecular Immunology}.
+\newblock Saunders.
+\bibAnnoteFile{abbas2011cellular}
+
+\bibitem{Egen2011}
+Egen JG, Rothfuchs AG, Feng CG, Horwitz MA, Sher A, et~al. (2011) {Intravital
+  imaging reveals limited antigen presentation and T cell effector function in
+  mycobacterial granulomas.}
+\newblock Immunity 34: 807--819.
+\bibAnnoteFile{Egen2011}
 
 \bibitem{Banerjee2010b}
 Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
@@ -438,11 +466,24 @@ Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
 \newblock Swarm Intelligence 4: 301--318.
 \bibAnnoteFile{Banerjee2010b}
 
-\bibitem{Banerjee2011}
-Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
-  Inflammatory Signals in Adaptive Immune Responses}.
-\newblock ICARIS 6825: 1--14.
-\bibAnnoteFile{Banerjee2011}
+\bibitem{Nandagopal2011}
+Nandagopal S, Wu D, Lin F (2011) {Combinatorial Guidance by CCR7 Ligands for T
+  Lymphocytes Migration in Co-Existing Chemokine Fields}.
+\newblock PLoS ONE 6: 11.
+\bibAnnoteFile{Nandagopal2011}
+
+\bibitem{Diamond2003}
+Diamond MS, Sitati EM, Friend LD, Higgs S, Shrestha B, et~al. (2003) {A
+  critical role for induced IgM in the protection against West Nile virus
+  infection.}
+\newblock The Journal of Experimental Medicine 198: 1853--1862.
+\bibAnnoteFile{Diamond2003}
+
+\bibitem{Ganusov2008}
+Ganusov VV, {De Boer} RJ (2008) {Estimating in vivo death rates of targets due
+  to CD8 T-cell-mediated killing.}
+\newblock Journal of Virology 82: 11749--11757.
+\bibAnnoteFile{Ganusov2008}
 
 \bibitem{Wu1986}
 Wu CFJ (1986) {Jackknife, Bootstrap and Other Resampling Methods in Regression

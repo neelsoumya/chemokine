@@ -6,43 +6,43 @@ Warning--can't use both author and editor fields in Peters1983
 Warning--can't use both volume and number fields in Peters1983
 You've used 5 entries,
             2441 wiz_defined-function locations,
-            591 strings with 6803 characters,
-and the built_in function-call counts, 5349 in all, are:
-= -- 493
-> -- 92
+            590 strings with 6901 characters,
+and the built_in function-call counts, 5094 in all, are:
+= -- 459
+> -- 100
 < -- 1
-+ -- 46
-- -- 23
-* -- 482
-:= -- 632
++ -- 50
+- -- 25
+* -- 452
+:= -- 606
 add.period$ -- 11
 call.type$ -- 5
 change.case$ -- 4
 chr.to.int$ -- 0
 cite$ -- 12
-duplicate$ -- 526
-empty$ -- 552
-format.name$ -- 27
-if$ -- 1180
+duplicate$ -- 496
+empty$ -- 520
+format.name$ -- 29
+if$ -- 1122
 int.to.chr$ -- 0
 int.to.str$ -- 5
-missing$ -- 62
+missing$ -- 64
 newline$ -- 41
 num.names$ -- 5
-pop$ -- 68
+pop$ -- 67
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 49
+skip$ -- 55
 stack$ -- 0
-substring$ -- 795
-swap$ -- 120
+substring$ -- 721
+swap$ -- 124
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 36
+while$ -- 38
 width$ -- 6
 write$ -- 72
 (There were 2 warnings)

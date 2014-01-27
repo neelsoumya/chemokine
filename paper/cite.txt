@@ -1,0 +1,6 @@
+@book{abbas2011cellular,
+  title={Cellular and Molecular Immunology: with STUDENT CONSULT Online Access},
+  author={Abbas, Abul K and Lichtman, Andrew HH and Pillai, Shiv},
+  year={2011},
+  publisher={Saunders}
+}
