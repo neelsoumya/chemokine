@@ -1,0 +1,157 @@
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+
+% Use doublespacing - comment out for single spacing
+\usepackage{setspace} 
+\doublespacing
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+% Use the PLoS provided bibtex style
+%\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+\usepackage{multirow}
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+% figure files reside in the figures/ directory
+\graphicspath{
+{figures/}
+}
+
+
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{ulem}
+
+\definecolor{dkred}{rgb}{0.75,0,0}
+\definecolor{dkgreen}{rgb}{0,0.5,0}
+\definecolor{dkblue}{rgb}{0,0,0.75}
+\definecolor{dkpurple}{rgb}{.375,0,.375}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\newcommand{\removed}[1]{{\color{dkred}\sout{#1}}}
+\newcommand{\drew}[1]{{\color{dkgreen}#1}}
+\newcommand{\fred}[1]{{\color{dkblue}#1}}
+\newcommand{\steph}[1]{{\color{dkpurple}#1}}
+
+%% END MACROS SECTION
+
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large
+\textbf{Spatially explicit model of the lymphocyte diaspora in influenza-infected lung reveals thresholds on chemokine directed migration (SUPPLEMENT)}
+}
+% Insert Author names, affiliations and corresponding author email.
+\\
+Drew Levin$^{1,\ast}$, 
+Stephanie Forrest$^{1}$, 
+Soumya Banerjee$^{1}$,
+Candice Clay$^{2}$, 
+Melanie Moses$^{1}$, 
+Frederick Koster$^{1,2}$
+\\
+\bf{1} Department of Computer Science, University of New Mexico, Albuquerque, NM, USA
+\\
+\bf{2} Lovelace Respiratory Research Institute, Albuquerque, NM, USA
+\\
+$\ast$ E-mail: Corresponding drew@cs.unm.edu
+\end{flushleft}
+
+
+
+% Results and Discussion can be combined.
+\section*{Results}
+
+\subsection*{General sensitivity analysis}
+
+Model parameters were chosen from literature when available and estimated otherwise (Table~\ref{tab:parameters}).  Due to the possible variability in the chosen values, we performed a rudimentary sensitivity analysis on a majority of the parameters.  Individual parameters were varied over ranges of plausible (and sometimes even implausible) values while the rest of the parameter set was held constant.  Each parameter was varied over all three influenza strains, creating three sets of sensitivity plots (Figures~\ref{fig:asensitivity}-\ref{fig:psensitivity}).
+
+We then categorize the model parameters into one of three qualitative groups: parameters that do not affect the model's qualitative behavior, parameters that affect the model's peak infection size but do not affect final clearance, and those parameters that affect the final clearance of the infection.
+
+\subsubsection*{Stable Parameters}
+
+The parameters in the first grouping do not affect the outcome of the infection unless adjusted to values that are outside the realm of possibility.  Specifically, each parameter in this group seems to lie within a range that does not affect the behavior of the model at all.  Of interest, this group can be mostly split into two types of parameters: those governing chemokine behavior (chemokine decay, chemokine diffusion, and chemokine secretion) and those governing T cell behavior (T cell circulation time, T cell kill rate, T cell velocity, and the two T cell decay rates).  Only the apoptosis time parameter does not fit into one of these two groups, and its inclusion as a stable parameter may be suspect due to the limited range of the values tested.  The importance of the apoptosis time parameter is discussed in more detail in the main results section: Temporal effects.  
+
+The stability of these parameters makes sense in the context of our model.  Chemokine exists in our model to provide a chemical gradient that T cells may follow to the focus of infection.  The total quantity of the chemokine in the lung does not have a strong effect on the location and size of the gradient.  Thus, the model will be stable for any values of chemokine secretion, diffusion, and decay that provide a gradient that T cells may follow.
+
+Similarly, T cells affect the model by clearing cells expressing virus.  As discussed in the main paper, the chemokine gradient creates areas of maximal concentration that attract all the T cells inside its basin of attraction.  Thus, most T cells are attracted to the same areas of the infection and overlap considerably.  Increasing T cell numbers and efficiency will not help clear the infection beyond a certain point.
+
+While we have classified these parameters as stable within a certain range, many of the parameters have values that do lead to a different model behavior.  We have deemed these deviations acceptable as on an individual basis.
+
+Apoptosis time diverges slightly in the sH1N1 strain.  As stated earlier, its inclusion in this group is already suspect and its effects are described in more detail in the results section of the main paper.
+
+The chemokine decay rate creates a divergence for its maximum value in the aH5N1 strain and both of its extreme values in the seasonal strain, but is stable over its inner values.  The maximum decay rate corresponds to an implausible 18 second half-life.  The minimal value corresponds to a similarly implausible 50 hour half-life.  The fact that an extremely low decay rate can hinder clearance is interesting.  In this case, lack of decay allows the chemokine to diffuse homogeneously across the entire infection, removing the concentration gradient required by T cells to find the active areas of the infection.  This confirms that the quantity of chemokine is immaterial as long as there is enough for T cells to be able to detect it.
+
+The chemokine diffusion rate only diverges for the maximum value in the sH1N1 strain.  If anything, our estimate for the diffusion rate is already large as it is optimistically based off of the Stokes-Einstein equation using viscosity of water.  Thus, it is also of note that lower values do not affect the model.
+
+Chemokine secretion values differ between strains.  It is important to node that aH5N1 and sH1N1 show a threshold at the same place: near 1e-6 $pg/s\cdot cell$.  While this may seem suspicious, it is actually an artifact of our artificially selected chemokine detection threshold, detailed in section S2.1 and Figure~\ref{fig:sensitivity}.  Because we initially picked a sensitivity threshold near the edge of the stable range of possible values, decreasing the total concentration of chemokine inadvertently crosses that arbitrary threshold and does not necessarily suggest an actual region of instability.
+
+T cell circulation times were tested over a very large range and only diverge at the very edge of that range.  Vascular and lymph circulation times of 1 minute and 3 minutes are implausible in a mouse model.
+
+The T cell kill rate only diverges on the lower end in sH1N1.  The extreme value corresponds to a T cell needing 100 minutes to induce the apoptosis of a single infected cell and is not biologically reasonable.  The intermediate value corresponds to a time of 33.3 minutes and is also unlikely.
+
+T cell movement in tissue has been observed \cite{Egen2011}.  Thus, we consider the extreme values biologically implausible.
+
+T cell decay parameters allow the model to diverge only in the most extreme cases.  Neither of these values are reasonable and the parameters show stable behavior otherwise.
+
+\subsubsection*{Difference in Peak Only}
+
+Two parameters, viral incubation time and viral expression time, do seem to affect the model's behavior up until the introduction of the T cell response, after which the results converge back to the same point.  This suggests that the secondary response dominates the effect of these two parameters.  This effect occurs because the T cells short circuit the lifespan of infected cells.  Once T cells arrive, virus secreting cells no longer survive for their full lifespan.  Rather, the secretion time becomes limited by the apoptosis time parameter.  Because these are both delay terms, neither one directly affects the kinetics of the virus itself and thus the infection's behavior is still determined by the properties of the virus and the T cell response.
+
+\subsubsection*{Unstable Parameters}
+
+This leaves five parameters shown that appear to directly affect the result of the infection: IgM strength, infection sensitivity, T cell secretion rate, viral decay, and viral diffusion.  By comparing the three strains of influenza, we also know that the viral secretion rate affects the result.  Of interest, nearly all of these parameters are directly related to the behavior of the virus.  Only the T cell secretion rate parameter is not.  
+
+IgM strength does not take effect until day 4 of the simulation, but once it does it directly affects the decay rate of the virus, and does so for the rest of the simulation.  The higher the strength of this parameter, the less virus there is in the system.
+
+Viral decay has the exact same effect as the IgM strength parameter.  Its value directly determines how much virus remains in the system over the course of the infection.
+
+Infection sensitivity describes the ability of the virus to infect healthy cells, yet its strength is directly related to how much virus is present in the area of the healthy cells.  Thus, increasing its value by any factor is equivalent to increasing the amount of virus by the same factor.  Thus, it behaves similarly to the IgM and viral decay parameters.
+
+Shown elsewhere, the viral secretion rate has a strong effect on the outcome of the infection.  Similar to the previously discussed parameters, its value directly affects how much virus there is in the system.  Thus, it's affect is similar to the previous parameters.
+
+Viral diffusion does not change how much virus there is in the system.  Rather, it determines how fast the virus may spread across the alveoli.  While its mechanism is different, its effect may be even stronger than the previous parameters.  By allowing the virus to diffuse faster than the chemokine (an unlikely scenario), the virus spread may outpace the body's ability to generate a chemical gradient.  Thus T cells will constantly be directed to locations behind the front edge rapidly spreading viral cloud and will be unable to 'get ahead' of the spread of the infection.
+
+Finally, the T cell secretion rate does have a consistent response over its different values, but this effect is minimized above a certain rate.  Thus it is reasonable to assume that there is a threshold of T cell secretion, beyond which the dynamics of the infection do not change.  This is consistent with our observations of T cell clumping in areas of high chemokine concentration.  Increasing the number of T cells in the system does not seem to help beyond a certain point because the T cells overlap in space and become redundant.
+
+
+
+\end{document}
