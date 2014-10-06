@@ -32,14 +32,14 @@ hold on
 %plot(time, infect(vara33), 'color', [.75 0 0]) % .7988
 %plot(time, infect(vara35), 'color', [.75 0 0]) % .5881
 plot(time, aavg, '-k', 'LineWidth', 2)
-hline3 = plot(time, alow, 'Color', 'k', 'LineStyle', '--');
-plot(time, ahigh, 'Color', 'k', 'LineStyle', '--')
+hline3 = plot(time, alow, 'Color', [.75 0 0], 'LineStyle', '--', 'LineWidth', 2);
+plot(time, ahigh, 'Color', [.75 0 0], 'LineStyle', '--', 'LineWidth', 2)
 hold off
 
 set(gca, 'FontSize', 16)
 set(gca, 'YColor', 'k')
-set(gca, 'YLim', [1 600])
-set(gca, 'YTick', [0 100 200 300 400 500 600])
+set(gca, 'YLim', [0 8000])
+set(gca, 'YTick', [0 2000 4000 6000 8000])
 set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
@@ -76,14 +76,14 @@ plot(time, [infect(vars00) infect(vars01) infect(vars02) infect(vars03) infect(v
 hold on
 %plot(time, infect(vars16), 'color', [.75 0 0])
 plot(time, savg, '-k', 'LineWidth', 2)
-plot(time, slow, 'Color', 'k', 'LineStyle', '--')
-plot(time, shigh, 'Color', 'k', 'LineStyle', '--')
+plot(time, slow, 'Color', [.75 0 0], 'LineStyle', '--', 'LineWidth', 2)
+plot(time, shigh, 'Color', [.75 0 0], 'LineStyle', '--', 'LineWidth', 2)
 hold off
 
 set(gca, 'FontSize', 16)
 set(gca, 'YColor', 'k')
-set(gca, 'YLim', [0 600])
-set(gca, 'YTick', [100 200 300 400 500 600])
+set(gca, 'YLim', [0 8000])
+set(gca, 'YTick', [2000 4000 6000 8000])
 set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
@@ -119,14 +119,14 @@ plot(time, [infect(varw00) infect(varw01) infect(varw02) infect(varw03) infect(v
         
 hold on
 plot(time, wavg, '-k', 'LineWidth', 2)
-plot(time, wlow, 'Color', 'k', 'LineStyle', '--')
-plot(time, whigh, 'Color', 'k', 'LineStyle', '--', 'LineWidth', 2)
+plot(time, wlow, 'Color', [.75 0 0], 'LineStyle', '--', 'LineWidth', 2)
+plot(time, whigh, 'Color', [.75 0 0], 'LineStyle', '--', 'LineWidth', 2)
 hold off
 
 set(gca, 'FontSize', 16)
 set(gca, 'YColor', 'k')
-set(gca, 'YLim', [0 600])
-set(gca, 'YTick', [100 200 300 400 500 600])
+set(gca, 'YLim', [0 8000])
+set(gca, 'YTick', [2000 4000 6000 8000])
 set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
