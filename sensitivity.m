@@ -2,7 +2,20 @@ cd('/nfs/adaptive/drew/chemokine');
 
 % Sensitivity Plot
 
-figure('Position',[100 500 1800 600])
+width = 20;
+height = 7;
+
+font_size = 18;
+title_font_size = 24;
+legend_font_size = 14;
+
+fig = figure();
+
+set(fig, 'PaperUnits', 'inches');
+set(fig, 'PaperSize', [width height]);
+set(fig, 'Units', 'inches');
+set(fig, 'Position', [0 0 width height]);
+set(fig, 'PaperPosition', [0 0 width height]);
 
 % Avian
 
@@ -35,8 +48,8 @@ hline1 = plot(time, infect(ar17), 'color', colors(1,:), 'LineWidth', 2);
 hline3 = plot(time, infect(ar19), 'color', colors(3,:), 'LineWidth', 2);
 hold off
 
-set(gca, 'FontSize', 18)
-set(gca, 'FontWeight', 'bold')
+set(gca, 'FontSize', font_size)
+%set(gca, 'FontWeight', 'bold')
 set(gca, 'YColor', 'k')
 set(gca, 'YLim', [1 8000])
 set(gca, 'YTick', [0 2000 4000 6000 8000])
@@ -44,9 +57,9 @@ set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
 ylabel('Infected Cell Count')
-title('aH5N1 Influenza')
+title('aH5N1 Influenza', 'FontSize', title_font_size)
 lh = legend([hline1 hline2 hline3 hline4], '10 \mug/mL', '1 \mug/mL', '100 ng/mL', '10 ng/mL to .01 pg/mL', 2);
-set(lh, 'FontSize', 14)
+set(lh, 'FontSize', legend_font_size)
 
 % Seasonal
 
@@ -65,8 +78,8 @@ hline1 = plot(time, infect(sb17), 'color', colors(1,:), 'LineWidth', 2);
 hline3 = plot(time, infect(sb19), 'color', colors(3,:), 'LineWidth', 2);
 hold off
 
-set(gca, 'FontSize', 18)
-set(gca, 'FontWeight', 'bold')
+set(gca, 'FontSize', font_size)
+%set(gca, 'FontWeight', 'bold')
 set(gca, 'YColor', 'k')
 set(gca, 'YLim', [1 8000])
 set(gca, 'YTick', [0 2000 4000 6000 8000])
@@ -74,9 +87,9 @@ set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
 %ylabel('Infected Cell Count')
-title('sH1N1 Influenza')
-lh = legend([hline1 hline2 hline3 hline4], '10 \mug/mL', '1 \mug/mL', '100 ng/mL', '10 ng/mL to .01 pg/mL', 2);
-set(lh, 'FontSize', 14)
+title('sH1N1 Influenza', 'FontSize', title_font_size)
+%lh = legend([hline1 hline2 hline3 hline4], '10 \mug/mL', '1 \mug/mL', '100 ng/mL', '10 ng/mL to .01 pg/mL', 2);
+set(lh, 'FontSize', legend_font_size)
 
 % Swine
 
@@ -95,8 +108,8 @@ hline1 = plot(time, infect(wb17), 'color', colors(1,:), 'LineWidth', 2);
 hline3 = plot(time, infect(wb19), 'color', colors(3,:), 'LineWidth', 2);
 hold off
 
-set(gca, 'FontSize', 18)
-set(gca, 'FontWeight', 'bold')
+set(gca, 'FontSize', font_size)
+%set(gca, 'FontWeight', 'bold')
 set(gca, 'YColor', 'k')
 set(gca, 'YLim', [1 8000])
 set(gca, 'YTick', [0 2000 4000 6000 8000])
@@ -104,9 +117,9 @@ set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
 %ylabel('Infected Cell Count')
-title('pH1N1 Influenza')
-lh = legend([hline1 hline2 hline3 hline4], '10 \mug/mL', '1 \mug/mL', '100 ng/mL', '10 ng/mL to .01 pg/mL', 4);
-set(lh, 'FontSize', 14)
+title('pH1N1 Influenza', 'FontSize', title_font_size)
+%lh = legend([hline1 hline2 hline3 hline4], '10 \mug/mL', '1 \mug/mL', '100 ng/mL', '10 ng/mL to .01 pg/mL', 4);
+set(lh, 'FontSize', legend_font_size)
 
 % Avian Histogram
 
@@ -233,3 +246,5 @@ set(lh, 'FontSize', 14)
 % %title('aH1N1 Influenza')
 % lh = legend([hbar1 hbar2 hbar3 hbar4 hbar5], '10 \mug/mL', '1 \mug/mL', '100 ng/mL', '10 ng/mL', '1 ng/mL to .01 pg/mL');
 % set(lh, 'FontSize', 14)
+
+print('-depsc2', '-loose', '/nfs/adaptive/drew/chemokine/paper/figures/Figure_S1.eps');

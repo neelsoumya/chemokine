@@ -31,8 +31,8 @@ for i=1:rows
     astderr(i) = std(vara(i,:));% / sqrt(cols);
 end
 
-alow = aavg - 2 * astderr;
-ahigh = aavg + 2 * astderr;
+% alow = aavg - 2 * astderr;
+% ahigh = aavg + 2 * astderr;
 
 
 % Seasonal

@@ -1,6 +1,6 @@
 % Instant kill rate and apoptosis plot
 
-figure('Position',[100 100 640 360])
+figure('Position',[100 100 960 540])
 
 colors = [.625  0  .2 ;
           1 .75  0 ;
@@ -17,11 +17,11 @@ hold off
 % set(gca, 'YLim', [ymin ymax])
 set(gca, 'XLim', [0 10])
 set(gca, 'FontSize', 20)
-set(gca, 'FontWeight', 'bold')
+%set(gca, 'FontWeight', 'bold')
 
 ylabel('Infected Cells')
 xlabel('Time (days)')
 lh = legend('aH5N1', 'sH1N1', 'pH1N1');
 set(lh, 'FontSize', 14)
 
-title('Instant Kill and Apoptosis');
+title('Instant Kill and Apoptosis', 'FontSize', 24);

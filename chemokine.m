@@ -1,8 +1,21 @@
 cd('/nfs/adaptive/drew/chemokine');
 
-% Chemokine Effects% Sensitivity Plot
+width = 20;
+height = 8;
 
-figure('Position',[100 500 1800 700])
+font_size = 18;
+title_font_size = 24;
+legend_font_size = 14;
+
+fig = figure();
+
+set(fig, 'PaperUnits', 'inches');
+set(fig, 'PaperSize', [width height]);
+set(fig, 'Units', 'inches');
+set(fig, 'Position', [0 0 width height]);
+set(fig, 'PaperPosition', [0 0 width height]);
+
+% Chemokine Effects
 
 % Avian
 
@@ -18,7 +31,7 @@ hold on
 plot(time, infect(ar19), 'color', colors(2,:), 'LineWidth', 2)
 hold off
 
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', font_size)
 set(gca, 'YColor', 'k')
 set(gca, 'YLim', [1 10000])
 set(gca, 'YTick', [0 2000 4000 6000 8000 10000])
@@ -26,8 +39,9 @@ set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
 ylabel('Infected Cell Count')
-title('aH5N1 Influenza')
-legend('None', 'RANTES', 2)
+title('aH5N1 Influenza', 'FontSize', title_font_size)
+lh = legend('None', 'RANTES', 2);
+set(lh, 'FontSize', legend_font_size);
 
 % Seasonal
 
@@ -40,7 +54,7 @@ plot(time, infect(si19), 'color', colors(3,:), 'LineWidth', 2)
 plot(time, infect(sb19), 'color', colors(4,:), 'LineWidth', 2) 
 hold off
 
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', font_size)
 set(gca, 'YColor', 'k')
 set(gca, 'YLim', [1 10000])
 set(gca, 'YTick', [0 2000 4000 6000 8000 10000])
@@ -48,8 +62,9 @@ set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
 %ylabel('Infected Cell Count')
-title('sH1N1 Influenza')
-legend('None', 'RANTES', 'IP-10', 'Both', 2)
+title('sH1N1 Influenza', 'FontSize', title_font_size)
+lh = legend('None', 'RANTES', 'IP-10', 'Both', 2);
+set(lh, 'FontSize', legend_font_size);
 
 % Swine
 
@@ -62,7 +77,7 @@ plot(time, infect(wi19), 'color', colors(3,:), 'LineWidth', 2)
 plot(time, infect(wb19), 'color', colors(4,:), 'LineWidth', 2) 
 hold off
 
-set(gca, 'FontSize', 16)
+set(gca, 'FontSize', font_size)
 set(gca, 'YColor', 'k')
 set(gca, 'YLim', [1 10000])
 set(gca, 'YTick', [0 2000 4000 6000 8000 10000])
@@ -70,5 +85,8 @@ set(gca, 'XLim', [0 10])
 set(gca, 'XTick', 0:2:10)
 xlabel('Days Post-Infection')
 %ylabel('Infected Cell Count')
-title('pH1N1 Influenza')
-legend('None', 'RANTES', 'IP-10', 'Both', 2)
+title('pH1N1 Influenza', 'FontSize', title_font_size)
+lh = legend('None', 'RANTES', 'IP-10', 'Both', 2);
+set(lh, 'FontSize', legend_font_size);
+
+print('-depsc2', '-loose', '/nfs/adaptive/drew/chemokine/paper/figures/Figure_S2.eps');
