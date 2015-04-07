@@ -327,7 +327,15 @@ T cell decay parameters allow the model to diverge only in the most extreme case
 
 We tested values up to one order of magnitude larger and smaller than the default parameter value.
 
-T cell decay parameters allow the model to diverge only in the most extreme cases.  Neither of these values are reasonable and the parameters show stable behavior otherwise.  While the default of 2 hours may seem short, it appears to generate similar behavior to models with larger values.
+T cell decay parameters allow the model to diverge only in the most extreme cases.  Neither of these values are reasonable and the parameters show stable behavior otherwise.  While the default of 2 hours may seem short, it appears to generate similar behavior to models with larger values. \\
+
+
+\textbf{T Cell Production Rate:} [ \textit{125 cells/h | 1257 cells/h | 3750 cells/h} ] - The T cell production rate determines the rate at which T cells enter the blood stream starting at day 5 post-infection.
+
+We tested values up to three times larger and ten times smaller than the default value.  Values beyond a three-fold increase were not computationally tractable.
+
+The T cell production rate does have a consistent response over its different values, but this effect is minimized above a certain rate.  Thus, it is reasonable to assume that there is a threshold of T cell production beyond which the dynamics of the infection do not change.  This is consistent with our observations of T cell clumping in areas of high chemokine concentration.  Increasing the number of T cells in the system does not control the infection beyond a certain point because the T cells overlap in space and become redundant.  The rapid decline of the infection size for the maximum value of $3 \mu m^2/s$ is simply an artifact of the infection exhausting the entire model space by day 3.
+
 
 \subsubsection{Difference in Peak Only} 
 
@@ -369,7 +377,7 @@ Viral decay has the exact same effect as the viral response to IgM parameter.  I
 
 \textbf{Infectivity:} [ \textit{12 m/virion | 2 h/virion | 20 h/virion} ] - Infectivity describes the ability of the virus to infect healthy cells.  A larger value corresponds to a virus particle needing less time to infect a nearby healthy epithelial cell.
 
-We tested values up to two orders of magnitude larger and smaller than the default parameter value.
+We tested values up to one order of magnitude larger and smaller than the default parameter value.
 
 The strength of the infectivity parameter is directly related to how much virus is present in the area of the healthy cells.  Thus, viral density is linearly proportional to infectivity.  Thus, it behaves similarly to the IgM and viral decay parameters as it directly determines the virulence of the virus. \\
 
@@ -386,13 +394,6 @@ The viral secretion rate has a strong effect on the outcome of the infection.  S
 We tested values up to two orders of magnitude larger and smaller than the default parameter value.
 
 The viral diffusion rate does not change how much virus there is in the system.  Rather, it determines how fast the virus may spread across the alveoli.  While its mechanism is different, its effect may be even stronger than the previous parameters.  Increasing the viral diffusion rate so that the virus diffuses faster than the chemokine (an unlikely scenario) allows the virus to out-pace the body's ability to establish a chemical gradient around the infected cells.  In this scenario T cells are constantly directed to locations behind the rapidly spreading viral cloud and would be unable to `get ahead' of the infection. \\
-
-
-\textbf{T Cell Production Rate:} [ \textit{125 cells/h | 1257 cells/h | 3750 cells/h} ] - The T cell production rate determines the rate at which T cells enter the blood stream starting at day 5 post-infection.
-
-We tested values up to three times larger and ten times smaller than the default value.  Values beyond a three-fold increase were not computationally tractable.
-
-The T cell production rate does have a consistent response over its different values, but this effect is minimized above a certain rate.  Thus, it is reasonable to assume that there is a threshold of T cell production beyond which the dynamics of the infection do not change.  This is consistent with our observations of T cell clumping in areas of high chemokine concentration.  Increasing the number of T cells in the system does not control the infection beyond a certain point because the T cells overlap in space and become redundant.  The rapid decline of the infection size for the maximum value of $3 \mu m^2/s$ is simply an artifact of the infection exhausting the entire model space by day 3.
 
 
 \subsection{Window of Control}
