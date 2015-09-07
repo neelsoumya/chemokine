@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[preprint,10pt,authoryear]{elsarticle}
 
 % amsmath package, useful for mathematical formulas
 \usepackage{amsmath}
@@ -10,7 +10,8 @@
 \usepackage{graphicx}
 
 % cite package, to clean up citations in the main text. Do not remove.
-\usepackage{cite}
+%\usepackage{cite}
+\usepackage{natbib}
 
 \usepackage{color} 
 
@@ -34,8 +35,7 @@
 % Captions will be left justified
 \usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
 
-% Use the PLoS provided bibtex style
-\bibliographystyle{plos2009}
+\bibliographystyle{elsarticle-num-names}
 
 % Remove brackets from numbering in List of References
 \makeatletter
@@ -79,10 +79,9 @@
 
 \begin{document}
 
-% Title must be 150 characters or less
 \begin{flushleft}
 {\Large
-\textbf{Chemokines versus viral replication: a spatial of model of lymphocyte search in the influenza infected lung (SUPPLEMENT)}
+\textbf{A spatial model of the efficiency of T cell search in the influenza-infected lung (SUPPLEMENT)}
 }
 % Insert Author names, affiliations and corresponding author email.
 \\
@@ -104,9 +103,6 @@ $\ast$ E-mail: Corresponding drew@cs.unm.edu
 \end{flushleft}
 
 
-% You may title this section "Methods" or "Models". 
-% "Models" is not a valid title for PLoS ONE authors. However, PLoS ONE
-% authors may use "Analysis" 
 \section{Models}
 
 \subsection{CyCells implementation details}
@@ -155,88 +151,28 @@ Our model assumes that blood flows uniformly through the lung vascular network. 
 
 %See Table~\ref{table:assumptions}.
 
-
-% Results and Discussion can be combined.
 \section{Results}
 
-\subsection{Estimating chemokine production rates}
-
-We estimate chemokine production rates, $r$, by adapting the delay differential equation model of influenza infection described in \cite{Mitchell2011} Eq. 1 by adding one new equation ($\dot{C}=r I_{1 \tau_3}-dC$) to model chemokine production.  Initial population sizes and parameter values are taken from the previous study.
-{\footnotesize
-\begin{equation*}
-\begin{aligned}
-\dot{T} &= - \beta T V \\
-\dot{I_1} &= \beta T V - \beta T_{\tau_1}V_{\tau_1} \\
-\dot{I_2} &= \beta T_{\tau_1}V_{\tau_1} - \delta I_2 \\
-\dot{V} &= \frac{p}{1+eF} I_2  - \beta T V  \\
-\dot{F} &=  I_{1 \tau_2} \\
-\dot{C} &= r I_{1 \tau_3} - d C \\
-\end{aligned}
-\tag{S1}
-\label{eq:dde}
-\end{equation*}
-\vspace{.05in}
-}
-
-$\tau$ subscript variables denote delay terms, signifying the value is the population quantity in existence at time $t - \tau$.  Table S2 summarizes population and parameter values and descriptions.  Strain-specific values for $r$ were found by fitting the equations to the experimental data in Table S1.  The results of these fits are discussed in the main paper and shown in Table 1.
-
-%\subsection*{Chemokine Secretion}
-
-%To provide estimates of chemokine concentrations and secretion rates present in lung tissue, chemokine levels were measured at 4-6h intervals during the first 48 h of infection in wells containing approximately one million human bronchial epithelial cells (Fig.~\ref{fig:data}).  The dynamic viral loads at these intervals in these cultures infected with seasonal H1N1 virus, pandemic H1N1 virus, and avian H5N1 virus have been reported previously \cite{Mitchell2011}.  IP-10 concentration increases were observed by 8h post-infection (p.i.), and RANTES by 16h p.i..  
-
-%To estimate per-cell chemokine production rates, we extended the delay differential equation (DDE) model of Ref. \cite{Mitchell2011} to include chemokine production from infected cells (Eq.~S1).  Model fits (Table \ref{tab:strains}) were computed for three strains using Matlab's \texttt{nlinfit} function (Levenberg-Marquardt algorithm).  The resulting chemokine production values were used in the CyCells ABM by combining IP-10 and RANTES into one aggregate rate but also reported separately (Fig.~S2).  Best-fit expression rates were similar for all strains except for significantly higher RANTES production in aH5N1.  There was no positive correlation between viral production and induced chemokine production across the three strains.
-
-
-\subsection{T cell production rate}
-
-We calculate the rate of production, $\sigma$, of CD8 T cells using a differential equation model from \cite{Miao2010}.  The equations model T cell production and subsequent search over an area of infected lung tissue.
-
-{\footnotesize
-\begin{equation*}
-\label{eq:miao}
-\begin{aligned}
-\dot{N_{c}} &= \sigma - \frac{r'^{2} \cdot N_{c}}{R^{2} \cdot t_{rc}} & \pi r'^{2} &= a \sqrt{I} + b \\
-\dot{N'_{f}} &= \frac{(r'^{2} - r^{2}) \cdot N_{c}}{R^{2} \cdot t_{rc}} - \frac{v_{tcell}}{(r' - r) / 2} \hspace*{2cm}  & \pi r^{2} &= \pi r_{cell}^{2} \cdot I \\
-\dot{N_{f}} &= \frac{r^{2} \cdot N_{c}}{R^{2} \cdot t_{rc}} + \frac{v_{tcell}}{(r' - r) / 2} \\
-\dot{T} &= \rho T -\beta TV \\
-\dot{I} &= \beta TV - \delta I - k_{e} N_{f} I \\
-\dot{V} &= pI - \beta TV - \gamma (t) V \\
-\gamma (t) &= \left\{ \begin{array}{rcl}
-	1/\mbox{day} & \mbox{,}  & t < 5  \\
-	3/\mbox{day} & \mbox{,} & t \geq 5  
-	\end{array}\right. \\
-\end{aligned}
-\tag{S2}
-\end{equation*}
-}
-\vspace{0.5in}
-
-
-$N_{c}$ is the number of circulating activated antigen-specific CD8 T cells, $N'_{f}$ is the number of circulating T cells that have found and exit into a region of lung tissue expressing chemokines, $N_{f}$ is the number of circulating T cells that have found an infected region. $T$ is the number of uninfected \textit{target} cells, $I$ is the number of productively infected cells, and $V$ is the viral titer in serum. The infected region is assumed to be of radius $r$ and is within a region expressing chemokines of radius $r'$ ($r  < r'$). The lung is modeled as a circular region with radius $R$. The area of the infected region is equal to the area of an infected cell (of radius $r_{cell}$) multiplied by the number of infected cells. See Fig. 1 for more details about the model.  The area of the region expressing chemokine was found to be related non-linearly to the number of infected cells ($\pi r'^{2} = a \sqrt{I} + b$) where $a$ and $b$ are constants that depend on the viral strain.  $a$ and $b$ were fit using 12 experimental runs of a spatial model implemented in CyCells.
-
-Circulating CD8 T cells ($N_{c}$) are assumed to be released from lymph nodes at a constant rate $\sigma$ and circulate to the $N'_{f}$ population over a time defined by $t_{rc}$. We assume these circulating cells transition into $N'_{f}$ and $N_{f}$ at rates proportional to the areas of the chemokine expressing and infected regions relative to the whole lung area. 
-
-The average time an exiting CD8 T cell takes to migrate to the infected region is equal to the difference in the radii between the two regions ($r' - r$) times the T cell speed, $v_{tcell}$.  Circulating cells that are in the chemokine expressing region ($N'_{f}$) move into the infected region after performing chemotaxis for that time. Target cells ($T$) become infected by virus at rate $\beta TV$, where $\beta$ is the rate constant characterizing infection. Infected cells ($I$) die at rate $\delta$ in addition to being lysed by T cells ($N_{f}$) at a rate $k_{e}$. Finally the viral titers ($V$) increase due to production of virus at rate $p$ by infected cells. Virus is also cleared due to uptake by infected cells (at a rate $- \beta TV$) and due to antibody (at a rate $\gamma (t)$ that changes after 5 days post infection). The initial viral titer was initialized to 10,000 PFUs and the initial number of target cells was one million. The initial number of infected cells is assumed to be zero. Parameter values are listed in Table S3.  This ODE was fit to data taken from \cite{Miao2010} using Matlab's \texttt{nlinfit} function in order to obtain a value for $\sigma$.  The final value was found to be 1,257 per hour.
 
 \subsection{T cell sensitivity to chemokine}
 
-The model simulates a chemokine gradient surrounding the infected focus (Fig. 5), based on the calculated per-infected cell secretion rate (Table 3) and known chemical parameters for a 10 kDa protein (Table 2).  T cell sensitivity depends on receptor density \cite{Desmetz2006} and this was assumed to be constant.
+The model simulates a chemokine gradient surrounding the infected focus (Fig. 5), based on the calculated per-infected cell secretion rate (Table 3) and known chemical parameters for a 10 kDa protein (Table 2).  T cell sensitivity depends on receptor density \citep{Desmetz2006} and this was assumed to be constant.
 
-Because this parameter is unknown, we simulated T cell sensitivity levels ranging over 10 orders of magnitude.  Concentration-dependent behavior of cells responding to chemokine was the same over a wide range of concentrations from 0.01 pg/mL to 100 ng/mL (model variance is discussed in the main text).  Decreased recruitment was predicted only by supra-natural concentration sensitivity levels at and above 1 $\mu$g/mL.  We then set the sensitivity to 100 $ng/mL$ for all future runs (10 $nM$ concentration assuming a chemokine molecular weight of 10 $kDa$) \cite{Gao2003}.  
+Because this parameter is unknown, we simulated T cell sensitivity levels ranging over 10 orders of magnitude.  Concentration-dependent behavior of cells responding to chemokine was the same over a wide range of concentrations from 0.01 pg/mL to 100 ng/mL (model variance is discussed in the main text).  Decreased recruitment was predicted only by supra-natural concentration sensitivity levels at and above 1 $\mu$g/mL.  We then set the sensitivity to 100 $ng/mL$ for all future runs (10 $nM$ concentration assuming a chemokine molecular weight of 10 $kDa$) \citep{Gao2003}.  
 
 % Because more than one T cell at each infected epithelial cell would not increasing effective target cell death, there may be a threshold of immigrant T cells above which no additional control of viral replication is possible.
 
 \subsection{Chemokine combinations}
 
-Because aH5N1 has been shown to suppress the production of interferon \cite{Mitchell2011}, we consider that IP-10 production is markedly reduced in comparison with that of RANTES and this may lead to elevated RANTES secretion measured in aH5N1 \textit{in vitro} infection when compared to the other strains.  Thus, IP-10 production was not included in aH5N1 simulations.
+Because aH5N1 has been shown to suppress the production of interferon \citep{Mitchell2011}, we consider that IP-10 production is markedly reduced in comparison with that of RANTES and this may lead to elevated RANTES secretion measured in aH5N1 \textit{in vitro} infection when compared to the other strains.  Thus, IP-10 production was not included in aH5N1 simulations.
 
-%Interestingly, the attenuation of the type I interferon response by H5N1 viruses is not associated with attenuation of chemokine secretion in our results and in others \cite{Zeng2007}.  
+%Interestingly, the attenuation of the type I interferon response by H5N1 viruses is not associated with attenuation of chemokine secretion in our results and in others \citep{Zeng2007}.  
 
 % we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table 3).  Because of this behavior IP-10 was not included in the aH5N1 model runs. 
 
 % we consider that IP-10 production is markedly reduced in comparison with that of RANTES and this may lead to elevated RANTES secretion measured in aH5N1 \textit{in vitro} infection when compared to the other strains.  Thus, IP-10 production was not included in aH5N1 simulations.
 
-T cell sensitivity depends on receptor density \cite{Desmetz2006} and this was assumed to be constant.  Thus, the chemokines in combination work additively in our model. 
+T cell sensitivity depends on receptor density \citep{Desmetz2006} and this was assumed to be constant.  Thus, the chemokines in combination work additively in our model. 
 
 Four models runs (both, IP-10, RANTES, and none) were performed for sH1N1 and pH1N1 strains and two runs (RANTES and none) for  aH5N1.  The runs show how the presence and/or absence of specific chemokines affect the simulated immune response (Fig.~\ref{fig:chemokine}).  The lack of both chemokines leads to runaway infections in all three strains.  The presence of only RANTES is enough to contain the aH5N1 infection, but is weaker than IP-10 in both H1N1 strains.  In sH1N1 and pH1N1 simulations, IP-10 alone proves to be as effective as the combination of IP-10 and RANTES.  This suggests that RANTES does not play a significant role in infections that stimulate an IP-10 response due to the higher production rates of IP-10.  
 
@@ -313,7 +249,7 @@ The parameter only diverges on the higher end in sH1N1.  The extreme value corre
 
 We tested values up to two orders of magnitude larger and smaller than the default parameter value.
 
-Divergence does occur in sH1N1 for the extreme values on both ends (but not for the intermediate ones).  T cell movement in tissue has been observed \cite{Egen2011}.  Thus, we consider the extreme values biologically implausible.  \\
+Divergence does occur in sH1N1 for the extreme values on both ends (but not for the intermediate ones).  T cell movement in tissue has been observed \citep{Egen2011}.  Thus, we consider the extreme values biologically implausible.  \\
 
 
 \textbf{Circulating T Cell Expected Age:} [ \textit{1h |  4d | 400d} ] - The expected age determines the decay rate of T cells in blood.  
@@ -624,7 +560,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
     & \hspace{2em} RANTES & 16 (h)\\
   \hline
 \end{tabular}
-\caption{\textbf{Parameters for Supplemental Model 1 (S2.1 Equation S1)}.  All parameters and populations are taken from \cite{Mitchell2011} except for $C$, $d$, and $\tau_3$.  The value chosen for $d$ corresponds to a 30 minute half-life and values for $\tau_3$ were set from the observed chemokine data (Fig. 3).  Interferon ($F$) is an abstracted unitless quantity and thus $e$ is a unitless multiplier.}
+\caption{\textbf{Parameters for Preliminary Model 1 (Equation 1)}.  All parameters and populations are taken from \citep{Mitchell2011} except for $C$, $d$, and $\tau_3$.  The value chosen for $d$ corresponds to a 30 minute half-life and values for $\tau_3$ were set from the observed chemokine data (Fig. 3).  Interferon ($F$) is an abstracted unitless quantity and thus $e$ is a unitless multiplier.}
 \label{tab:dde}
 \end{center}
 \end{table}
@@ -636,19 +572,19 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
   \hline                        
   Paramter & Value & Source \\
   \hline
-  T(0) & $1e6$ & \cite{Mitchell2011} \\
-  V(0) &  $1e4$ & \cite{Mitchell2011} \\
-  $r_{cell}$ &  $5 \mu m$ & \cite{Miao2010} \\
-  $t_{rc}$ & $6s$ & \cite{Peters1983} \\
-  $k_e$ & $6.4e-5/cell/day$ & \cite{Miao2010} \\
-  $\beta$ & $4.8e-7/cell/PFU$ & \cite{Mitchell2011} \\
-  $p$ & $0.18 PFU/h$ & \cite{Mitchell2011} \\
-  $\delta$ & $16.7 hours$ & \cite{Mitchell2011} \\
+  T(0) & $1e6$ & \citep{Mitchell2011} \\
+  V(0) &  $1e4$ & \citep{Mitchell2011} \\
+  $r_{cell}$ &  $5 \mu m$ & \citep{Miao2010a} \\
+  $t_{rc}$ & $6s$ & \citep{Peters1983} \\
+  $k_e$ & $6.4e-5/cell/day$ & \citep{Miao2010a} \\
+  $\beta$ & $4.8e-7/cell/PFU$ & \citep{Mitchell2011} \\
+  $p$ & $0.18 PFU/h$ & \citep{Mitchell2011} \\
+  $\delta$ & $16.7 hours$ & \citep{Mitchell2011} \\
   $a$ & $67.7$ & ABM fits \\
   $b$ & $433.5$ & ABM fits \\
   \hline  
 \end{tabular}
-\caption{\textbf{Parameters for Supplemental Model 2 (S2.2 Equation S2).}  Values are chosen to match the equations borrowed from both \cite{Mitchell2011} and \cite{Miao2010}.  Values \textit{a} and \textit{b} were fit to multiple runs of a simplified CyCells ABM.}
+\caption{\textbf{Parameters for Preliminary Model 2 (Equation 2).}  Values are chosen to match the equations borrowed from both \citep{Mitchell2011} and \citep{Miao2010a}.  Values \textit{a} and \textit{b} were fit to multiple runs of a simplified CyCells ABM.}
 \label{tab:supplement}
 \end{center}
 \end{table}
@@ -695,7 +631,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 %  T cell search time & T cells search in the lung for 6 minutes before they recirculate. \\
 %  \hline  
 %\end{tabular}
-%\caption{Supplemental model parameters.  Most values are chosen to match the equations borrowed from both \cite{Mitchell2011} and \cite{Miao2010}.  Values \textit{a} and \textit{b} were fit to multiple runs of a simplified CyCells ABM.}
+%\caption{Supplemental model parameters.  Most values are chosen to match the equations borrowed from both \citep{Mitchell2011} and \citep{Miao2010a}.  Values \textit{a} and \textit{b} were fit to multiple runs of a simplified CyCells ABM.}
 %\label{table:assumptions}
 %\end{center}
 %\end{table}

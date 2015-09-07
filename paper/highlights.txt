@@ -1,0 +1,9 @@
+A spatial agent-based model examines T cell search in an influenza infected lung.
+
+Experimental data show chemokines CXCL10 and CCL5 are stimulated by infection.
+
+Rapidly expanding plaques of infection create challenges for chemotaxing T cells.
+
+Sensitivity analysis isolates the effects of each parameter in the model.
+
+Model parameters are used to determine an upper bound on T cell search time.
