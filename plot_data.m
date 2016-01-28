@@ -69,8 +69,6 @@ subplot(1, 3, 1)
 hold on
 hline3 = plot(ait, ai);
 hline4 = errorbar(avt, av, ave*2, 'ob');
-%hline4 = plot(aft/60, aif);
-%hline5 = plot(aft/60, arf);
 hold off
 
 set(hline1, 'LineWidth', 2)
@@ -98,6 +96,9 @@ set(hline3, 'Color', colors(1,:))
 set(hline3, 'MarkerEdgeColor', colors(5,:))
 set(hline3, 'MarkerFaceColor', colors(1,:))
 
+%set(hline4, 'LineWidth', 2)
+%set(hline4, 'LineStyle', '--')
+%set(hline4, 'Color', colors(1,:))
 set(hline4, 'LineWidth', 2)
 set(hline4, 'LineStyle', 'none')
 set(hline4, 'Marker', 'o')
@@ -106,9 +107,9 @@ set(hline4, 'Color', colors(4,:))
 set(hline4, 'MarkerEdgeColor', colors(8,:))
 set(hline4, 'MarkerFaceColor', colors(4,:))
 
-%set(hline5, 'LineWidth', 2)
-%set(hline5, 'LineStyle', '--')
-%set(hline5, 'Color', colors(2,:))
+% set(hline5, 'LineWidth', 2)
+% set(hline5, 'LineStyle', '--')
+% set(hline5, 'Color', colors(2,:))
 
 axes(haxes(1))
 set(haxes(1), 'FontSize', font_size)
@@ -146,8 +147,6 @@ hold on
 hline4 = plot(siit, sii);
 hline3 = plot(sit, si);
 hline5 = errorbar(svt, sv, sve*2, 'ob');
-%hline5 = plot(sft/60, sif);
-%hline6 = plot(sft/60, srf);
 hold off
 
 set(hline1, 'LineWidth', 2)
@@ -181,9 +180,9 @@ set(hline4, 'Marker', '^')
 set(hline4, 'MarkerSize', 10)
 set(hline4, 'Color', colors(1,:))
 
-%set(hline5, 'LineWidth', 2)
-%set(hline5, 'LineStyle', '--')
-%set(hline5, 'Color', colors(1,:))
+% set(hline5, 'LineWidth', 2)
+% set(hline5, 'LineStyle', '--')
+% set(hline5, 'Color', colors(1,:))
 set(hline5, 'LineWidth', 2)
 set(hline5, 'LineStyle', 'none')
 set(hline5, 'Marker', 'o')
@@ -191,10 +190,10 @@ set(hline5, 'MarkerSize', 10)
 set(hline5, 'Color', 'b')
 set(hline5, 'MarkerEdgeColor', colors(8,:))
 set(hline5, 'MarkerFaceColor', colors(4,:))
-
-%set(hline6, 'LineWidth', 2)
-%set(hline6, 'LineStyle', '--')
-%set(hline6, 'Color', colors(2,:))
+% 
+% set(hline6, 'LineWidth', 2)
+% set(hline6, 'LineStyle', '--')
+% set(hline6, 'Color', colors(2,:))
 
 axes(haxes(1))
 set(haxes(1), 'FontSize', font_size)
@@ -231,8 +230,6 @@ subplot(1, 3, 3)
 hold on
 hline3 = plot(wit, wi);
 hline4 = errorbar(wvt, wv, wve*2, 'ob');
-%hline4 = plot(wft/60, wif);
-%hline5 = plot(wft/60, wrf);
 hold off
 
 set(hline1, 'LineWidth', 2)
@@ -259,9 +256,9 @@ set(hline3, 'Color', colors(1,:))
 set(hline3, 'MarkerEdgeColor', colors(5,:))
 set(hline3, 'MarkerFaceColor', colors(1,:))
 
-%set(hline4, 'LineWidth', 2)
-%set(hline4, 'LineStyle', '--')
-%set(hline4, 'Color', colors(1,:))
+% set(hline4, 'LineWidth', 2)
+% set(hline4, 'LineStyle', '--')
+% set(hline4, 'Color', colors(1,:))
 set(hline4, 'LineWidth', 2)
 set(hline4, 'LineStyle', 'none')
 set(hline4, 'Marker', 'o')
@@ -269,10 +266,10 @@ set(hline4, 'MarkerSize', 10)
 set(hline4, 'Color', colors(4,:))
 set(hline4, 'MarkerEdgeColor', colors(8,:))
 set(hline4, 'MarkerFaceColor', colors(4,:))
-
-%set(hline5, 'LineWidth', 2)
-%set(hline5, 'LineStyle', '--')
-%set(hline5, 'Color', colors(2,:))
+% 
+% set(hline5, 'LineWidth', 2)
+% set(hline5, 'LineStyle', '--')
+% set(hline5, 'Color', colors(2,:))
 
 axes(haxes(1))
 set(haxes(1), 'FontSize', font_size)
@@ -302,4 +299,4 @@ ylabel('Chemokine (pg/mL)')
 
 title('pH1N1 Influenza', 'FontSize', title_font_size)
 
-print('-depsc2', '-loose', '/nfs/adaptive/drew/chemokine/paper/figures/Figure_3.eps');
+% print('-depsc2', '-loose', '/nfs/adaptive/drew/chemokine/paper/figures/Figure_3.eps');

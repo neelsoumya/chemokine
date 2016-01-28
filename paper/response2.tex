@@ -1,0 +1,220 @@
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
+
+% Use doublespacing - comment out for single spacing
+\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+% Use the PLoS provided bibtex style
+\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+\usepackage{multirow}
+
+\usepackage{color}
+\usepackage{csquotes}
+\usepackage{ulem}
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+\definecolor{dkred}{rgb}{0.75,0,0}
+\definecolor{dkgreen}{rgb}{0,0.5,0}
+\definecolor{dkblue}{rgb}{0,0,0.75}
+\definecolor{dkpurple}{rgb}{.375,0,.375}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\newcommand{\removed}[1]{{\color{dkred}\sout{#1}}}
+%\newcommand{\removed}[1]{\textcolor{dkred}{#1}}
+\newcommand{\new}[1]{{\color{dkgreen}#1}}
+
+\newenvironment{response}{\fontfamily{cms}\selectfont\small}{\par}
+
+\renewcommand{\rmdefault}{cmr}
+\renewcommand{\sfdefault}{lmss}
+
+% figure files reside in the figures/ directory
+\graphicspath{
+{figures/}
+}
+
+%% END MACROS SECTION
+
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large
+\textbf{A spatial model of the efficiency of T cell search in the influenza-infected lung (Response to Reviewers)}
+}
+% Insert Author names, affiliations and corresponding author email.
+\\
+Drew Levin, 
+Stephanie Forrest, 
+Soumya Banerjee,
+Candice Clay,
+Judy Cannon, 
+Melanie Moses, 
+Frederick Koster
+\end{flushleft}
+\vspace{0.5cm}
+
+
+%We thank the reviewers for their constructive and insightful comments.  We have done our best to address each point raised and feel the incorporation of the reviewers' comments has greatly improved the paper.  We include detailed responses to each comment below.
+We thank the reviewers for their efforts in providing insightful critiques. Below we have provided detailed responses to each individual point raised by the reviewers. As the response to Reviewer 2 is brief, we address Reviewer 2's critique first. We hope that the reviewers and editor will find these detailed responses sufficient to address all their current critiques and find our manuscript suitable for publication in the Journal of Theoretical Biology. 
+
+\section*{Reviewer 2}
+
+\textbf{One last point that can be addressed is that they performed a new detailed uncertainty and Sensitivity analysis, but no references are listed for the method that they employed. It would be helpful to readers to know what approach they took to allow for reproducing their results or for following their method for future work. This must be rectified.} \\
+
+\begin{response}
+We are glad that Reviewer 2 is satisfied with the previous revisions, and we have addressed the one remaining suggestion by adding in the recommended reference (Marino et. al., 2008) in the Sensitivity Analysis section of the main paper.
+\end{response}
+
+
+\section*{Reviewer 1}
+
+\begin{enumerate}
+
+\item \textbf{You provided more detail of how you estimate the rate of chemokine production and how T cell production from LNs are calculated. However, from your description I cannot evaluate whether your numbers can be trust. Specifically, for model (Eq. 1) I have no idea whether your model predicts accurately chemokine production. No fits are shown for the data. How do you know that the parameters from Mitchell et al 2011 are compatible with your experiments. Although we hope that different experiments give the same parameter measurements, this is often not true. See paper by De Boer's group (Althaus et al JI 2008). Furthermore, your model fits for Eqn. 2 to estimate sigma (page 8). Again, I have no idea whether your model is good for the data as you claim. To me it appears that you think that estimating model parameters from data is a trivial exercise. It is not and one must try different alternative models to see how they describe the data. See book by Hilborn Ecological detective.}
+
+\begin{response}
+
+We are glad that the reviewer is happy with the additional detail provided with our previous revision. In response to this critique, we emphasize that the Mitchell 2011 reference is a paper from our group (including multiple authors of the current manuscript), and the data modeled in the earlier paper were used here to calibrate our new model in the current manuscript. We clarify the appropriateness of using parameters from the Mitchell 2011 paper as follows: 
+
+\begin{displayquote}
+``The model is parameterized with values taken from the literature when available. Because chemokine secretion rates are central to our model and appropriate data values are not available, we estimate the parameters using data from physical experiments and \removed{an earlier} \new{our previously published} ODE model (Mitchell et. al., 2011)." (p. 3)
+\end{displayquote}
+
+\begin{displayquote}
+``We extended \removed{a} \new{our}  previously published differential equation model (Mitchell et al., 2011) to obtain values for per-cell chemokine production rates. T cell production rates were derived from measured replication rates in vitro (Miao et al., 2010) using another differential equation model. T cell production is assumed to be constant after day 5 (Martin-Fontecha et al., 2003).'' (p. 5) 
+\end{displayquote}
+
+In addition, there is clarifying text on p. 6: 
+
+\begin{displayquote}
+``the dynamic viral loads at these intervals have been reported previously by us for cultures infected with seasonal H1N1 virus, pandemic H1N1 virus, and avian H5N1 virus (Mitchell et al., 2011).''
+\end{displayquote}
+
+However, as the reviewer correctly points out, no single model is likely to fit all experimental data pefectly.   For the question we are asking, the goal is less to look at the exact fits than to study the range of qualitative behaviors of T cell / chemokine interactions in the context of infection by three strains of influenza.  We have a deep appreciation for the difficulty of estimating parameter values from models, which is why we conducted a thorough sensitivity analysis, including the PRCC extension helpfully suggested by the reviewer earlier.
+
+Our sensitivity analysis, shown in Table 3 and Figures S3-S8, demonstrates that the two parameters that the reviewer is concerned about (chemokine production rate and T cell production rate) do not clear pandemic flu.  We tested chemokine production rates over a wide range of values: $\pm$ 2 orders of magnitude from strain-specific baseline, and  T cell production ranging from  $125/h$ to $3,750/h$, see Table 2.  Thus, we acknowledge the reviewer’s comment that estimating model parameters is not trivial, but our model results suggest that while the T cell response is sufficient to clear seasonal flu strains, chemokine production and T cell production rates are not likely to impact clearance of pandemic flu.  We note that to our knowledge this is the first such analysis, and we hope that subsequent models and experiments will shed further light on this important question.
+\end{response}
+
+\item \textbf{You ignored my request to investigate if virus control can be good by T cells (irrespectively of the type of virus) if chemokines diffuse faster than virus particles. Please do the simulations, and rephrase your discussion depending on the results you find.}
+
+\begin{response}
+We apologize that our previous response to this was not clear. In fact, we explicitly model chemokines diffusing faster than virus particles (see Table 2). Thus, all of our conclusions are based on modeling chemokine diffusing faster than virus.
+\end{response}
+
+\item \textbf{One additional issue I thought of is the ability of T cells to recruit more T cells to the site of infection by also secreting cytokines or changing vasculature structure to allow more T cell entry. Will this improve viral control?}
+
+\begin{response}
+The reviewer correctly points out that T cells may recruit more T cells to the site by changing the inflammatory environment. While no model can incorporate all potential aspects of T cell effects on the environment, we do address the reviewer's question by varying the number of recruited T cells over a wide range (see Sensitivity Analysis: Table 3 and Figures S3-S5). If T cells secrete more cytokines or change the vasculature in order to recruit more T cells, increasing the number of T cells would take this potential effect into account without explicitly modeling cytokines or vasculature.  As stated in the paper, we find that while T cells are sufficient to control seasonal H1N1,  increasing T cell secretion from 1,257 per hour to  3,750 per hour does not affect T cell control of pandemic flu (Figure S5).
+\end{response}
+
+\item \textbf{I wonder if your model does not represent flu dynamics appropriately. For all the data on flu dynamics in mice that I have seen, flu titers reach peak very early in infection, about 2-3 days p.i, while T cells start arriving to the lung 5-6 days post-infection (e.g., work by Doherty/Thomas). It seems to be that difference in pathogenesis of different viruses would come not from the inability of T cells to control virus spread but how much of the lung is being infected within 1-5 days post infection. Less virulent viruses infect fewer epithelian cells, are all cleared and this does not result in much pathology. Virulent viruses are able to infect much wider areas of the lung and T cells by clearing virus in the whole lung cause death - via immunopathology. Innate immunity is controlling early virus spread. Please investigate.}
+
+\begin{response}
+We concur with the reviewer's observation that innate immunity is important to early viral control. Even though we do not explicitly model each possible innate mechanism specifically, our model represents viral spread using parameters which likely reflect innate control mechanisms (virus secretion, infectivity, diffusion rate, and decay rate, see Tables 1 and 2). We appreciate the reviewer's perspective, but our goal in this paper is to study the effect of T cells and not to fully represent the interaction between influenza strains and the entirety of the immune response (Introduction 3rd paragraph shown below).  
+
+\begin{displayquote}
+``Specifically, we focus on the interactions between activated antigen-specific CD8 T cells, cytokines, and replicating influenza virus. ... Therefore, instead of developing a comprehensive immune system model, we present a spatially explicit agent-based model (ABM) to
+describe T cell interactions with chemotactic signals and a dynamically growing plaque." (p. 1)
+\end{displayquote}
+
+We feel that careful investigation of the role of early innate control, with its many complex mechanisms, in different influenza strains is best left to future studies.
+
+\end{response}
+
+\end{enumerate}
+
+\subsection*{Minor Issues}
+
+\begin{itemize}
+
+\item \textbf{Your reference list must be either numbered or be alphabetical. When you cite a reference, I cannot easily find it in the list of your references because currently references are not alphabetical (or do not have any numbering). I am surprised that you did not understand the issue yourself.}
+
+\begin{response}
+We apologize for the inaccuracies in the reference list and have corrected this as requested.
+\end{response}
+
+\item \textbf{page 3 - ``spatial model and the supporting experiments" - which experiments? Chemokine production? This is only very remotely related to your model.}
+
+\begin{response}
+The text has been changed to: ``\new{The analyses of} the spatial model reveal..."
+\end{response}
+
+\item \textbf{How bootsraps were performed (page 7) is not stated. Resampled data, residuals, parametric or non-parametric bootstrap. Please address}
+
+\begin{response}
+The text has been updated to read: ``1,000 bootstrapping runs \new{using resampled residuals} were performed..."
+\end{response}
+
+\item \textbf{page 8. Estimation of parameters a and b is not. This has to be extended, fits are shown and argued that these are appropriate fits (by doing all the needed statistics for nonlinear regressions!)}
+
+\begin{response}
+$a$ and $b$ were fit using a linear regression with a resulting $R^2 = 0.997$ and $P < 0.01$.  These values have been added to the main text and supplement, and the data points used for fitting have also been added to the supplement (Table S3).
+\end{response}
+
+\item \textbf{page 15 - reference to Banerjee et al. 2011 as showing "severe limitation to viral clearance ... ``is not appropriate as this is theoretical work. Only experiments may show this, model may only suggest.}
+
+\begin{response}
+The phrase ``has shown" has been changed to ``suggests".
+\end{response}
+
+\item \textbf{page 15. ``virus dynamics are crucial in determining the course of infection". }
+
+\begin{response}
+We changed the text to say \new{previous ODE models have studied how viral dynamics affect the course of infection}.
+\end{response}
+
+\end{itemize}
+
+\end{document}
+
+
+
+
+
+
+
+
+

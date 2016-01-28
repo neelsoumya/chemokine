@@ -356,7 +356,7 @@ FUNCTION {bibinfo.warn}
 FUNCTION {format.url}
 { url empty$
    { "" }
-   { "" } % "\urlprefix\url{" url * "}" * }
+   { "\urlprefix\url{" url * "}" * }
  if$
 }
 
@@ -479,7 +479,7 @@ FUNCTION {format.note}
 }
 
 FUNCTION {format.title}
-{ title 
+{ title
  "title" bibinfo.check
 }
 FUNCTION {format.full.names}

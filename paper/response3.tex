@@ -1,0 +1,274 @@
+\documentclass[10pt]{article}
+
+% amsmath package, useful for mathematical formulas
+\usepackage{amsmath}
+% amssymb package, useful for mathematical symbols
+\usepackage{amssymb}
+
+% graphicx package, useful for including eps and pdf graphics
+% include graphics with the command \includegraphics
+\usepackage{graphicx}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+\usepackage{color} 
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
+
+% Use doublespacing - comment out for single spacing
+\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\topmargin 0.0cm
+\oddsidemargin 0.5cm
+\evensidemargin 0.5cm
+\textwidth 16cm 
+\textheight 21cm
+
+% Bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,justification=raggedright]{caption}
+
+% Use the PLoS provided bibtex style
+%\bibliographystyle{plos2009}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+% Leave date blank
+\date{}
+
+\pagestyle{myheadings}
+%% ** EDIT HERE **
+
+\usepackage{multirow}
+
+\usepackage{color}
+\usepackage{csquotes}
+\usepackage{ulem}
+
+%% ** EDIT HERE **
+%% PLEASE INCLUDE ALL MACROS BELOW
+
+\definecolor{dkred}{rgb}{0.75,0,0}
+\definecolor{dkgreen}{rgb}{0,0.5,0}
+\definecolor{dkblue}{rgb}{0,0,0.75}
+\definecolor{dkpurple}{rgb}{.375,0,.375}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\newcommand{\removed}[1]{{\color{dkred}\sout{#1}}}
+%\newcommand{\removed}[1]{\textcolor{dkred}{#1}}
+\newcommand{\new}[1]{{\color{dkgreen}#1}}
+
+%\newenvironment{response}{\fontfamily{cms}\selectfont\small}{\par}
+\newenvironment{response}{\fontfamily{cmr}}{\par}
+
+\renewcommand{\rmdefault}{cmr}
+\renewcommand{\sfdefault}{lmss}
+
+% figure files reside in the figures/ directory
+\graphicspath{
+{figures/}
+}
+
+%% END MACROS SECTION
+
+\begin{document}
+
+% Title must be 150 characters or less
+\begin{flushleft}
+{\Large
+\textbf{A spatial model of the efficiency of T cell search in the influenza-infected lung (Response to Reviewers)}
+}
+% Insert Author names, affiliations and corresponding author email.
+\\
+Drew Levin, 
+Stephanie Forrest, 
+Soumya Banerjee,
+Candice Clay,
+Judy Cannon, 
+Melanie Moses, 
+Frederick Koster
+\end{flushleft}
+\vspace{0.5cm}
+
+
+%We thank the reviewers for their constructive and insightful comments.  We have done our best to address each point raised and feel the incorporation of the reviewers' comments has greatly improved the paper.  We include detailed responses to each comment below.
+
+%We thank the reviewers for their efforts in providing insightful critiques. Below we have provided detailed responses to each individual point raised by the reviewers. As the response to Reviewer 2 is brief, we address Reviewer 2's critique first. We hope that the reviewers and editor will find these detailed responses sufficient to address all their current critiques and find our manuscript suitable for publication in the Journal of Theoretical Biology. 
+
+We are grateful for the opportunity to respond to Reviewer 1's comments. We regret that Reviewer 1 did not ultimately agree with our rebuttal, but we believe that we have directly addressed all of his/her concerns in the previous rebuttal. We are providing additional evidence and discussion as requested by the last round of revisions. While we are grateful for the time given by Reviewer 1 to review our manuscript, we respectfully disagree with his/her contention that we did not understand or address his/her concerns. We provide additional rebuttals to Reviewer 1's comments below. We believe that we have adequately addressed all comments from both Reviewer 1 and 2.
+
+\section*{Reviewer 1}
+
+Reviewer 1: The authors misinterpreted what my comments meant, and this is third time.
+
+\begin{enumerate}
+
+\item \textbf{If you estimate chemokine production rate, I want to know how. You show no 
+model fits, so I cannot trust your numbers/analysis. The fact that chemokine 
+secretion rate does not impact clearance of pandemic virus raises a question -
+why do you need to estimate secretion rate then?}
+
+\begin{response}
+
+There is no known literature with chemokine secretion rate estimations.  In this paper, we present new empirical data of \textit{in vitro} chemokine levels and extend a previously published ODE model to estimate chemokine production rates.  We are as surprised as Reviewer 1 that these production rates do not have a strong effect on our agent-based model results as determined by our sensitivity analyses.  Nevertheless, because our agent-based model examines chemokine interactions, we require a non-zero value for the production rate.  We believe that fitting the extended ODE model to our new empirical data is the best approach available to determine biologically plausible values.  Our paper contains a subsection, \textit{Models for Parameter Estimation}, that details the exact process used to estimate the chemokine production rates (page 6).  We fit the system of differential equations to empirical data using a genetic algorithm to minimize the log squared error between the model and the data (the genetic algorithm performed favorably when compared to standard Levenberg-Marquardt nonlinear regression techniques).  
+
+We have added a figure displaying the model fits to the supplement (Fig. S1, also below) and Table S3 showing the root mean squared error of the fits for completeness.
+
+
+%\begin{displayquote}
+%``quote from paper"
+%\end{displayquote}
+%
+%more response stuff
+
+\end{response}
+
+\item \textbf{Mitchell et al. work is on in vitro culture while you model in vivo lung 
+infection. These are two completely different scenarios, parameter can and are 
+likely to be different.}
+
+\begin{response}
+All biological data have a foundation using \textit{in vitro} research. We agree with Reviewer 1 that while this raises the potential caveat that some of the values that we use to parameterize our models using \textit{in vitro} generated data may not reflect \textit{in vivo} values, we, along with most other researchers in the field, use \textit{in vitro} generated values as a starting point. We explicitly state this in the manuscript. This is precisely the reason that we undertook an extensive sensitivity analysis as we acknowledge that the values we use to parameterize the model may vary from initial starting values. We do not claim that the values we estimate are absolutely reflective of \textit{in vivo} values. Instead, we use best fit estimates that are currently available as a starting point, and use sensitivity analysis to confirm the role of individual parameters on the model.​
+\end{response}
+
+\item \textbf{You state that chemokine diffuses SLOWER that infection spread. What if it diffuses faster?}
+
+\begin{response}
+
+Chemokine does have a higher diffusion rate than virus in our model (Table 2).  It is important to note that our discussion of the infection outpacing the chemokine is different than the direct comparison between the viral diffusion rate and the chemokine diffusion rate.  Because T cells climb the chemokine gradient, a chemokine's effect is seen in the location of its local maxima, while the viral effect is seen in the spread and concentration of the virions themselves.  We have edited the text to be more clear of this distinction (\textit{Results: Spatial Effects}, page 10).
+
+\begin{displayquote}
+Finally, the spatial nature of our model reveals that \new{the locations of peak chemokine concentration}\removed{chemokines} can \new{move}\removed{diffuse} more slowly than the rate infected cells and virus expand, thus misdirecting the T cells.
+\end{displayquote}
+
+To complement our spatial analysis we performed multiple sensitivity analyses on our model's free parameters.  In doing so, we examined scenarios where the chemokine's diffusion rate was increased by up to two orders of magnitude (Table 2).  Each sensitivity analysis showed that the chemokine diffusion rate was an insensitive parameter in our model (Table 3 and Supplement)
+
+\end{response}
+
+
+\item \textbf{Secretion of T cells is irrelevant parameter, recruitment to the focus of 
+infection is the important one.}
+
+\begin{response}
+
+We agree with the reviewer that the T cell secretion rate is an insensitive parameter in our model as determined by our multiple sensitivity analyses.  Because our agent-based model investigates the recruitment of T cells to the focus of infection, we required a non-zero secretion rate to introduce these T cells into the model.  Similar to the chemokine secretion rate as discussed in the first point and in our paper (\textit{Models for Parameter Estimation}, page 7), we fit an ODE model to empirical data to best estimate a biologically plausible value for the T cell secretion rate for use in our agent-based model.
+
+We also agree that the recruitment of T cells to the focus of the infection is important.  We discuss this in the \textit{Spatial Effects} subsection (page 9-10) and in the discussion (page 15) as follows:
+
+\begin{displayquote}
+In our spatial model, CD8 T cells climb a chemokine gradient to find infected epithelial cells and
+cluster at local maxima of chemokine concentration. Because T cells are clustered, they cannot cover the
+expanding plaque effectively, where infected cells on the periphery become more highly dispersed as the
+plaque grows. Thus, T cells in the model become redundant at a relatively low threshold, beyond which
+additional T cells do not improve clearance rates.
+\end{displayquote}
+
+\end{response}
+
+\item \textbf{You don't understand my point about virus control and relevance of your work
+for interpretation of how CD8 T cells control flu replication.}
+
+\begin{response}
+
+The term `viral control' has been used in three different contexts.  We have explicitly addressed each point in previous responses.  In summary:
+
+\begin{enumerate}
+\item \textit{You ignored my request to investigate if virus control can be good by T cells (irrespectively of the type of virus) if chemokines diffuse faster than virus particles. Please do the simulations, and rephrase your discussion depending on the results you find.}
+\begin{displayquote}
+We have performed these simulations numerous times in the form of our sensitivity analyses.  Further, you seem to be misunderstanding the distinction between the differing roles of viral diffusion and chemokine diffusion.  Please refer to Response 3 of this document for more information.
+\end{displayquote}
+
+\item \textit{One additional issue I thought of is the ability of T cells to recruit more T cells to the site of infection by also secreting cytokines or changing vasculature structure to allow more T cell entry. Will this improve viral control?}
+
+\begin{displayquote}
+Here we summarize our previous response (emphasis added). While no model can incorporate all potential aspects of T cell effects on the environment, we do address the reviewer’s question by varying the number of recruited T cells over a wide range (see Sensitivity Analysis: Table 3 and Figures S4-S7). If T cells secrete more cytokines or change the vasculature in order to recruit more T cells, increasing the number of T cells would take this potential effect into account without explicitly modeling cytokines or vasculature. As stated in the paper, we find that while T cells are sufficient to control seasonal H1N1, increasing T cell secretion from 1,257 per hour to 3,750 per hour \emph{does not affect} T cell control of pandemic flu (Figure S6).
+\end{displayquote}
+
+\item \textit{It seems to be that difference in pathogenesis of different viruses would come not from the inability of T cells to control virus spread but how much of the lung is being infected within 1-5 days post infection. Less virulent viruses infect fewer epithelian cells, are all cleared and this does not result in much pathology. Virulent viruses are able to infect much wider areas of the lung and T cells by clearing virus in the whole lung cause death - via immunopathology. Innate immunity is controlling early virus spread. Please investigate.}
+
+\begin{displayquote}
+In summary, our paper makes no attempt to model the immune response in its entirety.  Our model does represent viral
+spread using parameters which likely reflect innate control mechanisms (virus secretion, infectivity, diffusion
+rate, and decay rate, see Tables 1 and 2). We appreciate the reviewer’s perspective, but our goal in this
+paper is to study the effect of T cells and not to fully represent the interaction between influenza strains
+and the entirety of the immune response (Introduction 3rd paragraph shown below). \\
+
+\textit{``Specifically, we focus on the interactions between activated antigen-specific CD8 T cells, cy-
+tokines, and replicating influenza virus. ... Therefore, instead of developing a comprehensive
+immune system model, we present a spatially explicit agent-based model (ABM) to describe T
+cell interactions with chemotactic signals and a dynamically growing plaque." (page 1)} \\
+
+We feel that careful investigation of the role of early innate control, with its many complex mechanisms, in
+different influenza strains is best left to future studies.
+
+\end{displayquote}
+
+\end{enumerate}
+
+\end{response}
+
+\item \textbf{Please read the paper by Oreskes et al. Science 1994 about how mathematical 
+modeling should be used to understand natural sciences.}
+
+\begin{response}
+We have reviewed Oreskes et. al.  The paper correctly points out that scientists often use terms incorrectly when describing their model's veracity which leads to incorrect claims and conclusions.  Specifically, Oreskes et. al. examines four terms: `verification', `validation', `calibration', and `confirmation'.
+\begin{itemize}
+\item \textbf{Verification:} Oreskes et. al. states that it is not possible to verify a numerical model by comparing it to an analytical model.  We use the term `verification' one time (page 15, concluding paragraph) in the context of obtaining empirical data only (emphasis added).
+\begin{displayquote}
+``Empirical \textbf{verification} of the model's sensitive parameters (viral response to IgM, infectivity, viral decay rate, viral diffusion rate, and viral production rate) will be valuable to future studies."
+\end{displayquote}
+\item \textbf{Validation:} We do not use the term in our paper.
+\item \textbf{Calibration:} Oreskes et. al. warn of the dangers of using the calibration of free parameters to emprical data as a basis for claiming model validity.  We use the term `calibration' only once (Abstract) and make no erroneous claims (emphasis added).
+\begin{displayquote}
+``We \textbf{calibrate} the model using viral and chemokine secretion rates we measure \textit{in vitro} together with values taken from literature."
+\end{displayquote}
+\item \textbf{Confirmation:} Oreskes et. al. states that observations consistent to a theory can `confirm' a theory, but warn that confirmation cannot lead to verification.  We use the term `confirm' twice and make no claims of verification or validity (emphasis added).
+
+Page 11:
+\begin{displayquote}
+``The  five viral parameters are \textbf{confirmed} by the PRCC analysis to be significantly correlated with model output (Table 3)."
+\end{displayquote}
+
+Page 12:
+\begin{displayquote}
+``We \textbf{confirm} this effect in the model by first setting both relevant parameters (apoptosis time and T cell kill time) to zero, and as expected all three strains were cleared (Fig. 7)."
+\end{displayquote}
+
+
+\end{itemize}
+
+At no point have we made claims inconsistent with Oreskes et. al.  We agree that models can inform research and use our model to propose a hypothesis of how additional T cells are limited in their effectiveness due to the spatial effects of the chemokine gradient and T cell chemotaxis.
+\end{response}
+
+\end{enumerate}
+
+
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\begin{figure}[b]
+\begin{center}
+\includegraphics[width=\columnwidth]{FigureS1.eps}
+\caption{{\bf Preliminary Model 1 fits to data.}  Preliminary Model 1 (Eq. 1) was fit to experimental data (Table S1) using a genetic algorithm as described in the main paper.  sH1N1 IP-10 secretion exceeded measurement accuracy above 8500 pg/mL and these three values (empty red triangles) were not included in the model fitting.  RMSE values of the fits can be seen in Table S3.  IP-10 data and model fits shown in red (triangles), RANTES data and model fits shown in yellow (squares).}
+\label{fig:fits}
+\end{center}
+\end{figure}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+

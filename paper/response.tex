@@ -13,10 +13,12 @@
 \usepackage{cite}
 
 \usepackage{color} 
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
 
 % Use doublespacing - comment out for single spacing
 \usepackage{setspace} 
-\doublespacing
+%\doublespacing
 
 % Text layout
 \topmargin 0.0cm
@@ -46,8 +48,27 @@
 
 \usepackage{multirow}
 
+\usepackage{color}
+\usepackage{csquotes}
+\usepackage{ulem}
+
 %% ** EDIT HERE **
 %% PLEASE INCLUDE ALL MACROS BELOW
+
+\definecolor{dkred}{rgb}{0.75,0,0}
+\definecolor{dkgreen}{rgb}{0,0.5,0}
+\definecolor{dkblue}{rgb}{0,0,0.75}
+\definecolor{dkpurple}{rgb}{.375,0,.375}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\newcommand{\removed}[1]{{\color{dkred}\sout{#1}}}
+%\newcommand{\removed}[1]{\textcolor{dkred}{#1}}
+\newcommand{\new}[1]{{\color{dkgreen}#1}}
+
+\newenvironment{response}{\fontfamily{cms}\selectfont\small}{\par}
+
+\renewcommand{\rmdefault}{cmr}
+\renewcommand{\sfdefault}{lmss}
 
 % figure files reside in the figures/ directory
 \graphicspath{
@@ -61,7 +82,7 @@
 % Title must be 150 characters or less
 \begin{flushleft}
 {\Large
-\textbf{Spatially explicit model of the lymphocyte diaspora in influenza-infected lung reveals thresholds on chemokine directed migration (Response to Reviewers)}
+\textbf{A spatial model of the efficiency of T cell search in the influenza-infected lung (Response to Reviewers)}
 }
 % Insert Author names, affiliations and corresponding author email.
 \\
@@ -69,200 +90,217 @@ Drew Levin,
 Stephanie Forrest, 
 Soumya Banerjee,
 Candice Clay,
+Judy Cannon, 
 Melanie Moses, 
 Frederick Koster
 \end{flushleft}
 \vspace{1cm}
 
 
-
-We thank the reviewers for their constructive and insightful comments.  The incorporation of the reviewers' comments has greatly improved the paper.  We include detailed responses to each comment below.
+We thank the reviewers for their constructive and insightful comments.  We have done our best to address each point raised and feel the incorporation of the reviewers' comments has greatly improved the paper.  We include detailed responses to each comment below.
 
 \section*{Reviewer 1}
 
 \begin{enumerate}
 
-\item \textbf{The title may be misleading as the model is very simplified from the immunological viewpoint and gives rather a qualitative rather than a quantitative view of the spatial dynamics.}
+\item \textbf{To me, the most interesting result would be estimating parameters for the dynamics of the virus and production of chemokines but the authors provide little to no details of how this was done. This is not sufficient as the model has so many parameters I would like to see how you estimated those. What are the model fits? Which parameters were fixed in fitting and why? What if Mitchell et al. study has parameters which are not compartible with your experiments? you need to explore this much deeper than the current ms. does.}
 
-We changed the title by changing the phrase `quantifies constraints' to `reveals thresholds', which we believe more accurately reflects the paper's main focus. \\
+\begin{response}
+We added one new paragraph and modified another in the Models for Parameter Estimation subsection to address the reviewer's three main questions, as well as others the reviewer did not explicitly ask for.  In summary:
+\begin{itemize}
+\item The model was fit using a genetic algorithm to minimize the sum of the squared log residuals between the model and the data.  In an earlier analysis the GA fits were superior to non-linear regression methods in both the Berkeley Madonna and Matlab software suites.
+\item All parameters were held constant during the fitting procedure aside from the chemokine secretion rate.  
+\item The model was fit to experimental data measured during the experiments reported in Mitchell 2011.  However, the chemokine data (Fig. 3, Table S1) have not been published previously.
+\item 1,000 bootstrapping runs were performed to generate confidence intervals over each estimated parameter value.
+\end{itemize}
 
+The new text to address the comment is:
 
-\item \textbf{Introduction, p3: It would be interesting to add a general reference to agent-based models (ABM), in particular spatial ABM in immunology and briefly justify the use of an ABM rather than partial differential equations in the present context.}
+\begin{displayquote}
+\new{To provide estimates of chemokine concentrations and secretion rates in lung tissue, chemokine levels were measured at 4-6h intervals during the first 48 h of infection in wells containing approximately one million human bronchial epithelial cells (Fig. 3, Table S1).  The dynamic viral loads at these intervals have been reported previously by us for cultures infected with seasonal H1N1 virus, pandemic H1N1 virus, and avian H5N1 virus (Mitchell et al., 2011).  IP-10 concentration increases were observed by 8h post-infection (p.i.), and RANTES by 16h p.i..}
 
-Added reference to Beauchemin 2006 paper that discusses ABM advantages vs. differential equations as well as Bauer 2009.  We have added the following sentences to the introduction: \\
+We estimate chemokine production rates, $r$, by adapting the delay differential equation model of influenza infection described in (Mitchell et al., 2011) Eq. 1 by adding one new equation ($\dot{C}=r I_{1 \tau_3}-dC$) to model chemokine production.   \new{Strain-specific values for $r$ were found by fitting the equations to the experimental data in Table S1 using a genetic algorithm to minimize the log squared error between the model and the data while holding the rest of the parameter values constant.  Next, 1,000 bootstrapping runs were performed on each modeled strain to generate confidence intervals over $r$.}  The results of these fits are shown in Table 1 \new{(viral secretion rates are from previous fits in Mitchell et al., 2011)}.  IP-10 and RANTES secretion rates are aggregated in the spatial model (S2.2). \\
 
-\textit{Activated CD8 T cells searching for and homing into infected tissue do so in a spatially complex environment. We therefore used agent-based modeling (ABM) to represent the physical environment of the searching T cell.} \\
+... Eq. 1 ... \\
 
-\pagebreak
+$\tau$ subscript variables denote delay terms, signifying the value is the population quantity in existence at time $t - \tau$.  Table S2 summarizes population and parameter values and descriptions.  \removed{Strain-specific values for $r$ were found by fitting the equations to the experimental data in Table S1.  The results of these fits are shown in Table 1.  IP-10 and RANTES secretion rates are aggregated in the spatial model (S2.2).}
+\end{displayquote}
+\end{response}
 
-\item \textbf{Computational modeling section: there is no reference to Fig. 1 in the main text. As far as I understand the drawing in Fig. 1, I see 16 branches rather than 14, why?}
+\item \textbf{I am not completely clear on many of the parameter choices in your model. Yes, you cite several studies for the parameter choice but I would like to see a more thorough review of which parameters you chose and why. The issue is that your model is not ODE model used in many of the studies you cite, so it is not straightforward to go from one model to another assuming that parameters must be the same (or similar). Specifically, how do you obtain 1257 cell/hour emergence from LNs? T cells decay with average lifespan of 3 days? IgM-mediated viral clearance increase of 10 fold? Constant T cell production after day 5?}
 
-A reference to Fig. 1 was added to the Model section.  The number 14 refers to the depth of the bronchial tree, where each layer represents the bifurcation of a branch.  Thus, each level results in the doubling of the total number of pathways.  14 branches refers to $2^{14} = 16,384$ endpoints.  The figure simplifies this to 4 layers and thus $2^4 = 16$ endpoints.  The figure has been edited to read `14 bifurcations' rather than `14 branches' and the caption was changed to read `vascular bifurcations' for clarity. \\
+\begin{response}
+We agree with the reviewer that there is no easy answer for which parameters to include or exclude from the model.  We added a new paragraph to the beginning of the Model Parameters subsection of the Modeling and Methods section to better explain our reasoning:
 
+\begin{displayquote}
+\new{We include only parameters that directly address the role of T cells and T cell migration because our study focuses on the role of T cells and the chemokine effects of T cells in influenza virus infection. Thus, we included parameters that affected virus, T cells, and chemokines. With regards to the influenza, we chose parameters involving viral replication, infectivity in epithelial cells, and virus decay and diffusion rates based on our earlier study.  The chemokine decay rate, diffusion rate, and secretion rate parameters are relevant to dynamic chemokine gradients required for T cell chemotaxis.  Because we wanted to use our model to test the role of T cells and T cell migration in influenza clearance, we included multiple T cell parameters, such as T cell production rate, T cell death rate, T cell kill time, and T cell migration rate.  We added IgM because many studies have argued for the importance of antibody mediated virus clearance. However, because our study is not addressing the role of antibody in clearance of influenza, we did not test the full range of B cell responses directly by including them in our parameters.}
+\end{displayquote}
 
-\item \textbf{Acronyms in text and tables should be defined (for example, ODE, FOI, NHBE, ATC, ?).}
+The reviewer is correct in observing that agent-based modeling is different from ODE models, we think that using parameters from the ODE models is a good first estimate.  We included parameters that ODE models have determined (cited in Table 2) and in cases where appropriate (such as the viral infection rate), we adapted values from an ODE model to mirror the expected behavior in a spatial environment.
 
-Acronyms in the text have been either defined or removed.  Acronyms in the table are now defined in the caption. \\
+The specific parameters identified by Reviewer 1, each one is listed with a citation or justification in Table 2.  For the case of the T cell production rate, there is also a subsection in the paper that describes our methodology (Models for Parameter Estimation).  For the case of the T cell decay rate, three days was an error as the correct value was four days.  This has been fixed in the manuscript.  These values are first referenced in the Model Implementation subsection of the Materials and Methods section, before the justification for the values are referenced.  To address this inconsistency, we moved the Model Parameters subsection to appear \textit{before} the Model Implementation subsection, and we added more direct references to Table 2 and the Models for Parameter Estimation subsection for clarity.
 
+The main finding of our study through sensitivity analysis shows that few parameters actually affect influenza clearance. Our findings confirm that despite the difficulty selecting parameters to populate the model, selection of most parameters is not likely to be a crucial factor in determining our results.​
 
-\item \textbf{Model definition:}
-\begin{enumerate}
-   \item \textbf{More details concerning the implementation of the ABM need to be given, at least in the supplement: a short description of the spatial arrangement (size of the simulation space, cell arrangement, number of epithelial cells, as well as how T cell movement vs. particle diffusion has been implemented.}
-  
-   \item \textbf{IgM addition is mentioned in section 2.1 of the supplement but not indicated in the main text.}
-   
-   \item \textbf{What happens in this ABM when a free virus particle infects a cell: is it absorbed and does it disappear from the pool of free viruses?}
-   
-  
-\end{enumerate}       
-
-Two new sections were added to the supplement (S1.2, S1.3).  One describes details of the general CyCells model environment and the other describes details of the model specific to this paper.  These sections address all of the points raised here by the reviewer except IgM.     We added a sentence referencing the IgM implementation to the main paper: \\
-
-\textit{IgM is modeled by increasing the viral decay rate by a factor of three after the third day.} \\
-
-\item \textbf{Materials, p6: the sentence "treatment of the monolayer with protease" is not understandable without reading reference [19] and requires here more explanation.}
-
-The description of viral measurement was expanded into two sentences and an explanation of why protease was used was added: \\
-
-\textit{Basal media was collected from previously undisturbed triplicate or quadruplicate wells at 0, 6, 10, 12, 16, 20, 24, 30, 36, 42, 48, and 72 hours after infection, and stored at -80C until assay.  Subsequently, apical fluid for virus secretion was collected before and after treatment of the monolayer with protease (Pronase, Sigma) to optimize the collection of infectious virus (Mitchell 2011).} \\
+\end{response}
 
 
-\item \textbf{Chemokine production, p6:}
+\item \textbf{The number of simulations performed seems small (50). Will statistics be better if you run more reasonable number of simulations as recommended for bootstrap analyses (e.g., 500-1000).}
 
-\begin{enumerate}
-	\item \textbf{The definition of all the variables and parameters of the ODE model in the supplement (eqs S1) should be added in order to be more self-contained.} 
-	
-The central differential equation was moved to the beginning of the model section of the main paper and a new table was added with descriptions of every population and parameter. \\
+\begin{response}
+The spatial nature of the model made it difficult to perform a full 1,000 sample bootstrapping run. Further, bootstrapping works by shuffling residuals of a model fit to generate new data sets for the purpose of generating confidence intervals over fit parameters.  In this case, we were simply interested in sampling the variance of the stochastic model itself.  We chose 50 runs of each model parameter set as that number was at the larger end of what was computationally tractable.
 
-	\item \textbf{Fig. 3: "8500 pg/mL" is indicated as a measurement threshold for sH1N1.  Why is this not also the case for aH5N1 and pH1N1?} 
-	
-The upper limit applied only to sH1N1 because there were insufficient sample dilutions made and the sample could not be repeated.  The sentence in the caption has been rewritten: \\
+To satisfy the reviewer's request, we performed an additional 50 samples of each modeled strain of influenza, doubling our sample size.  Avian influenza's maximum standard deviation changed from 37.2 to 35 (5.9\%), seasonal influenza changed from 242 to 212 (12.4\%), and pandemic influenza changed from 230 to 231 (0.4\%).  The text and Figure 4 have been updated to include the new model runs.
 
-\textit{sH1N1 IP-10 secretion exceeded measurement accuracy above 8500 pg/mL but these three values (empty red triangles) were not included in the model fitting.} \\
+We think the small change between the old and new values demonstrates that 100 runs is sufficient, but we can perform more samples if the reviewer deems it necessary.
+\end{response}
 
-\end{enumerate}
+\item \textbf{How important is the assumption of diffusion rate of chemonkines being slower than rate of viral spread? What if chemokine spreads faster? Will control be better?}
 
-\pagebreak
+\begin{response}
+This is a good question.  It is important to note that this is a different question than that regarding the direct comparison between the viral diffusion rate and the chemokine diffusion rate as the chemokine's effect is only seen in the gradient of the concentration and the location of the local maxima, while the viral effect is seen in the spread and concentration of the virions themselves.  
 
-\item \textbf{T cell sensitivity, p7, top: The sentence "Because multiple T cells ? we hypothesize ? more T cells are not more efficient above a critical threshold" is unclear. Is it not that the probability of apoptosis induction will increase with the T cell number even if the rate of transition from secreting to apoptotic cells does not scale with T cell number?}
+We added an explanatory text to the Spatial Effects subsection of the Results section to better address this question:
 
-It is {\em not} that the probability would increase with additional T cells at the infected epithelial cell in our model.  The section has been rearranged to improve clarity. The detail regarding multiple T cells was moved to other sections.  We also added two expanded model description sections to the supplement, which we hope clarifies this point. \\
+\begin{displayquote}
+Finally, the spatial nature of our model reveals that chemokines can diffuse more slowly than the rate infected cells and virus expand, thus misdirecting the T cells.  It takes time for infected cells to begin producing chemokine, while the preexisting areas of high chemokine density are slow to decay.  Thus, T cells whose movements respond to the spatial layout of the chemokine gradient can become trapped, failing to locate new regions of infected cells in the growing plaque.  \new{The differences in the infection outcomes between the three strains illustrate the effect of the infection spreading faster than the chemokine maxima can move in the case of pH1N1.  The velocity of the chemokine maxima positions depends on a combination of many factors, including the chemokine diffusion, decay, delay, and secretion rates (Table 2).}
+\removed{This effect is most pronounced in the pH1N1 strain, where the plaque expands more quickly than the chemokine can diffuse.}
+\end{displayquote}
+\end{response}
 
+\item \textbf{Your references are not formatted properly. Please correct.}
 
-\item \textbf{Spatial effects:}
-\begin{enumerate}
-	\item \textbf{p7, bottom: refer also to Fig. S1}
-	
-A reference to Figure S1 was added. \\
-
-	\item \textbf{Figure 6, legend: Can the difference in behaviour for pH1N1 and sH1N1 infections not be explained by the difference in IP-10 production rates (even if small)?}
-	
-We performed a new model run combining pH1N1 virus and sH1N1 chemokine and found no difference in the infection profile.  A sentence was to the spatial effects results section: \\
-
-\textit{Furthermore, increasing chemokine production fails to control the runaway pH1N1 infection (data not shown) suggesting that the effect of high viral production rates dominate low chemokine concentrations in this scenario.} \\
-	
-\end{enumerate}
-
-
-
-\item \textbf{Discussion, p10, 2d §: reference should also be given to section 2.2 of the supplement where combinations of chemokines are considered.}
-
-The Chemokine Directed T cell Search section of the discussion was significantly abbreviated for clarity and removal of information not directly relevant to the modeling exercise.  The paragraph in question was removed entirely. \\
-
-\item \textbf{Equations:}
-\begin{enumerate}
-	\item \textbf{Eqs S1: add definition of variables and parameters}
-	
-	We  moved the first equation from the supplement to the main paper to  help address the point that the paper is not self-contained.  We have added a new table with descriptions and values for each population and parameter of this equation. \\
-
-	\item \textbf{Eqs S2: add definition of $t_{rc}$ and $v_{tcell}$; reference to Fig. 1 of the main text should also be given in section 1.2 of the supplement as eqs. S2 relate to the bottom part of this figure.} 
-	
-	These modifications have all been made. \\
-
-	\item \textbf{Section 2.2: does the conclusion that RANTES does not play a significant role for H1N1 infections not simply follows from the fact that IP-10 has a much higher production rate (about 100 times) than RANTES in the H1N1 strains (Table 2, main text)?}
-        
-	Indeed, it does follow given the assumption that T cells are equally sensitive to each chemokine.  The text in S2.2 has been modified to make that assumption clear and to strengthen the conclusion.  The following two sentences in particular address the point. \\
-	
-	\textit{T cell sensitivity depends on receptor density (Desmetz 2006) and this was assumed to be constant.  Thus, the chemokines in combination work additively in our model.} \\
-	
-	\textit{This suggests that RANTES does not play a significant role in infections that stimulate an IP-10 response due to the higher production rates of IP-10.} \\
+\begin{response}
+We use the Mendeley reference manager to manage our citations.  We used the official JTB style formatter for Mendeley, along with the specific bibliography style file supplied by JTB, \texttt{elsarticle-num-names.bst}, to format our references with latex and bibtex.  We are happy to continue working with the editor to make our reference style compatible with the expectations of the journal but require further guidance on this point.
+\end{response}
 
 \end{enumerate}
-
-\pagebreak
-
-\item \textbf{Minor points:}
-\begin{enumerate}
-	\item \textbf{p7, Fig. 5, top row: T cells are barely visible. Could this be improved?}
-	
-	The figure has been enhanced to improve visibility and a note regarding the change has been added to the caption: \\
-	
-	\textit{Individual cell images for days 5.5 and 7 were enhanced (green dots are enlarged) manually to improve T cell visibility.  Thus, individual groups of T cells, which cover only an area of one or two epithelial cells in the model appear larger in the image.  Original images available upon request.} \\
-	
-	\item \textbf{p7, Fig. 6, legend, 5th line:  add "more expressing cells than sH1N1".}
-	
-	This has been done. \\
-	
-	\item \textbf{p8, line 4: taking the viral production indicated in Table 2, I find 2632 rather than 2643}
-	
-	This was calculated before we rounded to significant digits and has been fixed. (Impressive eye for detail!) \\
-	
-	\item \textbf{p9, line 12 from bottom: greater ? than}
-	
-	This sentence has been removed. \\
-	
-	\item \textbf{p9, line 3 from bottom: replace "into" by "in"}
-	
-	This has been done. \\
-	
-	\item \textbf{Note that some Table and reference numbers have been replaced by question marks in the supplement}	
-	
-	These have been fixed.	
-	
-\end{enumerate}
-
-\end{enumerate}
-
-
-
-
 
 \section*{Reviewer 2}
 
-\begin{enumerate}
-
-\item \textbf{Very little detail is given about the agent-based model and how chemokines influence cell migration behavior. The authors cite several papers (4,17,18) but as far as I can see these papers do not provide convincing evidence that chemokines direct migration of effector T cells to the sites of infection (foci of infected cells). In fact, I don't think that there is any evidence of that process. How chemokines direct migration of lymphocytes in tissues is not well understood and the cartoon knowledge of textbooks is mainly applicable to the process of extravasations and may not be used by T cells to find infected cells.}
-
-We agree with the reviewer that for the influenza model the evidence for chemokine-directed migration of T cells to infected foci is incomplete.  To provide a justification for constructing a math model based on chemokine-directed migration, we have completely rewritten the Introduction in order to thoroughly review the available literature on chemokine function with respect to RNA virus infections.  We state that there is no evidence for T cells climbing chemokine gradients, and that this activity has been shown only for neutrophils.  However, we feel that the pieces of evidence, taken together, support a reasonable hypothesis for chemokine-directed migration, in addition to extravasation, providing a reasonable justification for the model-building. \\
-
-
-\item \textbf{How you analyze experimental data is unclear. Which equations did you use?}
-
-This was a common theme in our reviews.  We have made the paper more self-contained by moving the central differential equation to the main paper.  We added details of the inner workings of the model to the supplement in two new sections (S1.2 and S1.3).  This allows the paper to stand alone from our previous work in Mitchell 2011.  \\
-
-\pagebreak
-
-\item \textbf{Please check parameter values that you provided in Table 1. It appears to several of those are made up and are not really measured in the referenced work.}
-
-Table 2 was split into a referenced parameter section and an estimated parameter section to make the distinction clear.  We reviewed all of our references and annotated two parameters in Table 2: Apoptosis Time and T Cell Speed as follows: 
-
 \begin{itemize}
 
-\item Apoptosis time has been rewritten as an estimated parameter and a note has been made that this value is specific to low T cell densities.
+%\item \textbf{(Introduction) P5 L3: delete one "the"}
+%
+%\begin{response}
+%Done
+%\end{response}
 
-\item T cell speed has been rewritten as an estimated parameter: \textit{The values were selected to be an order of magnitude faster than those calculated for inside the lymph node (Miller 2003).} \\
+\item \textbf{(Introduction) P5 L4: ``Pathogenicity is a function of the virus"....too vague. Function of what in the virus?}
+
+\begin{response}
+We added a new sentence to clarify our goals.  The question, ``a function of what in the virus?" is exactly the question this paper tries to answer.
+
+\begin{displayquote}
+Pathogenicity is a function of \new{both} the virus and its interaction with the immune response. \new{Our model explores how various features of the virus and the host immune system interact to produce observed differences between strains.}
+\end{displayquote}
+
+\end{response}
+
+\item \textbf{P8: ``T cells emerge from the lymph node at five days post infection (p.i.) at a rate of 1,257 cells per hour. T cell travel time from the lymph node to a random location on the lung's surface is six seconds. If chemokine is not encountered, the circulating T cell returns to a new location in the lung after another six seconds. If a circulating cell encounters chemokine, it changes state to chemotaxing and follows the chemotactic gradient to the FOI. Circulating T cells decay exponentially with an average lifespan of three days." Add some references for all these data.}
+
+\begin{response}
+This statement is related to Reviewer 1, point 2 (see above for how we addressed it). In summary, we added a new section describing our choice of the parameter set.  We moved the Model Parameters subsection up to appear before the Model Implementation subsection.  We also added references to Table 2, which contains citations and justifications for each of our parameter values.
+\end{response}
+
+\item \textbf{P8: ``IgM is modeled by...". IgM never defined.}
+
+\begin{response}
+We have added a new sentence to the Model Definition section.
+
+\begin{displayquote}
+\new{After four simulated days, Immunoglobulin M (IgM) is introduced into the model by increasing the viral decay rate.}
+\end{displayquote}
+\end{response}
+
+\item \textbf{P11: ``This ODE was fit to data taken from (Miao et al., 2010) using Matlab's nlinfit function in order to obtain a value for $<$sigma$>$. The final value was found to be 1,257 per hour." Any confidence intervals over sigma?}
+
+\begin{response}
+Although we don't report confidence intervals, we explain how we obtained the value in the section ``Models for Parameter Estimation".  $\sigma$ is part of our sensitivity analysis (T cell secretion rate) and shows its value does not have a strong effect on the model results within a biologically plausible range.
+\end{response}
+
+\item \textbf{P12: ``Because the CyCells model is stochastic, we conducted 50 runs of the model for each of the three influenza strains, each run initialized with a unique random seed (Fig. 4). " So 50 runs with the same parameter set? Not clear}
+
+\begin{response}
+We have expanded our sample from 50 to 100 runs as per Reviewer 1, point 3.  We have clarified that all 100 runs use the same parameter set.
+\begin{displayquote}
+Because the CyCells model is stochastic, we conducted \new{100}\removed{50} runs of the model \new{with the same parameter set} for each of the three influenza strains, each run initialized with a unique random seed (Fig. 4).  
+\end{displayquote}
+\end{response}
+
+\item \textbf{P12: ``We estimated variance across runs by calculating the standard deviation at each time point." Standard deviation of what? Viral load? Please specify.}
+
+\begin{response}
+We added a sentence to the beginning paragraph of that (Model Results) section:
+\begin{displayquote}
+Because the CyCells model is stochastic, we conducted 100 runs of the model with the same parameter set for each of the three influenza strains, each run initialized with a unique random seed (Fig. 4).  \new{We count the number of infected cells in the simulated plaque at every time point.}  For the avian and seasonal strains, all model runs cleared the infection by day 10.  Conversely, each simulation of the 2009 pandemic influenza led to uncontrolled infection. \\
+
+We estimated variance across runs by calculating the standard deviation \new{of the number of infected cells} at each time point. ...
+\end{displayquote}
+\end{response}
+
+\item \textbf{P13: Not clear how the Sensitivity Analysis has been performed. Were the parameters varied simultaneously? It appears that they have been varied independently (``Each of the remaining sixteen parameters was varied independently"). See PMCID: PMC2570191 for a comprehensive review of global sensitivity analysis methods, especially in the context of an ABM/stochastic model.}
+
+\begin{response}
+
+We thank the reviewer for this suggestion and reference. We performed a new sensitivity analysis using Latin hypercube sampling (LHS) and partial rank correlation coefficient (PRCC) analysis following the suggested citation to supplement our original analysis.  The new sensitivity analysis was performed only for the sH1N1 data due to computational constraints.  333 sample points involving 17 parameters (those of Table 3 plus the viral secretion rate) were generated using LHS and each point was evaluated three times, for a total of 999 model runs.  One sample point caused undefined model behavior and was removed, leaving 996 samples.
+
+The results of the PRCC analysis confirm and quantitate the original sensitivity analysis.  As we found previously, all sensitive parameters remain sensitive under PRCC ($P < 0.01$ with a high absolute Spearman's $\rho$).  Infected Cell expression time and T Cell Expected Lifespan at the FOI were confirmed to be significant with lower values of $\rho$.  These results have been added as a new paragraph to the Sensitivity Analysis subsection of the Results section in the main paper (text), Table 3 in the main paper (below), and expanded upon in the Supplement with text (S2.4) and three new figures (Figs. S6-S8).
+
+\begin{displayquote}
+\new{Partial rank correlation coefficient (PRCC) analysis was performed on the sH1N1 strain using the same 16 parameters plus the viral secretion rate to determine the strength and significance of the parameters' partial correlation with the model output (S2.4).  The  five viral parameters are confirmed by the PRCC analysis to be significantly correlated with model output (Table \ref{tab:sensitivity}).  This indicates our less computationally intensive OFAT analysis is accurate.}
+\end{displayquote}
+
+%\newpage
+
+\begin{displayquote}
+
+\setcounter{table}{2}
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{| c | l | c c c |}
+  \hline                        
+  Category & Parameter & Avian H5N1 & Seasonal H1N1 & Pandemic H1N1 \\
+  \hline
+  \multirow{3}{*}{Chemokine} & Chemokine Decay Rate & \cellcolor{blue!30}bounded stable & \cellcolor{blue!30}bounded stable & \cellcolor{green!50}stable \\
+  & Chemokine Diffusion Rate & \cellcolor{blue!30}bounded stable & \cellcolor{green!50}stable& \cellcolor{green!50}stable \\
+  & Chemokine Secretion Rate & \cellcolor{blue!30}bounded stable & \cellcolor{green!50}stable & \cellcolor{green!50}stable \\
+  \hline
+  \multirow{6}{*}{T Cell} & Circulation Time & \cellcolor{blue!30}bounded stable & \cellcolor{blue!30}bounded stable & \cellcolor{blue!30}bounded stable \\
+  & T Cell Kill Rate & \cellcolor{green!50}stable & \cellcolor{blue!30}bounded stable & \cellcolor{blue!30}bounded stable \\
+  & T Cell Speed & \cellcolor{green!50}stable & \cellcolor{blue!30}bounded stable & \cellcolor{blue!30}bounded stable \\
+  & T Cell Age in Blood& \cellcolor{green!50}stable & \cellcolor{blue!30}bounded stable& \cellcolor{blue!30}bounded stable \\
+  & T Cell Age at FOI& \cellcolor{green!50}stable & \cellcolor{blue!30}\textbf{bounded stable$^\dagger$} & \cellcolor{blue!30}bounded stable \\
+  & T Cell Production Rate & \cellcolor{blue!30}bounded stable & \cellcolor{blue!30}bounded stable & \cellcolor{blue!30}bounded stable \\
+  \hline
+  \multirow{3}{*}{Delay} & Apoptosis Time & \cellcolor{green!50}stable & \cellcolor{green!50}stable & \cellcolor{green!50}stable \\
+  & Expression Time & \cellcolor{yellow!50}peak change & \cellcolor{yellow!50}\textbf{peak change$^\dagger$} & \cellcolor{yellow!50}peak change \\
+  & Incubation Time &  \cellcolor{yellow!50}peak change & \cellcolor{yellow!50}peak change & \cellcolor{yellow!50}peak change \\
+  \hline 
+  \multirow{4}{*}{Virus} & Viral Response to IgM & \cellcolor{red!40}sensitive & \cellcolor{red!40}\textbf{sensitive$^\dagger$} & \cellcolor{red!40}sensitive \\
+  & Infectivity & \cellcolor{red!40}sensitive & \cellcolor{red!40}\textbf{sensitive$^*$} & \cellcolor{red!40}sensitive \\
+  & Viral Decay Rate & \cellcolor{red!40}sensitive & \cellcolor{red!40}\textbf{sensitive$^*$} & \cellcolor{red!40}sensitive \\
+  & Viral Diffusion Rate & \cellcolor{red!40}sensitive & \cellcolor{red!40}\textbf{sensitive$^*$} & \cellcolor{red!40}sensitive \\
+  \hline  
+\end{tabular}
+\caption{\textbf{Sensitivity Results:} The above parameters were varied over predetermined ranges in isolation, resulting in new model runs for every new value tested (Figs. S3-S5).  The results of the sensitivity analysis were then qualitatively evaluated for each individual parameter.  A model run's behavior was determined by examining the height of the peak of the infection at day 5 post-infection and the number of infected cells at day 10 post-infection.  Each combination of influenza strain and free parameter was classified as belonging to one of four categories.  Parameters were classified as \textbf{stable} if all runs follow the same behavior, \textbf{bounded stable} if intermediate parameter adjustments did not affect the model's behavior, even if the more extreme adjustments did, \textbf{peak change} if the peak of the infection differs but the result at day 10 is the same, and \textbf{sensitive} if any level of change in the parameter affects the resulting model behavior.  \new{PRCC analysis was also performed for the sH1N1 strain over these parameters (Figs. S6-S8).  Bold text in the seasonal column denotes significant Spearman rank correlation ($P < 0.01$) over the time period where the parameter was active. $\dagger$ indicates a maximum \textit{absolute} Spearman's $\rho$ of less than 0.5.  $*$ indicates a maximum \textit{absolute} Spearman's $\rho$ of over 0.5.}}
+\label{tab:sensitivity}
+\end{center}
+\end{table}
+
+\end{displayquote}
+\end{response}
 
 \end{itemize}
 
-\end{enumerate}
-
-
-\section*{Reviewer 3}
-
-\textbf{A minor comment is that I think it would be interesting to comment in the discussion on the fact that most pathogenic isolates kill the host (in animal models, for sure) presumably before an large CTL infiltration could occur, but that's really not the focus of the manuscript.} \\
-
-While it does not address early mortality in animal hosts, we added a note in the discussion addressing the fact that most humans did not die from pH1N1 infection: \\
-
-in vivo \textit{pH1N1 infection did not usually exhibit a resurgence due to features of the immune response not modeled, specifically antibody and local T cell proliferation}
 
 \end{document}
+
+
+
+
+
+
+
+
+
