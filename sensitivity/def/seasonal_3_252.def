@@ -1,0 +1,145 @@
+#DefFormat 8
+
+cell_names { healthy infected expressing dead apoptosis t_found t_search t_circ oracle }
+
+molecule_type virus {
+  diffusion_rate 0.2860811437399532
+  decay_until 2.4063604264390644e-05 345600
+  decay_rate 0.00020585707362968695
+}
+
+molecule_type chemokine {
+  diffusion_rate 0.031396563710998436
+  decay_rate 0.0032931150287427366
+}
+
+cell_type healthy {
+  radius 5
+
+  attribute age fixed 0 fixed 0
+  attribute apop_age fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute infection_age gaussian 231.0540504312147 23.10540504312147 gaussian 231.0540504312147 23.10540504312147
+  attribute sense_tcell fixed 0 fixed 0
+
+  sense virusC copy_conc virus
+
+  action infect virus infected calc_prob_single linear virusC 469759133823.8408 0
+}
+
+cell_type infected {
+  radius 5
+
+  attribute age fixed 0 fixed 0
+  attribute apop_age fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute infection_age gaussian 231.0540504312147 23.10540504312147 gaussian 231.0540504312147 23.10540504312147
+  attribute sense_tcell fixed 0 fixed 0
+
+  process age update fixed 1
+
+  action secrete_fixed chemokine 0.00021643936937179445 gte age 28800
+  action change expressing gte_var age infection_age
+}
+
+cell_type expressing {
+  radius 5
+
+  attribute age fixed 231.0540504312147 fixed 231.0540504312147
+  attribute apop_age fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute infection_age gaussian 231.0540504312147 23.10540504312147 gaussian 231.0540504312147 23.10540504312147
+  attribute sense_tcell fixed 0 fixed 0
+
+  sense sense_tcell cognate t_found 12
+
+  process age update fixed 1
+
+  action secrete_fixed chemokine 0.00021643936937179445 gte age 28800
+  action secrete_fixed virus 0.0006011672685787343 always
+
+  action change apoptosis composite gte sense_tcell 1 fixed_single 0.003590677792959846
+  action change dead gte age 64264.09882386396
+}
+
+cell_type dead {
+  radius 5
+
+  attribute age fixed 0 fixed 0
+  attribute apop_age fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute infection_age gaussian 231.0540504312147 23.10540504312147 gaussian 231.0540504312147 23.10540504312147
+  attribute sense_tcell fixed 0 fixed 0
+}
+
+cell_type apoptosis {
+  radius 5
+
+  attribute age fixed 231.0540504312147 fixed 231.0540504312147
+  attribute apop_age fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute infection_age gaussian 231.0540504312147 23.10540504312147 gaussian 231.0540504312147 23.10540504312147
+  attribute sense_tcell fixed 0 fixed 0
+
+  process age update fixed 1
+  process apop_age update fixed 1
+
+  action secrete_fixed chemokine 0.00021643936937179445 gte age 28800
+  action secrete_fixed virus 0.0006011672685787343 always
+  action change dead or gte apop_age 1337.787106181447 gte age 64264.09882386396
+}
+
+cell_type t_found {
+  radius 5
+  speed 0.003969772758547907
+
+  attribute age fixed 0 fixed 0
+  attribute inflammationC fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute p uniform 0 1 uniform 0 1
+
+  sense virusC copy_conc virus
+
+  action die fixed_single 0.00010701314220053694
+  action move_chem chemokine 1.66e-19 always
+}
+
+cell_type t_search {
+  radius 5
+
+  attribute age fixed 0 fixed 0
+  attribute inflammationC fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute p uniform 0 1 uniform 0 1
+
+  sense inflammationC copy_conc chemokine
+
+  action die fixed_single 0.00012859244189197816
+  action change t_circ lte inflammationC 1.66e-19
+  action change t_found gte inflammationC 1.66e-19
+}
+
+cell_type t_circ {
+  radius 5
+
+  attribute age fixed 0 fixed 0
+  attribute inflammationC fixed 0 fixed 0
+  attribute virusC fixed 0 fixed 0
+  attribute p uniform 0 1 uniform 0 1
+
+  process age update fixed 1
+
+  action die fixed_single 0.00012859244189197816
+  action recirculate2D t_search init composite gte age 0.12067878593997464 lte p 0.0025
+  action recirculate2D0 t_circ init composite gte age 0.12067878593997464 gte p 0.0025
+}
+cell_type oracle {
+  radius 1
+
+  attribute age fixed 0 fixed 0
+
+  process age update fixed 1
+
+  action admit_rand2D t_search init fixed 0.0008374453811874571 gte age 432000
+  action admit_mult t_circ init fixed 0.33414070709379534 gte age 432000
+}

@@ -1,0 +1,272 @@
+[09/09/2015 05:32:22] (MainThread) Initialized
+[09/09/2015 05:32:22] (Worker 1 ) Starting Row 223
+[09/09/2015 05:32:22] (Worker 2 ) Starting Row 224
+[09/09/2015 05:32:22] (Worker 3 ) Starting Row 225
+[09/09/2015 05:32:22] (Worker 4 ) Starting Row 226
+[09/09/2015 05:32:22] (Worker 5 ) Starting Row 227
+[09/09/2015 05:32:22] (Worker 6 ) Starting Row 228
+[09/09/2015 05:32:22] (Worker 7 ) Starting Row 229
+[09/09/2015 05:32:22] (Worker 8 ) Starting Row 230
+[09/09/2015 05:32:22] (Worker 9 ) Starting Row 231
+[09/09/2015 05:32:23] (Worker 10) Starting Row 232
+[09/09/2015 05:32:23] (Worker 11) Starting Row 233
+[09/09/2015 05:32:23] (Worker 12) Starting Row 234
+[09/09/2015 05:32:23] (Worker 13) Starting Row 235
+[09/09/2015 05:32:23] (Worker 14) Starting Row 236
+[09/09/2015 05:32:23] (Worker 15) Starting Row 237
+[09/09/2015 05:32:23] (Worker 16) Starting Row 238
+[09/09/2015 05:32:23] (Worker 17) Starting Row 239
+[09/09/2015 05:32:23] (Worker 18) Starting Row 240
+[09/09/2015 05:32:23] (Worker 19) Starting Row 241
+[09/09/2015 05:32:23] (Worker 20) Starting Row 242
+[09/09/2015 05:32:23] (Worker 21) Starting Row 243
+[09/09/2015 05:32:23] (Worker 22) Starting Row 244
+[09/09/2015 05:32:23] (Worker 23) Starting Row 245
+[09/09/2015 05:32:23] (Worker 24) Starting Row 246
+[09/09/2015 05:32:23] (Worker 25) Starting Row 247
+[09/09/2015 05:32:23] (Worker 26) Starting Row 248
+[09/09/2015 05:32:23] (Worker 27) Starting Row 249
+[09/09/2015 05:32:23] (Worker 28) Starting Row 250
+[09/09/2015 05:32:23] (Worker 29) Starting Row 251
+[09/09/2015 05:32:23] (Worker 30) Starting Row 252
+[09/09/2015 05:32:23] (Worker 31) Starting Row 253
+[09/09/2015 05:32:23] (Worker 32) Starting Row 254
+[09/09/2015 05:32:23] (Worker 33) Starting Row 255
+[09/09/2015 05:32:23] (Worker 34) Starting Row 256
+[09/09/2015 05:32:23] (Worker 35) Starting Row 257
+[09/09/2015 05:32:23] (Worker 36) Starting Row 258
+[09/09/2015 05:32:23] (Worker 37) Starting Row 259
+[09/09/2015 05:32:23] (Worker 38) Starting Row 260
+[09/09/2015 05:32:23] (Worker 39) Starting Row 261
+[09/09/2015 05:32:23] (Worker 40) Starting Row 262
+[09/09/2015 05:32:23] (Worker 41) Starting Row 263
+[09/09/2015 05:32:23] (Worker 42) Starting Row 264
+[09/09/2015 05:32:23] (Worker 43) Starting Row 265
+[09/09/2015 05:32:23] (Worker 44) Starting Row 266
+[09/09/2015 05:32:23] (Worker 45) Starting Row 267
+[09/09/2015 05:32:23] (Worker 46) Starting Row 268
+[09/09/2015 05:32:23] (Worker 47) Starting Row 269
+[09/09/2015 05:32:23] (Worker 48) Starting Row 270
+[09/09/2015 15:24:51] (Worker 10) seasonal_3_232 completed successfully
+[09/09/2015 15:24:51] (Worker 10) Starting Row 271
+[09/09/2015 15:26:17] (Worker 32) seasonal_3_254 completed successfully
+[09/09/2015 15:26:17] (Worker 32) Starting Row 272
+[09/09/2015 15:32:38] (Worker 30) seasonal_3_252 completed successfully
+[09/09/2015 15:32:38] (Worker 30) Starting Row 273
+[09/09/2015 15:42:56] (Worker 39) seasonal_3_261 completed successfully
+[09/09/2015 15:42:56] (Worker 39) Starting Row 274
+[09/09/2015 15:51:36] (Worker 6 ) seasonal_3_228 completed successfully
+[09/09/2015 15:51:36] (Worker 6 ) Starting Row 275
+[09/09/2015 15:56:00] (Worker 33) seasonal_3_255 completed successfully
+[09/09/2015 15:56:00] (Worker 33) Starting Row 276
+[09/09/2015 16:14:27] (Worker 40) seasonal_3_262 completed successfully
+[09/09/2015 16:14:27] (Worker 40) Starting Row 277
+[09/09/2015 16:23:34] (Worker 1 ) seasonal_3_223 completed successfully
+[09/09/2015 16:23:34] (Worker 1 ) Starting Row 278
+[09/09/2015 16:25:29] (Worker 7 ) seasonal_3_229 completed successfully
+[09/09/2015 16:25:29] (Worker 7 ) Starting Row 279
+[09/09/2015 16:30:16] (Worker 44) seasonal_3_266 completed successfully
+[09/09/2015 16:30:16] (Worker 44) Starting Row 280
+[09/09/2015 16:37:01] (Worker 14) seasonal_3_236 completed successfully
+[09/09/2015 16:37:01] (Worker 14) Starting Row 281
+[09/09/2015 16:45:45] (Worker 8 ) seasonal_3_230 completed successfully
+[09/09/2015 16:45:45] (Worker 8 ) Starting Row 282
+[09/09/2015 16:50:50] (Worker 11) seasonal_3_233 completed successfully
+[09/09/2015 16:50:50] (Worker 11) Starting Row 283
+[09/09/2015 17:04:44] (Worker 4 ) seasonal_3_226 completed successfully
+[09/09/2015 17:04:44] (Worker 4 ) Starting Row 284
+[09/09/2015 17:07:43] (Worker 46) seasonal_3_268 completed successfully
+[09/09/2015 17:07:43] (Worker 46) Starting Row 285
+[09/09/2015 17:08:30] (Worker 20) seasonal_3_242 completed successfully
+[09/09/2015 17:08:30] (Worker 20) Starting Row 286
+[09/09/2015 17:13:15] (Worker 28) seasonal_3_250 completed successfully
+[09/09/2015 17:13:15] (Worker 28) Starting Row 287
+[09/09/2015 18:05:51] (Worker 29) seasonal_3_251 completed successfully
+[09/09/2015 18:05:51] (Worker 29) Starting Row 288
+[09/09/2015 19:00:20] (Worker 21) seasonal_3_243 completed successfully
+[09/09/2015 19:00:20] (Worker 21) Starting Row 289
+[09/09/2015 21:05:29] (Worker 34) seasonal_3_256 completed successfully
+[09/09/2015 21:05:29] (Worker 34) Starting Row 290
+[09/09/2015 22:25:32] (Worker 48) seasonal_3_270 completed successfully
+[09/09/2015 22:25:32] (Worker 48) Starting Row 291
+[09/09/2015 22:34:06] (Worker 36) seasonal_3_258 completed successfully
+[09/09/2015 22:34:06] (Worker 36) Starting Row 292
+[09/09/2015 23:24:59] (Worker 22) seasonal_3_244 completed successfully
+[09/09/2015 23:24:59] (Worker 22) Starting Row 293
+[09/09/2015 23:28:38] (Worker 5 ) seasonal_3_227 completed successfully
+[09/09/2015 23:28:38] (Worker 5 ) Starting Row 294
+[09/09/2015 23:30:29] (Worker 33) seasonal_3_276 completed successfully
+[09/09/2015 23:30:29] (Worker 33) Starting Row 295
+[09/10/2015 00:06:01] (Worker 11) seasonal_3_283 completed successfully
+[09/10/2015 00:06:01] (Worker 11) Starting Row 296
+[09/10/2015 01:03:53] (Worker 3 ) seasonal_3_225 completed successfully
+[09/10/2015 01:03:53] (Worker 3 ) Starting Row 297
+[09/10/2015 01:25:57] (Worker 6 ) seasonal_3_275 completed successfully
+[09/10/2015 01:25:57] (Worker 6 ) Starting Row 298
+[09/10/2015 01:30:59] (Worker 12) seasonal_3_234 completed successfully
+[09/10/2015 01:30:59] (Worker 12) Starting Row 299
+[09/10/2015 01:52:51] (Worker 30) seasonal_3_273 completed successfully
+[09/10/2015 01:52:51] (Worker 30) Starting Row 300
+[09/10/2015 02:07:28] (Worker 10) seasonal_3_271 completed successfully
+[09/10/2015 02:07:28] (Worker 10) Starting Row 301
+[09/10/2015 02:09:53] (Worker 4 ) seasonal_3_284 completed successfully
+[09/10/2015 02:09:53] (Worker 4 ) Starting Row 302
+[09/10/2015 02:21:00] (Worker 1 ) seasonal_3_278 completed successfully
+[09/10/2015 02:21:00] (Worker 1 ) Starting Row 303
+[09/10/2015 02:28:07] (Worker 44) seasonal_3_280 completed successfully
+[09/10/2015 02:28:07] (Worker 44) Starting Row 304
+[09/10/2015 03:10:58] (Worker 23) seasonal_3_245 completed successfully
+[09/10/2015 03:10:58] (Worker 23) Starting Row 305
+[09/10/2015 04:06:29] (Worker 39) seasonal_3_274 completed successfully
+[09/10/2015 04:06:29] (Worker 39) Starting Row 306
+[09/10/2015 04:24:12] (Worker 21) seasonal_3_289 completed successfully
+[09/10/2015 04:24:12] (Worker 21) Starting Row 307
+[09/10/2015 04:25:14] (Worker 29) seasonal_3_288 completed successfully
+[09/10/2015 04:25:14] (Worker 29) Starting Row 308
+[09/10/2015 06:29:14] (Worker 17) seasonal_3_239 completed successfully
+[09/10/2015 06:29:14] (Worker 17) Starting Row 309
+[09/10/2015 07:05:03] (Worker 40) seasonal_3_277 completed successfully
+[09/10/2015 07:05:03] (Worker 40) Starting Row 310
+[09/10/2015 07:09:18] (Worker 38) seasonal_3_260 completed successfully
+[09/10/2015 07:09:18] (Worker 38) Starting Row 311
+[09/10/2015 07:27:12] (Worker 28) seasonal_3_287 completed successfully
+[09/10/2015 07:27:12] (Worker 28) Starting Row 312
+[09/10/2015 08:09:12] (Worker 48) seasonal_3_291 completed successfully
+[09/10/2015 08:09:12] (Worker 48) Starting Row 313
+[09/10/2015 08:56:58] (Worker 22) seasonal_3_293 completed successfully
+[09/10/2015 08:56:58] (Worker 22) Starting Row 314
+[09/10/2015 09:05:57] (Worker 26) seasonal_3_248 completed successfully
+[09/10/2015 09:05:57] (Worker 26) Starting Row 315
+[09/10/2015 09:09:28] (Worker 5 ) seasonal_3_294 completed successfully
+[09/10/2015 09:09:28] (Worker 5 ) Starting Row 316
+[09/10/2015 09:14:31] (Worker 36) seasonal_3_292 completed successfully
+[09/10/2015 09:14:31] (Worker 36) Starting Row 317
+[09/10/2015 09:53:18] (Worker 33) seasonal_3_295 completed successfully
+[09/10/2015 09:53:18] (Worker 33) Starting Row 318
+[09/10/2015 10:12:36] (Worker 34) seasonal_3_290 completed successfully
+[09/10/2015 10:12:36] (Worker 34) Starting Row 319
+[09/10/2015 10:38:14] (Worker 43) seasonal_3_265 completed successfully
+[09/10/2015 10:38:14] (Worker 43) Starting Row 320
+[09/10/2015 10:44:56] (Worker 6 ) seasonal_3_298 completed successfully
+[09/10/2015 10:44:56] (Worker 6 ) Starting Row 321
+[09/10/2015 11:20:07] (Worker 30) seasonal_3_300 completed successfully
+[09/10/2015 11:20:07] (Worker 30) Starting Row 322
+[09/10/2015 11:45:40] (Worker 3 ) seasonal_3_297 completed successfully
+[09/10/2015 11:45:40] (Worker 3 ) Starting Row 323
+[09/10/2015 11:51:28] (Worker 37) seasonal_3_259 completed successfully
+[09/10/2015 11:51:28] (Worker 37) Starting Row 324
+[09/10/2015 12:00:34] (Worker 11) seasonal_3_296 completed successfully
+[09/10/2015 12:00:34] (Worker 11) Starting Row 325
+[09/10/2015 12:05:46] (Worker 12) seasonal_3_299 completed successfully
+[09/10/2015 12:05:46] (Worker 12) Starting Row 326
+[09/10/2015 12:24:55] (Worker 23) seasonal_3_305 completed successfully
+[09/10/2015 12:24:55] (Worker 23) Starting Row 327
+[09/10/2015 12:36:53] (Worker 31) seasonal_3_253 completed successfully
+[09/10/2015 12:36:53] (Worker 31) Starting Row 328
+[09/10/2015 14:30:18] (Worker 39) seasonal_3_306 completed successfully
+[09/10/2015 14:30:18] (Worker 39) Starting Row 329
+[09/10/2015 14:31:43] (Worker 4 ) seasonal_3_302 completed successfully
+[09/10/2015 14:31:43] (Worker 4 ) Starting Row 330
+[09/10/2015 14:55:24] (Worker 29) seasonal_3_308 completed successfully
+[09/10/2015 14:55:24] (Worker 29) Starting Row 331
+[09/10/2015 15:01:24] (Worker 19) seasonal_3_241 completed successfully
+[09/10/2015 15:01:24] (Worker 19) Starting Row 332
+[09/10/2015 15:08:27] (Worker 47) seasonal_3_269 completed successfully
+[09/10/2015 15:08:27] (Worker 47) Starting Row 333
+[09/10/2015 16:22:57] (Worker 42) seasonal_3_264 completed successfully
+[09/10/2015 16:22:57] (Worker 42) Exiting
+[09/10/2015 17:25:39] (Worker 48) seasonal_3_313 completed successfully
+[09/10/2015 17:25:39] (Worker 48) Exiting
+[09/10/2015 17:40:08] (Worker 8 ) seasonal_3_282 completed successfully
+[09/10/2015 17:40:08] (Worker 8 ) Exiting
+[09/10/2015 18:00:21] (Worker 22) seasonal_3_314 completed successfully
+[09/10/2015 18:00:21] (Worker 22) Exiting
+[09/10/2015 18:02:58] (Worker 44) seasonal_3_304 completed successfully
+[09/10/2015 18:02:58] (Worker 44) Exiting
+[09/10/2015 19:41:48] (Worker 26) seasonal_3_315 completed successfully
+[09/10/2015 19:41:48] (Worker 26) Exiting
+[09/10/2015 20:24:50] (Worker 6 ) seasonal_3_321 completed successfully
+[09/10/2015 20:24:50] (Worker 6 ) Exiting
+[09/10/2015 20:44:35] (Worker 16) seasonal_3_238 completed successfully
+[09/10/2015 20:44:35] (Worker 16) Exiting
+[09/10/2015 20:59:11] (Worker 36) seasonal_3_317 completed successfully
+[09/10/2015 20:59:11] (Worker 36) Exiting
+[09/10/2015 21:07:02] (Worker 43) seasonal_3_320 completed successfully
+[09/10/2015 21:07:02] (Worker 43) Exiting
+[09/10/2015 22:19:21] (Worker 17) seasonal_3_309 completed successfully
+[09/10/2015 22:19:21] (Worker 17) Exiting
+[09/10/2015 23:01:55] (Worker 46) seasonal_3_285 completed successfully
+[09/10/2015 23:01:55] (Worker 46) Exiting
+[09/11/2015 00:00:05] (Worker 19) seasonal_3_332 completed successfully
+[09/11/2015 00:00:05] (Worker 19) Exiting
+[09/11/2015 00:23:27] (Worker 15) seasonal_3_237 completed successfully
+[09/11/2015 00:23:27] (Worker 15) Exiting
+[09/11/2015 00:24:15] (Worker 13) seasonal_3_235 completed successfully
+[09/11/2015 00:24:15] (Worker 13) Exiting
+[09/11/2015 00:47:30] (Worker 40) seasonal_3_310 completed successfully
+[09/11/2015 00:47:30] (Worker 40) Exiting
+[09/11/2015 01:09:28] (Worker 4 ) seasonal_3_330 completed successfully
+[09/11/2015 01:09:28] (Worker 4 ) Exiting
+[09/11/2015 01:37:54] (Worker 29) seasonal_3_331 completed successfully
+[09/11/2015 01:37:54] (Worker 29) Exiting
+[09/11/2015 01:45:12] (Worker 23) seasonal_3_327 completed successfully
+[09/11/2015 01:45:12] (Worker 23) Exiting
+[09/11/2015 01:58:24] (Worker 10) seasonal_3_301 completed successfully
+[09/11/2015 01:58:24] (Worker 10) Exiting
+[09/11/2015 03:24:37] (Worker 5 ) seasonal_3_316 completed successfully
+[09/11/2015 03:24:37] (Worker 5 ) Exiting
+[09/11/2015 04:02:29] (Worker 11) seasonal_3_325 completed successfully
+[09/11/2015 04:02:29] (Worker 11) Exiting
+[09/11/2015 06:37:04] (Worker 47) seasonal_3_333 completed successfully
+[09/11/2015 06:37:04] (Worker 47) Exiting
+[09/11/2015 07:44:39] (Worker 32) seasonal_3_272 completed successfully
+[09/11/2015 07:44:39] (Worker 32) Exiting
+[09/11/2015 08:42:02] (Worker 28) seasonal_3_312 completed successfully
+[09/11/2015 08:42:02] (Worker 28) Exiting
+[09/11/2015 12:52:12] (Worker 34) seasonal_3_319 completed successfully
+[09/11/2015 12:52:12] (Worker 34) Exiting
+[09/11/2015 13:09:13] (Worker 12) seasonal_3_326 completed successfully
+[09/11/2015 13:09:13] (Worker 12) Exiting
+[09/11/2015 15:52:31] (Worker 37) seasonal_3_324 completed successfully
+[09/11/2015 15:52:31] (Worker 37) Exiting
+[09/11/2015 21:05:39] (Worker 31) seasonal_3_328 completed successfully
+[09/11/2015 21:05:39] (Worker 31) Exiting
+[09/11/2015 23:48:08] (Worker 24) seasonal_3_246 completed successfully
+[09/11/2015 23:48:08] (Worker 24) Exiting
+[09/12/2015 06:02:44] (Worker 25) seasonal_3_247 completed successfully
+[09/12/2015 06:02:44] (Worker 25) Exiting
+[09/12/2015 10:53:15] (Worker 30) seasonal_3_322 completed successfully
+[09/12/2015 10:53:15] (Worker 30) Exiting
+[09/12/2015 10:56:23] (Worker 3 ) seasonal_3_323 completed successfully
+[09/12/2015 10:56:23] (Worker 3 ) Exiting
+[09/12/2015 11:10:41] (Worker 33) seasonal_3_318 completed successfully
+[09/12/2015 11:10:41] (Worker 33) Exiting
+[09/12/2015 11:38:35] (Worker 27) seasonal_3_249 completed successfully
+[09/12/2015 11:38:35] (Worker 27) Exiting
+[09/12/2015 21:58:44] (Worker 1 ) seasonal_3_303 completed successfully
+[09/12/2015 21:58:44] (Worker 1 ) Exiting
+[09/13/2015 17:12:48] (Worker 14) seasonal_3_281 completed successfully
+[09/13/2015 17:12:48] (Worker 14) Exiting
+[09/13/2015 19:43:29] (Worker 35) seasonal_3_257 completed successfully
+[09/13/2015 19:43:29] (Worker 35) Exiting
+[09/14/2015 01:52:29] (Worker 39) seasonal_3_329 completed successfully
+[09/14/2015 01:52:29] (Worker 39) Exiting
+[09/14/2015 04:30:46] (Worker 21) seasonal_3_307 completed successfully
+[09/14/2015 04:30:46] (Worker 21) Exiting
+[09/14/2015 11:32:22] (Worker 41) seasonal_3_263 completed successfully
+[09/14/2015 11:32:22] (Worker 41) Exiting
+[09/14/2015 15:31:09] (Worker 38) seasonal_3_311 completed successfully
+[09/14/2015 15:31:09] (Worker 38) Exiting
+[09/15/2015 01:14:49] (Worker 18) seasonal_3_240 completed successfully
+[09/15/2015 01:14:49] (Worker 18) Exiting
+[09/15/2015 07:03:19] (Worker 45) seasonal_3_267 completed successfully
+[09/15/2015 07:03:19] (Worker 45) Exiting
+[09/15/2015 14:02:36] (Worker 7 ) seasonal_3_279 completed successfully
+[09/15/2015 14:02:36] (Worker 7 ) Exiting
+[09/18/2015 20:34:50] (Worker 20) seasonal_3_286 completed successfully
+[09/18/2015 20:34:50] (Worker 20) Exiting
+[09/19/2015 22:26:52] (Worker 9 ) seasonal_3_231 completed successfully
+[09/19/2015 22:26:52] (Worker 9 ) Exiting
+[09/20/2015 01:51:49] (Worker 2 ) seasonal_3_224 completed successfully
+[09/20/2015 01:51:49] (Worker 2 ) Exiting
+[09/20/2015 01:51:49] (MainThread) Complete

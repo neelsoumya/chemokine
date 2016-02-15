@@ -1,0 +1,4 @@
+[09/04/2015 02:34:46 PM] (MainThread) Initialized
+[09/04/2015 02:34:46 PM] (Worker 1  ) Starting Row 11
+[09/04/2015 02:35:46 PM] (Worker 1  ) seasonal_1_011 failed to complete
+[09/04/2015 02:35:46 PM] (Worker 1  ) Exiting

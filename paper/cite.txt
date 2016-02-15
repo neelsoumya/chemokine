@@ -1,6 +1,10 @@
-@book{abbas2011cellular,
-  title={Cellular and Molecular Immunology: with STUDENT CONSULT Online Access},
-  author={Abbas, Abul K and Lichtman, Andrew HH and Pillai, Shiv},
-  year={2011},
-  publisher={Saunders}
+@article{lim2015neutrophil,
+  title={Neutrophil trails guide influenza-specific CD8+ T cells in the airways},
+  author={Lim, Kihong and Hyun, Young-Min and Lambert-Emo, Kris and Capece, Tara and Bae, Seyeon and Miller, Richard and Topham, David J and Kim, Minsoo},
+  journal={Science},
+  volume={349},
+  number={6252},
+  pages={aaa4352},
+  year={2015},
+  publisher={American Association for the Advancement of Science}
 }

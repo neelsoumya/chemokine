@@ -24,6 +24,9 @@
 % \usepackage{lscape}
 \usepackage{pdflscape}
 
+\usepackage{xr}
+\externaldocument{chemokine_main_revised}
+
 
 % Text layout
 \topmargin 0.0cm
@@ -119,7 +122,7 @@ Cells will measure the local concentration at their position by calculating a li
 
 \subsection{Model implementation details}
 
-An overview of the model implementation is shown in Fig. 2.  The model is initialized with one virus-secreting cell placed in the middle of a 2-dimensional sheet of hexagonally-tiled epithelial cells (288,212 total cells).  The sheet measures 5$mm$ per side, which is large enough to contain the infection (Fig. 5).  The molecular grid (Text S1 1.3) is initialized with a resolution of 20$\mu m$.  Each time step of the model represents 6 seconds.
+An overview of the model implementation is shown in Fig.~\ref{fig:modelchart}.  The model is initialized with one virus-secreting cell placed in the middle of a 2-dimensional sheet of hexagonally-tiled epithelial cells (288,212 total cells).  The sheet measures 5$mm$ per side, which is large enough to contain the infection (Fig.~\ref{fig:cycells}).  The molecular grid (Text S1 1.3) is initialized with a resolution of 20$\mu m$.  Each time step of the model represents 6 seconds.
 
 Healthy cells transition to virus-incubating based on a probability that scales linearly with the local virus concentration.   When a cell `becomes infected' it removes the amount of viral concentration equal to a single virion. 
 
@@ -157,7 +160,7 @@ Our model assumes that blood flows uniformly through the lung vascular network. 
 
 \subsection{T cell sensitivity to chemokine}
 
-The model simulates a chemokine gradient surrounding the infected focus (Fig. 5), based on the calculated per-infected cell secretion rate (Table 3) and known chemical parameters for a 10 kDa protein (Table 2).  T cell sensitivity depends on receptor density \citep{Desmetz2006} and this was assumed to be constant.
+The model simulates a chemokine gradient surrounding the infected focus (Fig.~\ref{fig:cycells}), based on the calculated per-infected cell secretion rate (Table \ref{tab:strains}) and known chemical parameters for a 10 kDa protein (Table \ref{tab:parameters}).  T cell sensitivity depends on receptor density \citep{Desmetz2006} and this was assumed to be constant.
 
 Because this parameter is unknown, we simulated T cell sensitivity levels ranging over 10 orders of magnitude.  Concentration-dependent behavior of cells responding to chemokine was the same over a wide range of concentrations from 0.01 pg/mL to 100 ng/mL (model variance is discussed in the main text).  Decreased recruitment was predicted only by supra-natural concentration sensitivity levels at and above 1 $\mu$g/mL.  We then set the sensitivity to 100 $ng/mL$ for all future runs (10 $nM$ concentration assuming a chemokine molecular weight of 10 $kDa$) \citep{Gao2003}.  
 
@@ -169,7 +172,7 @@ Because aH5N1 has been shown to suppress the production of interferon \citep{Mit
 
 %Interestingly, the attenuation of the type I interferon response by H5N1 viruses is not associated with attenuation of chemokine secretion in our results and in others \citep{Zeng2007}.  
 
-% we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table 3).  Because of this behavior IP-10 was not included in the aH5N1 model runs. 
+% we hypothesize that it renders IP-10 ineffectual.  We hypothesize that this leads to the elevated RANTES secretion rates measured in aH5N1 compared to the other two strains (Table \ref{tab:strains}).  Because of this behavior IP-10 was not included in the aH5N1 model runs. 
 
 % we consider that IP-10 production is markedly reduced in comparison with that of RANTES and this may lead to elevated RANTES secretion measured in aH5N1 \textit{in vitro} infection when compared to the other strains.  Thus, IP-10 production was not included in aH5N1 simulations.
 
@@ -182,9 +185,9 @@ Four models runs (both, IP-10, RANTES, and none) were performed for sH1N1 and pH
 
 A general sensitivity analysis serves two purposes.  First, it allows us to observe how the model behavior changes as a single parameter is varied.  Second, it allows us to examine which parameters affect the model strongly and which do not.  Here we describe the sensitivity analysis of 16 of our parameters in detail.
 
-The model parameters were chosen from literature when available and estimated within plausible ranges otherwise (Tables 1 and 2).  One-factor-at-a-time (OFAT) analysis was performed by varying Individual parameters over ranges of plausible (and sometimes even implausible) values while the rest of the parameter set was held constant.  Each parameter was varied over all three influenza strains, creating three sets of sensitivity plots (Figures~\ref{fig:asensitivity}-\ref{fig:psensitivity}).
+The model parameters were chosen from literature when available and estimated within plausible ranges otherwise (Tables \ref{tab:strains} and \ref{tab:parameters}).  One-factor-at-a-time (OFAT) analysis was performed by varying Individual parameters over ranges of plausible (and sometimes even implausible) values while the rest of the parameter set was held constant.  Each parameter was varied over all three influenza strains, creating three sets of sensitivity plots (Figures~\ref{fig:asensitivity}-\ref{fig:psensitivity}).
 
-We then categorized the model parameters into one of three qualitative groups: parameters that do not affect the model's qualitative behavior (stable parameters), parameters that affect the model's quantitative peak infection size but do not affect final clearance, (peak change parameters), and those parameters that affect the final clearance of the infection (sensitive parameters) (Table 3).  Parameters are presented along with their range using the following format:  \\
+We then categorized the model parameters into one of three qualitative groups: parameters that do not affect the model's qualitative behavior (stable parameters), parameters that affect the model's quantitative peak infection size but do not affect final clearance, (peak change parameters), and those parameters that affect the final clearance of the infection (sensitive parameters) (Table \ref{tab:sensitivity}).  Parameters are presented along with their range using the following format:  \\
 
 \textbf{Parameter Name:} [ \textit{min | default | max} ].
 
@@ -192,7 +195,7 @@ We then categorized the model parameters into one of three qualitative groups: p
 
 \subsubsection{Stable Parameters}
 
-Stable parameters do not affect the outcome of the infection unless they are adjusted to values outside the realm of possibility.  Specifically, the plausible parameter values in this group are within a range that does not significantly affect the asymptotic behavior of the model.  We further split this group into two categories in Table 3, \textit{stable} parameters and \textit{bounded stable} parameters.  \textit{Bounded stable} parameters are only stable within a specific range of values, while \textit{stable} parameters seem to be stable over all the values that were tested.
+Stable parameters do not affect the outcome of the infection unless they are adjusted to values outside the realm of possibility.  Specifically, the plausible parameter values in this group are within a range that does not significantly affect the asymptotic behavior of the model.  We further split this group into two categories in Table \ref{tab:sensitivity}, \textit{stable} parameters and \textit{bounded stable} parameters.  \textit{Bounded stable} parameters are only stable within a specific range of values, while \textit{stable} parameters seem to be stable over all the values that were tested.
 
 Of interest, this group can be split into two types of parameters: those governing chemokine behavior (chemokine decay, chemokine diffusion, and chemokine secretion) and those governing T cell behavior (T cell circulation time, T cell kill rate, T cell velocity, and the two T cell decay rates).  Only the apoptosis time parameter does not fit into one of these two groups, and its inclusion as a stable parameter may be suspect due to the limited range of the values tested.  The importance of the apoptosis time parameter is discussed in more detail in the main results section: Temporal Effects.  
 
@@ -202,7 +205,7 @@ Similarly, T cells affect the model by clearing cells expressing virus.  As disc
 
 While we have claimed that these parameters are qualitatively stable within a certain range, many of the parameters were set to values that did lead to a divergent model behavior.  Testing these extreme values provides bracketing information regarding the range of stability of the parameter in question.  We have deemed these deviations acceptable on an individual basis as described below. \\
 
-Compartmental modeling design suggests the removal of such stable parameters.  Due to the nature of the ABM, inclusion of these parameters is mechanistically necessary.  Thus, we include and parameterize them using the methods described in the main paper and Table 2.
+Compartmental modeling design suggests the removal of such stable parameters.  Due to the nature of the ABM, inclusion of these parameters is mechanistically necessary.  Thus, we include and parameterize them using the methods described in the main paper and Table \ref{tab:parameters}.
 
 \textbf{Apoptosis Time:} [ \textit{0 | 1h | 2h} ] - Apoptosis time describes how long it takes for a cell to complete apoptosis and transition to an inert dead state.  
 
@@ -321,7 +324,7 @@ The strength of the infectivity parameter is directly related to how much virus 
 
 \textbf{Viral Secretion Rate:} [ \textit{5.4e-5 $PFU/s\cdot cel$ | 3.8e-4 $PFU/s\cdot cel$ | 5.1e-3 $PFU/s\cdot cel$} ] - The viral secretion rate determines how quickly virus-secreting epithelial cells secrete new virus particles.
 
-An explicit sensitivity analysis was not directly performed.  The range of the parameters are taken from the respective secretion rates of the aH5N1, sH1N1, and pH1N1 influenzas (Table 1).
+An explicit sensitivity analysis was not directly performed.  The range of the parameters are taken from the respective secretion rates of the aH5N1, sH1N1, and pH1N1 influenzas (Table \ref{tab:strains}).
 
 The viral secretion rate has a strong effect on the outcome of the infection.  Similar to the previously discussed parameters, its value directly affects how much virus there is in the system.  Thus, its effect is similar to the previous parameters. \\
 
@@ -339,17 +342,17 @@ We performed a partial rank correlation coefficient (PRCC) sensitivity analysis 
 
 \subsubsection{PRCC Design and Implementation}
 
-PRCC analysis was performed as described in \cite{Marino2008}.  Samples were generated using Latin hypercube sampling (LHS) to generate 333 sample points for 17 parameters (those from Table 3, plus the sH1N1 viral secretion rate).  Each parameter was assigned a confidence distribution (Table \ref{tab:lhs}) and sampled using its inverse cumulative distribution function to generate points with density proportional to the underlying probability distribution function.  Each sample point was evaluated three times using unique random seeds for a total of 999 samples.  One sample point resulted in undefined model behavior and was removed, leaving a total of 996 samples.
+PRCC analysis was performed as described in \cite{Marino2008}.  Samples were generated using Latin hypercube sampling (LHS) to generate 333 sample points for 17 parameters (those from Table \ref{tab:sensitivity}, plus the sH1N1 viral secretion rate).  Each parameter was assigned a confidence distribution (Table \ref{tab:lhs}) and sampled using its inverse cumulative distribution function to generate points with density proportional to the underlying probability distribution function.  Each sample point was evaluated three times using unique random seeds for a total of 999 samples.  One sample point resulted in undefined model behavior and was removed, leaving a total of 996 samples.
 
-Output is defined as the number of infected cells remaining for each time point.  Each model run generates 144,001 time points (10 day model with 6 second time steps).  PRCC analysis was performed over every 100th time point, resulting in a time series of 1441 Spearman rank correlation coefficients ($\rho$) and significance values ($p$) for each parameter (Figs. S6 - S7).
+Output is defined as the number of infected cells remaining for each time point.  Each model run generates 144,001 time points (10 day model with 6 second time steps).  PRCC analysis was performed over every 100th time point, resulting in a time series of 1441 Spearman rank correlation coefficients ($\rho$) and significance values ($p$) for each parameter (Figs. \ref{fig:prcc} - \ref{fig:vsec}).
 
 \subsubsection{PRCC Results}
 
 The  analysis confirmed the conclusion of original sensitivity analysis that viral parameters dominate model output.  Of the 17 parameters tested with PRCC analysis, 7 show significance of $p < 0.01$ over the time period where the parameter was relevant to model dynamics (Figs. S6 - S7).  All five of the viral parameters (viral response to IgM, viral infectivity, viral decay rate, viral diffusion rate, and viral secretion rate) are significant.  Infected cell expression time and the T cell age at the focus of infection are also significant at $p < 0.01$ (but have $\rho$ values near 0).  Viral infectivity, viral decay rate, viral diffusion rate, and viral secretion rate are the only parameters that have maximum absolute vales of $\rho$ above 0.5.  Other parameters showed significant correlations (with low values of $\rho$), but only over time periods where they were not active.
 
-Viral infectivity, viral diffusion rate, and viral secretion rate, values of $\rho$ cross or approach zero over time.  This merely reflects that the modeled target cells have died (Fig. S8) and so the decline in $\rho$ is irrelevant.
+Viral infectivity, viral diffusion rate, and viral secretion rate, values of $\rho$ cross or approach zero over time.  This merely reflects that the modeled target cells have died (Fig.~\ref{fig:exhaustive}) and so the decline in $\rho$ is irrelevant.
 
-%This effect is due to the spatial constraints built into our agent based model.  The  model environment was designed to be large enough to contain an infection defined by the default model parameter values.  Extreme values of the viral parameters cause rapid infection growth to the point that the modeled system is exhausted (Fig. S8).  In these cases the number of infected cells tends towards zero at later time points as every modeled target cell has died before the model is complete.  Thus, the calculated values of $\rho$ for these given parameters should be trusted only at earlier time points.
+%This effect is due to the spatial constraints built into our agent based model.  The  model environment was designed to be large enough to contain an infection defined by the default model parameter values.  Extreme values of the viral parameters cause rapid infection growth to the point that the modeled system is exhausted (Fig. \ref{fig:exhaustive}).  In these cases the number of infected cells tends towards zero at later time points as every modeled target cell has died before the model is complete.  Thus, the calculated values of $\rho$ for these given parameters should be trusted only at earlier time points.
 
 \subsection{Window of Control}
 
@@ -408,10 +411,18 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 \setcounter{figure}{0}
 \renewcommand{\thefigure}{S\arabic{figure}}
 
+\begin{figure}[!ht]
+\begin{center}
+ \includegraphics[width=\textwidth]{Figure_S1}
+ \end{center}
+\caption{{\bf Preliminary Model 1 fits to data.}  Preliminary Model 1 (Eq. 1) was fit to experimental data (Table~\ref{tab:data}) using a genetic algorithm as described in the main paper.  sH1N1 IP-10 secretion exceeded measurement accuracy above 8500 pg/mL and these three values (empty red triangles) were not included in the model fitting.  RMSE values of the fits can be seen in Table~\ref{tab:rmse}.  IP-10 data and model fits shown in red (triangles), RANTES data and model fits shown in yellow (squares).} 
+ \label{fig:fits}
+\end{figure}
+
 
 \begin{figure}[!ht]
 \begin{center}
- \includegraphics[width=\textwidth]{Figure_S-1}
+ \includegraphics[width=\textwidth]{Figure_S2}
  \end{center}
 \caption{{\bf Varying T cell sensitivity to chemokine.}  H5N1 model results use RANTES  only, and sH1N1 and pH1N1 use both IP-10 and RANTES. Total number of incubating, secreting and apoptotic cells are plotted for each infection.  The sensitivity value specifies the minimum level of chemokine concentration required for T cells to detect it. } 
  \label{fig:sensitivity}
@@ -420,7 +431,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=\textwidth]{Figure_S2}
+	\includegraphics[width=\textwidth]{Figure_S3}
 	\caption{\textbf{Effects of different chemokine combinations.}  A) aH5N1 does not stimulate an IP-10 response.  B-C) sH1N1 and pH1N1 show no significant difference between IP-10 alone versus IP-10 and RANTES combined.}
 	\label{fig:chemokine}
 \end{center}
@@ -431,7 +442,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=9in]{Figure_S3}
+	\includegraphics[width=9in]{Figure_S4}
 	\caption{\textbf{aH5N1 sensitivity analysis.} The sensitivity analysis results for 16 parameters applied to the aH5N1 model simulation.  In each subgraph, the thicker purple line shows the results of the model using the default parameter value.}
 	\label{fig:asensitivity}
 \end{center}
@@ -439,7 +450,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=9in]{Figure_S4}
+	\includegraphics[width=9in]{Figure_S5}
 	\caption{\textbf{sH1N1 sensitivity analysis.} The sensitivity analysis results for 16 parameters applied to the sH1N1 model simulation.  In each subgraph, the thicker purple line shows the results of the model using the default parameter value.  The divergence between Apoptosis Time values of 90m and 120m (upper-left plot) highlights an important threshold of infection control.}
 	\label{fig:ssensitivity}
 \end{center}
@@ -447,7 +458,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=9in]{Figure_S5}
+	\includegraphics[width=9in]{Figure_S6}
 	\caption{\textbf{pH1N1 sensitivity analysis.} The sensitivity analysis results for 16 parameters applied to the pH1N1 model simulation.  In each subgraph, the thicker purple line shows the results of the model using the default parameter value.}
 	\label{fig:psensitivity}
 \end{center}
@@ -455,7 +466,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=9in]{Figure_S6}
+	\includegraphics[width=9in]{Figure_S7}
 	\caption{\textbf{PRCC sensitivity analysis.} PRCC analysis generated Spearman correlation coefficients ($\rho$) and significance values ($p$) over 1441 time points.  Plots show values of $\rho$ vs. time for each parameter tested.  Dark blue indicates significance levels at $p < 0.01$.  Gold indicates significance of $p < 0.05$.  Light gray indicates $p \geq 0.05$.  Six parameters show significant effect over the time period where they were relevant to model dynamics: infected cell expression time, viral response to IgM, viral infectivity, T cell expected lifetime at the FOI, viral decay rate, and the viral diffusion rate.}
 	\label{fig:prcc}
 \end{center}
@@ -465,16 +476,16 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=\textwidth]{Figure_S7}
-	\caption{\textbf{PRCC sensitivity analysis for the viral secretion rate.} Similar to Figure S6, PRCC analysis generated Spearman correlation coefficients ($\rho$) and significance values ($p$) over 1441 time points.  Plot shows the values of $\rho$ vs. time for the viral secretion rate.  Dark blue indicates significance levels at $p < 0.01$.  Gold indicates significance of $p < 0.05$.  Light gray indicates $p \geq 0.05$.  Viral secretion shows significant effect on model output.  The decline of $\rho$ over time reflects the early death of every modeled target cell (Figure S8).}
+	\includegraphics[width=\textwidth]{Figure_S8}
+	\caption{\textbf{PRCC sensitivity analysis for the viral secretion rate.} Similar to Figure S6, PRCC analysis generated Spearman correlation coefficients ($\rho$) and significance values ($p$) over 1441 time points.  Plot shows the values of $\rho$ vs. time for the viral secretion rate.  Dark blue indicates significance levels at $p < 0.01$.  Gold indicates significance of $p < 0.05$.  Light gray indicates $p \geq 0.05$.  Viral secretion shows significant effect on model output.  The decline of $\rho$ over time reflects the early death of every modeled target cell (Figure~\ref{fig:exhaustive})).}
 	\label{fig:vsec}
 \end{center}
 \end{figure}
 
 \begin{figure}[ht!]
 \begin{center}
-	\includegraphics[width=\textwidth]{Figure_S8}
-	\caption{\textbf{Exhaustive Growth:} Certain parameter sets generated by Latin hypercube sampling caused rapid uncontrolled infection growth (Samples 1-3).  This resulted in the early death of every modeled target cell (saturation at day 1) and the inevitable decline of the infection size to zero.  A larger, unbounded model environment would show unconstrained growth.  This effect explains the decline of the $\rho$ value of several viral parameters to or past zero over time in Figures S6 and S7.}
+	\includegraphics[width=\textwidth]{Figure_S9}
+	\caption{\textbf{Exhaustive Growth:} Certain parameter sets generated by Latin hypercube sampling caused rapid uncontrolled infection growth (Samples 1-3).  This resulted in the early death of every modeled target cell (saturation at day 1) and the inevitable decline of the infection size to zero.  A larger, unbounded model environment would show unconstrained growth.  This effect explains the decline of the $\rho$ value of several viral parameters to or past zero over time in Figures \ref{fig:prcc} and \ref{fig:vsec}.}
 	\label{fig:exhaustive}
 \end{center}
 \end{figure}
@@ -606,8 +617,30 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
     & \hspace{2em} RANTES & 16 (h)\\
   \hline
 \end{tabular}
-\caption{\textbf{Parameters for Preliminary Model 1 (Equation 1)}.  All parameters and populations are taken from \citep{Mitchell2011} except for $C$, $d$, and $\tau_3$.  The value chosen for $d$ corresponds to a 30 minute half-life and values for $\tau_3$ were set from the observed chemokine data (Fig. 3).  Interferon ($F$) is an abstracted unitless quantity and thus $e$ is a unitless multiplier.}
+\caption{\textbf{Parameters for Preliminary Model 1 (Equation 1)}.  All parameters and populations are taken from \citep{Mitchell2011} except for $C$, $d$, and $\tau_3$.  The value chosen for $d$ corresponds to a 30 minute half-life and values for $\tau_3$ were set from the observed chemokine data (Fig.~\ref{fig:data}).  Interferon ($F$) is an abstracted unitless quantity and thus $e$ is a unitless multiplier.}
 \label{tab:dde}
+\end{center}
+\end{table}
+
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{| c | c | c |}
+  \hline
+  Strain & Chemokine & RMSE \\
+  \hline
+  \multirow{2}{*}{aH5N1} & RANTES & 166 \\
+  & IP-10 & 7,950 \\
+  \hline
+  \multirow{2}{*}{sH1N1} & RANTES & 90 \\
+  & IP-10 & 2,732 \\
+  \hline
+  \multirow{2}{*}{pH1N1} & RANTES & 2,671  \\
+  & IP-10 & 64,342 \\
+  \hline
+\end{tabular}
+\caption{\textbf{Root mean squared error of Preliminary Model 1 fits.}  Preliminary Model 1 (Eq. 1) was fit to experimental data (Table~\ref{tab:data}) using a genetic algorithm as described in the main paper.  The resulting model fits can be seen in Figure~\ref{fig:fits}.}
+\label{tab:rmse}
 \end{center}
 \end{table}
 
@@ -646,6 +679,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
 \end{center}
 \end{table}
 
+
 \begin{table}[!ht]
 \centering
 \begin{tabular}{| c | l | c | l |}
@@ -674,7 +708,7 @@ Videos can be found at the following web address: http://cs.unm.edu\textbackslas
   & Viral Secretion & $(PFU/s\cdot cell)$ & LN(-3.4, 0.3) \\
   \hline  
 \end{tabular}
-\caption{\textbf{Latin hypercube sampling distributions.}  LHS was used to generate sample points containing each of the 16 parameters from Table 3, plus the sH1N1 viral secretion rate.  Parameters were sampled over biologically plausible ranges listed here for use in PRCC analysis.  LN signifies a log-normal distribution.  Values were sampled from a regular normal distribution with the listed parameters and then transformed to linear space from $log_{10}$ space.  U signifies a uniform distribution.}
+\caption{\textbf{Latin hypercube sampling distributions.}  LHS was used to generate sample points containing each of the 16 parameters from Table \ref{tab:sensitivity}, plus the sH1N1 viral secretion rate.  Parameters were sampled over biologically plausible ranges listed here for use in PRCC analysis.  LN signifies a log-normal distribution.  Values were sampled from a regular normal distribution with the listed parameters and then transformed to linear space from $log_{10}$ space.  U signifies a uniform distribution.}
 \label{tab:lhs}
 \end{table}
  

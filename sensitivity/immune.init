@@ -1,0 +1,13 @@
+#InitFormat 4
+
+geometry
+5000x5000x20 microns;  mol_res: 20  cell_res: 20
+
+molecule_uniform: virus 0 0 
+molecule_uniform: chemokine 0 0 
+
+cell_hexsheet: healthy 10
+cell_list: 2
+	expressing 2500 2500 10
+	oracle 0 0 15
+

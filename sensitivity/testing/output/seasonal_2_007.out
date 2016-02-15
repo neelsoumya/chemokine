@@ -1,0 +1,88 @@
+constructor seed = 1825687399
+set Molecule geometry:  1x1x1=1
+molecule type name:  virus
+molecule type name:  chemokine
+cell type name:  healthy
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+sense type:  copy_conc
+action type:  infect
+cell type name:  infected
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+process type:  update
+action type:  secrete_fixed
+action type:  change
+cell type name:  expressing
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+sense type:  cognate
+process type:  update
+action type:  secrete_fixed
+action type:  secrete_fixed
+action type:  change
+action type:  change
+cell type name:  dead
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+cell type name:  apoptosis
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+process type:  update
+process type:  update
+action type:  secrete_fixed
+action type:  secrete_fixed
+action type:  change
+cell type name:  t_found
+attribute name:  age
+attribute name:  inflammationC
+attribute name:  virusC
+attribute name:  p
+sense type:  copy_conc
+action type:  die
+action type:  move_chem
+cell type name:  t_search
+attribute name:  age
+attribute name:  inflammationC
+attribute name:  virusC
+attribute name:  p
+sense type:  copy_conc
+action type:  die
+action type:  change
+action type:  change
+cell type name:  t_circ
+attribute name:  age
+attribute name:  inflammationC
+attribute name:  virusC
+attribute name:  p
+process type:  update
+action type:  die
+action type:  recirculate2D
+action type:  recirculate2D0
+cell type name:  oracle
+attribute name:  age
+process type:  update
+action type:  admit_rand2D
+action type:  admit_mult
+2.075722e-16
+set Molecule geometry:  250x250x1=62500
+added hex sheet at z = 10
+read number of cells = 2
+read:  expressing at 2500 2500 10
+read:  oracle at 0 0 15
+seed = 2

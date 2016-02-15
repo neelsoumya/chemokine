@@ -1,0 +1,232 @@
+constructor seed = 1350191712
+set Molecule geometry:  1x1x1=1
+molecule type name:  virus
+molecule type name:  chemokine
+cell type name:  healthy
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+sense type:  copy_conc
+action type:  infect
+cell type name:  infected
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+process type:  update
+action type:  secrete_fixed
+action type:  change
+cell type name:  expressing
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+sense type:  cognate
+process type:  update
+action type:  secrete_fixed
+action type:  secrete_fixed
+action type:  change
+action type:  change
+cell type name:  dead
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+cell type name:  apoptosis
+attribute name:  age
+attribute name:  apop_age
+attribute name:  virusC
+attribute name:  infection_age
+attribute name:  sense_tcell
+process type:  update
+process type:  update
+action type:  secrete_fixed
+action type:  secrete_fixed
+action type:  change
+cell type name:  t_found
+attribute name:  age
+attribute name:  inflammationC
+attribute name:  virusC
+attribute name:  p
+sense type:  copy_conc
+action type:  die
+action type:  move_chem
+cell type name:  t_search
+attribute name:  age
+attribute name:  inflammationC
+attribute name:  virusC
+attribute name:  p
+sense type:  copy_conc
+action type:  die
+action type:  change
+action type:  change
+cell type name:  t_circ
+attribute name:  age
+attribute name:  inflammationC
+attribute name:  virusC
+attribute name:  p
+process type:  update
+action type:  die
+action type:  recirculate2D
+action type:  recirculate2D0
+cell type name:  oracle
+attribute name:  age
+process type:  update
+action type:  admit_rand2D
+action type:  admit_mult
+2.075722e-16
+set Molecule geometry:  250x250x1=62500
+added hex sheet at z = 10
+read number of cells = 2
+read:  expressing at 2500 2500 10
+read:  oracle at 0 0 15
+seed = 2
+Time: 6000
+Time: 12000
+Time: 18000
+Time: 24000
+Time: 30000
+Time: 36000
+Time: 42000
+Time: 48000
+Time: 54000
+Time: 60000
+Time: 66000
+Time: 72000
+Time: 78000
+Time: 84000
+Time: 90000
+Time: 96000
+Time: 102000
+Time: 108000
+Time: 114000
+Time: 120000
+Time: 126000
+Time: 132000
+Time: 138000
+Time: 144000
+Time: 150000
+Time: 156000
+Time: 162000
+Time: 168000
+Time: 174000
+Time: 180000
+Time: 186000
+Time: 192000
+Time: 198000
+Time: 204000
+Time: 210000
+Time: 216000
+Time: 222000
+Time: 228000
+Time: 234000
+Time: 240000
+Time: 246000
+Time: 252000
+Time: 258000
+Time: 264000
+Time: 270000
+Time: 276000
+Time: 282000
+Time: 288000
+Time: 294000
+Time: 300000
+Time: 306000
+Time: 312000
+Time: 318000
+Time: 324000
+Time: 330000
+Time: 336000
+Time: 342000
+Time: 348000
+Time: 354000
+Time: 360000
+Time: 366000
+Time: 372000
+Time: 378000
+Time: 384000
+Time: 390000
+Time: 396000
+Time: 402000
+Time: 408000
+Time: 414000
+Time: 420000
+Time: 426000
+Time: 432000
+Time: 438000
+Time: 444000
+Time: 450000
+Time: 456000
+Time: 462000
+Time: 468000
+Time: 474000
+Time: 480000
+Time: 486000
+Time: 492000
+Time: 498000
+Time: 504000
+Time: 510000
+Time: 516000
+Time: 522000
+Time: 528000
+Time: 534000
+Time: 540000
+Time: 546000
+Time: 552000
+Time: 558000
+Time: 564000
+Time: 570000
+Time: 576000
+Time: 582000
+Time: 588000
+Time: 594000
+Time: 600000
+Time: 606000
+Time: 612000
+Time: 618000
+Time: 624000
+Time: 630000
+Time: 636000
+Time: 642000
+Time: 648000
+Time: 654000
+Time: 660000
+Time: 666000
+Time: 672000
+Time: 678000
+Time: 684000
+Time: 690000
+Time: 696000
+Time: 702000
+Time: 708000
+Time: 714000
+Time: 720000
+Time: 726000
+Time: 732000
+Time: 738000
+Time: 744000
+Time: 750000
+Time: 756000
+Time: 762000
+Time: 768000
+Time: 774000
+Time: 780000
+Time: 786000
+Time: 792000
+Time: 798000
+Time: 804000
+Time: 810000
+Time: 816000
+Time: 822000
+Time: 828000
+Time: 834000
+Time: 840000
+Time: 846000
+Time: 852000
+Time: 858000
+Time: 864000

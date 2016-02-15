@@ -1,64 +1,93 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-\providecommand{\bibAnnoteFile}[1]{%
-  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
-  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
-\providecommand{\bibAnnote}[2]{%
-  \begin{quotation}\noindent\textsc{Key:} #1\\
-  \textsc{Annotation:}\ #2\end{quotation}}
-\providecommand{\eprint}[2][]{\url{#2}}
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\url{#1}\endgroup}\fi
+\providecommand{\bibinfo}[2]{#2}
 
-\bibitem{Mitchell2011}
-Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
-  level of replication efficiency of 2009 (H1N1) pandemic influenza virus than
-  those of seasonal and avian strains: kinetics from epithelial cell culture
-  and computational modeling.}
-\newblock Journal of virology 85: 1125--35.
-\bibAnnoteFile{Mitchell2011}
+\bibitem[{Desmetz et~al.(2006)Desmetz, Lin, Mettling, Portal\`{e}s,
+  Rabesandratana, Clot, and Corbeau}]{Desmetz2006}
+\bibinfo{author}{C.~Desmetz}, \bibinfo{author}{Y.-L. Lin},
+  \bibinfo{author}{C.~Mettling}, \bibinfo{author}{P.~Portal\`{e}s},
+  \bibinfo{author}{H.~Rabesandratana}, \bibinfo{author}{J.~Clot},
+  \bibinfo{author}{P.~Corbeau}, \bibinfo{title}{{The strength of the
+  chemotactic response to a CCR5 binding chemokine is determined by the level
+  of cell surface CCR5 density.}}, \bibinfo{journal}{Immunology}
+  \bibinfo{volume}{119}~(\bibinfo{number}{4}) (\bibinfo{year}{2006})
+  \bibinfo{pages}{551--61}, ISSN \bibinfo{issn}{0019-2805},
+  \doi{\bibinfo{doi}{10.1111/j.1365-2567.2006.02470.x}},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2265826\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Miao2010}
-Miao H, Hollenbaugh J, Zand M, Holden-Wiltse J, Mosmann T, et~al. (2010)
-  {Quantifying the early immune response and adaptive immune response kinetics
-  in mice infected with influenza A virus}.
-\newblock Journal of virology 84: 6687--6698.
-\bibAnnoteFile{Miao2010}
+\bibitem[{Gao et~al.(2003)Gao, Zhou, Yashiro-ohtani, Yang, Sugimoto, Ono,
+  Nagasawa, Fujiwara, and Hamaoka}]{Gao2003}
+\bibinfo{author}{P.~Gao}, \bibinfo{author}{X.-y. Zhou},
+  \bibinfo{author}{Y.~Yashiro-ohtani}, \bibinfo{author}{Y.-f. Yang},
+  \bibinfo{author}{N.~Sugimoto}, \bibinfo{author}{S.~Ono},
+  \bibinfo{author}{T.~Nagasawa}, \bibinfo{author}{H.~Fujiwara},
+  \bibinfo{author}{T.~Hamaoka}, \bibinfo{title}{{The unique target specificity
+  of a nonpeptide chemokine receptor antagonist : selective blockade of two Th1
+  chemokine receptors CCR5 and CXCR3 cated in their migration to sites of
+  inflammation .}}, \bibinfo{journal}{Journal of Leukocyte Biology}
+  \bibinfo{volume}{73}~(\bibinfo{number}{February}) (\bibinfo{year}{2003})
+  \bibinfo{pages}{273--280}, \doi{\bibinfo{doi}{10.1189/jlb.0602269.Journal}}.
 
-\bibitem{Desmetz2006}
-Desmetz C, Lin YL, Mettling C, Portal\`{e}s P, Rabesandratana H, et~al. (2006)
-  {The strength of the chemotactic response to a CCR5 binding chemokine is
-  determined by the level of cell surface CCR5 density.}
-\newblock Immunology 119: 551--61.
-\bibAnnote{Desmetz2006}{--> the important factor seems to be the fluctuations
-  of CCR5 (receptor) expression on T cells and less the fluctuations of CCL5
-  (chemokine) concentration on T cell chemotactic activity. - CCL5
-  concentration dependent T cell migration (in vitro) --> CCL5 T cell
-  sensitivity ?}
+\bibitem[{Mitchell et~al.(2011)Mitchell, Levin, Forrest, Beauchemin, Tipper,
+  Knight, Donart, Layton, Pyles, Gao, Harrod, Perelson, and
+  Koster}]{Mitchell2011}
+\bibinfo{author}{H.~Mitchell}, \bibinfo{author}{D.~Levin},
+  \bibinfo{author}{S.~Forrest}, \bibinfo{author}{C.~a.~a. Beauchemin},
+  \bibinfo{author}{J.~Tipper}, \bibinfo{author}{J.~Knight},
+  \bibinfo{author}{N.~Donart}, \bibinfo{author}{R.~C. Layton},
+  \bibinfo{author}{J.~Pyles}, \bibinfo{author}{P.~Gao}, \bibinfo{author}{K.~S.
+  Harrod}, \bibinfo{author}{A.~S. Perelson}, \bibinfo{author}{F.~Koster},
+  \bibinfo{title}{{Higher level of replication efficiency of 2009 (H1N1)
+  pandemic influenza virus than those of seasonal and avian strains: kinetics
+  from epithelial cell culture and computational modeling.}},
+  \bibinfo{journal}{Journal of virology}
+  \bibinfo{volume}{85}~(\bibinfo{number}{2}) (\bibinfo{year}{2011})
+  \bibinfo{pages}{1125--35}, ISSN \bibinfo{issn}{1098-5514},
+  \doi{\bibinfo{doi}{10.1128/JVI.01722-10}},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3019989\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Gao2003}
-Gao P, Zhou Xy, Yashiro-ohtani Y, Yang Yf, Sugimoto N, et~al. (2003) {The
-  unique target specificity of a nonpeptide chemokine receptor antagonist :
-  selective blockade of two Th1 chemokine receptors CCR5 and CXCR3 cated in
-  their migration to sites of inflammation .}
-\newblock Journal of Leukocyte Biology 73: 273--280.
-\bibAnnote{Gao2003}{CCL5 (RANTES) and CXCL10 (IP-10) concentrations inducing T
-  cell chemotaxis (adhesion)}
+\bibitem[{Egen et~al.(2011)Egen, Rothfuchs, Feng, Horwitz, Sher, and
+  Germain}]{Egen2011}
+\bibinfo{author}{J.~G. Egen}, \bibinfo{author}{A.~G. Rothfuchs},
+  \bibinfo{author}{C.~G. Feng}, \bibinfo{author}{M.~A. Horwitz},
+  \bibinfo{author}{A.~Sher}, \bibinfo{author}{R.~N. Germain},
+  \bibinfo{title}{{Intravital imaging reveals limited antigen presentation and
+  T cell effector function in mycobacterial granulomas.}},
+  \bibinfo{journal}{Immunity} \bibinfo{volume}{34}~(\bibinfo{number}{5})
+  (\bibinfo{year}{2011}) \bibinfo{pages}{807--819},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/21596592}.
 
-\bibitem{Egen2011}
-Egen JG, Rothfuchs AG, Feng CG, Horwitz MA, Sher A, et~al. (2011) {Intravital
-  imaging reveals limited antigen presentation and T cell effector function in
-  mycobacterial granulomas.}
-\newblock Immunity 34: 807--819.
-\bibAnnoteFile{Egen2011}
+\bibitem[{Marino et~al.(2008)Marino, Hogue, Ray, and Kirschner}]{Marino2008}
+\bibinfo{author}{S.~Marino}, \bibinfo{author}{I.~B. Hogue},
+  \bibinfo{author}{C.~J. Ray}, \bibinfo{author}{D.~E. Kirschner},
+  \bibinfo{title}{{A methodology for performing global uncertainty and
+  sensitivity analysis in systems biology}},
+  \doi{\bibinfo{doi}{10.1016/j.jtbi.2008.04.011}}, \bibinfo{year}{2008}.
 
-\bibitem{Peters1983}
-Peters RH (1983) {The ecological implications of body size}, volume Cambridge.
-\newblock Cambridge University Press, 329 pp.
-\newblock \urlprefix\url{http://books.google.com/books?id=OYVxiZgTXWsC}.
-\bibAnnoteFile{Peters1983}
+\bibitem[{Miao et~al.(2010)Miao, Hollenbaugh, Zand, Holden-Wiltse, Mosmann,
+  Perelson, Wu, and Topham}]{Miao2010a}
+\bibinfo{author}{H.~Miao}, \bibinfo{author}{J.~A. Hollenbaugh},
+  \bibinfo{author}{M.~S. Zand}, \bibinfo{author}{J.~Holden-Wiltse},
+  \bibinfo{author}{T.~R. Mosmann}, \bibinfo{author}{A.~S. Perelson},
+  \bibinfo{author}{H.~Wu}, \bibinfo{author}{D.~J. Topham},
+  \bibinfo{title}{{Quantifying the early immune response and adaptive immune
+  response kinetics in mice infected with influenza A virus.}},
+  \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{84}~(\bibinfo{number}{13}) (\bibinfo{year}{2010})
+  \bibinfo{pages}{6687--6698},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2903284\&tool=pmcentrez\&rendertype=abstract}.
+
+\bibitem[{Peters(1983)}]{Peters1983}
+\bibinfo{author}{R.~H. Peters}, \bibinfo{title}{{The ecological implications of
+  body size}}, vol. \bibinfo{volume}{Cambridge}, \bibinfo{publisher}{Cambridge
+  University Press}, ISBN \bibinfo{isbn}{052128886X},
+  \urlprefix\url{http://books.google.com/books?id=OYVxiZgTXWsC},
+  \bibinfo{year}{1983}.
 
 \end{thebibliography}

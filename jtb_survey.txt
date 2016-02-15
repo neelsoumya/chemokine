@@ -1,0 +1,100 @@
+Modelling the movement of interacting cell populations: A moment dynamics approach
+(lattice-based)
+
+Intro
+Methods (all math)
+Results
+Discussion and conclusions
+
+----------------------------------------------------------------------------------
+
+Identifying robustness in the regulation of collective foraging of ant
+colonies using an interaction-based model with backward bifurcation
+
+Intro
+Model derivation
+Mathematical Analysis
+Numerical Simulations
+Discussion
+Proofs
+
+----------------------------------------------------------------------------------
+
+On time scale invariance of random walks in confined space
+
+Intro
+Random walks in a bounded space
+Behavior of populations on a bounded line
+Behavior of populations in two dimensional geometries
+Discussion and conclusions
+
+----------------------------------------------------------------------------------
+
+In silico single cell dynamics of hepatitis B virus infection and clearance
+(agent-based)
+
+
+Intro
+Materials and Methods
+  Mathematical models
+  Parameter estimation
+  Stochastic agent based model and simulations
+  Emergence of refractory cells
+  Calculation of minimum hepatocyte turnover
+Results
+Discussion
+
+----------------------------------------------------------------------------------
+
+Decision-making in honeybee swarms based on quality and distance
+information of candidate nest sites
+
+Intro
+Modelling the swarm’s decision-making process
+Results and discussion
+Conclusions
+
+----------------------------------------------------------------------------------
+
+Modeling shortest path selection of the ant Linepithema humile
+using psychophysical theory and realistic parameter values
+
+Intro
+The models
+  Deneubourg model
+  Psychophysical theory
+Materials and methods
+Results
+Discussion
+
+----------------------------------------------------------------------------------
+
+Predicting pathogen-specific CD8 T cell immune responses
+from a modeling approach
+(experimental data)
+
+Intro
+Results and discussion
+Conclusion
+Methods
+  Experimental work
+  Model
+  Identifiability of parameter values
+  Simulations and selection of parameter sets
+
+----------------------------------------------------------------------------------
+
+The inflammatory response to influenza A virus (H1N1):
+An experimental and mathematical study
+(experimental data)
+
+
+Intro
+Materials and methods
+  Experimental data
+  Mathematical model development
+  Uncertainty analysis: Metropolis–Hastings Monte Carlo sampling
+Results
+Discussion
+Conclusions
+

@@ -1,436 +1,735 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{68}
+\providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-\providecommand{\bibAnnoteFile}[1]{%
-  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
-  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
-\providecommand{\bibAnnote}[2]{%
-  \begin{quotation}\noindent\textsc{Key:} #1\\
-  \textsc{Annotation:}\ #2\end{quotation}}
-\providecommand{\eprint}[2][]{\url{#2}}
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\url{#1}\endgroup}\fi
+\providecommand{\bibinfo}[2]{#2}
 
-\bibitem{Who2009}
-Who (2009) {WHO Influenza fact sheet}.
-\newblock Technical report.
-\bibAnnoteFile{Who2009}
+\bibitem[{Who(2009)}]{Who2009}
+\bibinfo{title}{{WHO Influenza fact sheet}}, \bibinfo{type}{Tech. Rep.},
+  \bibinfo{institution}{World Health Organisation}, \bibinfo{year}{2009}.
 
-\bibitem{Bromley2008}
-Bromley SK, Mempel TR, Luster AD (2008) {Orchestrating the orchestrators:
-  chemokines in control of T cell traffic.}
-\newblock Nature immunology 9: 970--80.
-\bibAnnoteFile{Bromley2008}
+\bibitem[{Handel and Antia(2008)}]{Handel2008}
+\bibinfo{author}{A.~Handel}, \bibinfo{author}{R.~Antia}, \bibinfo{title}{{A
+  Simple Mathematical Model Helps To Explain the Immunodominance of CD8 T Cells
+  in Influenza A Virus Infections}}, \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{82}~(\bibinfo{number}{16}) (\bibinfo{year}{2008})
+  \bibinfo{pages}{7768--7772},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2519595\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Medoff2005}
-Medoff BD, Thomas SY, Banerji A, Wain JC, Zhang H, et~al. (2005) {Pathogenic
-  T-cell recruitment into the airway in human disease.}
-\newblock Annals Of The New York Academy Of Sciences 1062: 220--241.
-\bibAnnoteFile{Medoff2005}
+\bibitem[{Lee et~al.(2009)Lee, Topham, Park, Hollenbaugh, Treanor, Mosmann,
+  Jin, Ward, Miao, Holden-Wiltse, Perelson, Zand, and Wu}]{Lee2009}
+\bibinfo{author}{H.~Y. Lee}, \bibinfo{author}{D.~J. Topham},
+  \bibinfo{author}{S.~Y. Park}, \bibinfo{author}{J.~Hollenbaugh},
+  \bibinfo{author}{J.~Treanor}, \bibinfo{author}{T.~R. Mosmann},
+  \bibinfo{author}{X.~Jin}, \bibinfo{author}{B.~M. Ward},
+  \bibinfo{author}{H.~Miao}, \bibinfo{author}{J.~Holden-Wiltse},
+  \bibinfo{author}{A.~S. Perelson}, \bibinfo{author}{M.~Zand},
+  \bibinfo{author}{H.~Wu}, \bibinfo{title}{{Simulation and Prediction of the
+  Adaptive Immune Response to Influenza A Virus Infection}},
+  \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{83}~(\bibinfo{number}{14}) (\bibinfo{year}{2009})
+  \bibinfo{pages}{7151--7165},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2704765\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Castellino2006}
-Castellino F, Huang AY, Altan-Bonnet G, Stoll S, Scheinecker C, et~al. (2006)
-  {Chemokines enhance immunity by guiding naive CD8+ T cells to sites of CD4+ T
-  cell-dendritic cell interaction.}
-\newblock Nature 440: 890--5.
-\bibAnnoteFile{Castellino2006}
+\bibitem[{Miao et~al.(2010)Miao, Hollenbaugh, Zand, Holden-Wiltse, Mosmann,
+  Perelson, Wu, and Topham}]{Miao2010a}
+\bibinfo{author}{H.~Miao}, \bibinfo{author}{J.~A. Hollenbaugh},
+  \bibinfo{author}{M.~S. Zand}, \bibinfo{author}{J.~Holden-Wiltse},
+  \bibinfo{author}{T.~R. Mosmann}, \bibinfo{author}{A.~S. Perelson},
+  \bibinfo{author}{H.~Wu}, \bibinfo{author}{D.~J. Topham},
+  \bibinfo{title}{{Quantifying the early immune response and adaptive immune
+  response kinetics in mice infected with influenza A virus.}},
+  \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{84}~(\bibinfo{number}{13}) (\bibinfo{year}{2010})
+  \bibinfo{pages}{6687--6698},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2903284\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Gunn1998}
-Gunn MD, Tangemann K, Tam C, Cyster JG, Rosen SD, et~al. (1998) {A chemokine
-  expressed in lymphoid high endothelial venules promotes the adhesion and
-  chemotaxis of naive T lymphocytes.}
-\newblock Proceedings of the National Academy of Sciences of the United States
-  of America 95: 258--263.
-\bibAnnoteFile{Gunn1998}
+\bibitem[{Saenz et~al.(2010)Saenz, Quinlivan, Elton, MacRae, Blunden, Mumford,
+  Daly, Digard, Cullinane, Grenfell, McCauley, Wood, and Gog}]{Saenz2010}
+\bibinfo{author}{R.~A. Saenz}, \bibinfo{author}{M.~Quinlivan},
+  \bibinfo{author}{D.~Elton}, \bibinfo{author}{S.~MacRae},
+  \bibinfo{author}{A.~S. Blunden}, \bibinfo{author}{J.~A. Mumford},
+  \bibinfo{author}{J.~M. Daly}, \bibinfo{author}{P.~Digard},
+  \bibinfo{author}{A.~Cullinane}, \bibinfo{author}{B.~T. Grenfell},
+  \bibinfo{author}{J.~W. McCauley}, \bibinfo{author}{J.~L.~N. Wood},
+  \bibinfo{author}{J.~R. Gog}, \bibinfo{title}{{Dynamics of influenza virus
+  infection and pathology.}}, \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{84}~(\bibinfo{number}{8}) (\bibinfo{year}{2010})
+  \bibinfo{pages}{3974--3983},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/20130053}.
 
-\bibitem{Okada2005}
-Okada T, Miller MJ, Parker I, Krummel MF, Neighbors M, et~al. (2005)
-  {Antigen-Engaged B Cells Undergo Chemotaxis toward the T Zone and Form Motile
-  Conjugates with Helper T Cells}.
-\newblock PLoS Biology 3: e150.
-\bibAnnoteFile{Okada2005}
+\bibitem[{Murillo et~al.(2013)Murillo, Murillo, and Perelson}]{Murillo2013}
+\bibinfo{author}{L.~N. Murillo}, \bibinfo{author}{M.~S. Murillo},
+  \bibinfo{author}{A.~S. Perelson}, \bibinfo{title}{{Towards multiscale
+  modeling of influenza infection}}, \bibinfo{year}{2013}.
 
-\bibitem{Chan2005}
-Chan MCW, Cheung CY, Chui WH, Tsao SW, Nicholls JM, et~al. (2005)
-  {Proinflammatory cytokine responses induced by influenza A (H5N1) viruses in
-  primary human alveolar and bronchial epithelial cells}.
-\newblock Respiratory Research 6: 135.
-\bibAnnoteFile{Chan2005}
+\bibitem[{Crauste et~al.(2015)Crauste, Terry, Mercier, Mafille, Djebali,
+  Andrieu, Mercier, Kaneko, Arpin, Marvel, and Gandrillon}]{Crauste2015}
+\bibinfo{author}{F.~Crauste}, \bibinfo{author}{E.~Terry},
+  \bibinfo{author}{I.~L. Mercier}, \bibinfo{author}{J.~Mafille},
+  \bibinfo{author}{S.~Djebali}, \bibinfo{author}{T.~Andrieu},
+  \bibinfo{author}{B.~Mercier}, \bibinfo{author}{G.~Kaneko},
+  \bibinfo{author}{C.~Arpin}, \bibinfo{author}{J.~Marvel},
+  \bibinfo{author}{O.~Gandrillon}, \bibinfo{title}{{Predicting
+  Pathogen-Specific CD8 T Cell Immune Responses from a Modeling Approach}},
+  \bibinfo{journal}{Journal of Theoretical Biology} \bibinfo{volume}{374}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{66--82}, ISSN
+  \bibinfo{issn}{00225193}, \doi{\bibinfo{doi}{10.1016/j.jtbi.2015.03.033}},
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0022519315001484}.
 
-\bibitem{Zhao2000}
-Zhao MQ, Stoler MH, Liu AN, Wei B, Soguero C, et~al. (2000) {Alveolar
-  epithelial cell chemokine expression triggered by antigen-specific cytolytic
-  CD8(+) T cell recognition.}
-\newblock Journal of Clinical Investigation 106: R49--R58.
-\bibAnnoteFile{Zhao2000}
+\bibitem[{Price et~al.(2015)Price, Mochan-Keef, Swigon, Ermentrout, Lukens,
+  Toapanta, Ross, and Clermont}]{Price2015}
+\bibinfo{author}{I.~Price}, \bibinfo{author}{E.~D. Mochan-Keef},
+  \bibinfo{author}{D.~Swigon}, \bibinfo{author}{G.~B. Ermentrout},
+  \bibinfo{author}{S.~Lukens}, \bibinfo{author}{F.~R. Toapanta},
+  \bibinfo{author}{T.~M. Ross}, \bibinfo{author}{G.~Clermont},
+  \bibinfo{title}{{The inflammatory response to influenza A virus (H1N1): An
+  experimental and mathematical study.}}, \bibinfo{journal}{Journal of
+  theoretical biology} \bibinfo{volume}{374} (\bibinfo{year}{2015})
+  \bibinfo{pages}{83--93}, ISSN \bibinfo{issn}{1095-8541},
+  \doi{\bibinfo{doi}{10.1016/j.jtbi.2015.03.017}},
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0022519315001265}.
 
-\bibitem{Hoji2005}
-Hoji A, Rinaldo CR (2005) {Human CD8+ T cells specific for influenza A virus M1
-  display broad expression of maturation-associated phenotypic markers and
-  chemokine receptors}.
-\newblock Immunology 115: 239--245.
-\bibAnnoteFile{Hoji2005}
+\bibitem[{Beauchemin et~al.(2005)Beauchemin, Samuel, and
+  Tuszynski}]{Beauchemin2005}
+\bibinfo{author}{C.~Beauchemin}, \bibinfo{author}{J.~Samuel},
+  \bibinfo{author}{J.~Tuszynski}, \bibinfo{title}{{A simple cellular automaton
+  model for influenza A viral infections}}, \bibinfo{journal}{Journal of
+  Theoretical Biology} \bibinfo{volume}{232}~(\bibinfo{number}{2})
+  (\bibinfo{year}{2005}) \bibinfo{pages}{223--234}.
 
-\bibitem{Groom2011a}
-Groom JR, Luster AD (2011) {CXCR3 ligands: redundant, collaborative and
-  antagonistic functions.}
-\newblock Immunology and Cell Biology 89: 207--215.
-\bibAnnoteFile{Groom2011a}
+\bibitem[{Beltman et~al.(2007)Beltman, Mar\'{e}e, and {De Boer}}]{Beltman2007}
+\bibinfo{author}{J.~B. Beltman}, \bibinfo{author}{A.~F.~M. Mar\'{e}e},
+  \bibinfo{author}{R.~J. {De Boer}}, \bibinfo{title}{{Spatial modelling of
+  brief and long interactions between T cells and dendritic cells.}},
+  \bibinfo{journal}{Immunology and Cell Biology}
+  \bibinfo{volume}{85}~(\bibinfo{number}{4}) (\bibinfo{year}{2007})
+  \bibinfo{pages}{306--314},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/17420768}.
 
-\bibitem{Cerwenka1999}
-Cerwenka A, Morgan TM, Harmsen AG, Dutton RW (1999) {Migration Kinetics and
-  Final Destination of  Type 1 and Type 2 CD8 Effector Cells Predict
-  Protection against Pulmonary Virus Infection}.
-\newblock The Journal of Experimental Medicine 189: 423--434.
-\bibAnnoteFile{Cerwenka1999}
+\bibitem[{Zheng et~al.(2008)Zheng, Jin, Henrickson, Perelson, {Von Andrian},
+  and Chakraborty}]{Zheng2008}
+\bibinfo{author}{H.~Zheng}, \bibinfo{author}{B.~Jin}, \bibinfo{author}{S.~E.
+  Henrickson}, \bibinfo{author}{A.~S. Perelson}, \bibinfo{author}{U.~H. {Von
+  Andrian}}, \bibinfo{author}{A.~K. Chakraborty}, \bibinfo{title}{{How antigen
+  quantity and quality determine T-cell decisions in lymphoid tissue.}},
+  \bibinfo{journal}{Molecular and Cellular Biology}
+  \bibinfo{volume}{28}~(\bibinfo{number}{12}) (\bibinfo{year}{2008})
+  \bibinfo{pages}{4040--4051},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2423119\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Kim2011}
-Kim TS, Sun J, Braciale TJ (2011) {T cell responses during influenza infection:
-  getting and keeping control.}
-\newblock Trends in Immunology 32: 225--231.
-\bibAnnoteFile{Kim2011}
+\bibitem[{Mirsky et~al.(2011)Mirsky, Miller, Linderman, and
+  Kirschner}]{Mirsky2011}
+\bibinfo{author}{H.~P. Mirsky}, \bibinfo{author}{M.~J. Miller},
+  \bibinfo{author}{J.~J. Linderman}, \bibinfo{author}{D.~E. Kirschner},
+  \bibinfo{title}{{Systems biology approaches for understanding cellular
+  mechanisms of immunity in lymph nodes during infection}},
+  \doi{\bibinfo{doi}{10.1016/j.jtbi.2011.06.037}}, \bibinfo{year}{2011}.
 
-\bibitem{Miao2010}
-Miao H, Hollenbaugh J, Zand M, Holden-Wiltse J, Mosmann T, et~al. (2010)
-  {Quantifying the early immune response and adaptive immune response kinetics
-  in mice infected with influenza A virus}.
-\newblock Journal of virology 84: 6687--6698.
-\bibAnnoteFile{Miao2010}
+\bibitem[{Celli et~al.(2012)Celli, Day, M\"{u}ller, Molina-Paris, Lythe, and
+  Bousso}]{Celli2012}
+\bibinfo{author}{S.~Celli}, \bibinfo{author}{M.~Day}, \bibinfo{author}{A.~J.
+  M\"{u}ller}, \bibinfo{author}{C.~Molina-Paris}, \bibinfo{author}{G.~Lythe},
+  \bibinfo{author}{P.~Bousso}, \bibinfo{title}{{How many dendritic cells are
+  required to initiate a T-cell response?}}, \bibinfo{journal}{Blood}
+  \bibinfo{volume}{120} (\bibinfo{year}{2012}) \bibinfo{pages}{3945--3948},
+  ISSN \bibinfo{issn}{00064971},
+  \doi{\bibinfo{doi}{10.1182/blood-2012-01-408260}}.
 
-\bibitem{Saenz2010}
-Saenz RA, Quinlivan M, Elton D, MacRae S, Blunden AS, et~al. (2010) {Dynamics
-  of influenza virus infection and pathology.}
-\newblock Journal of Virology 84: 3974--3983.
-\bibAnnoteFile{Saenz2010}
+\bibitem[{Vroomans et~al.(2012)Vroomans, Mar\'{e}e, {De Boer}, and
+  Beltman}]{Vroomans2012}
+\bibinfo{author}{R.~M.~A. Vroomans}, \bibinfo{author}{A.~F.~M. Mar\'{e}e},
+  \bibinfo{author}{R.~J. {De Boer}}, \bibinfo{author}{J.~B. Beltman},
+  \bibinfo{title}{{Chemotactic migration of T cells towards dendritic cells
+  promotes the detection of rare antigens}}, \bibinfo{journal}{PLoS Comput
+  Biol} \bibinfo{volume}{8}~(\bibinfo{number}{11}) (\bibinfo{year}{2012})
+  \bibinfo{pages}{e1002763}, \doi{\bibinfo{doi}{10.1371/journal.pcbi.1002763}}.
 
-\bibitem{Handel2008}
-Handel A, Antia R (2008) {A Simple Mathematical Model Helps To Explain the
-  Immunodominance of CD8 T Cells in Influenza A Virus Infections}.
-\newblock Journal of Virology 82: 7768--7772.
-\bibAnnoteFile{Handel2008}
+\bibitem[{Textor et~al.(2014)Textor, Henrickson, Mandl, von Andrian,
+  Westermann, de~Boer, and Beltman}]{Textor2014}
+\bibinfo{author}{J.~Textor}, \bibinfo{author}{S.~E. Henrickson},
+  \bibinfo{author}{J.~N. Mandl}, \bibinfo{author}{U.~H. von Andrian},
+  \bibinfo{author}{J.~Westermann}, \bibinfo{author}{R.~J. de~Boer},
+  \bibinfo{author}{J.~B. Beltman}, \bibinfo{title}{{Random Migration and Signal
+  Integration Promote Rapid and Robust T Cell Recruitment.}},
+  \bibinfo{journal}{PLoS computational biology}
+  \bibinfo{volume}{10}~(\bibinfo{number}{8}) (\bibinfo{year}{2014})
+  \bibinfo{pages}{e1003752}, ISSN \bibinfo{issn}{1553-7358},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/25102014}.
 
-\bibitem{Lee2009}
-Lee HY, Topham DJ, Park SY, Hollenbaugh J, Treanor J, et~al. (2009) {Simulation
-  and Prediction of the Adaptive Immune Response to Influenza A Virus
-  Infection}.
-\newblock Journal of Virology 83: 7151--7165.
-\bibAnnoteFile{Lee2009}
+\bibitem[{Gunn et~al.(1998)Gunn, Tangemann, Tam, Cyster, Rosen, and
+  Williams}]{Gunn1998}
+\bibinfo{author}{M.~D. Gunn}, \bibinfo{author}{K.~Tangemann},
+  \bibinfo{author}{C.~Tam}, \bibinfo{author}{J.~G. Cyster},
+  \bibinfo{author}{S.~D. Rosen}, \bibinfo{author}{L.~T. Williams},
+  \bibinfo{title}{{A chemokine expressed in lymphoid high endothelial venules
+  promotes the adhesion and chemotaxis of naive T lymphocytes.}},
+  \bibinfo{journal}{Proceedings of the National Academy of Sciences of the
+  United States of America} \bibinfo{volume}{95}~(\bibinfo{number}{1})
+  (\bibinfo{year}{1998}) \bibinfo{pages}{258--263},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=18193\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Murillo2013}
-Murillo LN, Murillo MS, Perelson AS (2013).
-\newblock {Towards multiscale modeling of influenza infection}.
-\bibAnnoteFile{Murillo2013}
+\bibitem[{Medoff et~al.(2005)Medoff, Thomas, Banerji, Wain, Zhang, Lilly,
+  Ginns, and Luster}]{Medoff2005}
+\bibinfo{author}{B.~D. Medoff}, \bibinfo{author}{S.~Y. Thomas},
+  \bibinfo{author}{A.~Banerji}, \bibinfo{author}{J.~C. Wain},
+  \bibinfo{author}{H.~Zhang}, \bibinfo{author}{C.~M. Lilly},
+  \bibinfo{author}{L.~C. Ginns}, \bibinfo{author}{A.~D. Luster},
+  \bibinfo{title}{{Pathogenic T-cell recruitment into the airway in human
+  disease.}}, \bibinfo{journal}{Annals Of The New York Academy Of Sciences}
+  \bibinfo{volume}{1062} (\bibinfo{year}{2005}) \bibinfo{pages}{220--241},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/16461804}.
 
-\bibitem{Beltman2007}
-Beltman JB, Mar\'{e}e AFM, {De Boer} RJ (2007) {Spatial modelling of brief and
-  long interactions between T cells and dendritic cells.}
-\newblock Immunology and Cell Biology 85: 306--314.
-\bibAnnoteFile{Beltman2007}
+\bibitem[{Okada et~al.(2005)Okada, Miller, Parker, Krummel, Neighbors, Hartley,
+  O'Garra, Cahalan, and Cyster}]{Okada2005}
+\bibinfo{author}{T.~Okada}, \bibinfo{author}{M.~J. Miller},
+  \bibinfo{author}{I.~Parker}, \bibinfo{author}{M.~F. Krummel},
+  \bibinfo{author}{M.~Neighbors}, \bibinfo{author}{S.~B. Hartley},
+  \bibinfo{author}{A.~O'Garra}, \bibinfo{author}{M.~D. Cahalan},
+  \bibinfo{author}{J.~G. Cyster}, \bibinfo{title}{{Antigen-Engaged B Cells
+  Undergo Chemotaxis toward the T Zone and Form Motile Conjugates with Helper T
+  Cells}}, \bibinfo{journal}{PLoS Biology}
+  \bibinfo{volume}{3}~(\bibinfo{number}{6}) (\bibinfo{year}{2005})
+  \bibinfo{pages}{e150},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=1088276\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Zheng2008}
-Zheng H, Jin B, Henrickson SE, Perelson AS, {Von Andrian} UH, et~al. (2008)
-  {How antigen quantity and quality determine T-cell decisions in lymphoid
-  tissue.}
-\newblock Molecular and Cellular Biology 28: 4040--4051.
-\bibAnnoteFile{Zheng2008}
+\bibitem[{Castellino et~al.(2006)Castellino, Huang, Altan-Bonnet, Stoll,
+  Scheinecker, and Germain}]{Castellino2006}
+\bibinfo{author}{F.~Castellino}, \bibinfo{author}{A.~Y. Huang},
+  \bibinfo{author}{G.~Altan-Bonnet}, \bibinfo{author}{S.~Stoll},
+  \bibinfo{author}{C.~Scheinecker}, \bibinfo{author}{R.~N. Germain},
+  \bibinfo{title}{{Chemokines enhance immunity by guiding naive CD8+ T cells to
+  sites of CD4+ T cell-dendritic cell interaction.}}, \bibinfo{journal}{Nature}
+  \bibinfo{volume}{440}~(\bibinfo{number}{7086}) (\bibinfo{year}{2006})
+  \bibinfo{pages}{890--5}, ISSN \bibinfo{issn}{14764687},
+  \doi{\bibinfo{doi}{10.1038/nature04651}},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/16612374}.
 
-\bibitem{Vroomans2012}
-Vroomans RMA, Mar\'{e}e AFM, {De Boer} RJ, Beltman JB (2012) {Chemotactic
-  migration of T cells towards dendritic cells promotes the detection of rare
-  antigens}.
-\newblock PLoS Comput Biol 8: e1002763.
-\bibAnnoteFile{Vroomans2012}
+\bibitem[{Bromley et~al.(2008)Bromley, Mempel, and Luster}]{Bromley2008}
+\bibinfo{author}{S.~K. Bromley}, \bibinfo{author}{T.~R. Mempel},
+  \bibinfo{author}{A.~D. Luster}, \bibinfo{title}{{Orchestrating the
+  orchestrators: chemokines in control of T cell traffic.}},
+  \bibinfo{journal}{Nature immunology}
+  \bibinfo{volume}{9}~(\bibinfo{number}{9}) (\bibinfo{year}{2008})
+  \bibinfo{pages}{970--80}, ISSN \bibinfo{issn}{1529-2916},
+  \doi{\bibinfo{doi}{10.1038/ni.f.213}},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/18711434}.
 
-\bibitem{Textor2014}
-Textor J, Henrickson SE, Mandl JN, von Andrian UH, Westermann J, et~al. (2014)
-  {Random Migration and Signal Integration Promote Rapid and Robust T Cell
-  Recruitment.}
-\newblock PLoS computational biology 10: e1003752.
-\bibAnnoteFile{Textor2014}
+\bibitem[{Zhao et~al.(2000)Zhao, Stoler, Liu, Wei, Soguero, Hahn, and
+  Enelow}]{Zhao2000}
+\bibinfo{author}{M.~Q. Zhao}, \bibinfo{author}{M.~H. Stoler},
+  \bibinfo{author}{A.~N. Liu}, \bibinfo{author}{B.~Wei},
+  \bibinfo{author}{C.~Soguero}, \bibinfo{author}{Y.~S. Hahn},
+  \bibinfo{author}{R.~I. Enelow}, \bibinfo{title}{{Alveolar epithelial cell
+  chemokine expression triggered by antigen-specific cytolytic CD8(+) T cell
+  recognition.}}, \bibinfo{journal}{Journal of Clinical Investigation}
+  \bibinfo{volume}{106}~(\bibinfo{number}{6}) (\bibinfo{year}{2000})
+  \bibinfo{pages}{R49--R58},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=381394\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Mitchell2011}
-Mitchell H, Levin D, Forrest S, Beauchemin Caa, Tipper J, et~al. (2011) {Higher
-  level of replication efficiency of 2009 (H1N1) pandemic influenza virus than
-  those of seasonal and avian strains: kinetics from epithelial cell culture
-  and computational modeling.}
-\newblock Journal of virology 85: 1125--35.
-\bibAnnoteFile{Mitchell2011}
+\bibitem[{Chan et~al.(2005)Chan, Cheung, Chui, Tsao, Nicholls, Chan, Chan,
+  Long, Poon, Guan, and Peiris}]{Chan2005}
+\bibinfo{author}{M.~C.~W. Chan}, \bibinfo{author}{C.~Y. Cheung},
+  \bibinfo{author}{W.~H. Chui}, \bibinfo{author}{S.~W. Tsao},
+  \bibinfo{author}{J.~M. Nicholls}, \bibinfo{author}{Y.~O. Chan},
+  \bibinfo{author}{R.~W.~Y. Chan}, \bibinfo{author}{H.~T. Long},
+  \bibinfo{author}{L.~L.~M. Poon}, \bibinfo{author}{Y.~Guan},
+  \bibinfo{author}{J.~S.~M. Peiris}, \bibinfo{title}{{Proinflammatory cytokine
+  responses induced by influenza A (H5N1) viruses in primary human alveolar and
+  bronchial epithelial cells}}, \bibinfo{journal}{Respiratory Research}
+  \bibinfo{volume}{6}~(\bibinfo{number}{1}) (\bibinfo{year}{2005})
+  \bibinfo{pages}{135},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/16283933}.
 
-\bibitem{Warrender2006}
-Warrender C, Forrest S, Koster F (2006) {Modeling intercellular interactions in
-  early Mycobacterium infection.}
-\newblock Bulletin of Mathematical Biology 68: 2233--2261.
-\bibAnnoteFile{Warrender2006}
+\bibitem[{Cerwenka et~al.(1999)Cerwenka, Morgan, Harmsen, and
+  Dutton}]{Cerwenka1999}
+\bibinfo{author}{A.~Cerwenka}, \bibinfo{author}{T.~M. Morgan},
+  \bibinfo{author}{A.~G. Harmsen}, \bibinfo{author}{R.~W. Dutton},
+  \bibinfo{title}{{Migration Kinetics and Final Destination of  Type 1 and
+  Type 2 CD8 Effector Cells Predict Protection against Pulmonary Virus
+  Infection}}, \bibinfo{journal}{The Journal of Experimental Medicine}
+  \bibinfo{volume}{189}~(\bibinfo{number}{2}) (\bibinfo{year}{1999})
+  \bibinfo{pages}{423--434},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2192982\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Miller2003}
-Miller MJ, Wei SH, Cahalan MD, Parker I (2003) {Autonomous T cell trafficking
-  examined in vivo with intravital two-photon microscopy}.
-\newblock Proceedings of the National Academy of Sciences of the United States
-  of America 100: 2604--2609.
-\bibAnnoteFile{Miller2003}
+\bibitem[{Kim et~al.(2011)Kim, Sun, and Braciale}]{Kim2011}
+\bibinfo{author}{T.~S. Kim}, \bibinfo{author}{J.~Sun}, \bibinfo{author}{T.~J.
+  Braciale}, \bibinfo{title}{{T cell responses during influenza infection:
+  getting and keeping control.}}, \bibinfo{journal}{Trends in Immunology}
+  \bibinfo{volume}{32}~(\bibinfo{number}{5}) (\bibinfo{year}{2011})
+  \bibinfo{pages}{225--231},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/21435950}.
 
-\bibitem{Allan2006}
-Allan RS, Waithman J, Bedoui S, Jones CM, Villadangos JA, et~al. (2006)
-  {Migratory dendritic cells transfer antigen to a lymph node-resident
-  dendritic cell population for efficient CTL priming.}
-\newblock Immunity 25: 153--162.
-\bibAnnoteFile{Allan2006}
+\bibitem[{Mitchell et~al.(2011)Mitchell, Levin, Forrest, Beauchemin, Tipper,
+  Knight, Donart, Layton, Pyles, Gao, Harrod, Perelson, and
+  Koster}]{Mitchell2011}
+\bibinfo{author}{H.~Mitchell}, \bibinfo{author}{D.~Levin},
+  \bibinfo{author}{S.~Forrest}, \bibinfo{author}{C.~a.~a. Beauchemin},
+  \bibinfo{author}{J.~Tipper}, \bibinfo{author}{J.~Knight},
+  \bibinfo{author}{N.~Donart}, \bibinfo{author}{R.~C. Layton},
+  \bibinfo{author}{J.~Pyles}, \bibinfo{author}{P.~Gao}, \bibinfo{author}{K.~S.
+  Harrod}, \bibinfo{author}{A.~S. Perelson}, \bibinfo{author}{F.~Koster},
+  \bibinfo{title}{{Higher level of replication efficiency of 2009 (H1N1)
+  pandemic influenza virus than those of seasonal and avian strains: kinetics
+  from epithelial cell culture and computational modeling.}},
+  \bibinfo{journal}{Journal of virology}
+  \bibinfo{volume}{85}~(\bibinfo{number}{2}) (\bibinfo{year}{2011})
+  \bibinfo{pages}{1125--35}, ISSN \bibinfo{issn}{1098-5514},
+  \doi{\bibinfo{doi}{10.1128/JVI.01722-10}},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3019989\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Ingulli2009}
-Ingulli E, Funatake C, Jacovetty EL, Zanetti M (2009) {Cutting edge: antigen
-  presentation to CD8 T cells after influenza A virus infection.}
-\newblock The Journal of Immunology 182: 29--33.
-\bibAnnoteFile{Ingulli2009}
+\bibitem[{Hoji and Rinaldo(2005)}]{Hoji2005}
+\bibinfo{author}{A.~Hoji}, \bibinfo{author}{C.~R. Rinaldo},
+  \bibinfo{title}{{Human CD8+ T cells specific for influenza A virus M1 display
+  broad expression of maturation-associated phenotypic markers and chemokine
+  receptors}}, \bibinfo{journal}{Immunology}
+  \bibinfo{volume}{115}~(\bibinfo{number}{2}) (\bibinfo{year}{2005})
+  \bibinfo{pages}{239--245},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\&db=PubMed\&dopt=Citation\&list\_uids=15885130}.
 
-\bibitem{bachem1996simulated}
-Bachem A, Hochst\"{a}ttler W, Malich M (1996) {The simulated trading heuristic
-  for solving vehicle routing problems}.
-\newblock Discrete Applied Mathematics 65: 47--72.
-\bibAnnoteFile{bachem1996simulated}
+\bibitem[{Groom and Luster(2011{\natexlab{a}})}]{Groom2011a}
+\bibinfo{author}{J.~R. Groom}, \bibinfo{author}{A.~D. Luster},
+  \bibinfo{title}{{CXCR3 ligands: redundant, collaborative and antagonistic
+  functions.}}, \bibinfo{journal}{Immunology and Cell Biology}
+  \bibinfo{volume}{89}~(\bibinfo{number}{2})
+  (\bibinfo{year}{2011}{\natexlab{a}}) \bibinfo{pages}{207--215},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/21221121}.
 
-\bibitem{Beauchemin2005}
-Beauchemin C, Samuel J, Tuszynski J (2005) {A simple cellular automaton model
-  for influenza A viral infections}.
-\newblock Journal of Theoretical Biology 232: 223--234.
-\bibAnnoteFile{Beauchemin2005}
+\bibitem[{Martin-Fontecha et~al.(2003)Martin-Fontecha, Sebastiani, H\"{o}pken,
+  Uguccioni, Lipp, Lanzavecchia, and Sallusto}]{MartIn-Fontecha2003}
+\bibinfo{author}{A.~Martin-Fontecha}, \bibinfo{author}{S.~Sebastiani},
+  \bibinfo{author}{U.~E. H\"{o}pken}, \bibinfo{author}{M.~Uguccioni},
+  \bibinfo{author}{M.~Lipp}, \bibinfo{author}{A.~Lanzavecchia},
+  \bibinfo{author}{F.~Sallusto}, \bibinfo{title}{{Regulation of dendritic cell
+  migration to the draining lymph node: impact on T lymphocyte traffic and
+  priming.}}, \bibinfo{journal}{The Journal of experimental medicine}
+  \bibinfo{volume}{198}~(\bibinfo{number}{4}) (\bibinfo{year}{2003})
+  \bibinfo{pages}{615--621}, ISSN \bibinfo{issn}{0022-1007}.
 
-\bibitem{MartIn-Fontecha2003}
-MartIn-Fontecha A, Sebastiani S, H\"{o}pken UE, Uguccioni M, Lipp M, et~al.
-  (2003) {Regulation of dendritic cell migration to the draining lymph node:
-  impact on T lymphocyte traffic and priming.}
-\newblock The Journal of experimental medicine 198: 615--621.
-\bibAnnoteFile{MartIn-Fontecha2003}
+\bibitem[{Warrender et~al.(2006)Warrender, Forrest, and Koster}]{Warrender2006}
+\bibinfo{author}{C.~Warrender}, \bibinfo{author}{S.~Forrest},
+  \bibinfo{author}{F.~Koster}, \bibinfo{title}{{Modeling intercellular
+  interactions in early Mycobacterium infection.}}, \bibinfo{journal}{Bulletin
+  of Mathematical Biology} \bibinfo{volume}{68}~(\bibinfo{number}{8})
+  (\bibinfo{year}{2006}) \bibinfo{pages}{2233--2261},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/17086496}.
 
-\bibitem{abbas2011cellular}
-Abbas AK, Lichtman AHH, Pillai S (2011) {Cellular and Molecular Immunology}.
-\newblock Saunders.
-\bibAnnoteFile{abbas2011cellular}
+\bibitem[{Miller et~al.(2003)Miller, Wei, Cahalan, and Parker}]{Miller2003}
+\bibinfo{author}{M.~J. Miller}, \bibinfo{author}{S.~H. Wei},
+  \bibinfo{author}{M.~D. Cahalan}, \bibinfo{author}{I.~Parker},
+  \bibinfo{title}{{Autonomous T cell trafficking examined in vivo with
+  intravital two-photon microscopy}}, \bibinfo{journal}{Proceedings of the
+  National Academy of Sciences of the United States of America}
+  \bibinfo{volume}{100}~(\bibinfo{number}{5}) (\bibinfo{year}{2003})
+  \bibinfo{pages}{2604--2609},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/18431356}.
 
-\bibitem{Diamond2003}
-Diamond MS, Sitati EM, Friend LD, Higgs S, Shrestha B, et~al. (2003) {A
+\bibitem[{Allan et~al.(2006)Allan, Waithman, Bedoui, Jones, Villadangos, Zhan,
+  Lew, Shortman, Heath, and Carbone}]{Allan2006}
+\bibinfo{author}{R.~S. Allan}, \bibinfo{author}{J.~Waithman},
+  \bibinfo{author}{S.~Bedoui}, \bibinfo{author}{C.~M. Jones},
+  \bibinfo{author}{J.~A. Villadangos}, \bibinfo{author}{Y.~Zhan},
+  \bibinfo{author}{A.~M. Lew}, \bibinfo{author}{K.~Shortman},
+  \bibinfo{author}{W.~R. Heath}, \bibinfo{author}{F.~R. Carbone},
+  \bibinfo{title}{{Migratory dendritic cells transfer antigen to a lymph
+  node-resident dendritic cell population for efficient CTL priming.}},
+  \bibinfo{journal}{Immunity} \bibinfo{volume}{25}~(\bibinfo{number}{1})
+  (\bibinfo{year}{2006}) \bibinfo{pages}{153--162},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/16860764}.
+
+\bibitem[{Ingulli et~al.(2009)Ingulli, Funatake, Jacovetty, and
+  Zanetti}]{Ingulli2009}
+\bibinfo{author}{E.~Ingulli}, \bibinfo{author}{C.~Funatake},
+  \bibinfo{author}{E.~L. Jacovetty}, \bibinfo{author}{M.~Zanetti},
+  \bibinfo{title}{{Cutting edge: antigen presentation to CD8 T cells after
+  influenza A virus infection.}}, \bibinfo{journal}{The Journal of Immunology}
+  \bibinfo{volume}{182}~(\bibinfo{number}{1}) (\bibinfo{year}{2009})
+  \bibinfo{pages}{29--33},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/19109130}.
+
+\bibitem[{Bachem et~al.(1996)Bachem, Hochst\"{a}ttler, and
+  Malich}]{bachem1996simulated}
+\bibinfo{author}{A.~Bachem}, \bibinfo{author}{W.~Hochst\"{a}ttler},
+  \bibinfo{author}{M.~Malich}, \bibinfo{title}{{The simulated trading heuristic
+  for solving vehicle routing problems}}, \bibinfo{journal}{Discrete Applied
+  Mathematics} \bibinfo{volume}{65}~(\bibinfo{number}{1})
+  (\bibinfo{year}{1996}) \bibinfo{pages}{47--72}.
+
+\bibitem[{Abbas et~al.(2011)Abbas, Lichtman, and Pillai}]{abbas2011cellular}
+\bibinfo{author}{A.~K. Abbas}, \bibinfo{author}{A.~H.~H. Lichtman},
+  \bibinfo{author}{S.~Pillai}, \bibinfo{title}{{Cellular and Molecular
+  Immunology}}, \bibinfo{publisher}{Saunders}, \bibinfo{year}{2011}.
+
+\bibitem[{Diamond et~al.(2003)Diamond, Sitati, Friend, Higgs, Shrestha, and
+  Engle}]{Diamond2003}
+\bibinfo{author}{M.~S. Diamond}, \bibinfo{author}{E.~M. Sitati},
+  \bibinfo{author}{L.~D. Friend}, \bibinfo{author}{S.~Higgs},
+  \bibinfo{author}{B.~Shrestha}, \bibinfo{author}{M.~Engle}, \bibinfo{title}{{A
   critical role for induced IgM in the protection against West Nile virus
-  infection.}
-\newblock The Journal of Experimental Medicine 198: 1853--1862.
-\bibAnnoteFile{Diamond2003}
+  infection.}}, \bibinfo{journal}{The Journal of Experimental Medicine}
+  \bibinfo{volume}{198}~(\bibinfo{number}{12}) (\bibinfo{year}{2003})
+  \bibinfo{pages}{1853--1862},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2194144\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Christensen2004}
-Christensen JE, Nansen A, Moos T, Lu B, Gerard C, et~al. (2004) {Efficient
-  T-cell surveillance of the CNS requires expression of the CXC chemokine
-  receptor 3.}
-\newblock Journal of Neuroscience 24: 4849--4858.
-\bibAnnoteFile{Christensen2004}
+\bibitem[{Marino et~al.(2008)Marino, Hogue, Ray, and Kirschner}]{Marino2008}
+\bibinfo{author}{S.~Marino}, \bibinfo{author}{I.~B. Hogue},
+  \bibinfo{author}{C.~J. Ray}, \bibinfo{author}{D.~E. Kirschner},
+  \bibinfo{title}{{A methodology for performing global uncertainty and
+  sensitivity analysis in systems biology}},
+  \doi{\bibinfo{doi}{10.1016/j.jtbi.2008.04.011}}, \bibinfo{year}{2008}.
 
-\bibitem{Christensen2006}
-Christensen JE, {De Lemos} C, Moos T, Christensen JP, Thomsen AR (2006) {CXCL10
-  is the key ligand for CXCR3 on CD8+ effector T cells involved in immune
-  surveillance of the lymphocytic choriomeningitis virus-infected central
-  nervous system.}
-\newblock The Journal of Immunology 176: 4235--4243.
-\bibAnnoteFile{Christensen2006}
+\bibitem[{Christensen et~al.(2004)Christensen, Nansen, Moos, Lu, Gerard,
+  Christensen, and Thomsen}]{Christensen2004}
+\bibinfo{author}{J.~E. Christensen}, \bibinfo{author}{A.~Nansen},
+  \bibinfo{author}{T.~Moos}, \bibinfo{author}{B.~Lu},
+  \bibinfo{author}{C.~Gerard}, \bibinfo{author}{J.~P. Christensen},
+  \bibinfo{author}{A.~R. Thomsen}, \bibinfo{title}{{Efficient T-cell
+  surveillance of the CNS requires expression of the CXC chemokine receptor
+  3.}}, \bibinfo{journal}{Journal of Neuroscience}
+  \bibinfo{volume}{24}~(\bibinfo{number}{20}) (\bibinfo{year}{2004})
+  \bibinfo{pages}{4849--4858},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/15152045}.
 
-\bibitem{Dawson2000}
-Dawson TC, Beck Ma, Kuziel Wa, Henderson F, Maeda N (2000) {Contrasting effects
-  of CCR5 and CCR2 deficiency in the pulmonary inflammatory response to
-  influenza A virus.}
-\newblock The American journal of pathology 156: 1951--9.
-\bibAnnote{Dawson2000}{--> description of the general effect on lung
-  "inflammation" of CCR5 dependent T cell response during influenza infection -
-  CCR5 KO triggers higher mortality rate in influenza infected mice but does
-  not significantly decrease the clearance of the virus (}
+\bibitem[{Christensen et~al.(2006)Christensen, {De Lemos}, Moos, Christensen,
+  and Thomsen}]{Christensen2006}
+\bibinfo{author}{J.~E. Christensen}, \bibinfo{author}{C.~{De Lemos}},
+  \bibinfo{author}{T.~Moos}, \bibinfo{author}{J.~P. Christensen},
+  \bibinfo{author}{A.~R. Thomsen}, \bibinfo{title}{{CXCL10 is the key ligand
+  for CXCR3 on CD8+ effector T cells involved in immune surveillance of the
+  lymphocytic choriomeningitis virus-infected central nervous system.}},
+  \bibinfo{journal}{The Journal of Immunology}
+  \bibinfo{volume}{176}~(\bibinfo{number}{7}) (\bibinfo{year}{2006})
+  \bibinfo{pages}{4235--4243},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\&db=PubMed\&dopt=Citation\&list\_uids=16547260}.
 
-\bibitem{DeLemos2005}
-{De Lemos} C, Christensen JE, Nansen A, Moos T, Lu B, et~al. (2005) {Opposing
+\bibitem[{Dawson et~al.(2000)Dawson, Beck, Kuziel, Henderson, and
+  Maeda}]{Dawson2000}
+\bibinfo{author}{T.~C. Dawson}, \bibinfo{author}{M.~a. Beck},
+  \bibinfo{author}{W.~a. Kuziel}, \bibinfo{author}{F.~Henderson},
+  \bibinfo{author}{N.~Maeda}, \bibinfo{title}{{Contrasting effects of CCR5 and
+  CCR2 deficiency in the pulmonary inflammatory response to influenza A
+  virus.}}, \bibinfo{journal}{The American journal of pathology}
+  \bibinfo{volume}{156}~(\bibinfo{number}{6}) (\bibinfo{year}{2000})
+  \bibinfo{pages}{1951--9}, ISSN \bibinfo{issn}{0002-9440},
+  \doi{\bibinfo{doi}{10.1016/S0002-9440(10)65068-7}},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=1850091\&tool=pmcentrez\&rendertype=abstract}.
+
+\bibitem[{{De Lemos} et~al.(2005){De Lemos}, Christensen, Nansen, Moos, Lu,
+  Gerard, Christensen, and Thomsen}]{DeLemos2005}
+\bibinfo{author}{C.~{De Lemos}}, \bibinfo{author}{J.~E. Christensen},
+  \bibinfo{author}{A.~Nansen}, \bibinfo{author}{T.~Moos},
+  \bibinfo{author}{B.~Lu}, \bibinfo{author}{C.~Gerard}, \bibinfo{author}{J.~P.
+  Christensen}, \bibinfo{author}{A.~R. Thomsen}, \bibinfo{title}{{Opposing
   effects of CXCR3 and CCR5 deficiency on CD8+ T cell-mediated inflammation in
-  the central nervous system of virus-infected mice.}
-\newblock The Journal of Immunology 175: 1767--1775.
-\bibAnnoteFile{DeLemos2005}
+  the central nervous system of virus-infected mice.}}, \bibinfo{journal}{The
+  Journal of Immunology} \bibinfo{volume}{175}~(\bibinfo{number}{3})
+  (\bibinfo{year}{2005}) \bibinfo{pages}{1767--1775},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\&db=PubMed\&dopt=Citation\&list\_uids=16034118}.
 
-\bibitem{Fadel2008}
-Fadel S, Bromley S, Medoff B, Luster A (2008) {CXCR3-deficiency protects
-  influenza-infected CCR5-deficient mice from mortality}.
-\newblock European journal of immunology 38: 3376--3387.
-\bibAnnoteFile{Fadel2008}
+\bibitem[{Fadel et~al.(2008)Fadel, Bromley, Medoff, and Luster}]{Fadel2008}
+\bibinfo{author}{S.~Fadel}, \bibinfo{author}{S.~Bromley},
+  \bibinfo{author}{B.~Medoff}, \bibinfo{author}{A.~Luster},
+  \bibinfo{title}{{CXCR3-deficiency protects influenza-infected CCR5-deficient
+  mice from mortality}}, \bibinfo{journal}{European journal of immunology}
+  \bibinfo{volume}{38}~(\bibinfo{number}{12}) (\bibinfo{year}{2008})
+  \bibinfo{pages}{3376--3387},
+  \doi{\bibinfo{doi}{10.1002/eji.200838628.CXCR3-deficiency}},
+  \urlprefix\url{http://onlinelibrary.wiley.com/doi/10.1002/eji.200838628/full}.
 
-\bibitem{Gadhamsetty2014}
-Gadhamsetty S, Mar\'{e}e AFM, Beltman JB, {De Boer} RJ (2014) {A general
-  functional response of cytotoxic T lymphocyte-mediated killing of target
-  cells}.
-\newblock Biophysical Journal 106: 1780--1791.
-\bibAnnoteFile{Gadhamsetty2014}
+\bibitem[{Gadhamsetty et~al.(2014)Gadhamsetty, Mar\'{e}e, Beltman, and {De
+  Boer}}]{Gadhamsetty2014}
+\bibinfo{author}{S.~Gadhamsetty}, \bibinfo{author}{A.~F.~M. Mar\'{e}e},
+  \bibinfo{author}{J.~B. Beltman}, \bibinfo{author}{R.~J. {De Boer}},
+  \bibinfo{title}{{A general functional response of cytotoxic T
+  lymphocyte-mediated killing of target cells}}, \bibinfo{journal}{Biophysical
+  Journal} \bibinfo{volume}{106}~(\bibinfo{number}{8}) (\bibinfo{year}{2014})
+  \bibinfo{pages}{1780--1791}.
 
-\bibitem{Groom2011}
-Groom JR, Luster AD (2011) {CXCR3 in T cell function.}
-\newblock Experimental Cell Research 317: 620--631.
-\bibAnnoteFile{Groom2011}
+\bibitem[{Groom and Luster(2011{\natexlab{b}})}]{Groom2011}
+\bibinfo{author}{J.~R. Groom}, \bibinfo{author}{A.~D. Luster},
+  \bibinfo{title}{{CXCR3 in T cell function.}}, \bibinfo{journal}{Experimental
+  Cell Research} \bibinfo{volume}{317}~(\bibinfo{number}{5})
+  (\bibinfo{year}{2011}{\natexlab{b}}) \bibinfo{pages}{620--631},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3065205\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Hsieh2006}
-Hsieh MF, Lai SL, Chen JP, Sung JM, Lin YL, et~al. (2006) {Both CXCR3 and
+\bibitem[{Hsieh et~al.(2006)Hsieh, Lai, Chen, Sung, Lin, Wu-Hsieh, Gerard,
+  Luster, and Liao}]{Hsieh2006}
+\bibinfo{author}{M.-F. Hsieh}, \bibinfo{author}{S.-L. Lai},
+  \bibinfo{author}{J.-P. Chen}, \bibinfo{author}{J.-M. Sung},
+  \bibinfo{author}{Y.-L. Lin}, \bibinfo{author}{B.~A. Wu-Hsieh},
+  \bibinfo{author}{C.~Gerard}, \bibinfo{author}{A.~Luster},
+  \bibinfo{author}{F.~Liao}, \bibinfo{title}{{Both CXCR3 and
   CXCL10/IFN-inducible protein 10 are required for resistance to primary
-  infection by dengue virus.}
-\newblock The Journal of Immunology 177: 1855--1863.
-\bibAnnoteFile{Hsieh2006}
+  infection by dengue virus.}}, \bibinfo{journal}{The Journal of Immunology}
+  \bibinfo{volume}{177}~(\bibinfo{number}{3}) (\bibinfo{year}{2006})
+  \bibinfo{pages}{1855--1863},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/16849497}.
 
-\bibitem{Klein2005}
-Klein RS, Lin E, Zhang B, Luster AD, Tollett J, et~al. (2005) {Neuronal CXCL10
-  directs CD8+ T-cell recruitment and control of West Nile virus encephalitis.}
-\newblock Journal of Virology 79: 11457--11466.
-\bibAnnoteFile{Klein2005}
+\bibitem[{Klein et~al.(2005)Klein, Lin, Zhang, Luster, Tollett, Samuel, Engle,
+  and Diamond}]{Klein2005}
+\bibinfo{author}{R.~S. Klein}, \bibinfo{author}{E.~Lin},
+  \bibinfo{author}{B.~Zhang}, \bibinfo{author}{A.~D. Luster},
+  \bibinfo{author}{J.~Tollett}, \bibinfo{author}{M.~A. Samuel},
+  \bibinfo{author}{M.~Engle}, \bibinfo{author}{M.~S. Diamond},
+  \bibinfo{title}{{Neuronal CXCL10 directs CD8+ T-cell recruitment and control
+  of West Nile virus encephalitis.}}, \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{79}~(\bibinfo{number}{17}) (\bibinfo{year}{2005})
+  \bibinfo{pages}{11457--11466},
+  \urlprefix\url{http://jvi.asm.org/cgi/content/abstract/79/17/11457}.
 
-\bibitem{Kohlmeier2009}
-Kohlmeier JE, Cookenham T, Miller SC, Roberts AD, Christensen JP, et~al. (2009)
-  {CXCR3 directs antigen-specific effector CD4+ T cell migration to the lung
-  during parainfluenza virus infection.}
-\newblock The Journal of Immunology 183: 4378--4384.
-\bibAnnoteFile{Kohlmeier2009}
+\bibitem[{Kohlmeier et~al.(2009)Kohlmeier, Cookenham, Miller, Roberts,
+  Christensen, Thomsen, and Woodland}]{Kohlmeier2009}
+\bibinfo{author}{J.~E. Kohlmeier}, \bibinfo{author}{T.~Cookenham},
+  \bibinfo{author}{S.~C. Miller}, \bibinfo{author}{A.~D. Roberts},
+  \bibinfo{author}{J.~P. Christensen}, \bibinfo{author}{A.~R. Thomsen},
+  \bibinfo{author}{D.~L. Woodland}, \bibinfo{title}{{CXCR3 directs
+  antigen-specific effector CD4+ T cell migration to the lung during
+  parainfluenza virus infection.}}, \bibinfo{journal}{The Journal of
+  Immunology} \bibinfo{volume}{183}~(\bibinfo{number}{7})
+  (\bibinfo{year}{2009}) \bibinfo{pages}{4378--4384},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2757292\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Kohlmeier2011}
-Kohlmeier JE, Reiley WW, Perona-Wright G, Freeman ML, Yager EJ, et~al. (2011)
-  {Inflammatory chemokine receptors regulate CD8(+) T cell contraction and
-  memory generation following infection.}
-\newblock The Journal of Experimental Medicine 208: 1621--1634.
-\bibAnnoteFile{Kohlmeier2011}
+\bibitem[{Kohlmeier et~al.(2011)Kohlmeier, Reiley, Perona-Wright, Freeman,
+  Yager, Connor, Brincks, Cookenham, Roberts, Burkum, Sell, Winslow, Blackman,
+  Mohrs, and Woodland}]{Kohlmeier2011}
+\bibinfo{author}{J.~E. Kohlmeier}, \bibinfo{author}{W.~W. Reiley},
+  \bibinfo{author}{G.~Perona-Wright}, \bibinfo{author}{M.~L. Freeman},
+  \bibinfo{author}{E.~J. Yager}, \bibinfo{author}{L.~M. Connor},
+  \bibinfo{author}{E.~L. Brincks}, \bibinfo{author}{T.~Cookenham},
+  \bibinfo{author}{A.~D. Roberts}, \bibinfo{author}{C.~E. Burkum},
+  \bibinfo{author}{S.~Sell}, \bibinfo{author}{G.~M. Winslow},
+  \bibinfo{author}{M.~A. Blackman}, \bibinfo{author}{M.~Mohrs},
+  \bibinfo{author}{D.~L. Woodland}, \bibinfo{title}{{Inflammatory chemokine
+  receptors regulate CD8(+) T cell contraction and memory generation following
+  infection.}}, \bibinfo{journal}{The Journal of Experimental Medicine}
+  \bibinfo{volume}{208}~(\bibinfo{number}{8}) (\bibinfo{year}{2011})
+  \bibinfo{pages}{1621--1634},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/21788409}.
 
-\bibitem{Thapa2008}
-Thapa M, Welner RS, Pelayo R, Carr DJJ (2008) {CXCL9 and CXCL10 expression are
-  critical for control of genital herpes simplex virus type 2 infection through
-  mobilization of HSV-specific CTL and NK cells to the nervous system.}
-\newblock The Journal of Immunology 180: 1098--1106.
-\bibAnnoteFile{Thapa2008}
+\bibitem[{Thapa et~al.(2008)Thapa, Welner, Pelayo, and Carr}]{Thapa2008}
+\bibinfo{author}{M.~Thapa}, \bibinfo{author}{R.~S. Welner},
+  \bibinfo{author}{R.~Pelayo}, \bibinfo{author}{D.~J.~J. Carr},
+  \bibinfo{title}{{CXCL9 and CXCL10 expression are critical for control of
+  genital herpes simplex virus type 2 infection through mobilization of
+  HSV-specific CTL and NK cells to the nervous system.}}, \bibinfo{journal}{The
+  Journal of Immunology} \bibinfo{volume}{180}~(\bibinfo{number}{2})
+  (\bibinfo{year}{2008}) \bibinfo{pages}{1098--1106},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2185792\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Wareing2004}
-Wareing MD, Lyon AB, Lu B, Gerard C, Sarawar SR (2004) {Chemokine expression
-  during the development and resolution of a pulmonary leukocyte response to
-  influenza A virus infection in mice.}
-\newblock Journal of Leukocyte Biology 76: 886--895.
-\bibAnnoteFile{Wareing2004}
+\bibitem[{Wareing et~al.(2004)Wareing, Lyon, Lu, Gerard, and
+  Sarawar}]{Wareing2004}
+\bibinfo{author}{M.~D. Wareing}, \bibinfo{author}{A.~B. Lyon},
+  \bibinfo{author}{B.~Lu}, \bibinfo{author}{C.~Gerard}, \bibinfo{author}{S.~R.
+  Sarawar}, \bibinfo{title}{{Chemokine expression during the development and
+  resolution of a pulmonary leukocyte response to influenza A virus infection
+  in mice.}}, \bibinfo{journal}{Journal of Leukocyte Biology}
+  \bibinfo{volume}{76}~(\bibinfo{number}{4}) (\bibinfo{year}{2004})
+  \bibinfo{pages}{886--895},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/15240757}.
 
-\bibitem{Wuest2008}
-Wuest TR, Carr DJJ (2008) {Dysregulation of CXCR3 signaling due to CXCL10
-  deficiency impairs the antiviral response to herpes simplex virus 1
-  infection.}
-\newblock The Journal of Immunology 181: 7985--7993.
-\bibAnnoteFile{Wuest2008}
+\bibitem[{Wuest and Carr(2008)}]{Wuest2008}
+\bibinfo{author}{T.~R. Wuest}, \bibinfo{author}{D.~J.~J. Carr},
+  \bibinfo{title}{{Dysregulation of CXCR3 signaling due to CXCL10 deficiency
+  impairs the antiviral response to herpes simplex virus 1 infection.}},
+  \bibinfo{journal}{The Journal of Immunology}
+  \bibinfo{volume}{181}~(\bibinfo{number}{11}) (\bibinfo{year}{2008})
+  \bibinfo{pages}{7985--7993},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2596651\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Pawelek2012}
-Pawelek KA, Huynh GT, Quinlivan M, Cullinane A, Rong L, et~al. (2012) {Modeling
-  within-host dynamics of influenza virus infection including immune
-  responses}.
-\newblock PLoS Computational Biology 8.
-\bibAnnoteFile{Pawelek2012}
+\bibitem[{Pawelek et~al.(2012)Pawelek, Huynh, Quinlivan, Cullinane, Rong, and
+  Perelson}]{Pawelek2012}
+\bibinfo{author}{K.~A. Pawelek}, \bibinfo{author}{G.~T. Huynh},
+  \bibinfo{author}{M.~Quinlivan}, \bibinfo{author}{A.~Cullinane},
+  \bibinfo{author}{L.~Rong}, \bibinfo{author}{A.~S. Perelson},
+  \bibinfo{title}{{Modeling within-host dynamics of influenza virus infection
+  including immune responses}}, \bibinfo{journal}{PLoS Computational Biology}
+  \bibinfo{volume}{8}~(\bibinfo{number}{6}).
 
-\bibitem{DeJong2006}
-{De Jong} MD, Simmons CP, Thanh TT, Hien VM, Smith GJD, et~al. (2006) {Fatal
-  outcome of human influenza A (H5N1) is associated with high viral load and
-  hypercytokinemia.}
-\newblock Nature Medicine 12: 1203--1207.
-\bibAnnoteFile{DeJong2006}
+\bibitem[{{De Jong} et~al.(2006){De Jong}, Simmons, Thanh, Hien, Smith, Chau,
+  Hoang, Chau, Khanh, Dong, Qui, Cam, Ha, Guan, Peiris, Chinh, Hien, and
+  Farrar}]{DeJong2006}
+\bibinfo{author}{M.~D. {De Jong}}, \bibinfo{author}{C.~P. Simmons},
+  \bibinfo{author}{T.~T. Thanh}, \bibinfo{author}{V.~M. Hien},
+  \bibinfo{author}{G.~J.~D. Smith}, \bibinfo{author}{T.~N.~B. Chau},
+  \bibinfo{author}{D.~M. Hoang}, \bibinfo{author}{N.~V.~V. Chau},
+  \bibinfo{author}{T.~H. Khanh}, \bibinfo{author}{V.~C. Dong},
+  \bibinfo{author}{P.~T. Qui}, \bibinfo{author}{B.~V. Cam},
+  \bibinfo{author}{D.~Q. Ha}, \bibinfo{author}{Y.~Guan},
+  \bibinfo{author}{J.~S.~M. Peiris}, \bibinfo{author}{N.~T. Chinh},
+  \bibinfo{author}{T.~T. Hien}, \bibinfo{author}{J.~Farrar},
+  \bibinfo{title}{{Fatal outcome of human influenza A (H5N1) is associated with
+  high viral load and hypercytokinemia.}}, \bibinfo{journal}{Nature Medicine}
+  \bibinfo{volume}{12}~(\bibinfo{number}{10}) (\bibinfo{year}{2006})
+  \bibinfo{pages}{1203--1207},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/16964257}.
 
-\bibitem{Chan2010}
-Chan RWY, Yuen KM, Yu WCL, Ho CCC, Nicholls JM, et~al. (2010) {Influenza H5N1
-  and H1N1 Virus Replication and Innate Immune Responses in Bronchial
-  Epithelial Cells Are Influenced by the State of Differentiation}.
-\newblock PLoS ONE 5: 9.
-\bibAnnoteFile{Chan2010}
+\bibitem[{Chan et~al.(2010)Chan, Yuen, Yu, Ho, Nicholls, Peiris, and
+  Chan}]{Chan2010}
+\bibinfo{author}{R.~W.~Y. Chan}, \bibinfo{author}{K.~M. Yuen},
+  \bibinfo{author}{W.~C.~L. Yu}, \bibinfo{author}{C.~C.~C. Ho},
+  \bibinfo{author}{J.~M. Nicholls}, \bibinfo{author}{J.~S.~M. Peiris},
+  \bibinfo{author}{M.~C.~W. Chan}, \bibinfo{title}{{Influenza H5N1 and H1N1
+  Virus Replication and Innate Immune Responses in Bronchial Epithelial Cells
+  Are Influenced by the State of Differentiation}}, \bibinfo{journal}{PLoS ONE}
+  \bibinfo{volume}{5}~(\bibinfo{number}{1}) (\bibinfo{year}{2010})
+  \bibinfo{pages}{9},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2806912\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Zeng2011}
-Zeng H, Pappas C, Katz JM, Tumpey TM (2011) {The 2009 pandemic H1N1 and
-  triple-reassortant swine H1N1 influenza viruses replicate efficiently but
-  elicit an attenuated inflammatory response in polarized human bronchial
-  epithelial cells.}
-\newblock Journal of Virology 85: 686--696.
-\bibAnnoteFile{Zeng2011}
+\bibitem[{Zeng et~al.(2011)Zeng, Pappas, Katz, and Tumpey}]{Zeng2011}
+\bibinfo{author}{H.~Zeng}, \bibinfo{author}{C.~Pappas}, \bibinfo{author}{J.~M.
+  Katz}, \bibinfo{author}{T.~M. Tumpey}, \bibinfo{title}{{The 2009 pandemic
+  H1N1 and triple-reassortant swine H1N1 influenza viruses replicate
+  efficiently but elicit an attenuated inflammatory response in polarized human
+  bronchial epithelial cells.}}, \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{85}~(\bibinfo{number}{2}) (\bibinfo{year}{2011})
+  \bibinfo{pages}{686--696},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/21047961}.
 
-\bibitem{Matsukura1996}
-Matsukura S, Kokubu F, Noda H, Tokunaga H, Adachi M (1996) {Expression of IL-6,
-  IL-8, and RANTES on human bronchial epithelial cells, NCI-H292, induced by
-  influenza virus A.}
-\newblock The Journal of allergy and clinical immunology 98: 1080--1087.
-\bibAnnoteFile{Matsukura1996}
+\bibitem[{Matsukura et~al.(1996)Matsukura, Kokubu, Noda, Tokunaga, and
+  Adachi}]{Matsukura1996}
+\bibinfo{author}{S.~Matsukura}, \bibinfo{author}{F.~Kokubu},
+  \bibinfo{author}{H.~Noda}, \bibinfo{author}{H.~Tokunaga},
+  \bibinfo{author}{M.~Adachi}, \bibinfo{title}{{Expression of IL-6, IL-8, and
+  RANTES on human bronchial epithelial cells, NCI-H292, induced by influenza
+  virus A.}}, \bibinfo{journal}{The Journal of allergy and clinical immunology}
+  \bibinfo{volume}{98}~(\bibinfo{number}{6 Pt 1}) (\bibinfo{year}{1996})
+  \bibinfo{pages}{1080--1087},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\&db=PubMed\&dopt=Citation\&list\_uids=8977509}.
 
-\bibitem{Arndt2002}
-Arndt U, Wennemuth G, Barth P, Nain M, Al-Abed Y, et~al. (2002) {Release of
-  Macrophage Migration Inhibitory Factor and CXCL8/Interleukin-8 from Lung
-  Epithelial Cells Rendered Necrotic by Influenza A Virus Infection}.
-\newblock Journal of Virology 76: 9298--9306.
-\bibAnnoteFile{Arndt2002}
+\bibitem[{Arndt et~al.(2002)Arndt, Wennemuth, Barth, Nain, Al-Abed, Meinhardt,
+  Gemsa, and Bacher}]{Arndt2002}
+\bibinfo{author}{U.~Arndt}, \bibinfo{author}{G.~Wennemuth},
+  \bibinfo{author}{P.~Barth}, \bibinfo{author}{M.~Nain},
+  \bibinfo{author}{Y.~Al-Abed}, \bibinfo{author}{A.~Meinhardt},
+  \bibinfo{author}{D.~Gemsa}, \bibinfo{author}{M.~Bacher},
+  \bibinfo{title}{{Release of Macrophage Migration Inhibitory Factor and
+  CXCL8/Interleukin-8 from Lung Epithelial Cells Rendered Necrotic by Influenza
+  A Virus Infection}}, \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{76}~(\bibinfo{number}{18}) (\bibinfo{year}{2002})
+  \bibinfo{pages}{9298--9306},
+  \urlprefix\url{http://view.ncbi.nlm.nih.gov/pubmed/12186913}.
 
-\bibitem{Julkunen2000}
-Julkunen I, Mel\'{e}n K, Nyqvist M, Pirhonen J, Sareneva T, et~al. (2000)
-  {Inflammatory responses in influenza A virus infection}.
-\newblock Vaccine 19 Suppl 1: S32--7.
-\bibAnnoteFile{Julkunen2000}
+\bibitem[{Julkunen et~al.(2000)Julkunen, Mel\'{e}n, Nyqvist, Pirhonen,
+  Sareneva, and Matikainen}]{Julkunen2000}
+\bibinfo{author}{I.~Julkunen}, \bibinfo{author}{K.~Mel\'{e}n},
+  \bibinfo{author}{M.~Nyqvist}, \bibinfo{author}{J.~Pirhonen},
+  \bibinfo{author}{T.~Sareneva}, \bibinfo{author}{S.~Matikainen},
+  \bibinfo{title}{{Inflammatory responses in influenza A virus infection}},
+  \bibinfo{journal}{Vaccine} \bibinfo{volume}{19 Suppl
+  1}~(\bibinfo{number}{Supplement 1}) (\bibinfo{year}{2000})
+  \bibinfo{pages}{S32--7}, ISSN \bibinfo{issn}{0264410X},
+  \doi{\bibinfo{doi}{10.1016/S0264-410X(00)00275-9}},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve\&db=PubMed\&dopt=Citation\&list\_uids=11163460}.
 
-\bibitem{LiJeon2002}
-{Li Jeon} N, Baskaran H, Dertinger SKW, Whitesides GM, {Van De Water} L, et~al.
-  (2002) {Neutrophil chemotaxis in linear and complex gradients of
-  interleukin-8 formed in a microfabricated device.}
-\newblock Nature Biotechnology 20: 826--830.
-\bibAnnoteFile{LiJeon2002}
+\bibitem[{Lim et~al.(2015)Lim, Hyun, Lambert-Emo, Capece, Bae, Miller, Topham,
+  and Kim}]{lim2015neutrophil}
+\bibinfo{author}{K.~Lim}, \bibinfo{author}{Y.-M. Hyun},
+  \bibinfo{author}{K.~Lambert-Emo}, \bibinfo{author}{T.~Capece},
+  \bibinfo{author}{S.~Bae}, \bibinfo{author}{R.~Miller}, \bibinfo{author}{D.~J.
+  Topham}, \bibinfo{author}{M.~Kim}, \bibinfo{title}{{Neutrophil trails guide
+  influenza-specific CD8+ T cells in the airways}}, \bibinfo{journal}{Science}
+  \bibinfo{volume}{349}~(\bibinfo{number}{6252}) (\bibinfo{year}{2015})
+  \bibinfo{pages}{aaa4352}.
 
-\bibitem{McDonald2010}
-McDonald B, Pittman K, Menezes GB, Hirota SA, Slaba I, et~al. (2010)
-  {Intravascular danger signals guide neutrophils to sites of sterile
-  inflammation.}
-\newblock Science 330: 362--366.
-\bibAnnoteFile{McDonald2010}
+\bibitem[{{Li Jeon} et~al.(2002){Li Jeon}, Baskaran, Dertinger, Whitesides,
+  {Van De Water}, and Toner}]{LiJeon2002}
+\bibinfo{author}{N.~{Li Jeon}}, \bibinfo{author}{H.~Baskaran},
+  \bibinfo{author}{S.~K.~W. Dertinger}, \bibinfo{author}{G.~M. Whitesides},
+  \bibinfo{author}{L.~{Van De Water}}, \bibinfo{author}{M.~Toner},
+  \bibinfo{title}{{Neutrophil chemotaxis in linear and complex gradients of
+  interleukin-8 formed in a microfabricated device.}}, \bibinfo{journal}{Nature
+  Biotechnology} \bibinfo{volume}{20}~(\bibinfo{number}{8})
+  (\bibinfo{year}{2002}) \bibinfo{pages}{826--830},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/12091913}.
 
-\bibitem{Banerjee2011}
-Banerjee S, Levin D, Moses M, Koster F, Forrest S (2011) {The Value of
-  Inflammatory Signals in Adaptive Immune Responses}.
-\newblock ICARIS 6825: 1--14.
-\bibAnnoteFile{Banerjee2011}
+\bibitem[{McDonald et~al.(2010)McDonald, Pittman, Menezes, Hirota, Slaba,
+  Waterhouse, Beck, Muruve, and Kubes}]{McDonald2010}
+\bibinfo{author}{B.~McDonald}, \bibinfo{author}{K.~Pittman},
+  \bibinfo{author}{G.~B. Menezes}, \bibinfo{author}{S.~A. Hirota},
+  \bibinfo{author}{I.~Slaba}, \bibinfo{author}{C.~C.~M. Waterhouse},
+  \bibinfo{author}{P.~L. Beck}, \bibinfo{author}{D.~A. Muruve},
+  \bibinfo{author}{P.~Kubes}, \bibinfo{title}{{Intravascular danger signals
+  guide neutrophils to sites of sterile inflammation.}},
+  \bibinfo{journal}{Science} \bibinfo{volume}{330}~(\bibinfo{number}{6002})
+  (\bibinfo{year}{2010}) \bibinfo{pages}{362--366},
+  \urlprefix\url{http://www.sciencemag.org/cgi/doi/10.1126/science.1195491}.
 
-\bibitem{Ganusov2014}
-Ganusov VV, Auerbach J (2014) {Mathematical Modeling Reveals Kinetics of
-  Lymphocyte Recirculation in the Whole Organism}.
-\newblock PLoS Computational Biology 10.
-\bibAnnoteFile{Ganusov2014}
+\bibitem[{Banerjee et~al.(2011)Banerjee, Levin, Moses, Koster, and
+  Forrest}]{Banerjee2011}
+\bibinfo{author}{S.~Banerjee}, \bibinfo{author}{D.~Levin},
+  \bibinfo{author}{M.~Moses}, \bibinfo{author}{F.~Koster},
+  \bibinfo{author}{S.~Forrest}, \bibinfo{title}{{The Value of Inflammatory
+  Signals in Adaptive Immune Responses}}, \bibinfo{journal}{ICARIS}
+  \bibinfo{volume}{6825} (\bibinfo{year}{2011}) \bibinfo{pages}{1--14}.
 
-\bibitem{Wu1986}
-Wu CFJ (1986) {Jackknife, Bootstrap and Other Resampling Methods in Regression
-  Analysis}.
-\newblock Annals of Statistics 14: 1261--1295.
-\bibAnnoteFile{Wu1986}
+\bibitem[{Wu(1986)}]{Wu1986}
+\bibinfo{author}{C.~F.~J. Wu}, \bibinfo{title}{{Jackknife, Bootstrap and Other
+  Resampling Methods in Regression Analysis}}, \bibinfo{journal}{Annals of
+  Statistics} \bibinfo{volume}{14}~(\bibinfo{number}{4}) (\bibinfo{year}{1986})
+  \bibinfo{pages}{1261--1295}, ISSN \bibinfo{issn}{00905364},
+  \doi{\bibinfo{doi}{10.1214/aos/1176350142}},
+  \urlprefix\url{http://projecteuclid.org/euclid.aos/1176350142}.
 
-\bibitem{Beauchemin2006}
-Beauchemin C, Forrest S, Koster FT (2006) {Modeling Influenza Viral Dynamics in
-  Tissue}.
-\newblock LNCS Artificial Immune Systems 4163: 23--36.
-\bibAnnoteFile{Beauchemin2006}
+\bibitem[{Beauchemin et~al.(2006)Beauchemin, Forrest, and
+  Koster}]{Beauchemin2006}
+\bibinfo{author}{C.~Beauchemin}, \bibinfo{author}{S.~Forrest},
+  \bibinfo{author}{F.~T. Koster}, \bibinfo{title}{{Modeling Influenza Viral
+  Dynamics in Tissue}}, \bibinfo{journal}{LNCS Artificial Immune Systems}
+  \bibinfo{volume}{4163} (\bibinfo{year}{2006}) \bibinfo{pages}{23--36}, ISSN
+  \bibinfo{issn}{03029743},
+  \urlprefix\url{http://www.springerlink.com/content/9754174j200113jv/}.
 
-\bibitem{Elbert1999}
-Elbert KJ, Sch\"{a}fer UF, Sch\"{a}fers HJ, Kim KJ, Lee VH, et~al. (1999)
-  {Monolayers of human alveolar epithelial cells in primary culture for
-  pulmonary absorption and transport studies.}
-\newblock Pharmaceutical Research 16: 601--608.
-\bibAnnoteFile{Elbert1999}
+\bibitem[{Elbert et~al.(1999)Elbert, Sch\"{a}fer, Sch\"{a}fers, Kim, Lee, and
+  Lehr}]{Elbert1999}
+\bibinfo{author}{K.~J. Elbert}, \bibinfo{author}{U.~F. Sch\"{a}fer},
+  \bibinfo{author}{H.~J. Sch\"{a}fers}, \bibinfo{author}{K.~J. Kim},
+  \bibinfo{author}{V.~H. Lee}, \bibinfo{author}{C.~M. Lehr},
+  \bibinfo{title}{{Monolayers of human alveolar epithelial cells in primary
+  culture for pulmonary absorption and transport studies.}},
+  \bibinfo{journal}{Pharmaceutical Research}
+  \bibinfo{volume}{16}~(\bibinfo{number}{5}) (\bibinfo{year}{1999})
+  \bibinfo{pages}{601--608},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/10349999}.
 
-\bibitem{Egen2011}
-Egen JG, Rothfuchs AG, Feng CG, Horwitz MA, Sher A, et~al. (2011) {Intravital
-  imaging reveals limited antigen presentation and T cell effector function in
-  mycobacterial granulomas.}
-\newblock Immunity 34: 807--819.
-\bibAnnoteFile{Egen2011}
+\bibitem[{Egen et~al.(2011)Egen, Rothfuchs, Feng, Horwitz, Sher, and
+  Germain}]{Egen2011}
+\bibinfo{author}{J.~G. Egen}, \bibinfo{author}{A.~G. Rothfuchs},
+  \bibinfo{author}{C.~G. Feng}, \bibinfo{author}{M.~A. Horwitz},
+  \bibinfo{author}{A.~Sher}, \bibinfo{author}{R.~N. Germain},
+  \bibinfo{title}{{Intravital imaging reveals limited antigen presentation and
+  T cell effector function in mycobacterial granulomas.}},
+  \bibinfo{journal}{Immunity} \bibinfo{volume}{34}~(\bibinfo{number}{5})
+  (\bibinfo{year}{2011}) \bibinfo{pages}{807--819},
+  \urlprefix\url{http://www.ncbi.nlm.nih.gov/pubmed/21596592}.
 
-\bibitem{Banerjee2010b}
-Banerjee S, Moses M (2010) {Scale invariance of immune system response rates
-  and times: perspectives on immune system architecture and implications for
-  artificial immune systems}.
-\newblock Swarm Intelligence 4: 301--318.
-\bibAnnoteFile{Banerjee2010b}
+\bibitem[{Banerjee and Moses(2010)}]{Banerjee2010b}
+\bibinfo{author}{S.~Banerjee}, \bibinfo{author}{M.~Moses},
+  \bibinfo{title}{{Scale invariance of immune system response rates and times:
+  perspectives on immune system architecture and implications for artificial
+  immune systems}}, \bibinfo{journal}{Swarm Intelligence}
+  \bibinfo{volume}{4}~(\bibinfo{number}{4}) (\bibinfo{year}{2010})
+  \bibinfo{pages}{301--318}, ISSN \bibinfo{issn}{1935-3812},
+  \doi{\bibinfo{doi}{10.1007/s11721-010-0048-2}},
+  \urlprefix\url{http://www.springerlink.com/index/10.1007/s11721-010-0048-2}.
 
-\bibitem{Nandagopal2011}
-Nandagopal S, Wu D, Lin F (2011) {Combinatorial Guidance by CCR7 Ligands for T
-  Lymphocytes Migration in Co-Existing Chemokine Fields}.
-\newblock PLoS ONE 6: 11.
-\bibAnnoteFile{Nandagopal2011}
+\bibitem[{Nandagopal et~al.(2011)Nandagopal, Wu, and Lin}]{Nandagopal2011}
+\bibinfo{author}{S.~Nandagopal}, \bibinfo{author}{D.~Wu},
+  \bibinfo{author}{F.~Lin}, \bibinfo{title}{{Combinatorial Guidance by CCR7
+  Ligands for T Lymphocytes Migration in Co-Existing Chemokine Fields}},
+  \bibinfo{journal}{PLoS ONE} \bibinfo{volume}{6}~(\bibinfo{number}{3})
+  (\bibinfo{year}{2011}) \bibinfo{pages}{11},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3064588\&tool=pmcentrez\&rendertype=abstract}.
 
-\bibitem{Ganusov2008}
-Ganusov VV, {De Boer} RJ (2008) {Estimating in vivo death rates of targets due
-  to CD8 T-cell-mediated killing.}
-\newblock Journal of Virology 82: 11749--11757.
-\bibAnnoteFile{Ganusov2008}
+\bibitem[{Ganusov and {De Boer}(2008)}]{Ganusov2008}
+\bibinfo{author}{V.~V. Ganusov}, \bibinfo{author}{R.~J. {De Boer}},
+  \bibinfo{title}{{Estimating in vivo death rates of targets due to CD8
+  T-cell-mediated killing.}}, \bibinfo{journal}{Journal of Virology}
+  \bibinfo{volume}{82}~(\bibinfo{number}{23}) (\bibinfo{year}{2008})
+  \bibinfo{pages}{11749--11757},
+  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2583656\&tool=pmcentrez\&rendertype=abstract}.
 
 \end{thebibliography}
